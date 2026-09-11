@@ -6,7 +6,9 @@ const VM_CONFIG = {
   host: '70.153.151.62',
   port: 22,
   username: 'azureuser',
-  password: 'RaghavFood@2026!'
+  password: 'RaghavFood@2026!',
+  readyTimeout: 40000,
+  keepaliveInterval: 10000
 };
 
 const GIT_EXE = 'C:\\Users\\dhakr\\AppData\\Local\\Programs\\PortableGit\\cmd\\git.exe';
