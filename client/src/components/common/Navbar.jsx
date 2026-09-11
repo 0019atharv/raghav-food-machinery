@@ -50,14 +50,18 @@ export default function Navbar() {
     <header className="sticky top-0 z-40 w-full transition-all">
       {/* Top Banner Notice (if active) */}
       {settings.bannerNotice?.active && (
-        <div className="bg-gradient-to-r from-amber-600 via-amber-500 to-amber-600 text-industrial-950 font-medium text-xs md:text-sm py-1.5 px-4 text-center flex items-center justify-center gap-2 shadow-sm">
-          <Sparkles className="w-3.5 h-3.5 animate-pulse" />
-          <span>{settings.bannerNotice.text}</span>
-          {settings.bannerNotice.link && (
-            <Link to={settings.bannerNotice.link} className="underline font-bold hover:text-white transition-colors ml-1">
-              Explore Now &rarr;
-            </Link>
-          )}
+        <div className="bg-gradient-to-r from-amber-600 via-amber-500 to-amber-600 text-industrial-950 font-medium text-xs md:text-sm py-1.5 px-3 md:px-4 text-center shadow-sm">
+          <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-center gap-1 sm:gap-2">
+            <div className="flex items-center gap-1.5 justify-center">
+              <Sparkles className="w-3.5 h-3.5 flex-shrink-0 animate-pulse text-industrial-950" />
+              <span className="leading-tight">{settings.bannerNotice.text}</span>
+            </div>
+            {settings.bannerNotice.link && (
+              <Link to={settings.bannerNotice.link} className="inline-flex items-center font-bold underline hover:text-white transition-colors whitespace-nowrap text-industrial-950">
+                Explore Now &rarr;
+              </Link>
+            )}
+          </div>
         </div>
       )}
 
@@ -118,26 +122,26 @@ export default function Navbar() {
       </div>
 
       {/* Main Navigation Bar */}
-      <nav className="bg-industrial-900/90 backdrop-blur-xl border-b border-industrial-800/80 px-4 md:px-8 py-3.5">
+      <nav className="bg-industrial-900/90 backdrop-blur-xl border-b border-industrial-800/80 px-3 sm:px-6 md:px-8 py-2.5 sm:py-3.5">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-3 group">
-            <div className="w-10 h-10 md:w-11 md:h-11 rounded-xl bg-gradient-to-br from-amber-500 to-amber-700 p-0.5 shadow-glow-amber flex items-center justify-center">
+          <Link to="/" className="flex items-center gap-2.5 sm:gap-3 group min-w-0">
+            <div className="w-9 h-9 sm:w-10 sm:h-10 md:w-11 md:h-11 rounded-xl bg-gradient-to-br from-amber-500 to-amber-700 p-0.5 shadow-glow-amber flex items-center justify-center flex-shrink-0">
               <div className="w-full h-full bg-industrial-950 rounded-[10px] flex items-center justify-center">
-                <Wrench className="w-5 h-5 text-amber-brand group-hover:rotate-45 transition-transform duration-500" />
+                <Wrench className="w-4 h-4 sm:w-5 sm:h-5 text-amber-brand group-hover:rotate-45 transition-transform duration-500" />
               </div>
             </div>
-            <div className="flex flex-col">
-              <div className="flex items-center gap-1.5">
-                <span className="font-display font-extrabold text-lg md:text-xl tracking-tight text-white">
+            <div className="flex flex-col min-w-0">
+              <div className="flex items-center gap-1 sm:gap-1.5 whitespace-nowrap">
+                <span className="font-display font-extrabold text-base sm:text-xl tracking-tight text-white">
                   RAGHAV
                 </span>
-                <span className="font-display font-bold text-lg md:text-xl text-amber-brand">
+                <span className="font-display font-bold text-base sm:text-xl text-amber-brand">
                   MACHINES
                 </span>
               </div>
-              <span className="text-[10px] font-mono text-industrial-400 tracking-wider uppercase -mt-0.5">
+              <span className="text-[9px] sm:text-[10px] font-mono text-industrial-400 tracking-wider uppercase -mt-0.5 truncate max-w-[170px] sm:max-w-none">
                 Food Processing & Canning Tech
               </span>
             </div>
@@ -161,14 +165,14 @@ export default function Navbar() {
           </div>
 
           {/* Right Action Icons */}
-          <div className="flex items-center gap-2 md:gap-3">
+          <div className="flex items-center gap-1.5 sm:gap-2 md:gap-3 flex-shrink-0">
             {/* Theme Selector Dropdown */}
             <ThemeSwitcher />
 
-            {/* RFQ Quote Cart Drawer Button */}
+            {/* RFQ Quote Cart Drawer Button (Shown on desktop/tablet, hidden on mobile since bottom bar has it) */}
             <button
               onClick={() => setIsDrawerOpen(true)}
-              className="relative flex items-center gap-2 bg-gradient-to-r from-amber-500/10 to-amber-600/20 hover:from-amber-500/20 hover:to-amber-600/30 text-amber-glow border border-amber-500/30 px-3 md:px-4 py-2 rounded-xl text-sm font-semibold transition-all shadow-sm"
+              className="hidden sm:flex relative items-center gap-2 bg-gradient-to-r from-amber-500/10 to-amber-600/20 hover:from-amber-500/20 hover:to-amber-600/30 text-amber-glow border border-amber-500/30 px-3 md:px-4 py-2 rounded-xl text-sm font-semibold transition-all shadow-sm"
               title="View Request For Quote Cart"
             >
               <ShoppingCart className="w-4 h-4 text-amber-brand" />
