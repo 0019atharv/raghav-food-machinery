@@ -64,7 +64,7 @@ async function runDeploy() {
     # Update backend
     cd /var/www/rfpm/app/server
     npm install --omit=dev
-    pm2 reload rfpm-backend || pm2 restart rfpm-backend
+    pm2 reload rfpm-backend --update-env || pm2 restart rfpm-backend --update-env
     
     # Rebuild frontend
     cd /var/www/rfpm/app/client
