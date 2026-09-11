@@ -377,6 +377,177 @@ export const initialProducts = [
     ],
     isFeatured: false,
     isPublished: true
+  },
+  {
+    name: "Raghav 500 Ltr Stainless Steel Conical Storage Tank",
+    slug: "raghav-500ltr-conical-storage-tank",
+    category: "Commercial Kettles & Cooking",
+    categorySlug: "commercial-kettles-cooking",
+    shortDescription: "Food-grade SS-304 500-liter conical bottom storage and balancing tank designed for hygienic holding of sauces, fruit pulp, juices, syrup, and pastes with zero product retention.",
+    fullDescription: "The Raghav 500 Ltr Stainless Steel Conical Storage Tank is an industrial-grade hygienic processing vessel engineered for commercial food plants, beverage processors, dairy operations, and sauce manufacturers. Fabricated with heavy-gauge 16-gauge SS-304 stainless steel, it features a 60-degree steep conical cone bottom that ensures 100% complete gravity drainage with zero stagnant product residue. Supported on four heavy-duty tubular stainless steel legs with pre-drilled flange anchor pads for exceptional floor stability. The interior is mirror-finished and sanitary TIG-welded with radius corners to prevent bacterial harborage and facilitate swift CIP (Clean-In-Place) washdowns. Features sanitary tri-clamp / butterfly discharge port, top dust cover flange, and level indicator ports.",
+    price: "₹ 65,000",
+    priceUnit: "Ex-Factory (GST Extra)",
+    capacity: "500 Liters",
+    power: "Gravity / Pump Flow",
+    materialGrade: "Food Grade SS-304 (16 Gauge Heavy Duty)",
+    automationGrade: "Manual / Semi-Automatic",
+    voltage: "Not applicable",
+    dimensions: "1100 mm (Dia) x 1650 mm (H)",
+    weight: "140 kg",
+    warranty: "1 Year Comprehensive Warranty",
+    images: [
+      "https://res.cloudinary.com/vgmmtb5k/image/upload/v1789137497/raghav-food-processing-machines/raghav-500ltr-storage-tank.png"
+    ],
+    specifications: [
+      { label: "Holding Capacity", value: "500 Liters" },
+      { label: "Sheet Thickness", value: "16 Gauge (approx 1.6 mm)" },
+      { label: "Bottom Cone Angle", value: "60° Conical Hopper Bottom (Zero Residue)" },
+      { label: "Discharge Port", value: "2-inch / 2.5-inch Sanitary Butterfly / TC Flange" },
+      { label: "Leg Support", value: "4 Heavy-Duty SS Tubular Legs with Flange Base Pads" },
+      { label: "Internal Polish", value: "Mirror Polish (Ra < 0.4 µm) Food Grade" },
+      { label: "Cleaning Method", value: "CIP Compatible Radius Sanitary Welds" }
+    ],
+    applications: [
+      "Fruit Pulp, Tomato Puree, Ketchup & Sauce Storage",
+      "Sugar Syrup, Liquid Glucose, Honey & Edible Oil",
+      "Milk, Dairy Liquids & Ready-to-Serve Beverages"
+    ],
+    features: [
+      "Zero product retention with steep 60° conical bottom",
+      "Certified food-grade SS-304 with mirror sanitary finish",
+      "Heavy-duty tubular legs with level-leveling floor flanges",
+      "Corrosion-resistant and 100% compatible with hot washdowns"
+    ],
+    isFeatured: true,
+    isPublished: true
+  },
+  {
+    name: "Raghav Heavy-Duty Manual Crown Corking & Bottle Capping Machine",
+    slug: "raghav-heavy-duty-crown-corking-machine",
+    category: "Packaging & Sealing",
+    categorySlug: "packaging-sealing",
+    shortDescription: "Precision manual crown corking machine built for commercial micro-breweries, craft beverage makers, artisanal juice bottlers, and sauce packaging lines.",
+    fullDescription: "The Raghav Heavy-Duty Manual Crown Corking Machine is engineered for professional-grade bottle sealing across craft beverage, cold-brew coffee, kombucha, fruit juice, tomato sauce, and micro-brewery plants. Constructed from high-density cast iron with an industrial emerald powder-coat finish and a precision chrome-plated solid steel column. Equipped with a hardened magnetic crimping bell that securely retains standard 26mm (and optional 29mm) crown caps, ensuring airtight, hermetic, leak-proof crimping without chipping glass rims. The smooth leverage handle mechanism delivers high mechanical advantage with minimal operator hand fatigue. Includes tool-free height adjustment to swiftly accommodate bottles from 150ml nip bottles up to 1000ml tall beverage bottles, and a stable bench-mount base with pre-cast bolt holes.",
+    price: "₹ 4,000",
+    priceUnit: "Ex-Factory Unit",
+    capacity: "300 - 500 Bottles / Hour",
+    power: "Manual Mechanical (Zero Electricity Required)",
+    materialGrade: "Cast Iron Base + Chrome-Plated Solid Steel Column",
+    automationGrade: "Manual Leverage Action",
+    voltage: "Zero Power Required",
+    dimensions: "250 mm x 200 mm x 520 mm",
+    weight: "4.8 kg",
+    warranty: "1 Year Replacement Warranty on Crimp Head",
+    images: [
+      "https://res.cloudinary.com/vgmmtb5k/image/upload/v1789137653/raghav-food-processing-machines/raghav-heavy-duty-crown-corking-machine.png"
+    ],
+    specifications: [
+      { label: "Capping Speed", value: "300 - 500 Bottles per hour" },
+      { label: "Cap Standard", value: "26 mm Crown Caps (Optional 29 mm Bell)" },
+      { label: "Bottle Height Range", value: "100 mm to 380 mm (Tool-Free Quick Clamp)" },
+      { label: "Crimp Die", value: "Hardened Steel Magnetic Crimping Bell" },
+      { label: "Base Structure", value: "High-Tension Cast Iron with Rubber Centering Pad" },
+      { label: "Mounting", value: "Pre-drilled bench mounting holes" }
+    ],
+    applications: [
+      "Glass Bottle Sealing: Craft Beer, Cider & Kombucha",
+      "Fruit Juices, Cold Drinks, Flavored Milks & Sharbat",
+      "Ketchup, Sauce & Vinegar Glass Packaging"
+    ],
+    features: [
+      "Magnetic capping bell securely holds cap before crimping",
+      "Ergonomic extended lever arm minimizes operator effort",
+      "Heavy cast iron base prevents tipping during operation",
+      "Airtight, leak-proof hermetic seal every single cycle"
+    ],
+    isFeatured: true,
+    isPublished: true
+  },
+  {
+    name: "Raghav Blower Cyclone Spice & Grain Pulverizer Machine",
+    slug: "raghav-blower-cyclone-pulverizer-machine",
+    category: "Spices & Grain Pulverizers",
+    categorySlug: "spices-grain-pulverizers",
+    shortDescription: "Heavy-duty industrial grinding mill with centrifugal air blower and stainless steel cyclone dust separator for cool, continuous, dust-free spice and grain pulverizing.",
+    fullDescription: "The Raghav Blower Cyclone Spice & Grain Pulverizer Machine is an advanced industrial grinding plant designed for spice processors, grain millers, Ayurvedic herb producers, and commercial food facilities. Unlike standard hammer mills that heat up and lose volatile spice aromas, this unit integrates an internal pneumatic draft air blower and a conical cyclone collector that actively draws cool ambient air through the grinding chamber. Raw spices (red chili, turmeric, coriander, black pepper, dry ginger) and grains are pulverized by high-speed hardened serrated beaters against grooved liners, instantly aspirated through precision perforated sieves, and conveyed pneumatically into the cyclone separator. This yields consistent, ultra-fine mesh output (40 to 120 mesh) with zero dust dispersion in the work area, zero moisture sweating, and 100% color & aroma retention.",
+    price: "₹ 145,000",
+    priceUnit: "Complete Unit with Motor & Cyclone",
+    capacity: "100 - 250 kg/hr (Depending on spice & fineness)",
+    power: "7.5 HP to 10 HP Heavy-Duty Induction Motor",
+    materialGrade: "Full SS-304 Contact Chamber & Cyclone / Heavy MS Base",
+    automationGrade: "Semi-Automatic Continuous Operation",
+    voltage: "415 V, 3-Phase, 50 Hz",
+    dimensions: "1650 mm x 1150 mm x 1850 mm",
+    weight: "380 kg",
+    warranty: "1 Year Comprehensive Industrial Warranty",
+    images: [
+      "https://res.cloudinary.com/vgmmtb5k/image/upload/v1789137654/raghav-food-processing-machines/raghav-blower-cyclone-pulverizer.jpg"
+    ],
+    specifications: [
+      { label: "Output Capacity", value: "100 - 250 kg per hour" },
+      { label: "Motor Requirement", value: "7.5 HP / 10 HP (Three Phase 415V)" },
+      { label: "Dust Separation", value: "Stainless Steel Cyclone Collector with Bag Filter" },
+      { label: "Grinding Fineness", value: "40 Mesh to 120 Mesh (Interchangeable Sieves)" },
+      { label: "Beater Type", value: "Dynamic Balanced Hardened SS Beaters" },
+      { label: "Air System", value: "Centrifugal Blower for Rapid Cooling & Transfer" }
+    ],
+    applications: [
+      "Turmeric, Red Chili, Coriander, Cumin, Black Pepper",
+      "Pulses, Gram Flour (Besan), Rice & Wheat Grinding",
+      "Ayurvedic Herbs, Dry Leaves, Sugar & Salt"
+    ],
+    features: [
+      "100% Dust-free operation with pneumatic cyclone discharge",
+      "Cold-grinding airflow prevents thermal degradation of volatile oils",
+      "Heavy-duty dynamically balanced rotor ensures vibration-free run",
+      "Quick-clamp screen changeover in under 2 minutes"
+    ],
+    isFeatured: true,
+    isPublished: true
+  },
+  {
+    name: "Raghav Tilting Steam Jacketed Cooking Kettle (Commercial Boiling Pan)",
+    slug: "raghav-tilting-steam-jacketed-kettle-commercial",
+    category: "Commercial Kettles & Cooking",
+    categorySlug: "commercial-kettles-cooking",
+    shortDescription: "Commercial hemispherical tilting steam kettle for rapid, scorch-free boiling, simmering, and batch concentration of sauces, syrups, pastes, soups, and dairy products.",
+    fullDescription: "The Raghav Tilting Steam Jacketed Cooking Kettle is an indispensable commercial cooking vessel engineered for industrial kitchens, confectionery manufacturers, sauce & ketchup plants, dairy plants, and catering operations. Constructed with a deep, seamless hemispherical inner bowl surrounded by an outer pressurised steam jacket rated up to 3-4 bar. Because heat is transferred uniformly across the entire curved surface rather than a concentrated flame point, delicate viscous foods like tomato purée, milk khoya, sugar syrups, gravies, and fruit jams cook 3x faster without scorching, burning, or caramelization. Mounted on robust A-frame stainless steel stanchions with dual hollow trunnions for steam supply and condensate discharge. Includes a precision worm-gear manual tilting handwheel with self-locking safety brake, allowing the operator to pour out molten batches with pinpoint control.",
+    price: "₹ 95,000",
+    priceUnit: "Ex-Factory (GST Extra)",
+    capacity: "150 to 250 Liters (Batch Processing)",
+    power: "External Steam Boiler / Optional 0.5 HP Stirrer",
+    materialGrade: "Inner Bowl SS-304/SS-316 (10 Gauge), Steam Jacket SS-304",
+    automationGrade: "Manual Worm-Gear Tilting Handwheel",
+    voltage: "Steam Operated (No Electric Motor needed for basic kettle)",
+    dimensions: "1450 mm x 1050 mm x 1250 mm",
+    weight: "220 kg",
+    warranty: "1 Year Comprehensive Industrial Warranty",
+    images: [
+      "https://res.cloudinary.com/vgmmtb5k/image/upload/v1789137658/raghav-food-processing-machines/raghav-tilting-steam-jacketed-kettle.jpg"
+    ],
+    specifications: [
+      { label: "Pan Capacity", value: "150 - 250 Liters per batch" },
+      { label: "Working Pressure", value: "Up to 3.5 bar (50 PSI) Steam Pressure" },
+      { label: "Inner Vessel", value: "Heavy-Gauge SS-304 / SS-316 (10 Gauge / 3.2 mm)" },
+      { label: "Outer Jacket", value: "Reinforced SS-304 Jacket with Safety Relief Valve" },
+      { label: "Tilting Control", value: "Manual Worm-Gear Handwheel with Safety Self-Lock" },
+      { label: "Steam In/Out", value: "Dual Hollow Rotary Trunnions with Condensate Steam Trap" },
+      { label: "Safety Rating", value: "Hydraulic Tested to 1.5x Working Steam Pressure" }
+    ],
+    applications: [
+      "Tomato Sauce, Ketchup, Puree & Paste Cooking",
+      "Milk Boiling, Khoya, Basundi & Dairy Products",
+      "Sugar Syrup, Chikki, Gulab Jamun Syrup & Confectionery",
+      "Commercial Gravies, Dal Makhani & Bulk Catering Curries"
+    ],
+    features: [
+      "Indirect 360° steam jacket heating eliminates scorching & hotspots",
+      "Precision worm gear tilting handwheel enables smooth, safe pouring",
+      "Sanitary food-grade stainless steel with polished seamless inner bowl",
+      "Heavy A-frame construction engineered for decades of daily factory use"
+    ],
+    isFeatured: true,
+    isPublished: true
   }
 ];
 
