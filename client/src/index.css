@@ -1,0 +1,224 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+/* Base Industrial Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #06090f;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #334155;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #f59e0b;
+}
+
+/* Glassmorphism helpers */
+.glass-panel {
+  background: rgba(17, 26, 46, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-panel-hover {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-panel-hover:hover {
+  background: rgba(30, 41, 59, 0.85);
+  border-color: rgba(245, 158, 11, 0.4);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px -10px rgba(245, 158, 11, 0.15);
+}
+
+/* Blueprint Grid Lines */
+.blueprint-grid {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+}
+
+/* Industrial Amber Gradient Text */
+.text-gradient-amber {
+  background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 50%, #ea580c 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-steel {
+  background: linear-gradient(135deg, #ffffff 0%, #cbd5e1 50%, #94a3b8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ==========================================================================
+   THEME STYLES (Light, Dark, Navy, Amber)
+   ========================================================================== */
+
+/* 1. PRECISION STEEL (LIGHT THEME) */
+html.theme-light {
+  color-scheme: light;
+}
+
+html.theme-light body {
+  background-color: #f1f5f9;
+  color: #0f172a;
+}
+
+html.theme-light .bg-industrial-950 {
+  background-color: #ffffff !important;
+}
+
+html.theme-light .bg-industrial-900 {
+  background-color: #f8fafc !important;
+}
+
+html.theme-light .bg-industrial-850 {
+  background-color: #f1f5f9 !important;
+}
+
+html.theme-light .bg-industrial-800 {
+  background-color: #e2e8f0 !important;
+  color: #0f172a !important;
+}
+
+html.theme-light .border-industrial-800,
+html.theme-light .border-industrial-850,
+html.theme-light .border-industrial-700 {
+  border-color: #cbd5e1 !important;
+}
+
+html.theme-light .text-white {
+  color: #0f172a !important;
+}
+
+html.theme-light .text-industrial-100,
+html.theme-light .text-industrial-200,
+html.theme-light .text-industrial-300 {
+  color: #334155 !important;
+}
+
+html.theme-light .text-industrial-400,
+html.theme-light .text-industrial-500 {
+  color: #64748B !important;
+}
+
+html.theme-light input,
+html.theme-light select,
+html.theme-light textarea {
+  background-color: #ffffff !important;
+  color: #0f172a !important;
+  border-color: #cbd5e1 !important;
+}
+
+html.theme-light input::placeholder,
+html.theme-light textarea::placeholder {
+  color: #94a3b8 !important;
+}
+
+html.theme-light .glass-panel {
+  background: rgba(255, 255, 255, 0.88) !important;
+  border-color: rgba(203, 213, 225, 0.8) !important;
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05) !important;
+}
+
+html.theme-light .glass-panel-hover:hover {
+  background: rgba(255, 255, 255, 0.98) !important;
+  border-color: rgba(217, 119, 6, 0.5) !important;
+  box-shadow: 0 12px 30px -10px rgba(217, 119, 6, 0.15) !important;
+}
+
+html.theme-light .blueprint-grid {
+  background-image: 
+    linear-gradient(to right, rgba(15, 23, 42, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(15, 23, 42, 0.04) 1px, transparent 1px) !important;
+}
+
+html.theme-light thead {
+  background-color: #f1f5f9 !important;
+  color: #475569 !important;
+}
+
+html.theme-light ::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+html.theme-light ::-webkit-scrollbar-thumb {
+  background: #94a3b8;
+}
+
+/* 2. COBALT CNC (NAVY THEME) */
+html.theme-navy {
+  color-scheme: dark;
+}
+
+html.theme-navy body {
+  background-color: #040918;
+}
+
+html.theme-navy .bg-industrial-950 {
+  background-color: #060c20 !important;
+}
+
+html.theme-navy .bg-industrial-900 {
+  background-color: #0b1536 !important;
+}
+
+html.theme-navy .bg-industrial-850 {
+  background-color: #101d4a !important;
+}
+
+html.theme-navy .bg-industrial-800 {
+  background-color: #162761 !important;
+}
+
+html.theme-navy .border-industrial-800,
+html.theme-navy .border-industrial-850,
+html.theme-navy .border-industrial-700 {
+  border-color: #1e357d !important;
+}
+
+/* 3. SAFETY AMBER (HIGH CONTRAST THEME) */
+html.theme-amber {
+  color-scheme: dark;
+}
+
+html.theme-amber body {
+  background-color: #0c0903;
+}
+
+html.theme-amber .bg-industrial-950 {
+  background-color: #120e05 !important;
+}
+
+html.theme-amber .bg-industrial-900 {
+  background-color: #1a1408 !important;
+}
+
+html.theme-amber .bg-industrial-850 {
+  background-color: #241c0b !important;
+}
+
+html.theme-amber .bg-industrial-800 {
+  background-color: #31260e !important;
+}
+
+html.theme-amber .border-industrial-800,
+html.theme-amber .border-industrial-850,
+html.theme-amber .border-industrial-700 {
+  border-color: rgba(245, 158, 11, 0.25) !important;
+}

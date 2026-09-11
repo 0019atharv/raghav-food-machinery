@@ -1,0 +1,12 @@
+{
+  "name": "raghav-food-machinery-platform",
+  "version": "1.0.0",
+  "description": "Full-stack industrial machinery website and CMS modeled after Raghav Food Machinery Company",
+  "scripts": {
+    "dev:server": "cd server && npm run dev",
+    "dev:client": "cd client && npm run dev",
+    "build:client": "cd client && npm run build",
+    "start": "cd server && npm start"
+  }
+}
+

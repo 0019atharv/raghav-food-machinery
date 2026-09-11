@@ -1,0 +1,32 @@
+﻿name: Deploy Backend to Azure VM
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'server/**'
+      - '.github/workflows/deploy-backend.yml'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Deploy to Azure Linux VM via SSH
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.AZURE_VM_HOST }}
+          username: ${{ secrets.AZURE_VM_USER }}
+          key: ${{ secrets.AZURE_SSH_PRIVATE_KEY }}
+          port: 22
+          script: |
+            echo "🚀 Deploying Raghav Food Machinery Backend..."
+            cd /var/www/RFPM/server || cd ~/RFPM/server
+            git pull origin main
+            npm install --omit=dev
+            pm2 restart rfpm-backend || pm2 start src/server.js --name rfpm-backend
+            pm2 save
+            echo "✅ Backend Deployed Successfully & PM2 restarted!"

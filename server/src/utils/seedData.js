@@ -1,0 +1,561 @@
+export const initialCategories = [
+  {
+    name: "Retort & Sterilization",
+    slug: "retort-sterilization",
+    description: "High-pressure food sterilization autoclaves for retort pouches, tin cans, glass bottles, and ready-to-eat (RTE) meals.",
+    image: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=800&q=80",
+    icon: "ShieldCheck",
+    machineCount: 3,
+    isPublished: true
+  },
+  {
+    name: "Snacks & Extrusion Lines",
+    slug: "snacks-extrusion-lines",
+    description: "Continuous puff extruders, kurkure machines, roasting drums, and complete automated snack food processing lines.",
+    image: "https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&w=800&q=80",
+    icon: "Layers",
+    machineCount: 4,
+    isPublished: true
+  },
+  {
+    name: "Vegetable & Fruit Processing",
+    slug: "vegetable-fruit-processing",
+    description: "Heavy-duty commercial fruit pulpers, tomato juicers, industrial vegetable dryers, washing flumes, and peelers.",
+    image: "https://images.unsplash.com/photo-1574314144368-232eb12bd1d0?auto=format&fit=crop&w=800&q=80",
+    icon: "Wheat",
+    machineCount: 3,
+    isPublished: true
+  },
+  {
+    name: "Commercial Kettles & Cooking",
+    slug: "commercial-kettles-cooking",
+    description: "Steam jacketed tilting kettles, vacuum boiling pans, and heavy duty sauce & paste preparation tanks.",
+    image: "https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&w=800&q=80",
+    icon: "Flame",
+    machineCount: 2,
+    isPublished: true
+  },
+  {
+    name: "Spices & Grain Pulverizers",
+    slug: "spices-grain-pulverizers",
+    description: "Micro pulverizers, pin mills, hammer crushers, and cyclone dust collectors for spices, sugar, and grains.",
+    image: "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=800&q=80",
+    icon: "Cpu",
+    machineCount: 2,
+    isPublished: true
+  },
+  {
+    name: "Packaging & Sealing",
+    slug: "packaging-sealing",
+    description: "Continuous band sealers with nitrogen flushing, batch coding, and pouch packaging systems.",
+    image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=800&q=80",
+    icon: "PackageCheck",
+    machineCount: 2,
+    isPublished: true
+  }
+];
+
+export const initialProducts = [
+  {
+    name: "Automatic Canning Retort Sterilization Machine (500 Ltr)",
+    slug: "automatic-canning-retort-500l",
+    category: "Retort & Sterilization",
+    categorySlug: "retort-sterilization",
+    shortDescription: "Industrial grade high-pressure steam autoclave retort engineered for canned foods, pouch meals, and baby food sterilization.",
+    fullDescription: "Raghav Food Machinery's 500L Automatic Retort Machine is specifically engineered to achieve commercial sterility (Fo value calculation) for ready-to-eat (RTE) foods, curries, meats, sweet corn, mushrooms, and beverage cans. Built from certified SS-304/SS-316 with hydraulic quick-locking door, digital temperature controllers, and precision overpressure protection.",
+    price: "₹3,75,000 - ₹5,50,000",
+    priceUnit: "Ex-Factory / Turnkey Setup",
+    capacity: "500 Liters / Batch (~250-300 standard cans)",
+    power: "12 kW Electric Immersion or Direct Boiler Steam",
+    materialGrade: "Food Grade SS-304 Contact Parts (SS-316 optional)",
+    automationGrade: "Fully Automatic PLC with Touchscreen HMI",
+    voltage: "415 V, 3-Phase, 50 Hz",
+    dimensions: "2100 mm x 1200 mm x 1850 mm",
+    weight: "850 kg approx",
+    warranty: "1 Year Comprehensive Warranty + Lifetime Online Tech Support",
+    images: [
+      "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1000&q=80"
+    ],
+    specifications: [
+      { label: "Working Pressure", value: "0.22 - 0.25 MPa (Tested up to 0.4 MPa)" },
+      { label: "Design Temperature", value: "Up to 135°C (275°F)" },
+      { label: "Vessel Material", value: "Stainless Steel SS-304 (6mm Shell Thickness)" },
+      { label: "Basket Capacity", value: "2 x Stainless Steel Perforated Loading Baskets" },
+      { label: "Cooling Method", value: "Compressed Air Counter-Pressure Water Shower" },
+      { label: "Safety System", value: "Dual Mechanical Safety Valves + Electronic Interlock" }
+    ],
+    applications: [
+      "Ready-to-Eat (RTE) Curries & Meals",
+      "Tin Can Foods (Sweet Corn, Mushroom, Pineapple)",
+      "Retort Pouches & Spouted Pouches",
+      "Glass Jar Pickles & Baby Food"
+    ],
+    features: [
+      "High thermal distribution efficiency with +/- 0.5°C uniformity",
+      "Touchscreen HMI with 20 programmable recipe memory cycles",
+      "Automatic air venting and rapid counter-pressure cooling",
+      "Hydrostatically pressure tested and CE certified safety standards"
+    ],
+    isFeatured: true,
+    isPublished: true
+  },
+  {
+    name: "Compact Industrial Retort Machine (120 Ltr)",
+    slug: "compact-industrial-retort-120l",
+    category: "Retort & Sterilization",
+    categorySlug: "retort-sterilization",
+    shortDescription: "Pilot plant and small-batch sterilization autoclave for food entrepreneurs and R&D testing laboratories.",
+    fullDescription: "The 120L Canning Retort is engineered for boutique food processing units, agricultural universities, and R&D food testing centers. Delivers the exact same thermal penetration kinetics as our large 1000L plants while maintaining a compact factory footprint.",
+    price: "₹1,85,000 - ₹2,40,000",
+    priceUnit: "Ex-Factory",
+    capacity: "120 Liters / Batch (~60-80 standard cans)",
+    power: "6 kW Electric Heating",
+    materialGrade: "SS-304 Food Grade",
+    automationGrade: "Digital PID Semi-Automatic Controller",
+    voltage: "230V Single Phase / 415V 3-Phase",
+    dimensions: "950 mm x 850 mm x 1350 mm",
+    weight: "280 kg",
+    warranty: "1 Year Warranty",
+    images: [
+      "https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1000&q=80"
+    ],
+    specifications: [
+      { label: "Working Pressure", value: "0.15 - 0.20 MPa" },
+      { label: "Design Temperature", value: "126°C" },
+      { label: "Basket System", value: "1 x Heavy-Duty SS-304 Basket" },
+      { label: "Water Level Indicator", value: "Tubular Sight Glass Gauge" }
+    ],
+    applications: [
+      "Pilot Food Laboratories",
+      "Specialty Retort Pouch Startups",
+      "Canned Fish & Meat Trial Batches"
+    ],
+    features: [
+      "Self-sealing silicone gasket with quick radial locking arms",
+      "Independent temperature and pressure sensor gauges",
+      "Stainless steel trolley for effortless basket loading"
+    ],
+    isFeatured: false,
+    isPublished: true
+  },
+  {
+    name: "High-Capacity Snacks & Kurkure Extruder Machine",
+    slug: "kurkure-snacks-extruder-machine",
+    category: "Snacks & Extrusion Lines",
+    categorySlug: "snacks-extrusion-lines",
+    shortDescription: "Direct drive rotary die extruder producing crunchy kurkure, corn rings, cheese balls, and puffed snacks.",
+    fullDescription: "Our signature Snacks Extruder is the backbone of snack food production in North and Western India. Featuring hardened alloy steel barrel and screws, variable frequency drive (VFD) for precision cutting speed, and high-shear friction design for optimal expansion without pre-cooking.",
+    price: "₹2,60,000 - ₹4,20,000",
+    priceUnit: "Machine with Cutter & Hopper",
+    capacity: "120 - 150 kg/hr finished output",
+    power: "15 HP Main Motor + 1 HP Cutter + 0.5 HP Feeder",
+    materialGrade: "Mild Steel Heavy Base Frame + SS-304 Contact Sheets",
+    automationGrade: "Continuous Automated Extrusion",
+    voltage: "415 V, 3-Phase, 50 Hz",
+    dimensions: "1850 mm x 950 mm x 1500 mm",
+    weight: "720 kg",
+    warranty: "1 Year Complete Warranty",
+    images: [
+      "https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1000&q=80"
+    ],
+    specifications: [
+      { label: "Output Capacity", value: "100 - 150 kg/hr" },
+      { label: "Raw Material", value: "Corn Meal, Rice Meal, Gram Grit (Besan)" },
+      { label: "Drive Mechanism", value: "Direct Coupled Heavy Duty Gearbox" },
+      { label: "Speed Control", value: "Schneider / Delta VFD on Cutting Assembly" }
+    ],
+    applications: [
+      "Kurkure & Collets",
+      "Cheese Puffs & Rice Balls",
+      "3D Pellets & Twisted Snacks"
+    ],
+    features: [
+      "Special alloy friction screws for long lifespan and minimum wear",
+      "Water jacket cooling manifold on extruder barrel",
+      "Vibration-free dynamic balancing base structure"
+    ],
+    isFeatured: true,
+    isPublished: true
+  },
+  {
+    name: "Continuous Namkeen & Potato Chips Automatic Fryer",
+    slug: "continuous-namkeen-chips-fryer",
+    category: "Snacks & Extrusion Lines",
+    categorySlug: "snacks-extrusion-lines",
+    shortDescription: "Automated continuous conveyor fryer with oil circulation filter and digital heat management.",
+    fullDescription: "Engineered for high-volume snack manufacturers producing sev, bhujia, boondi, potato wafers, and extruded snacks. Features low oil volume design to preserve FFA (Free Fatty Acid) levels and maximize product shelf life.",
+    price: "₹4,80,000 - ₹8,50,000",
+    priceUnit: "Turnkey Line with Filter & De-oiler",
+    capacity: "250 - 500 kg/hr",
+    power: "3 HP Conveyor Motor + 2 HP Circulation Pump",
+    materialGrade: "Full SS-304 Food Grade Construction",
+    automationGrade: "Fully Automatic Heat & Conveyor Speed Sync",
+    voltage: "415 V, 3-Phase",
+    dimensions: "4500 mm x 1200 mm x 1750 mm",
+    weight: "1400 kg",
+    warranty: "1 Year AMC Included",
+    images: [
+      "https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&w=1000&q=80"
+    ],
+    specifications: [
+      { label: "Heating Media", value: "Diesel Burner / Gas Burner / Thermic Fluid" },
+      { label: "Frying Time", value: "Adjustable from 30 seconds to 5 minutes via VFD" },
+      { label: "Belt System", value: "Teflon coated top submerger & bottom SS wire mesh" },
+      { label: "Oil Filtration", value: "Continuous paper continuous drum filtration" }
+    ],
+    applications: [
+      "Aloo Bhujia, Ratlami Sev, Boondi",
+      "Potato Chips & Banana Wafers",
+      "Coated Peanuts & Fried Dal"
+    ],
+    features: [
+      "Hood lifting system for effortless sanitation and daily cleaning",
+      "Overheat emergency shutoff and burner interlock sensors",
+      "Integrated centrifugal de-oiling conveyor output"
+    ],
+    isFeatured: true,
+    isPublished: true
+  },
+  {
+    name: "Industrial 48-Tray Vegetable & Fruit Dryer Machine",
+    slug: "industrial-48-tray-vegetable-dryer",
+    category: "Vegetable & Fruit Processing",
+    categorySlug: "vegetable-fruit-processing",
+    shortDescription: "Hot air circulation cabinet dehydrator for vegetables, onion flakes, garlic, spices, and dried fruits.",
+    fullDescription: "Engineered to deliver uniform cross-flow hot air across all 48 trays. Maintains accurate relative humidity and temperature up to 120°C, preserving aroma, natural pigments, and vitamin content in dehydrated food products.",
+    price: "₹1,95,000 - ₹2,75,000",
+    priceUnit: "Ex-Factory with 48 SS Trays",
+    capacity: "100 - 150 kg per batch (48 trays)",
+    power: "9 kW Electric Heating + 1.5 HP High CFM Blower",
+    materialGrade: "Inner Chamber SS-304, Outer Powder Coated / SS",
+    automationGrade: "Digital Temperature & Digital Timer Controller",
+    voltage: "415 V, 3-Phase",
+    dimensions: "1850 mm x 1150 mm x 1950 mm",
+    weight: "480 kg",
+    warranty: "1 Year Warranty",
+    images: [
+      "https://images.unsplash.com/photo-1574314144368-232eb12bd1d0?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1000&q=80"
+    ],
+    specifications: [
+      { label: "Number of Trays", value: "48 Trays (Size: 16\" x 32\" x 1.25\" SS-304)" },
+      { label: "Temperature Range", value: "Ambient + 5°C up to 120°C" },
+      { label: "Insulation", value: "75 mm High-Density Glass Wool / Rockwool" },
+      { label: "Air Circulation", value: "Axial flow aerodynamic fan with adjustable dampers" }
+    ],
+    applications: [
+      "Dehydrated Onion Flakes & Garlic Powder",
+      "Dried Mango, Banana Chips, Apple Slices",
+      "Herbs, Tea Leaves, Red Chili Drying"
+    ],
+    features: [
+      "Adjustable air exhaust dampers for optimal moisture removal",
+      "Heavy duty heat-resistant silicone gasket on double-walled doors",
+      "Detachable trolley system for fast loading & unloading"
+    ],
+    isFeatured: true,
+    isPublished: true
+  },
+  {
+    name: "Commercial Heavy-Duty Fruit Pulper & Juice Extractor",
+    slug: "heavy-duty-fruit-pulper-juice-extractor",
+    category: "Vegetable & Fruit Processing",
+    categorySlug: "vegetable-fruit-processing",
+    shortDescription: "High-yield dual-stage pulping and seed separating machine for mango, tomato, guava, and berries.",
+    fullDescription: "Raghav Food Machinery's industrial fruit pulper separates pulp, skins, seeds, and fiber in a single continuous operation. Stainless steel rotary beaters and fine sieves ensure maximum yield with minimal seed breakage.",
+    price: "₹1,45,000 - ₹2,20,000",
+    priceUnit: "Ex-Factory",
+    capacity: "500 - 1000 kg/hr fruit feed",
+    power: "3 HP / 5 HP High Torque Motor",
+    materialGrade: "All Food Contact Parts Stainless Steel SS-304",
+    automationGrade: "Continuous Duty Mechanical",
+    voltage: "415 V, 3-Phase",
+    dimensions: "1400 mm x 750 mm x 1250 mm",
+    weight: "310 kg",
+    warranty: "1 Year Guarantee",
+    images: [
+      "https://images.unsplash.com/photo-1574314144368-232eb12bd1d0?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&w=1000&q=80"
+    ],
+    specifications: [
+      { label: "Sieve Sizes", value: "Interchangeable 0.5 mm, 1 mm, 1.5 mm screens" },
+      { label: "Rotor Blades", value: "Adjustable clearance food-grade nylon/SS paddles" },
+      { label: "Discharge", value: "Twin chutes (Separate clean pulp and waste seed outlet)" }
+    ],
+    applications: [
+      "Mango Pulping & Canning Lines",
+      "Tomato Puree & Ketchup Processing",
+      "Guava, Papaya, Apple & Berry Crushing"
+    ],
+    features: [
+      "Zero seed crushing ensures 100% natural taste without bitterness",
+      "Easy hinged inspection hood for rapid clean-in-place (CIP)",
+      "Corrosion-proof food contact sanitary finish"
+    ],
+    isFeatured: false,
+    isPublished: true
+  },
+  {
+    name: "Steam Jacketed Tilting Cooking Kettle (300 Ltr)",
+    slug: "steam-jacketed-tilting-kettle-300l",
+    category: "Commercial Kettles & Cooking",
+    categorySlug: "commercial-kettles-cooking",
+    shortDescription: "Spherical hemispherical cooking vat with PTFE scraper agitator and worm-gear tilting discharge.",
+    fullDescription: "Ideal for high-volume commercial cooking, boiling, frying, and concentrating sauces, syrups, jams, gravies, and milk sweets. Double-jacketed steam heating prevents scorching while the motorised PTFE scraper keeps products moving smoothly.",
+    price: "₹1,65,000 - ₹2,60,000",
+    priceUnit: "Ex-Factory",
+    capacity: "300 Liters Gross Volume",
+    power: "2 HP Agitator Geared Motor",
+    materialGrade: "Inner Pan SS-316, Outer Jacket SS-304",
+    automationGrade: "Manual Worm Tilting / Motorised Agitation",
+    voltage: "415 V, 3-Phase",
+    dimensions: "1350 mm x 1100 mm x 1650 mm",
+    weight: "390 kg",
+    warranty: "1 Year Warranty",
+    images: [
+      "https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1000&q=80"
+    ],
+    specifications: [
+      { label: "Jacket Pressure", value: "Tested up to 4 bar steam pressure" },
+      { label: "Scraper Material", value: "Food-grade PTFE Teflon self-adjusting scrapers" },
+      { label: "Tilting Angle", value: "Up to 90 degrees with ergonomic handwheel gear" }
+    ],
+    applications: [
+      "Tomato Paste, Ketchup, Chutneys",
+      "Fruit Jams, Jellies & Marmalades",
+      "Commercial Curries & Gravy Bases"
+    ],
+    features: [
+      "Hemispherical bottom provides 40% faster heat transfer",
+      "Steam trap, pressure relief valve, and vacuum breaker included",
+      "Hygienic mirror polish on inner food contact surfaces"
+    ],
+    isFeatured: true,
+    isPublished: true
+  },
+  {
+    name: "Micro Spice Pulverizer & Masala Pin Mill",
+    slug: "micro-spice-pulverizer-pin-mill",
+    category: "Spices & Grains Pulverizers",
+    categorySlug: "spices-grain-pulverizers",
+    shortDescription: "Ultra-fine continuous spice grinder with water-jacket cooling and cyclone collector for dust-free operation.",
+    fullDescription: "Precision engineered for grinding dry spices like turmeric, coriander, red chili, black pepper, and grains. The internal water circulation jacket keeps the grinding chamber cool, preventing heat degradation and retaining essential aromatic spice oils.",
+    price: "₹1,35,000 - ₹2,10,000",
+    priceUnit: "Machine with Cyclone & Blower",
+    capacity: "100 - 250 kg/hr (depending on fineness)",
+    power: "10 HP / 15 HP Electric Motor",
+    materialGrade: "SS-304 Contact Blades & Housing",
+    automationGrade: "Continuous Duty Grinding",
+    voltage: "415 V, 3-Phase",
+    dimensions: "1600 mm x 850 mm x 1950 mm",
+    weight: "520 kg",
+    warranty: "1 Year Warranty",
+    images: [
+      "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=1000&q=80",
+      "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1000&q=80"
+    ],
+    specifications: [
+      { label: "Fineness Mesh", value: "60 to 200 Mesh adjustable screens" },
+      { label: "Chamber Cooling", value: "Water cooling jacket on stator ring" },
+      { label: "Collection System", value: "High efficiency cyclone separator with bag filter" }
+    ],
+    applications: [
+      "Turmeric, Red Chili, Coriander, Garam Masala",
+      "Sugar, Salt, Chemical & Herb Grinding",
+      "Gram Flour (Besan) & Wheat Processing"
+    ],
+    features: [
+      "Retains natural color, aroma, and essential volatile oils",
+      "Dust-free clean factory operation with pneumatic cyclone transfer",
+      "Hardened alloy hammers for wear resistance"
+    ],
+    isFeatured: false,
+    isPublished: true
+  }
+];
+
+export const initialBlogs = [
+  {
+    title: "The Comprehensive Guide to Canning Retort Sterilization for Ready-to-Eat (RTE) Foods",
+    slug: "guide-to-canning-retort-sterilization-rte-foods",
+    excerpt: "Learn how commercial retort autoclaves eliminate bacterial pathogens, calculate Fo values, and maintain shelf life without chemical preservatives.",
+    content: `Food preservation has undergone an enormous revolution with modern retort packaging and canning technology. Whether processing savory curries, tender sweet corn, meat cuts, or pureed baby food, achieving commercial sterility while preserving vitamins, flavor, and texture is paramount.
+
+### Understanding Commercial Sterility & The Fo Value
+In thermal food processing, commercial sterility is defined as the inactivation of all microorganisms of public health significance, specifically *Clostridium botulinum* spores. The industrial benchmark for low-acid foods (pH > 4.5) requires a minimum lethal heat exposure known as the Fo value of 3.0 minutes at 121.1°C (250°F).
+
+Raghav Food Machinery's 500L and 120L Automatic Retorts incorporate precision PLC modules that continuously log multi-point thermocouple readings inside food containers, dynamically calculating cumulative Fo lethality values in real-time.
+
+### Overpressure Counter-Balancing
+When heating canned goods or flexible retort pouches, internal pressure within the package increases dramatically due to moisture vapor and trapped headspace gases. If the external autoclave steam pressure drops unexpectedly during cooling, pouches will burst or tin seams will deform. Our retorts utilize compressed air overpressure management to ensure absolute package integrity throughout the thermal cycle.
+
+### Key Factors for Selecting a Retort Machine:
+1. **Container Type**: Rigid tin cans, spouted foil pouches, or vacuum trays.
+2. **Batch Volume**: 120L for R&D startups versus 500L - 1500L for commercial lines.
+3. **Heating Source**: Built-in high-efficiency electric elements versus external industrial steam boilers.
+4. **Data Logging**: Compliant digital recording for FSSAI, US FDA, and ISO audit trails.`,
+    coverImage: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1000&q=80",
+    author: "Er. Raghav Sharma (Chief Technical Director)",
+    category: "Retort Technology",
+    tags: ["Retort", "Canning", "Food Safety", "Sterilization", "FSSAI"],
+    readingTime: "6 min read",
+    isPublished: true
+  },
+  {
+    title: "Selecting Food Grade Stainless Steel: Why SS-304 vs SS-316 Matters in Machinery",
+    slug: "selecting-food-grade-stainless-steel-ss304-vs-ss316",
+    excerpt: "A deep dive into metallurgical requirements for food machinery fabrication to prevent pitting, acid corrosion, and contamination.",
+    content: `When commissioning food processing machinery, one of the most critical decisions made during engineering design is alloy selection. Food safety standards worldwide mandate non-toxic, non-porous, corrosion-resistant surfaces that withstand caustic washdowns and acidic ingredients.
+
+### What is SS-304?
+Grade 304 contains approximately 18% chromium and 8% nickel (often termed 18/8). It provides outstanding resistance to standard organic foods, snacks, doughs, dry spices, and dairy products. At Raghav Food Machinery, all our standard conveyor frames, pulverizer blades, and dryer trays are fabricated from prime SS-304.
+
+### When is SS-316 Necessary?
+Grade 316 incorporates 2% to 3% molybdenum into the metallurgical matrix. This key addition dramatically resists chloride pitting and severe corrosion from:
+- High-saline brines and pickles
+- Concentrated tomato paste and citrus pulps
+- High-acid vinegar solutions
+- Aggressive Clean-in-Place (CIP) chemical cleansers
+
+For our heavy-duty Steam Jacketed Kettles and specialized Fruit Pulpers handling acidic purees, we strongly recommend SS-316 contact pans to extend service life up to 15+ years.`,
+    coverImage: "https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&w=1000&q=80",
+    author: "Metallurgical Engineering Dept",
+    category: "Machinery Standards",
+    tags: ["Stainless Steel", "SS304", "SS316", "Manufacturing", "Sanitation"],
+    readingTime: "4 min read",
+    isPublished: true
+  },
+  {
+    title: "How to Set Up a Profitable Snacks & Namkeen Manufacturing Facility in India",
+    slug: "how-to-set-up-namkeen-snacks-plant-india",
+    excerpt: "Complete roadmap: machinery selection, factory layout planning, oil management, and turnkey cost breakdown.",
+    content: `The Indian packaged snack and ethnic namkeen market is growing at an incredible CAGR of over 11%. Starting a modern processing unit requires balancing automated efficiency, consistent flavor seasoning, and low oil oxidation.
+
+### Step-by-Step Plant Configuration:
+1. **Raw Material Preparation**: Automatic flour sieving and continuous besan mixer.
+2. **Forming & Extrusion**: Raghav rotary snacks extruder or continuous sev extruder.
+3. **Continuous Frying**: Temperature-controlled indirect frying lines that keep free fatty acids below 1%.
+4. **De-Oiling**: High-speed centrifugal conveyors to reduce excess oil content by up to 25%.
+5. **Flavour Coating**: Rotating drum applicators for consistent masala dusting.
+6. **Nitrogen Packing**: Multi-head weighers or continuous band sealers with nitrogen flush.
+
+Raghav Food Machinery provides complete turnkey assistance — from factory CAD layouts to technician commissioning across India.`,
+    coverImage: "https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&w=1000&q=80",
+    author: "Turnkey Project Advisory",
+    category: "Business Guide",
+    tags: ["Namkeen Plant", "Turnkey", "Food Business", "Snacks Extrusion"],
+    readingTime: "5 min read",
+    isPublished: true
+  }
+];
+
+export const initialGallery = [
+  {
+    title: "Automatic Retort Autoclave Pressure Vessel Assembly",
+    category: "Retort Machines",
+    imageUrl: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1000&q=80",
+    caption: "Hydrostatic pressure testing of 500L SS-304 retort autoclave at our Kundli manufacturing facility.",
+    isFeatured: true
+  },
+  {
+    title: "Precision CNC Laser Cutting of Food-Grade Stainless Sheets",
+    category: "Factory Floor",
+    imageUrl: "https://images.unsplash.com/photo-1504917599217-d4dc5ebe6122?auto=format&fit=crop&w=1000&q=80",
+    caption: "High-precision fiber laser cutting machine ensuring micro-millimeter tolerance on food machine chassis.",
+    isFeatured: true
+  },
+  {
+    title: "Continuous Automated Snacks Frying Line Assembly",
+    category: "Snacks Line",
+    imageUrl: "https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&w=1000&q=80",
+    caption: "Continuous frying system with integrated heat exchanger undergoing factory dry run testing.",
+    isFeatured: true
+  },
+  {
+    title: "300L Steam Jacketed Tilting Cooking Kettle Inspection",
+    category: "Cooking Kettles",
+    imageUrl: "https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&w=1000&q=80",
+    caption: "Food-grade mirror polish finish inspection on SS-316 contact bowl prior to client dispatch.",
+    isFeatured: true
+  },
+  {
+    title: "Client Factory Commissioning - Fruit Pulping Line",
+    category: "Client Plant",
+    imageUrl: "https://images.unsplash.com/photo-1574314144368-232eb12bd1d0?auto=format&fit=crop&w=1000&q=80",
+    caption: "On-site installation and operator training session for mango pulp processing facility in Gujarat.",
+    isFeatured: false
+  },
+  {
+    title: "Spice Grinding & Cyclone Dust Collector Array",
+    category: "Machinery",
+    imageUrl: "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?auto=format&fit=crop&w=1000&q=80",
+    caption: "Dust-free cyclone pulse collection setup on micro spice pulverizer unit.",
+    isFeatured: false
+  }
+];
+
+export const initialTestimonials = [
+  {
+    clientName: "Rajesh Singhania",
+    company: "Singhania Foods & Agro Ltd",
+    location: "Sonipat, Haryana",
+    rating: 5,
+    review: "We commissioned a 500L Automatic Retort Machine from Raghav Food Machinery for our ready-to-eat curry project. The thermal Fo calculation is spot-on and we achieved FSSAI commercial sterility on our first trial run. Their technical team stayed on-site for 3 days until our operators were 100% confident.",
+    avatarUrl: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80",
+    machinePurchased: "500L Automatic Retort Machine",
+    isApproved: true
+  },
+  {
+    clientName: "Vikas Patel",
+    company: "Gujarat Spices & Condiments",
+    location: "Ahmedabad, Gujarat",
+    rating: 5,
+    review: "The micro spice pulverizer with water cooling jacket preserved the bright natural yellow color and essential aroma of our organic turmeric. Zero burnt aroma and absolutely dust-free cyclone collection. Best Indian machinery manufacturer for spices!",
+    avatarUrl: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=200&q=80",
+    machinePurchased: "Micro Spice Pulverizer (15 HP)",
+    isApproved: true
+  },
+  {
+    clientName: "Gurpreet Singh",
+    company: "Doon Valley Agro Enterprises",
+    location: "Amritsar, Punjab",
+    rating: 5,
+    review: "Extremely rugged kurkure extruder and continuous namkeen fryer line. We run 16 hours daily without any breakdown. Spare parts are dispatched same day from Delhi NCR. Strongly recommend Raghav Food Machinery to any snack manufacturer.",
+    avatarUrl: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=200&q=80",
+    machinePurchased: "Continuous Snacks Extrusion Line",
+    isApproved: true
+  }
+];
+
+export const initialSettings = {
+  companyName: "Raghav Food Machinery Company",
+  websiteUrl: "https://raghavfoodprocessingmachines.com",
+  tagline: "Precision Engineering for Food Processing, Canning & Snacks Machinery",
+  phone: "+91 98734 56789",
+  secondaryPhone: "+91 98112 34567",
+  whatsappNumber: "+919873456789",
+  email: "sales@raghavfoodprocessingmachines.com",
+  supportEmail: "info@raghavfoodprocessingmachines.com",
+  gstin: "07AAACR1234F1Z8",
+  factoryAddress: "Plot No. 48, Industrial Area Phase II, Kundli, Sonipat, Delhi NCR, Haryana - 131028",
+  corporateOffice: "Office No. 302, Industrial Complex, Wazirpur, Delhi - 110052",
+  workingHours: "Monday – Saturday: 9:00 AM – 7:00 PM IST (Sunday Closed)",
+  bannerNotice: {
+    active: true,
+    text: "⭐ Factory Direct Supply: Avail special festive commercial discounts on Automatic Retort & Extruder Lines!",
+    link: "/machines"
+  },
+  socialLinks: {
+    indiamart: "https://www.indiamart.com/raghavfoodmachinery/",
+    youtube: "https://youtube.com/@raghavfoodmachinery",
+    linkedin: "https://linkedin.com/company/raghav-food-machinery",
+    facebook: "https://facebook.com/raghavfoodmachinery"
+  }
+};
+
