@@ -89,10 +89,10 @@ export default function Footer() {
         </div>
 
         {/* Main Footer Content */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 py-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-10 py-12">
           
-          {/* Col 1 & 2: Company Bio & Details */}
-          <div className="lg:col-span-2 flex flex-col gap-4">
+          {/* Col 1: Company Bio & Details (4 cols) */}
+          <div className="lg:col-span-4 flex flex-col gap-4">
             <Link to="/" className="flex items-center gap-3.5 group">
               <div className="relative w-12 h-12 rounded-xl bg-gradient-to-br from-industrial-900 to-industrial-950 border border-amber-500/40 p-1.5 shadow-glow-amber flex items-center justify-center flex-shrink-0 group-hover:border-amber-400 transition-colors">
                 <img src="/raghav-emblem-transparent.png" alt="Raghav Logo" className="w-full h-full object-contain" />
@@ -132,8 +132,8 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Col 3: Machinery Verticals */}
-          <div>
+          {/* Col 2: Machinery Verticals (2 cols) */}
+          <div className="lg:col-span-2">
             <h4 className="font-display font-semibold text-white text-base mb-4 border-l-2 border-amber-brand pl-2.5">
               Key Machinery
             </h4>
@@ -149,8 +149,8 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Col 4: Engineering Services */}
-          <div>
+          {/* Col 3: Engineering Services (2 cols) */}
+          <div className="lg:col-span-2">
             <h4 className="font-display font-semibold text-white text-base mb-4 border-l-2 border-amber-brand pl-2.5">
               Services & Setup
             </h4>
@@ -165,26 +165,26 @@ export default function Footer() {
               ))}
               <li className="pt-2">
                 <Link to="/catalog" className="text-amber-brand font-semibold hover:underline flex items-center gap-1">
-                  Download Full Catalog PDF &rarr;
+                  Download Catalog &rarr;
                 </Link>
               </li>
             </ul>
           </div>
 
-          {/* Col 5: Quick Direct Support & Inquiry */}
-          <div>
+          {/* Col 4: Quick Direct Support & Inquiry (4 cols - Ample width for email & cards) */}
+          <div className="lg:col-span-4">
             <h4 className="font-display font-semibold text-white text-base mb-4 border-l-2 border-amber-brand pl-2.5">
               Sales & Support
             </h4>
             <div className="flex flex-col gap-3">
               <a
                 href={`tel:${settings.phone.replace(/\s+/g, '')}`}
-                className="flex items-center gap-3 p-3 rounded-xl bg-industrial-900 border border-industrial-800 hover:border-amber-500/40 transition-colors"
+                className="flex items-center gap-3 p-3 rounded-xl bg-industrial-900 border border-industrial-800 hover:border-amber-500/40 transition-colors group"
               >
-                <Phone className="w-4 h-4 text-amber-brand" />
-                <div>
+                <Phone className="w-4 h-4 text-amber-brand flex-shrink-0 group-hover:scale-110 transition-transform" />
+                <div className="min-w-0">
                   <div className="text-[11px] text-industrial-500">Call Factory Desk</div>
-                  <div className="text-sm font-semibold text-white">{settings.phone}</div>
+                  <div className="text-sm font-semibold text-white whitespace-nowrap font-mono">{settings.phone}</div>
                 </div>
               </a>
 
@@ -192,25 +192,28 @@ export default function Footer() {
                 href={`https://wa.me/${settings.whatsappNumber.replace(/\D/g, '')}?text=Hello%20Raghav%20Food%20Machinery%20Team,%20I%20need%20commercial%20quotation.`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-3 p-3 rounded-xl bg-emerald-950/40 border border-emerald-800/50 hover:border-emerald-500 text-emerald-400 transition-colors"
+                className="flex items-center gap-3 p-3 rounded-xl bg-emerald-950/40 border border-emerald-800/50 hover:border-emerald-500 text-emerald-400 transition-colors group"
               >
-                <MessageSquare className="w-4 h-4 text-emerald-400" />
-                <div>
+                <MessageSquare className="w-4 h-4 text-emerald-400 flex-shrink-0 group-hover:scale-110 transition-transform" />
+                <div className="min-w-0">
                   <div className="text-[11px] text-emerald-300">WhatsApp Live Chat</div>
-                  <div className="text-sm font-semibold text-white">{settings.whatsappNumber || settings.phone}</div>
+                  <div className="text-sm font-semibold text-white whitespace-nowrap font-mono">{settings.whatsappNumber || settings.phone}</div>
                 </div>
               </a>
 
               <a
                 href={`mailto:${settings.email}`}
-                className="flex items-center gap-3 p-3 rounded-xl bg-industrial-900 border border-industrial-800 hover:border-industrial-700 transition-colors text-xs text-industrial-300"
+                className="flex items-center gap-3 p-3 rounded-xl bg-industrial-900 border border-industrial-800 hover:border-amber-500/40 transition-colors text-xs text-industrial-300 group min-w-0"
+                title={settings.email}
               >
-                <Mail className="w-4 h-4 text-amber-brand" />
-                <span>{settings.email}</span>
+                <Mail className="w-4 h-4 text-amber-brand flex-shrink-0 group-hover:scale-110 transition-transform" />
+                <span className="truncate select-all text-industrial-200 group-hover:text-white font-mono text-[11px] sm:text-xs">
+                  {settings.email}
+                </span>
               </a>
 
               <div className="mt-1 text-xs text-industrial-500">
-                GSTIN: <span className="text-industrial-300 font-mono">{settings.gstin}</span>
+                GSTIN: <span className="text-industrial-300 font-mono font-medium">{settings.gstin}</span>
               </div>
             </div>
           </div>

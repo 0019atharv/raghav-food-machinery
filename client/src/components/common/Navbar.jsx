@@ -66,55 +66,58 @@ export default function Navbar() {
       )}
 
       {/* Top Utility Contact Bar */}
-      <div className="hidden lg:block bg-industrial-950/90 backdrop-blur-md border-b border-industrial-800/80 text-xs text-industrial-400 py-2 px-6">
-        <div className="max-w-7xl mx-auto flex items-center justify-between">
+      <div className="hidden lg:block bg-industrial-950/90 backdrop-blur-md border-b border-industrial-800/80 text-xs text-industrial-400 py-1.5 px-4 sm:px-6">
+        <div className="max-w-7xl mx-auto flex items-center justify-between gap-4">
           {/* Left: Certifications & GSTIN */}
-          <div className="flex items-center gap-4">
-            <span className="flex items-center gap-1.5 text-amber-brand font-semibold">
-              <Shield className="w-3.5 h-3.5" />
-              ISO 9001:2015 & CE Certified Manufacturer
+          <div className="flex items-center gap-3 xl:gap-4 flex-shrink-0 text-[11px] xl:text-xs">
+            <span className="flex items-center gap-1.5 text-amber-brand font-semibold whitespace-nowrap flex-shrink-0">
+              <Shield className="w-3.5 h-3.5 flex-shrink-0" />
+              ISO 9001:2015 & CE Certified
             </span>
             <span className="text-industrial-700">|</span>
-            <span>GSTIN: <strong className="text-industrial-200">{settings.gstin}</strong></span>
-            <span className="text-industrial-700">|</span>
-            <span className="flex items-center gap-1 text-industrial-400">
-              <Clock className="w-3.5 h-3.5 text-industrial-500" />
+            <span className="whitespace-nowrap flex-shrink-0">GSTIN: <strong className="text-industrial-200 font-mono">{settings.gstin}</strong></span>
+            <span className="hidden 2xl:inline text-industrial-700">|</span>
+            <span className="hidden 2xl:flex items-center gap-1 text-industrial-400 whitespace-nowrap flex-shrink-0">
+              <Clock className="w-3.5 h-3.5 text-industrial-500 flex-shrink-0" />
               {settings.workingHours}
             </span>
           </div>
 
           {/* Right: Quick Contacts & Admin CMS Link */}
-          <div className="flex items-center gap-5">
+          <div className="flex items-center gap-3 xl:gap-5 flex-shrink-0 text-[11px] xl:text-xs">
             <a 
               href={`tel:${settings.phone.replace(/\s+/g, '')}`} 
-              className="flex items-center gap-1.5 hover:text-amber-brand transition-colors text-industrial-300"
+              className="flex items-center gap-1.5 hover:text-amber-brand transition-colors text-industrial-300 whitespace-nowrap flex-shrink-0"
+              title="Call Factory Desk"
             >
-              <Phone className="w-3.5 h-3.5 text-amber-brand" />
-              <span>{settings.phone}</span>
+              <Phone className="w-3.5 h-3.5 text-amber-brand flex-shrink-0" />
+              <span className="whitespace-nowrap font-mono font-medium">{settings.phone}</span>
             </a>
             <a 
               href={`https://wa.me/${settings.whatsappNumber.replace(/\D/g, '')}?text=Hello%20Raghav%20Food%20Machinery%20Team,%20I%20want%20to%20inquire%20about%20your%20machinery.`}
               target="_blank" 
               rel="noopener noreferrer"
-              className="flex items-center gap-1.5 text-emerald-400 hover:text-emerald-300 transition-colors"
+              className="flex items-center gap-1.5 text-emerald-400 hover:text-emerald-300 transition-colors whitespace-nowrap flex-shrink-0"
+              title="WhatsApp Sales"
             >
-              <MessageSquare className="w-3.5 h-3.5 fill-emerald-500/20" />
-              <span>WhatsApp Sales</span>
+              <MessageSquare className="w-3.5 h-3.5 fill-emerald-500/20 flex-shrink-0" />
+              <span className="whitespace-nowrap font-medium">WhatsApp Sales</span>
             </a>
             <a 
               href={`mailto:${settings.email}`} 
-              className="flex items-center gap-1.5 hover:text-industrial-200 transition-colors"
+              className="hidden xl:flex items-center gap-1.5 hover:text-industrial-200 transition-colors whitespace-nowrap flex-shrink-0"
+              title="Technical Email Desk"
             >
-              <Mail className="w-3.5 h-3.5 text-industrial-500" />
-              <span>{settings.email}</span>
+              <Mail className="w-3.5 h-3.5 text-industrial-500 flex-shrink-0" />
+              <span className="whitespace-nowrap font-mono">{settings.email}</span>
             </a>
 
             {/* Admin Portal Quick Switch */}
             <Link 
               to="/admin" 
-              className="flex items-center gap-1 bg-industrial-800 hover:bg-amber-brand hover:text-industrial-950 text-amber-brand px-2.5 py-1 rounded text-[11px] font-semibold transition-all border border-amber-500/20"
+              className="flex items-center gap-1 bg-industrial-800 hover:bg-amber-brand hover:text-industrial-950 text-amber-brand px-2 py-0.5 xl:px-2.5 xl:py-1 rounded text-[11px] font-semibold transition-all border border-amber-500/20 whitespace-nowrap flex-shrink-0"
             >
-              <Lock className="w-3 h-3" />
+              <Lock className="w-3 h-3 flex-shrink-0" />
               <span>Admin CMS</span>
             </Link>
           </div>
@@ -122,11 +125,11 @@ export default function Navbar() {
       </div>
 
       {/* Main Navigation Bar */}
-      <nav className="bg-industrial-900/90 backdrop-blur-xl border-b border-industrial-800/80 px-3 sm:px-6 md:px-8 py-2.5 sm:py-3.5">
-        <div className="max-w-7xl mx-auto flex items-center justify-between">
+      <nav className="bg-industrial-900/90 backdrop-blur-xl border-b border-industrial-800/80 px-3 sm:px-6 md:px-8 py-2.5 sm:py-3">
+        <div className="max-w-7xl mx-auto flex items-center justify-between gap-2 xl:gap-4">
           
-          {/* Logo */}
-          <Link to="/" className="flex items-center gap-2.5 sm:gap-3 group min-w-0">
+          {/* Logo - Protected with flex-shrink-0 so links never overlap */}
+          <Link to="/" className="flex items-center gap-2.5 sm:gap-3 group flex-shrink-0">
             <div className="relative w-10 h-10 sm:w-11 sm:h-11 md:w-12 md:h-12 flex-shrink-0 flex items-center justify-center rounded-xl bg-gradient-to-br from-industrial-900 to-industrial-950 border border-amber-500/30 p-1 shadow-glow-amber group-hover:border-amber-400 group-hover:scale-105 transition-all duration-300">
               <img 
                 src="/raghav-emblem-transparent.png" 
@@ -134,28 +137,28 @@ export default function Navbar() {
                 className="w-full h-full object-contain filter drop-shadow group-hover:rotate-6 transition-transform duration-500" 
               />
             </div>
-            <div className="flex flex-col min-w-0">
+            <div className="flex flex-col flex-shrink-0">
               <div className="flex items-center gap-1 sm:gap-1.5 whitespace-nowrap">
-                <span className="font-display font-extrabold text-base sm:text-xl tracking-tight text-white">
+                <span className="font-display font-extrabold text-base sm:text-lg xl:text-xl tracking-tight text-white">
                   RAGHAV
                 </span>
-                <span className="font-display font-bold text-base sm:text-xl text-amber-brand">
+                <span className="font-display font-bold text-base sm:text-lg xl:text-xl text-amber-brand">
                   MACHINES
                 </span>
               </div>
-              <span className="text-[9px] sm:text-[10px] font-mono text-industrial-400 tracking-wider uppercase -mt-0.5 truncate max-w-[170px] sm:max-w-none">
+              <span className="text-[9px] sm:text-[10px] font-mono text-industrial-400 tracking-wider uppercase -mt-0.5 whitespace-nowrap">
                 Food Processing & Canning Tech
               </span>
             </div>
           </Link>
 
           {/* Desktop Navigation Links */}
-          <div className="hidden xl:flex items-center gap-1">
+          <div className="hidden xl:flex items-center gap-0.5 2xl:gap-1 flex-shrink-0">
             {navLinks.map((link) => (
               <Link
                 key={link.name}
                 to={link.path}
-                className={`px-3 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
+                className={`px-2 2xl:px-3 py-1.5 rounded-lg text-xs 2xl:text-sm font-medium transition-all duration-200 whitespace-nowrap ${
                   isActive(link.path)
                     ? 'text-amber-brand bg-industrial-800/80 font-semibold'
                     : 'text-industrial-300 hover:text-white hover:bg-industrial-800/40'
@@ -171,14 +174,14 @@ export default function Navbar() {
             {/* Theme Selector Dropdown */}
             <ThemeSwitcher />
 
-            {/* RFQ Quote Cart Drawer Button (Shown on desktop/tablet, hidden on mobile since bottom bar has it) */}
+            {/* RFQ Quote Cart Drawer Button */}
             <button
               onClick={() => setIsDrawerOpen(true)}
-              className="hidden sm:flex relative items-center gap-2 bg-gradient-to-r from-amber-500/10 to-amber-600/20 hover:from-amber-500/20 hover:to-amber-600/30 text-amber-glow border border-amber-500/30 px-3 md:px-4 py-2 rounded-xl text-sm font-semibold transition-all shadow-sm"
+              className="hidden sm:flex relative items-center gap-1.5 md:gap-2 bg-gradient-to-r from-amber-500/10 to-amber-600/20 hover:from-amber-500/20 hover:to-amber-600/30 text-amber-glow border border-amber-500/30 px-2.5 md:px-3.5 py-1.5 md:py-2 rounded-xl text-xs md:text-sm font-semibold transition-all shadow-sm flex-shrink-0 whitespace-nowrap"
               title="View Request For Quote Cart"
             >
-              <ShoppingCart className="w-4 h-4 text-amber-brand" />
-              <span className="hidden sm:inline">RFQ Quote</span>
+              <ShoppingCart className="w-4 h-4 text-amber-brand flex-shrink-0" />
+              <span className="hidden sm:inline whitespace-nowrap">RFQ Quote</span>
               {totalItemCount > 0 && (
                 <span className="bg-amber-brand text-industrial-950 text-xs font-extrabold px-1.5 py-0.5 rounded-full animate-bounce">
                   {totalItemCount}
@@ -188,12 +191,12 @@ export default function Navbar() {
 
             {/* User Account / Login */}
             {user ? (
-              <div className="relative group">
+              <div className="relative group flex-shrink-0">
                 <button 
                   onClick={() => navigate(isAdmin ? '/admin' : '/dashboard')}
-                  className="flex items-center gap-2 bg-industrial-800 hover:bg-industrial-700 text-industrial-200 px-3 py-2 rounded-xl text-sm transition-all border border-industrial-700"
+                  className="flex items-center gap-1.5 md:gap-2 bg-industrial-800 hover:bg-industrial-700 text-industrial-200 px-2.5 md:px-3 py-1.5 md:py-2 rounded-xl text-xs md:text-sm transition-all border border-industrial-700 flex-shrink-0 whitespace-nowrap"
                 >
-                  <User className="w-4 h-4 text-amber-brand" />
+                  <User className="w-4 h-4 text-amber-brand flex-shrink-0" />
                   <span className="hidden md:inline max-w-[100px] truncate">{user.name}</span>
                   {isAdmin && (
                     <span className="bg-amber-500/20 text-amber-brand text-[10px] font-bold px-1.5 py-0.5 rounded">
@@ -205,17 +208,17 @@ export default function Navbar() {
             ) : (
               <button
                 onClick={() => setAuthModalOpen(true)}
-                className="flex items-center gap-1.5 bg-industrial-800/80 hover:bg-industrial-700 text-industrial-200 hover:text-white px-3 py-2 rounded-xl text-sm font-medium transition-all border border-industrial-700/60"
+                className="flex items-center gap-1.5 bg-industrial-800/80 hover:bg-industrial-700 text-industrial-200 hover:text-white px-2.5 md:px-3 py-1.5 md:py-2 rounded-xl text-xs md:text-sm font-medium transition-all border border-industrial-700/60 flex-shrink-0 whitespace-nowrap"
               >
-                <User className="w-4 h-4 text-industrial-400" />
-                <span className="hidden sm:inline">Client Sign In</span>
+                <User className="w-4 h-4 text-industrial-400 flex-shrink-0" />
+                <span className="hidden sm:inline whitespace-nowrap">Client Sign In</span>
               </button>
             )}
 
             {/* Mobile Hamburger Toggle */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="xl:hidden p-2 rounded-lg text-industrial-300 hover:text-white hover:bg-industrial-800 transition-colors"
+              className="xl:hidden p-2 rounded-lg text-industrial-300 hover:text-white hover:bg-industrial-800 transition-colors flex-shrink-0"
               aria-label="Toggle menu"
             >
               {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
