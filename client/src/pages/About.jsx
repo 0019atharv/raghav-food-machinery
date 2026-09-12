@@ -63,9 +63,13 @@ export default function About() {
         <div className="lg:col-span-5 relative">
           <div className="rounded-3xl overflow-hidden bg-industrial-900 border border-industrial-800 shadow-2xl">
             <img
-              src="https://images.unsplash.com/photo-1504917599217-d4dc5ebe6122?auto=format&fit=crop&w=1000&q=80"
-              alt="Raghav Food Machinery CNC Workshop"
+              src="/raghav-workshop.jpg"
+              alt="Raghav Food Machinery Manufacturing Facility & Workshop"
               className="w-full h-80 sm:h-96 object-cover"
+              onError={(e) => {
+                e.target.onerror = null;
+                e.target.src = "https://res.cloudinary.com/vgmmtb5k/image/upload/v1789209783/raghav-food-processing-machines/raghav-manufacturing-workshop-facility.jpg";
+              }}
             />
             <div className="p-4 bg-industrial-950/90 border-t border-industrial-800 text-xs text-industrial-400 flex items-center justify-between">
               <span>Kundli, Sonipat Works</span>
