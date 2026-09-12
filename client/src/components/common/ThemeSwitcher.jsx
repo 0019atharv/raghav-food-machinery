@@ -39,7 +39,7 @@ export default function ThemeSwitcher({ compact = false }) {
       >
         <Palette className="w-3.5 h-3.5 text-amber-brand" />
         {!compact && (
-          <span className="hidden sm:inline text-[11px] font-semibold">
+          <span className="hidden 2xl:inline text-[11px] font-semibold">
             {currentTheme.name.split(' ')[0]}
           </span>
         )}

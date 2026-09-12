@@ -107,14 +107,35 @@ export default function Navbar() {
               <span className="whitespace-nowrap font-mono">{settings.email}</span>
             </a>
 
-            {/* Admin Portal Quick Switch */}
-            <Link 
-              to="/admin" 
-              className="flex items-center gap-1 bg-industrial-800 hover:bg-amber-brand hover:text-industrial-950 text-amber-brand px-2.5 py-1 rounded text-[11px] font-semibold transition-all border border-amber-500/20 whitespace-nowrap flex-shrink-0"
-            >
-              <Lock className="w-3 h-3 flex-shrink-0" />
-              <span>Admin CMS</span>
-            </Link>
+            {/* Admin Portal Quick Switch & Auth */}
+            {user ? (
+              <div className="flex items-center gap-2 flex-shrink-0">
+                <Link 
+                  to="/admin" 
+                  className="flex items-center gap-1 bg-amber-500/10 hover:bg-amber-brand hover:text-industrial-950 text-amber-brand px-2.5 py-1 rounded text-[11px] font-semibold transition-all border border-amber-500/30 whitespace-nowrap flex-shrink-0"
+                  title="Admin CMS Control Panel"
+                >
+                  <Lock className="w-3 h-3 flex-shrink-0" />
+                  <span>Admin CMS</span>
+                </Link>
+                <button 
+                  onClick={logout}
+                  className="text-industrial-400 hover:text-red-400 text-[11px] font-medium transition-colors whitespace-nowrap flex-shrink-0 px-1"
+                  title="Logout Session"
+                >
+                  Logout
+                </button>
+              </div>
+            ) : (
+              <Link 
+                to="/admin" 
+                className="flex items-center gap-1 bg-industrial-800 hover:bg-amber-brand hover:text-industrial-950 text-amber-brand px-2.5 py-1 rounded text-[11px] font-semibold transition-all border border-amber-500/20 whitespace-nowrap flex-shrink-0"
+                title="Admin CMS Login"
+              >
+                <Lock className="w-3 h-3 flex-shrink-0" />
+                <span>Admin CMS</span>
+              </Link>
+            )}
           </div>
         </div>
       </div>
@@ -148,12 +169,12 @@ export default function Navbar() {
           </Link>
 
           {/* Center: Desktop Navigation Links (Centered via flex-1 justify-center) */}
-          <div className="hidden xl:flex items-center justify-center gap-1 2xl:gap-1.5 flex-1 mx-2">
+          <div className="hidden xl:flex items-center justify-center gap-1 2xl:gap-2 flex-1 mx-4">
             {navLinks.map((link) => (
               <Link
                 key={link.name}
                 to={link.path}
-                className={`px-2.5 2xl:px-3 py-1.5 rounded-lg text-xs 2xl:text-sm font-medium transition-all duration-200 whitespace-nowrap ${
+                className={`px-2.5 2xl:px-3.5 py-1.5 rounded-lg text-xs 2xl:text-sm font-medium transition-all duration-200 whitespace-nowrap ${
                   isActive(link.path)
                     ? 'text-amber-brand bg-industrial-800/80 font-semibold shadow-sm'
                     : 'text-industrial-300 hover:text-white hover:bg-industrial-800/40'
@@ -165,14 +186,14 @@ export default function Navbar() {
           </div>
 
           {/* Right Action Icons */}
-          <div className="flex items-center gap-2 sm:gap-2.5 flex-shrink-0">
+          <div className="flex items-center gap-2 sm:gap-3 flex-shrink-0">
             {/* Theme Selector Dropdown */}
             <ThemeSwitcher />
 
             {/* RFQ Quote Cart Drawer Button */}
             <button
               onClick={() => setIsDrawerOpen(true)}
-              className="hidden sm:flex relative items-center gap-1.5 md:gap-2 bg-gradient-to-r from-amber-500/10 to-amber-600/20 hover:from-amber-500/20 hover:to-amber-600/30 text-amber-glow border border-amber-500/30 px-2.5 md:px-3.5 py-1.5 md:py-2 rounded-xl text-xs md:text-sm font-semibold transition-all shadow-sm flex-shrink-0 whitespace-nowrap"
+              className="hidden sm:flex relative items-center gap-1.5 md:gap-2 bg-gradient-to-r from-amber-500/10 to-amber-600/20 hover:from-amber-500/20 hover:to-amber-600/30 text-amber-glow border border-amber-500/30 px-3 md:px-3.5 py-1.5 md:py-2 rounded-xl text-xs md:text-sm font-semibold transition-all shadow-sm flex-shrink-0 whitespace-nowrap"
               title="View Request For Quote Cart"
             >
               <ShoppingCart className="w-4 h-4 text-amber-brand flex-shrink-0" />
@@ -183,30 +204,6 @@ export default function Navbar() {
                 </span>
               )}
             </button>
-
-            {/* User Account / Login */}
-            {user ? (
-              <div className="relative group flex-shrink-0">
-                <button 
-                  onClick={() => navigate(isAdmin ? '/admin' : '/dashboard')}
-                  className="flex items-center gap-1.5 md:gap-2 bg-industrial-800 hover:bg-industrial-700 text-industrial-200 px-2.5 md:px-3 py-1.5 md:py-2 rounded-xl text-xs md:text-sm transition-all border border-industrial-700 flex-shrink-0 whitespace-nowrap font-medium"
-                  title={isAdmin ? "Admin Control Panel" : "Client Dashboard"}
-                >
-                  <User className="w-4 h-4 text-amber-brand flex-shrink-0" />
-                  <span className="hidden md:inline font-semibold">
-                    {isAdmin || user.name?.toLowerCase().includes('admin') ? 'Admin' : user.name}
-                  </span>
-                </button>
-              </div>
-            ) : (
-              <button
-                onClick={() => setAuthModalOpen(true)}
-                className="flex items-center gap-1.5 bg-industrial-800/80 hover:bg-industrial-700 text-industrial-200 hover:text-white px-2.5 md:px-3 py-1.5 md:py-2 rounded-xl text-xs md:text-sm font-medium transition-all border border-industrial-700/60 flex-shrink-0 whitespace-nowrap"
-              >
-                <User className="w-4 h-4 text-industrial-400 flex-shrink-0" />
-                <span className="hidden sm:inline whitespace-nowrap">Client Sign In</span>
-              </button>
-            )}
 
             {/* Mobile Hamburger Toggle */}
             <button
