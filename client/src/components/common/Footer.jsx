@@ -201,7 +201,7 @@ export default function Footer() {
                 <MessageSquare className="w-4 h-4 text-emerald-400" />
                 <div>
                   <div className="text-[11px] text-emerald-300">WhatsApp Live Chat</div>
-                  <div className="text-sm font-semibold text-white">+91 98734 56789</div>
+                  <div className="text-sm font-semibold text-white">{settings.whatsappNumber || settings.phone}</div>
                 </div>
               </a>
 

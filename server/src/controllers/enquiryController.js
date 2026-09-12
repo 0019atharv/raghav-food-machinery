@@ -60,7 +60,7 @@ export const createEnquiry = async (req, res) => {
 
     const whatsappText = `Hello Raghav Food Machinery Team,%0A%0AI have submitted a Request for Quote on your website.%0A*RFQ No:* ${enquiryNumber}%0A*Name:* ${customerName}%0A*Company:* ${businessName || 'N/A'}%0A*Phone:* ${phone}%0A*State:* ${state || 'N/A'}%0A%0A*Interested Machinery:*%0A${machineListText || 'Custom Turnkey Food Plant Enquiry'}%0A%0A*Requirements:* ${encodeURIComponent(requirements || 'Please provide quotation and catalog.')}%0A%0APlease share technical brochure, pricing & delivery schedule.`;
 
-    const whatsappUrl = `https://wa.me/919873456789?text=${whatsappText}`;
+    const whatsappUrl = `https://wa.me/919220706381?text=${whatsappText}`;
 
     console.log(`[Enquiry] New RFQ received: ${enquiryNumber} from ${customerName} (${phone})`);
 

@@ -560,7 +560,7 @@ export default function SiteSettings() {
                 type="text"
                 value={formData.whatsappNumber || ''}
                 onChange={(e) => handleChange('whatsappNumber', e.target.value)}
-                placeholder="+919873456789"
+                placeholder="+919220706381"
                 className="w-full bg-industrial-950 border border-industrial-800 rounded-xl px-3.5 py-2 text-xs text-white font-mono"
               />
             </div>
