@@ -548,6 +548,212 @@ export const initialProducts = [
     ],
     isFeatured: true,
     isPublished: true
+  },
+  {
+    name: "Raghav Industrial Screw Type Juicer & Cold-Press Spiral Juice Extractor",
+    slug: "raghav-screw-type-spiral-juicer-machine",
+    category: "Vegetable & Fruit Processing",
+    categorySlug: "vegetable-fruit-processing",
+    price: "₹ 32,000",
+    priceUnit: "Ex-Factory (GST Extra)",
+    capacity: "100 - 300 kg/hr (Raw Fruit & Vegetable Feed)",
+    power: "1.5 HP to 2 HP Single Phase / Three Phase Geared Motor",
+    materialGrade: "Food Grade SS-304 Contact Screws, Filter Mesh & Hopper",
+    automationGrade: "Semi-Automatic Continuous Auger Extraction",
+    voltage: "220V Single Phase / 415V Three Phase, 50 Hz",
+    dimensions: "950 mm x 450 mm x 750 mm",
+    weight: "75 kg",
+    warranty: "1 Year Comprehensive Manufacturer Warranty",
+    shortDescription: "Continuous spiral auger slow juice press engineered for high-yield, cold-press extraction of ginger, amla, sugarcane, apples, carrots, pineapples, tomatoes, and citrus fruits.",
+    fullDescription: "The Raghav Industrial Screw Type Juicer (Spiral Auger Juice Extractor) is an industrial cold-press extraction machine built for commercial beverage processors, herbal health-juice units, ginger/garlic processing plants, and food manufacturing units. Unlike high-speed centrifugal extractors that generate heat and cause rapid juice oxidation, this unit utilizes a slow-turning, heavy-duty stainless steel spiral auger operating inside a precision conical perforated screen. As raw fruits or vegetables travel along the narrowing screw pitch, they are progressively compressed under mechanical pressure. Clean, natural juice drains through the micron filter screen into the lower collector chute, while dry fibrous pomace/pulp is continuously expelled from the front conical discharge port. The low RPM preserves natural color, vitamins, enzymes, and fresh flavor with zero foam generation.",
+    images: [
+      "https://res.cloudinary.com/vgmmtb5k/image/upload/v1789202425/raghav-food-processing-machines/raghav-screw-type-juicer.png"
+    ],
+    specifications: [
+      { label: "Extraction Mechanism", value: "Progressive Mechanical Spiral Auger Compression" },
+      { label: "Processing Capacity", value: "100 - 300 kg per hour" },
+      { label: "Motor Specification", value: "1.5 HP / 2 HP Heavy-Duty Induction Gear Motor" },
+      { label: "Screen Mesh", value: "0.6 mm to 1.2 mm SS-304 Perforated Sieve Filter" },
+      { label: "Hopper Design", value: "Flanged SS-304 Funnel Hopper with Anti-Splash Guard" },
+      { label: "Discharge", value: "Dual Outlet (Pure Liquid Chute + Dry Pomace Cone)" },
+      { label: "Chassis", value: "Powder-Coated Heavy MS Frame with SS-304 Enclosure" }
+    ],
+    applications: [
+      "Ginger & Garlic Juice, Amla, Sugarcane, Pineapple, Apple, Carrot, Beetroot, Citrus, Wheatgrass & Herbal Extracts"
+    ],
+    features: [
+      "Cold-press technology prevents thermal oxidation and nutritional loss",
+      "Maximum juice yield with extremely dry cake/pomace discharge",
+      "Sanitary CIP-friendly design with quick-disassembly filter cylinder",
+      "Heavy-duty geared transmission designed for continuous production runs"
+    ],
+    isFeatured: true,
+    isPublished: true
+  },
+  {
+    name: "Raghav Automatic Vertical Form Fill Seal (FFS) Pouch Packing Machine",
+    slug: "raghav-automatic-ffs-pouch-packing-machine",
+    category: "Packaging & Sealing",
+    categorySlug: "packaging-sealing",
+    price: "₹ 165,000",
+    priceUnit: "Ex-Factory (GST Extra)",
+    capacity: "20 - 60 Pouches / Minute (Depending on pack volume & product)",
+    power: "2.5 kW / Single Phase 220V or Three Phase 415V",
+    materialGrade: "SS-304 Product Contact Parts & Exterior Stainless Cladding",
+    automationGrade: "Fully Automatic PLC / Microprocessor Controlled",
+    voltage: "220 V / 415 V, 50 Hz",
+    dimensions: "850 mm x 950 mm x 1950 mm",
+    weight: "350 kg",
+    warranty: "1 Year Comprehensive On-Site Warranty",
+    shortDescription: "Versatile automated vertical pouch packaging system that forms, fills, and heat-seals continuous pillow or center-seal pouches for liquids, pastes, powders, and spices.",
+    fullDescription: "The Raghav Automatic Vertical Form Fill Seal (FFS) Machine is a high-speed, continuous packaging solution engineered for food manufacturers, spice packagers, sauce processors, and edible oil/dairy plants. Starting from a continuous roll of laminated packaging film, the machine smoothly pulls the web over a precision former collar, seals the vertical back seam, accurately doses the product, and creates an airtight horizontal end-seal before knife cut-off. Equipped with dual digital PID intelligent temperature controllers for independent horizontal and vertical sealing jaws, an emergency stop console, motorized film unwind tension control, and quick-change forming shoulders. Mounted on heavy-duty lockable swivel caster wheels for effortless relocation within processing facilities.",
+    images: [
+      "https://res.cloudinary.com/vgmmtb5k/image/upload/v1789202428/raghav-food-processing-machines/raghav-ffs-pouch-packing-machine.jpg"
+    ],
+    specifications: [
+      { label: "Packing Speed", value: "20 to 60 Pouches per minute" },
+      { label: "Pouch Types", value: "Center Seal, Pillow Pouch, 3-Side / 4-Side Seal" },
+      { label: "Pack Volume Range", value: "10 ml to 200 ml / 10 g to 250 g (Model Configurable)" },
+      { label: "Film Compatibility", value: "Laminated Film, Polyester/Poly, Aluminum Foil Laminates" },
+      { label: "Temperature Control", value: "Dual Digital Microprocessor PID Controllers" },
+      { label: "Sealing Mechanism", value: "Pneumatic / Mechanical Heat-Sealing Jaws with Serrated Cut-off" },
+      { label: "Mobility", value: "Heavy-Duty 360° Industrial Swivel Casters with Leveling Locks" }
+    ],
+    applications: [
+      "Tomato Ketchup, Liquid Sauces, Edible Oils, Milk, Masala Powders, Spices, Ghee, Shampoos & Pastes"
+    ],
+    features: [
+      "All-in-one automatic pouch forming, accurate dosing, and sealing",
+      "Consistent airtight, leak-proof seal prevents product spoilage",
+      "High precision photo-mark sensor for accurate printed film registration",
+      "Easy tool-free pouch width changeover with modular forming tubes"
+    ],
+    isFeatured: true,
+    isPublished: true
+  },
+  {
+    name: "Raghav Motorized Tilting Steam Jacketed Mixing Kettle (with Scraper Agitator)",
+    slug: "raghav-motorized-mixing-steam-jacketed-kettle",
+    category: "Commercial Kettles & Cooking",
+    categorySlug: "commercial-kettles-cooking",
+    price: "₹ 135,000",
+    priceUnit: "Ex-Factory (GST Extra)",
+    capacity: "150 to 300 Liters per batch",
+    power: "1 HP / 1.5 HP Flange-Mounted Electric Gear Motor (415V 3-Phase)",
+    materialGrade: "Inner Vessel SS-304/SS-316 (10 Gauge / 3.2 mm), Outer Jacket SS-304",
+    automationGrade: "Motorized Agitator + Manual Worm-Gear Tilting Handwheel",
+    voltage: "415 V, 3-Phase, 50 Hz (Steam Heated Jacket)",
+    dimensions: "1550 mm x 1150 mm x 1450 mm",
+    weight: "260 kg",
+    warranty: "1 Year Comprehensive Industrial Warranty",
+    shortDescription: "Commercial steam-jacketed cooking pan with top-mounted electric motorized agitator and food-grade Teflon scrapers to cook and blend thick sauces, ketchup, khoya, and jams without scorching.",
+    fullDescription: "The Raghav Motorized Tilting Steam Jacketed Mixing Kettle is designed specifically for cooking, concentrating, and blending high-viscosity, burn-prone food products. Combining 360-degree indirect steam jacket heating with a heavy-duty top-mounted gear motor drive, the central anchor agitator sweeps food-grade PTFE (Teflon) scraper blades along the entire inner hemispherical bowl. This continuous wall wiping prevents heat-sensitive foods like tomato ketchup, fruit jams, confectionery syrup, milk khoya, and viscous gravies from adhering to hot metal surfaces, completely eliminating caramelization, burning, and hotspots. Mounted on heavy structural stainless steel stanchions with rotary steam trunnions and a precision self-locking worm-gear tilting handwheel for effortless batch pouring. Includes heavy-duty mobile polyurethane caster wheels for flexible plant positioning.",
+    images: [
+      "https://res.cloudinary.com/vgmmtb5k/image/upload/v1789202430/raghav-food-processing-machines/raghav-mixing-steam-jacket-kettle.jpg"
+    ],
+    specifications: [
+      { label: "Batch Capacity", value: "150 - 300 Liters" },
+      { label: "Steam Jacket Pressure", value: "Rated up to 3.5 bar (50 PSI) Hydro-tested" },
+      { label: "Agitator Drive", value: "Top-Mounted Helical Bevel Geared Motor (30 - 45 RPM)" },
+      { label: "Scraper Blades", value: "Food-Grade Virgin Teflon (PTFE) Self-Adjusting Scrapers" },
+      { label: "Vessel Metallurgy", value: "Heavy SS-304 (SS-316 Acid-Resistant Bowl Option)" },
+      { label: "Tilting Mechanism", value: "Heavy-Duty Worm Gear Handwheel (Self-Locking Safety Pour)" },
+      { label: "Steam Ports", value: "Rotary Joint Steam Inlet, Air Vent & Condensate Steam Trap" },
+      { label: "Mobility", value: "4 Industrial Swivel Caster Wheels with Foot-Pedal Brakes" }
+    ],
+    applications: [
+      "Tomato Paste, Ketchup, Fruit Jams, Marmalade, Khoya, Basundi, Toffee/Caramel, Ayurvedic Syrups & Commercial Curries"
+    ],
+    features: [
+      "PTFE scrapers continuously wipe inner surface for 100% scorch-free cooking",
+      "Uniform indirect steam heat cuts batch processing time by up to 50%",
+      "Smooth worm gear tilting wheel ensures safe, controlled hot liquid discharge",
+      "Sanitary mirror-polished contact surfaces facilitate rapid clean-in-place (CIP)"
+    ],
+    isFeatured: true,
+    isPublished: true
+  },
+  {
+    name: "Raghav Industrial Rectangular Vibratory Sifter & Grading Screen Machine",
+    slug: "raghav-industrial-vibratory-shifter-machine",
+    category: "Spices & Grain Pulverizers",
+    categorySlug: "spices-grain-pulverizers",
+    price: "₹ 45,000",
+    priceUnit: "Ex-Factory (GST Extra)",
+    capacity: "200 - 800 kg/hr (Depending on bulk density & screen mesh)",
+    power: "1 HP / 1.5 HP Vibratory Flange Motor (Three Phase 415V / Single Phase 220V)",
+    materialGrade: "All Contact Parts Food Grade SS-304 / Heavy SS Support Frame",
+    automationGrade: "Continuous Linear Vibratory Screening",
+    voltage: "220 V / 415 V, 50 Hz",
+    dimensions: "1350 mm x 750 mm x 950 mm",
+    weight: "110 kg",
+    warranty: "1 Year Comprehensive Manufacturer Warranty",
+    shortDescription: "Heavy-duty linear motion rectangular vibro sifter and screening machine with perforated stainless steel decks and dual discharge chutes for grading, de-dusting, and classifying dry foods.",
+    fullDescription: "The Raghav Industrial Rectangular Vibratory Sifter (Vibro Shifter & Grading Machine) is an essential classification unit engineered for dry food packaging lines, spice pulverizing plants, namkeen snacks facilities, and grain mills. Utilizing an adjustable eccentric vibratory motor mounted beneath the screening bed, the machine generates linear harmonic vibrations that rapidly convey material across the perforated stainless steel screen deck. Oversized agglomerates, unground lumps, foreign fibers, and fine dust are cleanly separated and discharged through side collection spouts, while graded clean product falls through the precision mesh to the downstream line. Built entirely from hygienic stainless steel with tensioned, quick-change clamp screens and rubber vibration-dampening suspension mounts that isolate vibrations from the factory floor.",
+    images: [
+      "https://res.cloudinary.com/vgmmtb5k/image/upload/v1789202431/raghav-food-processing-machines/raghav-vibratory-shifter-machine.jpg"
+    ],
+    specifications: [
+      { label: "Screening Capacity", value: "200 - 800 kg per hour" },
+      { label: "Screen Deck Area", value: "1000 mm x 550 mm Rectangular SS-304 Perforated Deck" },
+      { label: "Mesh Compatibility", value: "1 mm to 15 mm Perforated Sheets & Wire Mesh Screens" },
+      { label: "Vibration Motor", value: "1 HP / 1.5 HP Heavy-Duty Eccentric Vibratory Drive (1440 RPM)" },
+      { label: "Discharge Spouts", value: "Dual Side Chutes for Oversize and Undersize Fractions" },
+      { label: "Vibration Isolation", value: "High-Resilience Elastomer Rubber Suspension Bushings" },
+      { label: "Floor Base", value: "Heavy-Gauge SS Box Section Legs with Anchor Flange Pads" }
+    ],
+    applications: [
+      "Namkeen & Sev Grading, Ground Spices, Besan & Flour Sieving, Dry Grains, Pulses, Tea Leaves, Dehydrated Vegetables & Granules"
+    ],
+    features: [
+      "Rapid high-capacity linear separation with zero mesh blinding",
+      "Dual side collection chutes allow continuous, unhindered material flow",
+      "Modular screen frame enables mesh changeover in less than 3 minutes",
+      "Quiet, low-noise operation with floor-isolated vibration dampeners"
+    ],
+    isFeatured: true,
+    isPublished: true
+  },
+  {
+    name: "Raghav Horizontal Continuous Band Sealing Machine (with Digital PID Controller)",
+    slug: "raghav-horizontal-continuous-band-sealing-machine",
+    category: "Packaging & Sealing",
+    categorySlug: "packaging-sealing",
+    price: "₹ 25,000",
+    priceUnit: "Ex-Factory (GST Extra)",
+    capacity: "0 - 12 Meters / Minute Continuous Sealing Speed",
+    power: "500 W Heating Elements + 60 W Conveyor Motor (220V Single Phase)",
+    materialGrade: "Stainless Steel 304 Casing & Conveyor Bed, Solid Brass Heating Blocks",
+    automationGrade: "Automated Continuous Conveyor Sealing",
+    voltage: "220 V, 50 Hz Single Phase",
+    dimensions: "850 mm x 420 mm x 380 mm",
+    weight: "28 kg",
+    warranty: "1 Year Warranty on Heating Elements & Drive System",
+    shortDescription: "Automated tabletop continuous band sealer with motorized green conveyor, solid brass heating/cooling blocks, digital PID temperature display, and embossing coder for pre-filled pouches.",
+    fullDescription: "The Raghav Horizontal Continuous Band Sealing Machine is an automated pouch packaging sealer engineered for snacks, spices, grains, seeds, bakery goods, and food packaging lines. Pre-filled thermoplastic, foil, or laminated pouches are laid on the motor-driven green conveyor belt and guided through solid brass heating blocks followed by high-efficiency air-cooling blocks. Seamless Teflon sealing belts apply uniform pressure and heat, creating an airtight, hermetic, leak-proof 10 mm wide knurled or smooth seal. Equipped with a digital intelligent PID temperature controller (0°C - 300°C), variable conveyor speed knob, adjustable conveyor height/width, and an interchangeable steel date/batch embossing wheel to imprint manufacturing dates and MRP during the sealing process.",
+    images: [
+      "https://res.cloudinary.com/vgmmtb5k/image/upload/v1789202433/raghav-food-processing-machines/raghav-continuous-band-sealer-machine.jpg"
+    ],
+    specifications: [
+      { label: "Sealing Speed", value: "0 - 12 Meters per minute (Infinitely Variable)" },
+      { label: "Seal Width", value: "8 mm - 12 mm Knurled / Diamond / Striped Hermetic Seal" },
+      { label: "Temperature Range", value: "0°C to 300°C (Dual Digital PID Intelligent Display)" },
+      { label: "Conveyor Load", value: "Max 5 kg Total Conveyor Load (Single pouch up to 1 kg)" },
+      { label: "Film Materials", value: "PE, PP, OPP, Aluminum Foil, Kraft Paper Laminated Pouches" },
+      { label: "Coding Wheel", value: "Embossing Wheel for Expiry Date, Batch No. & MRP Imprinting" },
+      { label: "Structure", value: "Food-Grade Satin Finish SS-304 Housing with Cooling Fan Vents" }
+    ],
+    applications: [
+      "Snacks & Namkeen, Tea & Coffee Pouches, Spices, Dry Fruits, Seeds, Frozen Foods, Confectionery & Hardware Packaging"
+    ],
+    features: [
+      "Continuous high-speed operation significantly outperforms manual impulse sealers",
+      "Digital PID controller maintains exact sealing temperature without scorching film",
+      "Teflon guide belts prevent plastic adhesion and ensure mirror-clean seam",
+      "Built-in cooling fan blocks instantly set the seal for maximum tensile strength"
+    ],
+    isFeatured: true,
+    isPublished: true
   }
 ];
 
