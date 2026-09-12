@@ -79,18 +79,18 @@ export default function Home() {
     stat3Label: settings.hero?.stat3Label || "Food-Grade SS-304/SS-316",
     stat4Number: settings.hero?.stat4Number || "24/7",
     stat4Label: settings.hero?.stat4Label || "Engineer AMC Support",
-    showcaseTag: settings.hero?.showcaseTag || "Flagship: Automatic Canning Retort 500L",
-    showcaseImage: settings.hero?.showcaseImage || "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1000&q=80",
-    showcaseModel: settings.hero?.showcaseModel || "RFPM-RET-500",
+    showcaseTag: settings.hero?.showcaseTag || "Flagship: Continuous Band Sealing Machine",
+    showcaseImage: settings.hero?.showcaseImage || "https://res.cloudinary.com/vgmmtb5k/image/upload/v1789208820/raghav-food-processing-machines/raghav-continuous-band-sealer-hero-branded.jpg",
+    showcaseModel: settings.hero?.showcaseModel || "RFPM-CBS-900",
     showcaseStockStatus: settings.hero?.showcaseStockStatus || "In Stock / Ready Dispatch",
-    showcaseSpec1Label: settings.hero?.showcaseSpec1Label || "Batch Capacity",
-    showcaseSpec1Value: settings.hero?.showcaseSpec1Value || "500 Liters",
+    showcaseSpec1Label: settings.hero?.showcaseSpec1Label || "Sealing Speed",
+    showcaseSpec1Value: settings.hero?.showcaseSpec1Value || "0 - 12 Mtr/Min",
     showcaseSpec2Label: settings.hero?.showcaseSpec2Label || "Temperature",
-    showcaseSpec2Value: settings.hero?.showcaseSpec2Value || "Up to 135°C",
+    showcaseSpec2Value: settings.hero?.showcaseSpec2Value || "PID 0 - 300°C",
     showcaseSpec3Label: settings.hero?.showcaseSpec3Label || "Automation",
-    showcaseSpec3Value: settings.hero?.showcaseSpec3Value || "PLC + HMI",
+    showcaseSpec3Value: settings.hero?.showcaseSpec3Value || "Conveyor Driven",
     showcaseButtonText: settings.hero?.showcaseButtonText || "View Machine Specs",
-    showcaseButtonLink: settings.hero?.showcaseButtonLink || "/product/automatic-canning-retort-500l"
+    showcaseButtonLink: settings.hero?.showcaseButtonLink || "/product/raghav-horizontal-continuous-band-sealing-machine"
   };
 
   return (

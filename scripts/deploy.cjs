@@ -1,5 +1,6 @@
 const { execSync } = require('child_process');
 const path = require('path');
+const fs = require('fs');
 const { Client } = require(path.join(__dirname, '..', 'server', 'node_modules', 'ssh2'));
 
 const VM_CONFIG = {
@@ -18,6 +19,18 @@ async function runDeploy() {
   console.log('\n==================================================');
   console.log('🚀 Starting 1-Click Deployment to Azure Production');
   console.log('==================================================\n');
+
+  // Auto-recover corrupted 0-byte index if needed
+  try {
+    const indexPath = path.join(ROOT_DIR, '.git', 'index');
+    if (fs.existsSync(indexPath) && fs.statSync(indexPath).size === 0) {
+      console.log('🔧 Rebuilding corrupted 0-byte git index...');
+      fs.unlinkSync(indexPath);
+      execSync(`"${GIT_EXE}" reset`, { cwd: ROOT_DIR });
+    }
+  } catch (e) {
+    console.log('Index recovery note:', e.message);
+  }
 
   // 1. Check for uncommitted changes
   try {
