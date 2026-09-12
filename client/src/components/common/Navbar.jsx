@@ -66,25 +66,20 @@ export default function Navbar() {
       )}
 
       {/* Top Utility Contact Bar */}
-      <div className="hidden lg:block bg-industrial-950/90 backdrop-blur-md border-b border-industrial-800/80 text-xs text-industrial-400 py-1.5 px-4 sm:px-6">
-        <div className="max-w-7xl mx-auto flex items-center justify-between gap-4">
+      <div className="hidden lg:block bg-industrial-950/90 backdrop-blur-md border-b border-industrial-800/80 text-xs text-industrial-400 py-2 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto flex items-center justify-between gap-6">
           {/* Left: Certifications & GSTIN */}
-          <div className="flex items-center gap-3 xl:gap-4 flex-shrink-0 text-[11px] xl:text-xs">
+          <div className="flex items-center gap-3 xl:gap-4 flex-shrink-0 text-xs">
             <span className="flex items-center gap-1.5 text-amber-brand font-semibold whitespace-nowrap flex-shrink-0">
               <Shield className="w-3.5 h-3.5 flex-shrink-0" />
               ISO 9001:2015 & CE Certified
             </span>
             <span className="text-industrial-700">|</span>
             <span className="whitespace-nowrap flex-shrink-0">GSTIN: <strong className="text-industrial-200 font-mono">{settings.gstin}</strong></span>
-            <span className="hidden 2xl:inline text-industrial-700">|</span>
-            <span className="hidden 2xl:flex items-center gap-1 text-industrial-400 whitespace-nowrap flex-shrink-0">
-              <Clock className="w-3.5 h-3.5 text-industrial-500 flex-shrink-0" />
-              {settings.workingHours}
-            </span>
           </div>
 
           {/* Right: Quick Contacts & Admin CMS Link */}
-          <div className="flex items-center gap-3 xl:gap-5 flex-shrink-0 text-[11px] xl:text-xs">
+          <div className="flex items-center gap-4 xl:gap-5 flex-shrink-0 text-xs">
             <a 
               href={`tel:${settings.phone.replace(/\s+/g, '')}`} 
               className="flex items-center gap-1.5 hover:text-amber-brand transition-colors text-industrial-300 whitespace-nowrap flex-shrink-0"
@@ -115,7 +110,7 @@ export default function Navbar() {
             {/* Admin Portal Quick Switch */}
             <Link 
               to="/admin" 
-              className="flex items-center gap-1 bg-industrial-800 hover:bg-amber-brand hover:text-industrial-950 text-amber-brand px-2 py-0.5 xl:px-2.5 xl:py-1 rounded text-[11px] font-semibold transition-all border border-amber-500/20 whitespace-nowrap flex-shrink-0"
+              className="flex items-center gap-1 bg-industrial-800 hover:bg-amber-brand hover:text-industrial-950 text-amber-brand px-2.5 py-1 rounded text-[11px] font-semibold transition-all border border-amber-500/20 whitespace-nowrap flex-shrink-0"
             >
               <Lock className="w-3 h-3 flex-shrink-0" />
               <span>Admin CMS</span>
@@ -125,10 +120,10 @@ export default function Navbar() {
       </div>
 
       {/* Main Navigation Bar */}
-      <nav className="bg-industrial-900/90 backdrop-blur-xl border-b border-industrial-800/80 px-3 sm:px-6 md:px-8 py-2.5 sm:py-3">
-        <div className="max-w-7xl mx-auto flex items-center justify-between gap-2 xl:gap-4">
+      <nav className="bg-industrial-900/90 backdrop-blur-xl border-b border-industrial-800/80 px-4 sm:px-6 lg:px-8 py-2.5 sm:py-3.5">
+        <div className="max-w-7xl mx-auto flex items-center justify-between gap-3 lg:gap-6">
           
-          {/* Logo - Protected with flex-shrink-0 so links never overlap */}
+          {/* Logo - Protected with flex-shrink-0 */}
           <Link to="/" className="flex items-center gap-2.5 sm:gap-3 group flex-shrink-0">
             <div className="relative w-10 h-10 sm:w-11 sm:h-11 md:w-12 md:h-12 flex-shrink-0 flex items-center justify-center rounded-xl bg-gradient-to-br from-industrial-900 to-industrial-950 border border-amber-500/30 p-1 shadow-glow-amber group-hover:border-amber-400 group-hover:scale-105 transition-all duration-300">
               <img 
@@ -152,15 +147,15 @@ export default function Navbar() {
             </div>
           </Link>
 
-          {/* Desktop Navigation Links */}
-          <div className="hidden xl:flex items-center gap-0.5 2xl:gap-1 flex-shrink-0">
+          {/* Center: Desktop Navigation Links (Centered via flex-1 justify-center) */}
+          <div className="hidden xl:flex items-center justify-center gap-1 2xl:gap-1.5 flex-1 mx-2">
             {navLinks.map((link) => (
               <Link
                 key={link.name}
                 to={link.path}
-                className={`px-2 2xl:px-3 py-1.5 rounded-lg text-xs 2xl:text-sm font-medium transition-all duration-200 whitespace-nowrap ${
+                className={`px-2.5 2xl:px-3 py-1.5 rounded-lg text-xs 2xl:text-sm font-medium transition-all duration-200 whitespace-nowrap ${
                   isActive(link.path)
-                    ? 'text-amber-brand bg-industrial-800/80 font-semibold'
+                    ? 'text-amber-brand bg-industrial-800/80 font-semibold shadow-sm'
                     : 'text-industrial-300 hover:text-white hover:bg-industrial-800/40'
                 }`}
               >
@@ -170,7 +165,7 @@ export default function Navbar() {
           </div>
 
           {/* Right Action Icons */}
-          <div className="flex items-center gap-1.5 sm:gap-2 md:gap-3 flex-shrink-0">
+          <div className="flex items-center gap-2 sm:gap-2.5 flex-shrink-0">
             {/* Theme Selector Dropdown */}
             <ThemeSwitcher />
 
@@ -194,15 +189,13 @@ export default function Navbar() {
               <div className="relative group flex-shrink-0">
                 <button 
                   onClick={() => navigate(isAdmin ? '/admin' : '/dashboard')}
-                  className="flex items-center gap-1.5 md:gap-2 bg-industrial-800 hover:bg-industrial-700 text-industrial-200 px-2.5 md:px-3 py-1.5 md:py-2 rounded-xl text-xs md:text-sm transition-all border border-industrial-700 flex-shrink-0 whitespace-nowrap"
+                  className="flex items-center gap-1.5 md:gap-2 bg-industrial-800 hover:bg-industrial-700 text-industrial-200 px-2.5 md:px-3 py-1.5 md:py-2 rounded-xl text-xs md:text-sm transition-all border border-industrial-700 flex-shrink-0 whitespace-nowrap font-medium"
+                  title={isAdmin ? "Admin Control Panel" : "Client Dashboard"}
                 >
                   <User className="w-4 h-4 text-amber-brand flex-shrink-0" />
-                  <span className="hidden md:inline max-w-[100px] truncate">{user.name}</span>
-                  {isAdmin && (
-                    <span className="bg-amber-500/20 text-amber-brand text-[10px] font-bold px-1.5 py-0.5 rounded">
-                      Admin
-                    </span>
-                  )}
+                  <span className="hidden md:inline font-semibold">
+                    {isAdmin || user.name?.toLowerCase().includes('admin') ? 'Admin' : user.name}
+                  </span>
                 </button>
               </div>
             ) : (
@@ -261,7 +254,7 @@ export default function Navbar() {
 
               {user ? (
                 <div className="flex items-center justify-between px-4 py-2 text-sm text-industrial-400">
-                  <span>Logged in as <strong>{user.name}</strong></span>
+                  <span>Logged in as <strong>{isAdmin || user.name?.toLowerCase().includes('admin') ? 'Admin' : user.name}</strong></span>
                   <button 
                     onClick={() => { logout(); setMobileMenuOpen(false); }}
                     className="text-red-400 hover:text-red-300 text-xs font-semibold"
