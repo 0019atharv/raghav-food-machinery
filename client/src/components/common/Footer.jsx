@@ -117,17 +117,13 @@ export default function Footer() {
             </div>
 
             <p className="text-industrial-400 text-sm leading-relaxed mt-1">
-              Raghav Food Machinery Company is an Indian premier manufacturer and turnkey plant engineering firm specializing in canning retort autoclaves, continuous snacks extrusion lines, industrial fruit/vegetable processing systems, and food-grade stainless steel fabrication.
+              Raghav Food Processing Machine is an Indian manufacturer specializing in canning retort autoclaves, continuous band sealers, snacks extrusion lines, commercial kettles, and food-grade stainless steel machinery.
             </p>
 
             <div className="flex flex-col gap-2 mt-2 text-xs">
               <div className="flex items-start gap-2">
                 <MapPin className="w-4 h-4 text-amber-brand mt-0.5 flex-shrink-0" />
-                <span><strong>Factory:</strong> {settings.factoryAddress}</span>
-              </div>
-              <div className="flex items-start gap-2">
-                <MapPin className="w-4 h-4 text-industrial-500 mt-0.5 flex-shrink-0" />
-                <span><strong>Office:</strong> {settings.corporateOffice}</span>
+                <span><strong>Principal Place & Works:</strong> {settings.factoryAddress}</span>
               </div>
               <div className="flex items-center gap-2">
                 <Clock className="w-4 h-4 text-amber-brand flex-shrink-0" />
@@ -223,7 +219,7 @@ export default function Footer() {
         {/* Bottom Copyright & Disclaimer */}
         <div className="pt-8 mt-4 border-t border-industrial-800/60 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-industrial-500">
           <div>
-            &copy; {new Date().getFullYear()} Raghav Food Machinery Company. All Rights Reserved. Turnkey Industrial Machinery.
+            &copy; {new Date().getFullYear()} {settings.companyName || 'Raghav Food Processing Machine'}. All Rights Reserved. Turnkey Industrial Machinery.
           </div>
           <div className="flex items-center gap-4">
             <Link to="/about" className="hover:text-industrial-300">About Us</Link>

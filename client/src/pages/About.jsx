@@ -42,16 +42,16 @@ export default function About() {
             Built by Engineers. Trusted by 500+ Food Processors.
           </h2>
           <p className="text-xs sm:text-sm text-industrial-300 leading-relaxed">
-            Founded with a steadfast mission to replace expensive imported food processing machinery with rugged, high-precision, locally serviceable Indian equipment, <strong>Raghav Food Machinery Company</strong> has grown to become a premier supplier across Delhi NCR, Punjab, Gujarat, Rajasthan, and international export markets.
+            Founded with a steadfast mission to replace expensive imported food processing machinery with rugged, high-precision, locally serviceable Indian equipment, <strong>Raghav Food Processing Machine</strong> (Proprietorship: Naresh) has grown to become a trusted manufacturer across Delhi NCR, Punjab, Gujarat, Rajasthan, and nationwide markets.
           </p>
           <p className="text-xs sm:text-sm text-industrial-300 leading-relaxed">
-            Our state-of-the-art fabrication facility in <strong>Kundli Industrial Area, Sonipat (Delhi NCR)</strong> is equipped with advanced CNC fiber laser cutters, high-tonnage hydraulic dish forming presses, automated orbital TIG welding rigs, and dedicated hydrostatic pressure testing pits.
+            Our manufacturing facility and workshop located at <strong>House No. 388, 1st Floor, JJ Colony Block-1, Near Gurudwara, Mangol Puri, North West Delhi - 110083</strong> is equipped with precision machinery, automated orbital TIG welding rigs, dish-forming equipment, and dedicated hydrostatic pressure testing pits.
           </p>
 
           <div className="grid grid-cols-2 gap-4 pt-2">
             <div className="p-4 rounded-xl bg-industrial-900 border border-industrial-800">
-              <div className="font-display font-extrabold text-2xl text-amber-brand">35,000+ sq.ft.</div>
-              <div className="text-xs text-industrial-400 mt-1">Modern Fabrication Facility</div>
+              <div className="font-display font-extrabold text-2xl text-amber-brand">SS-304 & 316</div>
+              <div className="text-xs text-industrial-400 mt-1">Certified Food-Grade Alloys</div>
             </div>
             <div className="p-4 rounded-xl bg-industrial-900 border border-industrial-800">
               <div className="font-display font-extrabold text-2xl text-white">500+</div>
@@ -64,7 +64,7 @@ export default function About() {
           <div className="rounded-3xl overflow-hidden bg-industrial-900 border border-industrial-800 shadow-2xl">
             <img
               src="/raghav-workshop.jpg"
-              alt="Raghav Food Machinery Manufacturing Facility & Workshop"
+              alt="Raghav Food Processing Machine Manufacturing Facility & Workshop"
               className="w-full h-80 sm:h-96 object-cover"
               onError={(e) => {
                 e.target.onerror = null;
@@ -72,8 +72,8 @@ export default function About() {
               }}
             />
             <div className="p-4 bg-industrial-950/90 border-t border-industrial-800 text-xs text-industrial-400 flex items-center justify-between">
-              <span>Kundli, Sonipat Works</span>
-              <span className="text-amber-brand font-semibold">ISO 9001:2015</span>
+              <span>Mangol Puri, New Delhi</span>
+              <span className="text-amber-brand font-semibold font-mono">GST: 07AREPN9294Q1ZQ</span>
             </div>
           </div>
         </div>

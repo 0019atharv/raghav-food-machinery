@@ -126,7 +126,8 @@ const testimonialSchema = new mongoose.Schema({
 // 7. SITE SETTINGS SCHEMA
 // ============================================================================
 const siteSettingSchema = new mongoose.Schema({
-  companyName: { type: String, default: 'Raghav Food Machinery Company' },
+  companyName: { type: String, default: 'Raghav Food Processing Machine' },
+  proprietor: { type: String, default: 'Naresh' },
   websiteUrl: { type: String, default: 'https://raghavfoodprocessingmachines.com' },
   tagline: { type: String, default: 'Pioneering Industrial Food Processing & Canning Machinery' },
   phone: { type: String, default: '+91 92207 06381' },
@@ -135,8 +136,8 @@ const siteSettingSchema = new mongoose.Schema({
   email: { type: String, default: 'raghavfoodprocessingmachinee@gmail.com' },
   supportEmail: { type: String, default: 'raghavfoodprocessingmachinee@gmail.com' },
   gstin: { type: String, default: '07AREPN9294Q1ZQ' },
-  factoryAddress: { type: String, default: 'Plot No. 48, Industrial Area Phase II, Kundli, Sonipat, Delhi NCR, Haryana - 131028' },
-  corporateOffice: { type: String, default: 'Office No. 302, Industrial Complex, Wazirpur, Delhi - 110052' },
+  factoryAddress: { type: String, default: 'House No. 388, 1st Floor, JJ Colony Block-1, Near Gurudwara, Mangol Puri, North West Delhi, New Delhi, Delhi - 110083' },
+  corporateOffice: { type: String, default: 'House No. 388, 1st Floor, JJ Colony Block-1, Near Gurudwara, Mangol Puri, North West Delhi, New Delhi, Delhi - 110083' },
   workingHours: { type: String, default: 'Mon - Sat: 9:00 AM - 7:00 PM IST (Sunday Closed)' },
   bannerNotice: {
     active: { type: Boolean, default: true },

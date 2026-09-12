@@ -85,10 +85,10 @@ export default function Contact() {
           Get in Touch
         </span>
         <h1 className="font-display text-3xl sm:text-4xl md:text-5xl font-extrabold text-white">
-          Contact Raghav Food Machinery
+          Contact Raghav Food Processing Machine
         </h1>
         <p className="text-sm text-industrial-300 leading-relaxed">
-          Request commercial machinery quotation, schedule a live factory trial run in Kundli, or consult our engineering team regarding your plant requirements.
+          Request commercial machinery quotation, schedule a visit to our facility in Mangol Puri, New Delhi, or consult our engineering team regarding your plant requirements.
         </p>
       </div>
 
@@ -171,13 +171,13 @@ export default function Contact() {
           {/* Interactive Map Embed / Preview */}
           <div className="rounded-3xl overflow-hidden bg-industrial-900 border border-industrial-800 h-64 relative shadow-xl">
             <iframe
-              title="Raghav Food Machinery Location"
-              src="https://maps.google.com/maps?q=Kundli%20Industrial%20Area,%20Sonipat,%20Haryana&t=&z=13&ie=UTF8&iwloc=&output=embed"
+              title="Raghav Food Processing Machine Location"
+              src="https://maps.google.com/maps?q=House%20No%20388,%20JJ%20Colony%20Block-1,%20Mangol%20Puri,%20New%20Delhi%20110083&t=&z=14&ie=UTF8&iwloc=&output=embed"
               className="w-full h-full border-0 filter grayscale invert contrast-125 opacity-70 hover:opacity-100 transition-opacity"
               loading="lazy"
             />
             <div className="absolute bottom-3 left-3 bg-industrial-950/90 backdrop-blur-md px-3 py-1 rounded-lg text-[10px] text-white border border-industrial-800">
-              📍 Kundli Industrial Area, Sonipat, Delhi NCR
+              📍 Mangol Puri, North West Delhi - 110083
             </div>
           </div>
 

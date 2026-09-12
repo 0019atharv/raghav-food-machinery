@@ -2,7 +2,8 @@ import React, { createContext, useContext, useState, useEffect } from 'react';
 import { api } from '../services/api';
 
 const defaultSettings = {
-  companyName: "Raghav Food Machinery Company",
+  companyName: "Raghav Food Processing Machine",
+  proprietor: "Naresh",
   websiteUrl: "https://raghavfoodprocessingmachines.com",
   tagline: "Precision Engineering for Food Processing, Canning & Snacks Machinery",
   phone: "+91 92207 06381",
@@ -11,9 +12,9 @@ const defaultSettings = {
   email: "raghavfoodprocessingmachinee@gmail.com",
   supportEmail: "raghavfoodprocessingmachinee@gmail.com",
   gstin: "07AREPN9294Q1ZQ",
-  factoryAddress: "Plot No. 48, Industrial Area Phase II, Kundli, Sonipat, Delhi NCR, Haryana - 131028",
-  corporateOffice: "Office No. 302, Industrial Complex, Wazirpur, Delhi - 110052",
-  workingHours: "Mon – Sat: 9:00 AM – 7:00 PM IST",
+  factoryAddress: "House No. 388, 1st Floor, JJ Colony Block-1, Near Gurudwara, Mangol Puri, North West Delhi, New Delhi, Delhi - 110083",
+  corporateOffice: "House No. 388, 1st Floor, JJ Colony Block-1, Near Gurudwara, Mangol Puri, North West Delhi, New Delhi, Delhi - 110083",
+  workingHours: "Mon – Sat: 9:00 AM – 7:00 PM IST (Sunday Closed)",
   bannerNotice: {
     active: true,
     text: "⭐ Factory Direct Supply: Avail special commercial discounts on Retort & Snacks Lines!",

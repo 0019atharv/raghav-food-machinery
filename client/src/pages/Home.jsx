@@ -610,7 +610,7 @@ export default function Home() {
               Ready to Upgrade or Establish Your Food Processing Plant?
             </h3>
             <p className="text-xs sm:text-sm font-medium text-industrial-950/80 leading-relaxed">
-              Schedule a factory visit in Kundli, Sonipat (Delhi NCR) to inspect live dry runs and review engineering drawings with our technical team.
+              Schedule a visit to our facility in Mangol Puri, New Delhi to inspect live machinery runs and review equipment specifications with our technical team.
             </p>
           </div>
 
@@ -623,7 +623,7 @@ export default function Home() {
             </Link>
 
             <a
-              href={`https://wa.me/${settings.whatsappNumber.replace(/\D/g, '')}?text=Hello%20Raghav%20Food%20Machinery,%20I%20want%20to%20schedule%20a%20factory%20visit.`}
+              href={`https://wa.me/${settings.whatsappNumber.replace(/\D/g, '')}?text=Hello%20Raghav%20Food%20Processing%20Machine,%20I%20want%20to%20schedule%20a%20visit.`}
               target="_blank"
               rel="noopener noreferrer"
               className="w-full sm:w-auto text-center bg-white/90 hover:bg-white text-industrial-950 font-extrabold px-6 py-3.5 rounded-xl text-sm transition-all shadow-md flex items-center justify-center gap-2"
