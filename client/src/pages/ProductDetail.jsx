@@ -117,6 +117,19 @@ export default function ProductDetail() {
                 Featured System
               </div>
             )}
+
+            {/* Official Manufacturer Watermark Overlay */}
+            <div className="absolute bottom-4 right-4 z-10 flex items-center gap-2 bg-industrial-950/85 backdrop-blur-md border border-amber-500/30 px-3 py-1.5 rounded-xl shadow-lg pointer-events-none select-none">
+              <img 
+                src="/raghav-emblem-transparent.png" 
+                alt="Raghav Certified" 
+                className="w-5 h-5 object-contain" 
+              />
+              <div className="flex flex-col text-left">
+                <span className="font-display font-extrabold text-[10px] tracking-wider text-white leading-none">RAGHAV</span>
+                <span className="text-[8px] font-mono uppercase tracking-widest text-amber-brand leading-none mt-0.5">Certified Equipment</span>
+              </div>
+            </div>
           </div>
 
           {/* Thumbnails */}

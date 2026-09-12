@@ -127,10 +127,12 @@ export default function Navbar() {
           
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2.5 sm:gap-3 group min-w-0">
-            <div className="w-9 h-9 sm:w-10 sm:h-10 md:w-11 md:h-11 rounded-xl bg-gradient-to-br from-amber-500 to-amber-700 p-0.5 shadow-glow-amber flex items-center justify-center flex-shrink-0">
-              <div className="w-full h-full bg-industrial-950 rounded-[10px] flex items-center justify-center">
-                <Wrench className="w-4 h-4 sm:w-5 sm:h-5 text-amber-brand group-hover:rotate-45 transition-transform duration-500" />
-              </div>
+            <div className="relative w-10 h-10 sm:w-11 sm:h-11 md:w-12 md:h-12 flex-shrink-0 flex items-center justify-center rounded-xl bg-gradient-to-br from-industrial-900 to-industrial-950 border border-amber-500/30 p-1 shadow-glow-amber group-hover:border-amber-400 group-hover:scale-105 transition-all duration-300">
+              <img 
+                src="/raghav-emblem-transparent.png" 
+                alt="Raghav Food Processing Machine" 
+                className="w-full h-full object-contain filter drop-shadow group-hover:rotate-6 transition-transform duration-500" 
+              />
             </div>
             <div className="flex flex-col min-w-0">
               <div className="flex items-center gap-1 sm:gap-1.5 whitespace-nowrap">

@@ -66,10 +66,21 @@ export default function Contact() {
   };
 
   return (
-    <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-8 py-12 space-y-16">
+    <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-8 py-12 space-y-16 overflow-hidden">
+      {/* Background Watermark Emblem */}
+      <div className="absolute -right-20 top-20 w-96 h-96 opacity-[0.035] pointer-events-none select-none z-0">
+        <img src="/raghav-emblem-transparent.png" alt="" className="w-full h-full object-contain" />
+      </div>
       
       {/* Header */}
-      <div className="text-center max-w-3xl mx-auto space-y-4">
+      <div className="text-center max-w-3xl mx-auto space-y-4 relative z-10">
+        <div className="flex items-center justify-center mb-4">
+          <img 
+            src="/raghav-logo.png" 
+            alt="Raghav Food Processing Machine Official Badge Logo" 
+            className="h-16 sm:h-20 w-auto object-contain rounded-2xl bg-white/95 p-2.5 shadow-xl border border-amber-500/30 hover:scale-105 transition-transform" 
+          />
+        </div>
         <span className="text-xs font-mono font-bold text-amber-brand uppercase tracking-wider bg-amber-500/10 border border-amber-500/20 px-3 py-1 rounded-full">
           Get in Touch
         </span>

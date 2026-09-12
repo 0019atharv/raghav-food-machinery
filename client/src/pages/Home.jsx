@@ -69,8 +69,12 @@ export default function Home() {
           1. HERO BANNER WITH DYNAMIC INDUSTRIAL ACCENTS & TELEMETRY
           ===================================================================== */}
       <section className="relative pt-12 md:pt-20 pb-16 px-4 md:px-8 max-w-7xl mx-auto overflow-hidden">
+        {/* Subtle Background Watermark Emblem */}
+        <div className="absolute -right-16 top-1/2 -translate-y-1/2 w-[480px] h-[480px] md:w-[600px] md:h-[600px] opacity-[0.045] pointer-events-none select-none z-0">
+          <img src="/raghav-emblem-transparent.png" alt="" className="w-full h-full object-contain filter drop-shadow" />
+        </div>
         
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
           
           {/* Left Column: Headline & Action */}
           <div className="lg:col-span-7 space-y-6">
@@ -158,6 +162,12 @@ export default function Home() {
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-industrial-950 via-transparent to-transparent opacity-80" />
+                
+                {/* Official Raghav Watermark Stamp */}
+                <div className="absolute bottom-3 right-3 z-10 flex items-center gap-1.5 bg-industrial-950/85 backdrop-blur-md border border-amber-500/30 px-2.5 py-1 rounded-lg text-[10px] text-industrial-200 shadow">
+                  <img src="/raghav-emblem-transparent.png" alt="Raghav" className="w-4 h-4 object-contain" />
+                  <span className="font-semibold tracking-wider uppercase font-mono text-[9px] text-amber-brand">Raghav Certified</span>
+                </div>
               </div>
 
               {/* Specs Badge Overlay */}
@@ -333,6 +343,11 @@ export default function Home() {
                   <div className="absolute bottom-3 right-3 bg-industrial-950/90 px-2 py-0.5 rounded text-[11px] font-mono text-industrial-300">
                     {machine.capacity}
                   </div>
+                  {/* Subtle Raghav Certified Stamp */}
+                  <div className="absolute bottom-3 left-3 flex items-center gap-1 bg-industrial-950/80 backdrop-blur-sm px-1.5 py-0.5 rounded border border-industrial-800/80 text-[9px] text-industrial-300 font-mono">
+                    <img src="/raghav-emblem-transparent.png" alt="" className="w-3.5 h-3.5 object-contain" />
+                    <span className="text-amber-brand font-semibold">RFPM</span>
+                  </div>
                 </div>
 
                 {/* Title */}
@@ -444,6 +459,14 @@ export default function Home() {
           ===================================================================== */}
       <section className="max-w-7xl mx-auto px-4 md:px-8">
         <div className="text-center max-w-2xl mx-auto mb-12">
+          {/* Official Badge Logo */}
+          <div className="flex items-center justify-center mb-5">
+            <img 
+              src="/raghav-logo.png" 
+              alt="Raghav Food Processing Machine Official Badge Logo" 
+              className="h-14 sm:h-16 w-auto object-contain rounded-xl bg-white/95 p-2 shadow-lg border border-amber-500/30 hover:scale-105 transition-transform" 
+            />
+          </div>
           <div className="text-xs font-bold font-mono text-amber-brand uppercase tracking-wider mb-2">
             The Raghav Advantage
           </div>

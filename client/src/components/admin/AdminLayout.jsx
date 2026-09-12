@@ -67,8 +67,8 @@ export default function AdminLayout() {
         <div className="max-w-md w-full p-8 rounded-3xl bg-industrial-900 border border-industrial-800 text-center space-y-5 shadow-2xl relative overflow-hidden">
           <div className="absolute -top-20 -right-20 w-40 h-40 bg-amber-500/10 rounded-full blur-3xl pointer-events-none" />
 
-          <div className="w-16 h-16 mx-auto rounded-2xl bg-amber-500/10 text-amber-brand flex items-center justify-center border border-amber-500/20">
-            <ShieldCheck className="w-8 h-8" />
+          <div className="w-16 h-16 mx-auto rounded-2xl bg-industrial-950 p-2 flex items-center justify-center border border-amber-500/30 shadow-glow-amber">
+            <img src="/raghav-emblem-transparent.png" alt="Raghav Logo" className="w-full h-full object-contain" />
           </div>
 
           <div>
@@ -158,10 +158,8 @@ export default function AdminLayout() {
         {/* Admin Brand Header */}
         <div className="p-6 border-b border-industrial-800/80 flex items-center justify-between">
           <Link to="/" className="flex items-center gap-3">
-            <div className="w-9 h-9 rounded-xl bg-gradient-to-br from-amber-500 to-amber-700 p-0.5 flex items-center justify-center shadow-glow-amber">
-              <div className="w-full h-full bg-industrial-950 rounded-[10px] flex items-center justify-center">
-                <Wrench className="w-4 h-4 text-amber-brand" />
-              </div>
+            <div className="w-10 h-10 rounded-xl bg-industrial-950 border border-amber-500/40 p-1 flex items-center justify-center shadow-glow-amber flex-shrink-0">
+              <img src="/raghav-emblem-transparent.png" alt="Raghav Logo" className="w-full h-full object-contain" />
             </div>
             <div>
               <div className="font-display font-bold text-sm tracking-tight text-white">

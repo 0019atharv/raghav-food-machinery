@@ -88,16 +88,20 @@ export default function RfqDrawer() {
 
       {/* Slide-out Drawer Panel */}
       <div className="fixed inset-y-0 right-0 max-w-full flex pl-10">
-        <div className="w-screen max-w-md bg-industrial-900 border-l border-industrial-800 shadow-2xl flex flex-col justify-between">
+        <div className="w-screen max-w-md bg-industrial-900 border-l border-industrial-800 shadow-2xl flex flex-col justify-between relative overflow-hidden">
+          {/* Subtle Background Watermark Emblem */}
+          <div className="absolute -bottom-10 -right-10 w-72 h-72 opacity-[0.035] pointer-events-none select-none z-0">
+            <img src="/raghav-emblem-transparent.png" alt="" className="w-full h-full object-contain" />
+          </div>
           
           {/* Header */}
-          <div className="p-5 border-b border-industrial-800 flex items-center justify-between bg-industrial-950/50">
-            <div className="flex items-center gap-2.5">
-              <div className="w-9 h-9 rounded-xl bg-amber-500/10 text-amber-brand flex items-center justify-center border border-amber-500/20">
-                <FileText className="w-5 h-5" />
+          <div className="p-5 border-b border-industrial-800 flex items-center justify-between bg-industrial-950/70 relative z-10">
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-xl bg-industrial-950 border border-amber-500/30 p-1 flex items-center justify-center shadow-glow-amber flex-shrink-0">
+                <img src="/raghav-emblem-transparent.png" alt="Raghav Emblem" className="w-full h-full object-contain" />
               </div>
               <div>
-                <h3 className="font-display font-bold text-lg text-white">Request for Quote (RFQ)</h3>
+                <h3 className="font-display font-bold text-base text-white leading-tight">Request for Quote (RFQ)</h3>
                 <p className="text-xs text-industrial-400">
                   {items.length} {items.length === 1 ? 'Machine' : 'Machines'} in your specification basket
                 </p>

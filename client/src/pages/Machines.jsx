@@ -88,7 +88,12 @@ export default function Machines() {
       
       {/* Page Header Banner */}
       <div className="rounded-3xl bg-industrial-900/80 border border-industrial-800 p-8 md:p-12 relative overflow-hidden">
-        <div className="max-w-2xl space-y-3">
+        {/* Background Watermark Emblem */}
+        <div className="absolute -right-16 -bottom-16 w-80 h-80 opacity-[0.04] pointer-events-none select-none">
+          <img src="/raghav-emblem-transparent.png" alt="" className="w-full h-full object-contain" />
+        </div>
+
+        <div className="max-w-2xl space-y-3 relative z-10">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/20 text-xs font-bold text-amber-brand">
             <Sparkles className="w-3.5 h-3.5" />
             <span>Certified Food-Grade SS-304 & SS-316</span>
@@ -229,6 +234,11 @@ export default function Machines() {
                   <div className="absolute bottom-3 right-3 bg-industrial-950/90 px-2 py-0.5 rounded text-[11px] font-mono text-industrial-300">
                     {machine.capacity}
                   </div>
+                  {/* Subtle Raghav watermark stamp */}
+                  <div className="absolute bottom-3 left-3 flex items-center gap-1 bg-industrial-950/80 backdrop-blur-sm px-1.5 py-0.5 rounded border border-industrial-800/80 text-[9px] text-industrial-300 font-mono">
+                    <img src="/raghav-emblem-transparent.png" alt="" className="w-3.5 h-3.5 object-contain" />
+                    <span className="text-amber-brand font-semibold">RFPM</span>
+                  </div>
                 </div>
 
                 <Link to={`/product/${machine.slug}`}>
@@ -293,12 +303,16 @@ export default function Machines() {
               key={machine._id || machine.slug}
               className="rounded-3xl bg-industrial-900/90 border border-industrial-800 hover:border-amber-500/40 p-5 flex flex-col md:flex-row items-center gap-6 transition-all duration-300 hover:-translate-y-0.5 shadow-card-dark"
             >
-              <div className="w-full md:w-56 h-44 rounded-2xl overflow-hidden bg-industrial-950 flex-shrink-0">
+              <div className="w-full md:w-56 h-44 rounded-2xl overflow-hidden bg-industrial-950 flex-shrink-0 relative">
                 <img
                   src={machine.images?.[0] || 'https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=800&q=80'}
                   alt={machine.name}
                   className="w-full h-full object-cover"
                 />
+                <div className="absolute bottom-2 left-2 flex items-center gap-1 bg-industrial-950/80 backdrop-blur-sm px-1.5 py-0.5 rounded border border-industrial-800/80 text-[9px] text-industrial-300 font-mono">
+                  <img src="/raghav-emblem-transparent.png" alt="" className="w-3 h-3 object-contain" />
+                  <span className="text-amber-brand font-semibold">RFPM</span>
+                </div>
               </div>
 
               <div className="flex-1 min-w-0 space-y-2">

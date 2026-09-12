@@ -37,8 +37,13 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="relative bg-industrial-950 border-t border-industrial-800/80 pt-16 pb-24 md:pb-12 text-industrial-400 text-sm">
-      <div className="max-w-7xl mx-auto px-4 md:px-8">
+    <footer className="relative bg-industrial-950 border-t border-industrial-800/80 pt-16 pb-24 md:pb-12 text-industrial-400 text-sm overflow-hidden">
+      {/* Background Watermark Emblem */}
+      <div className="absolute -right-16 -bottom-16 w-96 h-96 opacity-[0.035] pointer-events-none select-none">
+        <img src="/raghav-emblem-transparent.png" alt="" className="w-full h-full object-contain" />
+      </div>
+
+      <div className="max-w-7xl mx-auto px-4 md:px-8 relative z-10">
         
         {/* Top Feature Grid */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 pb-12 border-b border-industrial-800/80">
@@ -88,16 +93,28 @@ export default function Footer() {
           
           {/* Col 1 & 2: Company Bio & Details */}
           <div className="lg:col-span-2 flex flex-col gap-4">
-            <Link to="/" className="flex items-center gap-3 group">
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-amber-500 to-amber-700 p-0.5 flex items-center justify-center">
-                <div className="w-full h-full bg-industrial-950 rounded-[10px] flex items-center justify-center">
-                  <Wrench className="w-5 h-5 text-amber-brand" />
-                </div>
+            <Link to="/" className="flex items-center gap-3.5 group">
+              <div className="relative w-12 h-12 rounded-xl bg-gradient-to-br from-industrial-900 to-industrial-950 border border-amber-500/40 p-1.5 shadow-glow-amber flex items-center justify-center flex-shrink-0 group-hover:border-amber-400 transition-colors">
+                <img src="/raghav-emblem-transparent.png" alt="Raghav Logo" className="w-full h-full object-contain" />
               </div>
-              <span className="font-display font-bold text-xl text-white">
-                RAGHAV <span className="text-amber-brand">MACHINERY</span>
-              </span>
+              <div className="flex flex-col">
+                <span className="font-display font-black text-xl text-white tracking-tight">
+                  RAGHAV <span className="text-amber-brand">MACHINES</span>
+                </span>
+                <span className="text-[10px] font-mono text-industrial-400 uppercase tracking-widest">
+                  Food Processing Machine
+                </span>
+              </div>
             </Link>
+
+            {/* Official Certification Badge Logo */}
+            <div className="pt-1">
+              <img 
+                src="/raghav-logo.png" 
+                alt="Raghav Food Processing Machine Official Badge" 
+                className="h-16 w-auto object-contain rounded-xl bg-white/95 p-1.5 shadow-lg border border-industrial-700/50 hover:shadow-glow-amber transition-all" 
+              />
+            </div>
 
             <p className="text-industrial-400 text-sm leading-relaxed mt-1">
               Raghav Food Machinery Company is an Indian premier manufacturer and turnkey plant engineering firm specializing in canning retort autoclaves, continuous snacks extrusion lines, industrial fruit/vegetable processing systems, and food-grade stainless steel fabrication.

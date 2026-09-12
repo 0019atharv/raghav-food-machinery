@@ -45,9 +45,19 @@ export default function Catalog() {
 
       {/* Main Download Banner */}
       <div className="rounded-3xl bg-gradient-to-r from-industrial-900 via-industrial-850 to-industrial-900 border border-amber-500/30 p-8 md:p-12 shadow-2xl relative overflow-hidden flex flex-col lg:flex-row items-center justify-between gap-8">
-        <div className="space-y-4 max-w-xl">
-          <div className="w-12 h-12 rounded-2xl bg-amber-500/20 text-amber-brand flex items-center justify-center border border-amber-500/30">
-            <FileText className="w-6 h-6" />
+        {/* Subtle Background Watermark Emblem */}
+        <div className="absolute -right-12 -bottom-12 w-64 h-64 opacity-[0.05] pointer-events-none select-none">
+          <img src="/raghav-emblem-transparent.png" alt="" className="w-full h-full object-contain" />
+        </div>
+
+        <div className="space-y-4 max-w-xl relative z-10">
+          <div className="flex items-center gap-3">
+            <div className="w-12 h-12 rounded-2xl bg-amber-500/20 text-amber-brand flex items-center justify-center border border-amber-500/30">
+              <FileText className="w-6 h-6" />
+            </div>
+            <span className="text-xs font-mono font-semibold text-amber-brand uppercase tracking-wider">
+              Official Technical Catalog
+            </span>
           </div>
           <h2 className="font-display font-bold text-2xl text-white">
             Complete Industrial Food Machinery Master Catalog (PDF)
