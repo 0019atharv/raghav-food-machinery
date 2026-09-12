@@ -67,6 +67,8 @@ export default function Machines() {
 
   // Filter machines
   const filteredProducts = products.filter((p) => {
+    if (!p || p.isPublished === false) return false;
+
     const matchesCategory =
       selectedCategory === 'all' ||
       (p.categorySlug || '').toLowerCase() === selectedCategory.toLowerCase() ||

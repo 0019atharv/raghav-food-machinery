@@ -4,12 +4,13 @@ import { isUsingMongoDB, getFallbackDb, saveFallbackDb } from '../config/db.js';
 export const getProducts = async (req, res) => {
   try {
     const { category, search, featured, all } = req.query;
-    const isAdminView = all === 'true' || (req.user && req.user.role === 'admin');
+    // Only return unpublished/hidden products if explicitly requested via all=true by an authenticated admin
+    const isAdminView = all === 'true' && Boolean(req.user && req.user.role === 'admin');
 
     if (isUsingMongoDB()) {
       let query = {};
       if (!isAdminView) {
-        query.isPublished = true;
+        query.isPublished = { $ne: false };
       }
       if (category) {
         query.categorySlug = category.toLowerCase();
@@ -61,26 +62,31 @@ export const getProducts = async (req, res) => {
 export const getProductBySlug = async (req, res) => {
   try {
     const { slug } = req.params;
+    const isAdmin = Boolean(req.user && req.user.role === 'admin');
 
     if (isUsingMongoDB()) {
-      const product = await Product.findOne({ slug: slug.toLowerCase() });
+      const query = { slug: slug.toLowerCase() };
+      if (!isAdmin) {
+        query.isPublished = { $ne: false };
+      }
+      const product = await Product.findOne(query);
       if (!product) {
-        return res.status(404).json({ success: false, message: 'Machine not found.' });
+        return res.status(404).json({ success: false, message: 'Machine not found or is currently hidden from site.' });
       }
 
-      // Fetch related machines
+      // Fetch related machines (only published on public site)
       const related = await Product.find({
         category: product.category,
         _id: { $ne: product._id },
-        isPublished: true
+        isPublished: { $ne: false }
       }).limit(4);
 
       return res.json({ success: true, product, related });
     } else {
       const store = getFallbackDb();
       const product = store.products.find(p => p.slug.toLowerCase() === slug.toLowerCase());
-      if (!product) {
-        return res.status(404).json({ success: false, message: 'Machine not found.' });
+      if (!product || (!isAdmin && product.isPublished === false)) {
+        return res.status(404).json({ success: false, message: 'Machine not found or is currently hidden from site.' });
       }
 
       const related = store.products
@@ -193,6 +199,10 @@ export const updateProduct = async (req, res) => {
       updates.categorySlug = updates.category.toLowerCase().replace(/[^a-z0-9]+/g, '-');
     }
 
+    if (updates.isPublished !== undefined) {
+      updates.isPublished = Boolean(updates.isPublished);
+    }
+
     if (isUsingMongoDB()) {
       const updated = await Product.findByIdAndUpdate(id, updates, { new: true });
       if (!updated) {
@@ -222,22 +232,23 @@ export const togglePublish = async (req, res) => {
     if (isUsingMongoDB()) {
       const product = await Product.findById(id);
       if (!product) return res.status(404).json({ success: false, message: 'Product not found.' });
-      product.isPublished = !product.isPublished;
+      // If currently false, set to true; if true or undefined, set to false
+      product.isPublished = product.isPublished === false ? true : false;
       await product.save();
       return res.json({
         success: true,
-        message: `Product is now ${product.isPublished ? 'Published on Site' : 'Hidden in Drafts'}`,
+        message: `Machine is now ${product.isPublished ? 'Live on Site' : 'Hidden from Site (Draft)'}`,
         isPublished: product.isPublished
       });
     } else {
       const store = getFallbackDb();
       const product = store.products.find(p => p._id === id);
       if (!product) return res.status(404).json({ success: false, message: 'Product not found.' });
-      product.isPublished = !product.isPublished;
+      product.isPublished = product.isPublished === false ? true : false;
       saveFallbackDb(store);
       return res.json({
         success: true,
-        message: `Product is now ${product.isPublished ? 'Published on Site' : 'Hidden in Drafts'}`,
+        message: `Machine is now ${product.isPublished ? 'Live on Site' : 'Hidden from Site (Draft)'}`,
         isPublished: product.isPublished
       });
     }

@@ -12,7 +12,7 @@ import { requireAdmin, optionalAuth } from '../middleware/auth.js';
 const router = express.Router();
 
 router.get('/', optionalAuth, getProducts);
-router.get('/:slug', getProductBySlug);
+router.get('/:slug', optionalAuth, getProductBySlug);
 router.post('/', requireAdmin, createProduct);
 router.put('/:id', requireAdmin, updateProduct);
 router.patch('/:id/toggle-publish', requireAdmin, togglePublish);

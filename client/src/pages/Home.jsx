@@ -41,7 +41,10 @@ export default function Home() {
           api.getCategories(),
           api.getTestimonials()
         ]);
-        if (prodRes.success) setFeaturedProducts(prodRes.products || []);
+        if (prodRes.success) {
+          const publishedFeatured = (prodRes.products || []).filter(p => p && p.isPublished !== false);
+          setFeaturedProducts(publishedFeatured);
+        }
         if (catRes.success) setCategories(catRes.categories || []);
         if (testRes.success) setTestimonials(testRes.testimonials || []);
       } catch (err) {

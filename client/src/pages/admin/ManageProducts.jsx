@@ -46,6 +46,7 @@ export default function ManageProducts() {
   const [imageUrl, setImageUrl] = useState('');
   const [isFeatured, setIsFeatured] = useState(false);
   const [isPublished, setIsPublished] = useState(true); // Default published to site!
+  const [statusFilter, setStatusFilter] = useState('all'); // 'all' | 'live' | 'hidden'
   const [specList, setSpecList] = useState([{ label: 'Working Pressure', value: 'Standard' }]);
 
   const [uploadingImage, setUploadingImage] = useState(false);
@@ -209,16 +210,16 @@ export default function ManageProducts() {
         if (res.success) {
           setIsModalOpen(false);
           loadProducts();
-          setSuccessMsg('Machine updated and published!');
-          setTimeout(() => setSuccessMsg(''), 3000);
+          setSuccessMsg(isPublished ? 'Machine updated and LIVE on site!' : 'Machine updated and saved as HIDDEN draft!');
+          setTimeout(() => setSuccessMsg(''), 4000);
         }
       } else {
         const res = await api.createProduct(payload);
         if (res.success) {
           setIsModalOpen(false);
           loadProducts();
-          setSuccessMsg('New machine created and published to site!');
-          setTimeout(() => setSuccessMsg(''), 3000);
+          setSuccessMsg(isPublished ? 'New machine created and LIVE on site!' : 'New machine created as HIDDEN draft!');
+          setTimeout(() => setSuccessMsg(''), 4000);
         }
       }
     } catch (err) {
@@ -228,8 +229,13 @@ export default function ManageProducts() {
     }
   };
 
+  const liveCount = (products || []).filter(p => p.isPublished !== false).length;
+  const hiddenCount = (products || []).filter(p => p.isPublished === false).length;
+
   const filtered = (products || []).filter(p => {
     if (!p) return false;
+    if (statusFilter === 'live' && p.isPublished === false) return false;
+    if (statusFilter === 'hidden' && p.isPublished !== false) return false;
     const q = (search || '').trim().toLowerCase();
     if (!q) return true;
     const nameMatch = p.name ? String(p.name).toLowerCase().includes(q) : false;
@@ -272,20 +278,62 @@ export default function ManageProducts() {
         </div>
       )}
 
-      {/* Search Toolbar */}
-      <div className="flex items-center justify-between gap-4">
-        <div className="relative w-full max-w-sm">
-          <Search className="w-4 h-4 text-industrial-500 absolute left-3.5 top-3" />
-          <input
-            type="text"
-            value={search}
-            onChange={(e) => setSearch(e.target.value)}
-            placeholder="Search machines by name or category..."
-            className="w-full bg-industrial-900 border border-industrial-800 rounded-xl pl-10 pr-4 py-2.5 text-xs text-white placeholder-industrial-500 focus:border-amber-brand focus:outline-none"
-          />
+      {/* Search & Status Filter Toolbar */}
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+        <div className="flex flex-wrap items-center gap-3">
+          <div className="relative w-full sm:w-72">
+            <Search className="w-4 h-4 text-industrial-500 absolute left-3.5 top-3" />
+            <input
+              type="text"
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
+              placeholder="Search machines..."
+              className="w-full bg-industrial-900 border border-industrial-800 rounded-xl pl-10 pr-4 py-2 text-xs text-white placeholder-industrial-500 focus:border-amber-brand focus:outline-none"
+            />
+          </div>
+
+          {/* Status Filter Tabs */}
+          <div className="flex items-center gap-1 bg-industrial-950 p-1 rounded-xl border border-industrial-800 text-xs">
+            <button
+              type="button"
+              onClick={() => setStatusFilter('all')}
+              className={`px-3 py-1.5 rounded-lg font-semibold transition-all ${
+                statusFilter === 'all'
+                  ? 'bg-industrial-800 text-white shadow'
+                  : 'text-industrial-400 hover:text-white'
+              }`}
+            >
+              All ({products.length})
+            </button>
+            <button
+              type="button"
+              onClick={() => setStatusFilter('live')}
+              className={`px-3 py-1.5 rounded-lg font-semibold flex items-center gap-1.5 transition-all ${
+                statusFilter === 'live'
+                  ? 'bg-emerald-500/20 text-emerald-400 border border-emerald-500/40 shadow'
+                  : 'text-emerald-500 hover:text-emerald-400'
+              }`}
+            >
+              <span className="w-2 h-2 rounded-full bg-emerald-400" />
+              Live on Site ({liveCount})
+            </button>
+            <button
+              type="button"
+              onClick={() => setStatusFilter('hidden')}
+              className={`px-3 py-1.5 rounded-lg font-semibold flex items-center gap-1.5 transition-all ${
+                statusFilter === 'hidden'
+                  ? 'bg-amber-500/20 text-amber-300 border border-amber-500/40 shadow'
+                  : 'text-industrial-400 hover:text-amber-300'
+              }`}
+            >
+              <span className="w-2 h-2 rounded-full bg-amber-400" />
+              Hidden / Drafts ({hiddenCount})
+            </button>
+          </div>
         </div>
+
         <span className="text-xs text-industrial-400">
-          Total: <strong className="text-white">{filtered.length}</strong> machines
+          Showing: <strong className="text-white">{filtered.length}</strong> of {products.length}
         </span>
       </div>
 
@@ -356,26 +404,29 @@ export default function ManageProducts() {
                       {p.price || 'Contact for Quote'}
                     </td>
 
-                    {/* Published Toggle Switch */}
+                    {/* Published on Site Toggle Switch */}
                     <td className="px-6 py-4">
                       <button
+                        type="button"
                         onClick={() => handleTogglePublish(p._id)}
-                        className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-bold transition-all ${
+                        className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-[11px] font-bold transition-all shadow-sm ${
                           p.isPublished !== false
-                            ? 'bg-emerald-500/20 text-emerald-400 border border-emerald-500/30'
-                            : 'bg-industrial-800 text-industrial-500 border border-industrial-700'
+                            ? 'bg-emerald-500/20 text-emerald-400 border border-emerald-500/40 hover:bg-emerald-500/30'
+                            : 'bg-amber-500/10 text-amber-300 border border-amber-500/30 hover:bg-amber-500/20'
                         }`}
-                        title="Click to toggle live publication on storefront"
+                        title={p.isPublished !== false ? "Currently LIVE on website. Click to HIDE." : "Currently HIDDEN from website. Click to make LIVE."}
                       >
                         {p.isPublished !== false ? (
                           <>
-                            <Eye className="w-3 h-3 text-emerald-400" />
+                            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+                            <Eye className="w-3.5 h-3.5 text-emerald-400" />
                             <span>Live on Site</span>
                           </>
                         ) : (
                           <>
-                            <EyeOff className="w-3 h-3 text-industrial-500" />
-                            <span>Hidden / Draft</span>
+                            <span className="w-2 h-2 rounded-full bg-amber-400" />
+                            <EyeOff className="w-3.5 h-3.5 text-amber-400" />
+                            <span>Hidden on Site</span>
                           </>
                         )}
                       </button>
