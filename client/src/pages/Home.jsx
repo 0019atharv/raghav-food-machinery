@@ -65,6 +65,34 @@ export default function Home() {
     PackageCheck
   };
 
+  const heroData = {
+    badge: settings.hero?.badge || "India's Leading Industrial Food Machinery Engineering",
+    titleLine1: settings.hero?.titleLine1 || "Industrial Food",
+    titleHighlight: settings.hero?.titleHighlight || "Processing, Canning",
+    titleLine3: settings.hero?.titleLine3 || "& Snacks Machinery",
+    description: settings.hero?.description || "Engineered with certified Food-Grade SS-304/SS-316. From high-pressure Canning Retorts and Snacks Extruders to turnkey automated plants — delivered with factory direct warranty and on-site commissioning across India.",
+    stat1Number: settings.hero?.stat1Number || "500+",
+    stat1Label: settings.hero?.stat1Label || "Installed Plants Across India",
+    stat2Number: settings.hero?.stat2Number || "30+",
+    stat2Label: settings.hero?.stat2Label || "Years Food Tech Expertise",
+    stat3Number: settings.hero?.stat3Number || "100%",
+    stat3Label: settings.hero?.stat3Label || "Food-Grade SS-304/SS-316",
+    stat4Number: settings.hero?.stat4Number || "24/7",
+    stat4Label: settings.hero?.stat4Label || "Engineer AMC Support",
+    showcaseTag: settings.hero?.showcaseTag || "Flagship: Automatic Canning Retort 500L",
+    showcaseImage: settings.hero?.showcaseImage || "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1000&q=80",
+    showcaseModel: settings.hero?.showcaseModel || "RFPM-RET-500",
+    showcaseStockStatus: settings.hero?.showcaseStockStatus || "In Stock / Ready Dispatch",
+    showcaseSpec1Label: settings.hero?.showcaseSpec1Label || "Batch Capacity",
+    showcaseSpec1Value: settings.hero?.showcaseSpec1Value || "500 Liters",
+    showcaseSpec2Label: settings.hero?.showcaseSpec2Label || "Temperature",
+    showcaseSpec2Value: settings.hero?.showcaseSpec2Value || "Up to 135°C",
+    showcaseSpec3Label: settings.hero?.showcaseSpec3Label || "Automation",
+    showcaseSpec3Value: settings.hero?.showcaseSpec3Value || "PLC + HMI",
+    showcaseButtonText: settings.hero?.showcaseButtonText || "View Machine Specs",
+    showcaseButtonLink: settings.hero?.showcaseButtonLink || "/product/automatic-canning-retort-500l"
+  };
+
   return (
     <div className="relative z-10 space-y-24 pb-20">
       
@@ -85,19 +113,19 @@ export default function Home() {
             {/* Trust Badge */}
             <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-industrial-900/90 border border-amber-500/30 text-xs font-semibold text-amber-brand shadow-sm backdrop-blur-md">
               <span className="w-2 h-2 rounded-full bg-amber-brand animate-ping" />
-              <span>India's Leading Industrial Food Machinery Engineering</span>
+              <span>{heroData.badge}</span>
             </div>
 
             {/* Main Punchy Title */}
             <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.1]">
-              Industrial Food <br />
-              <span className="text-gradient-amber">Processing, Canning</span> <br />
-              & Snacks Machinery
+              {heroData.titleLine1} <br />
+              <span className="text-gradient-amber">{heroData.titleHighlight}</span> <br />
+              {heroData.titleLine3}
             </h1>
 
             {/* Description */}
             <p className="text-base sm:text-lg text-industrial-300 max-w-2xl leading-relaxed">
-              Engineered with certified <strong>Food-Grade SS-304/SS-316</strong>. From high-pressure <strong>Canning Retorts</strong> and <strong>Snacks Extruders</strong> to turnkey automated plants — delivered with factory direct warranty and on-site commissioning across India.
+              {heroData.description}
             </p>
 
             {/* CTAs */}
@@ -154,14 +182,14 @@ export default function Home() {
               {/* Highlight Tag */}
               <div className="absolute top-6 left-6 z-20 bg-industrial-950/90 border border-amber-500/40 px-3 py-1 rounded-full text-[11px] font-bold text-amber-brand flex items-center gap-1.5 shadow-md">
                 <Sparkles className="w-3.5 h-3.5" />
-                Flagship: Automatic Canning Retort 500L
+                {heroData.showcaseTag}
               </div>
 
               {/* Machine Image */}
               <div className="relative h-72 sm:h-80 rounded-2xl overflow-hidden bg-industrial-950">
                 <img
-                  src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1000&q=80"
-                  alt="Industrial Canning Retort Sterilizer Autoclave"
+                  src={heroData.showcaseImage}
+                  alt={heroData.showcaseTag}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-industrial-950 via-transparent to-transparent opacity-80" />
@@ -177,34 +205,34 @@ export default function Home() {
               <div className="p-4 space-y-3">
                 <div className="flex items-center justify-between">
                   <span className="text-xs font-mono text-amber-brand font-bold uppercase tracking-wider">
-                    Model: RFPM-RET-500
+                    Model: {heroData.showcaseModel}
                   </span>
                   <span className="text-xs bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 px-2 py-0.5 rounded font-semibold">
-                    In Stock / Ready Dispatch
+                    {heroData.showcaseStockStatus}
                   </span>
                 </div>
 
                 <div className="grid grid-cols-3 gap-2 text-center text-xs">
                   <div className="p-2 rounded-xl bg-industrial-950 border border-industrial-800">
-                    <span className="text-[10px] text-industrial-500 block">Batch Capacity</span>
-                    <strong className="text-white text-xs">500 Liters</strong>
+                    <span className="text-[10px] text-industrial-500 block">{heroData.showcaseSpec1Label}</span>
+                    <strong className="text-white text-xs">{heroData.showcaseSpec1Value}</strong>
                   </div>
                   <div className="p-2 rounded-xl bg-industrial-950 border border-industrial-800">
-                    <span className="text-[10px] text-industrial-500 block">Temperature</span>
-                    <strong className="text-white text-xs">Up to 135°C</strong>
+                    <span className="text-[10px] text-industrial-500 block">{heroData.showcaseSpec2Label}</span>
+                    <strong className="text-white text-xs">{heroData.showcaseSpec2Value}</strong>
                   </div>
                   <div className="p-2 rounded-xl bg-industrial-950 border border-industrial-800">
-                    <span className="text-[10px] text-industrial-500 block">Automation</span>
-                    <strong className="text-white text-xs">PLC + HMI</strong>
+                    <span className="text-[10px] text-industrial-500 block">{heroData.showcaseSpec3Label}</span>
+                    <strong className="text-white text-xs">{heroData.showcaseSpec3Value}</strong>
                   </div>
                 </div>
 
                 <div className="pt-2 flex items-center gap-2">
                   <Link
-                    to="/product/automatic-canning-retort-500l"
+                    to={heroData.showcaseButtonLink}
                     className="flex-1 text-center bg-industrial-800 hover:bg-industrial-700 text-white font-semibold py-2.5 rounded-xl text-xs transition-colors border border-industrial-700"
                   >
-                    View Machine Specs
+                    {heroData.showcaseButtonText}
                   </Link>
                   <button
                     onClick={() => {
@@ -225,20 +253,20 @@ export default function Home() {
         {/* Live Machinery Stats Bar */}
         <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4 p-6 rounded-2xl bg-industrial-900/60 border border-industrial-800/80 backdrop-blur-xl">
           <div className="text-center p-2">
-            <div className="font-display font-black text-3xl md:text-4xl text-gradient-amber">500+</div>
-            <div className="text-xs font-semibold text-industrial-300 mt-1">Installed Plants Across India</div>
+            <div className="font-display font-black text-3xl md:text-4xl text-gradient-amber">{heroData.stat1Number}</div>
+            <div className="text-xs font-semibold text-industrial-300 mt-1">{heroData.stat1Label}</div>
           </div>
           <div className="text-center p-2 border-l border-industrial-800/80">
-            <div className="font-display font-black text-3xl md:text-4xl text-white">30+</div>
-            <div className="text-xs font-semibold text-industrial-300 mt-1">Years Food Tech Expertise</div>
+            <div className="font-display font-black text-3xl md:text-4xl text-white">{heroData.stat2Number}</div>
+            <div className="text-xs font-semibold text-industrial-300 mt-1">{heroData.stat2Label}</div>
           </div>
           <div className="text-center p-2 border-l border-industrial-800/80">
-            <div className="font-display font-black text-3xl md:text-4xl text-gradient-amber">100%</div>
-            <div className="text-xs font-semibold text-industrial-300 mt-1">Food-Grade SS-304/SS-316</div>
+            <div className="font-display font-black text-3xl md:text-4xl text-gradient-amber">{heroData.stat3Number}</div>
+            <div className="text-xs font-semibold text-industrial-300 mt-1">{heroData.stat3Label}</div>
           </div>
           <div className="text-center p-2 border-l border-industrial-800/80">
-            <div className="font-display font-black text-3xl md:text-4xl text-white">24/7</div>
-            <div className="text-xs font-semibold text-industrial-300 mt-1">Engineer AMC Support</div>
+            <div className="font-display font-black text-3xl md:text-4xl text-white">{heroData.stat4Number}</div>
+            <div className="text-xs font-semibold text-industrial-300 mt-1">{heroData.stat4Label}</div>
           </div>
         </div>
 

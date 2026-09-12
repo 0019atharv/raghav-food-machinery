@@ -34,6 +34,9 @@ export const updateSettings = async (req, res) => {
         settings = await SiteSetting.create({ ...initialSettings, ...updates });
       } else {
         Object.assign(settings, updates);
+        if (updates.hero) settings.markModified('hero');
+        if (updates.bannerNotice) settings.markModified('bannerNotice');
+        if (updates.socialLinks) settings.markModified('socialLinks');
         await settings.save();
       }
       return res.json({ success: true, message: 'Site settings updated successfully!', settings });
