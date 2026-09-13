@@ -126,10 +126,18 @@ async function seedDatabaseIfEmpty() {
       });
       console.log('✅ [Database] Seeded Products, Categories, Blogs, Testimonials & Admin User into MongoDB!');
     } else {
-      console.log(`ℹ️ [Database] MongoDB already populated (${productCount} products found).`);
+      console.log(`ℹ️ [Database] MongoDB already populated (${productCount} products found). Syncing missing products...`);
+      for (const p of initialProducts) {
+        const exists = await Product.findOne({ slug: p.slug });
+        if (!exists) {
+          await Product.create(p);
+          console.log(`✅ [Database] Synced new product to MongoDB: ${p.slug}`);
+        }
+      }
     }
   } catch (seedErr) {
     console.error('[Database] Seeding error:', seedErr);
   }
+
 }
 
