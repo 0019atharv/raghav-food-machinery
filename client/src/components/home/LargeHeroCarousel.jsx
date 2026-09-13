@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import { 
   ChevronLeft, 
@@ -14,139 +14,216 @@ import {
 import { useCart } from '../../context/CartContext';
 import { useSettings } from '../../context/SettingsContext';
 
+// Default authentic fallback slides (used while products load or as fallback)
+const defaultFallbackSlides = [
+  {
+    id: "raghav-can-seamer",
+    name: "Raghav Can Seamer Machine (Semi-Automatic Double Seamer)",
+    tagline: "Heavy-Duty Tabletop Electric Double Can Seamer",
+    badge: "⭐ Flagship Seamer",
+    model: "RFPM-SEAM-01",
+    image: "https://res.cloudinary.com/vgmmtb5k/image/upload/v1789296405/raghav-food-processing-machines/raghav-can-seamer.jpg",
+    slug: "raghav-can-seamer",
+    price: "₹ 60,000",
+    mrp: "₹ 75,000",
+    stockStatus: "In Stock / Ready Dispatch",
+    shortDesc: "Commercial tabletop Semi-Automatic Electric Can Seamer Machine for tin, aluminum, and composite food/beverage cans with airtight hermetic double seaming.",
+    specs: [
+      { label: "Sealing Speed", value: "15 - 25 Cans/Min" },
+      { label: "Motor", value: "0.5 HP Single Phase" },
+      { label: "Can Diameter", value: "39 - 150 mm" },
+      { label: "Rollers", value: "Hardened Alloy Steel" }
+    ]
+  },
+  {
+    id: "raghav-band-sealer-machine",
+    name: "Raghav Horizontal Continuous Band Sealer Machine",
+    tagline: "Automated Conveyor-Driven Continuous Pouch Sealer",
+    badge: "⭐ Digital PID Controlled",
+    model: "RFPM-SEAL-02",
+    image: "https://res.cloudinary.com/vgmmtb5k/image/upload/v1789296405/raghav-food-processing-machines/raghav-band-sealer-machine.jpg",
+    slug: "raghav-band-sealer-machine",
+    price: "₹ 25,000",
+    mrp: "₹ 32,000",
+    stockStatus: "In Stock / Ready Dispatch",
+    shortDesc: "Continuous heat band sealer with digital PID temperature regulation, brass heating blocks, and embossing date coding wheel for snacks, spices, and pulses.",
+    specs: [
+      { label: "Conveyor Speed", value: "0 - 12 Mtr/Min" },
+      { label: "Sealing Width", value: "8 - 12 mm Knurled" },
+      { label: "Temp Range", value: "0 - 300°C PID" },
+      { label: "Construction", value: "Food-Grade SS-304" }
+    ]
+  },
+  {
+    id: "raghav-mixing-steam-jacket-kettle",
+    name: "Raghav Motorized Tilting Steam Jacketed Mixing Kettle",
+    tagline: "Uniform Cooking & Blending with Wall Scraper Agitator",
+    badge: "🍲 Commercial Cooking Vessel",
+    model: "RFPM-KET-03",
+    image: "https://res.cloudinary.com/vgmmtb5k/image/upload/v1789296406/raghav-food-processing-machines/raghav-mixing-steam-jacket-kettle.jpg",
+    slug: "raghav-mixing-steam-jacket-kettle",
+    price: "₹ 1,35,000",
+    mrp: "₹ 1,65,000",
+    stockStatus: "In Stock / Ready Dispatch",
+    shortDesc: "Industrial steam-jacketed cooking kettle with top motorized agitator, Teflon wall scrapers, and worm-gear tilting handwheel for scorch-free cooking.",
+    specs: [
+      { label: "Batch Capacity", value: "100 - 300 Liters" },
+      { label: "Agitator Drive", value: "1.5 HP Geared Motor" },
+      { label: "Scraper Blades", value: "Food-Grade PTFE" },
+      { label: "Tilting", value: "90° Worm Gear Handwheel" }
+    ]
+  },
+  {
+    id: "raghav-double-burner-bhatti",
+    name: "Raghav Heavy-Duty SS Double Burner Bhatti",
+    tagline: "Commercial High-Calorie Gas Range for Food Factories & Banquets",
+    badge: "🔥 High-BTU Gas Range",
+    model: "RFPM-BHA-04",
+    image: "https://res.cloudinary.com/vgmmtb5k/image/upload/v1789296407/raghav-food-processing-machines/raghav-double-burner-bhatti.jpg",
+    slug: "raghav-double-burner-bhatti",
+    price: "₹ 22,500",
+    mrp: "₹ 28,000",
+    stockStatus: "In Stock / Ready Dispatch",
+    shortDesc: "Commercial stainless steel double burner bhatti with heavy cast-iron pan trivets, pilot burners, and slide-out grease trays for heavy-duty cooking.",
+    specs: [
+      { label: "Burner Count", value: "2 x High-Calorie Cast Iron" },
+      { label: "Gas Source", value: "Commercial LPG / PNG" },
+      { label: "Top Sheet", value: "16-Gauge SS-304" },
+      { label: "Pot Fit", value: "Up to 100L Degchis" }
+    ]
+  },
+  {
+    id: "raghav-hydraulic-juice-press",
+    name: "Raghav Heavy-Duty Hydraulic Cold Juice Press",
+    tagline: "High-Tonnage Cold Extraction with SS-304 Basin",
+    badge: "🍊 Cold-Press Juicing",
+    model: "RFPM-JUC-05",
+    image: "https://res.cloudinary.com/vgmmtb5k/image/upload/v1789295915/raghav-food-processing-machines/raghav-hydraulic-juice-press.jpg",
+    slug: "raghav-hydraulic-juice-press",
+    price: "₹ 1,75,000",
+    mrp: "₹ 2,10,000",
+    stockStatus: "In Stock / Ready Dispatch",
+    shortDesc: "High-yield commercial hydraulic cold press delivering 20 to 30 tons of pressing force for juice extraction without thermal oxidation.",
+    specs: [
+      { label: "Pressure Force", value: "20 - 30 Tons Hydraulic" },
+      { label: "Power Pack", value: "3 HP Heavy Gear Pump" },
+      { label: "Capacity", value: "50 - 150 Kg/Batch" },
+      { label: "Contact Parts", value: "Food-Grade SS-304" }
+    ]
+  },
+  {
+    id: "raghav-12-tray-stainless-steel-dryer",
+    name: "Raghav 12-Tray Industrial Stainless Steel Dehydrator Dryer",
+    tagline: "Precision Controlled Hot Air Dehydration System",
+    badge: "🌿 Industrial Dehydrator",
+    model: "RFPM-DRY-06",
+    image: "https://res.cloudinary.com/vgmmtb5k/image/upload/v1789295914/raghav-food-processing-machines/raghav-12-tray-stainless-steel-dryer.jpg",
+    slug: "raghav-12-tray-stainless-steel-dryer",
+    price: "₹ 1,45,000",
+    mrp: "₹ 1,75,000",
+    stockStatus: "In Stock / Ready Dispatch",
+    shortDesc: "12-tray commercial food dehydrator with digital PID thermostat and forced-air convection for herbs, fruits, vegetables, spices, and pet treats.",
+    specs: [
+      { label: "Tray Capacity", value: "12 SS-304 Mesh Trays" },
+      { label: "Batch Load", value: "30 - 60 Kg / Batch" },
+      { label: "Heater Power", value: "4.5 kW Digital PID" },
+      { label: "Air Circulation", value: "Forced Convection Blower" }
+    ]
+  }
+];
+
 export default function LargeHeroCarousel({ featuredProducts = [] }) {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
   const { addToCart } = useCart();
   const { settings } = useSettings();
 
-  const slides = [
-    {
-      id: 1,
-      name: "Raghav Continuous Band Sealing Machine",
-      tagline: "High-Speed Automated Industrial Packaging Line",
-      badge: "⭐ Flagship Model 2026",
-      model: "RFPM-CBS-900",
-      image: "https://res.cloudinary.com/vgmmtb5k/image/upload/v1789208820/raghav-food-processing-machines/raghav-continuous-band-sealer-hero-branded.jpg",
-      slug: "raghav-horizontal-continuous-band-sealing-machine",
-      price: "₹ 25,000",
-      mrp: "₹ 35,000",
-      stockStatus: "In Stock / Ready Dispatch",
-      shortDesc: "Automated continuous conveyor heat sealing for pouches, laminated foil, and plastic barrier bags with precision digital PID temperature controller.",
-      specs: [
-        { label: "Sealing Speed", value: "0 - 12 Mtr/Min" },
-        { label: "Temperature", value: "PID 0 - 300°C" },
-        { label: "Conveyor Load", value: "Up to 5 Kg" },
-        { label: "Metallurgy", value: "Food-Grade SS-304" }
-      ]
-    },
-    {
-      id: 2,
-      name: "Raghav 500L Canning Retort Autoclave Sterilizer",
-      tagline: "Commercial High-Pressure Thermal Processing",
-      badge: "⚡ Heavy-Duty Certified",
-      model: "RFPM-RET-500",
-      image: "https://res.cloudinary.com/dmvkcqt1u/image/upload/v1788003361/raghavfood/ctrtkwecbs25xcz6kmin.webp",
-      slug: "raghav-commercial-canning-retort-autoclave-sterilizer-machine",
-      price: "₹ 195,000",
-      mrp: "₹ 220,000",
-      stockStatus: "Factory Built / Certified",
-      shortDesc: "Commercial high-pressure sterilization autoclave for retort pouches, glass jars, and tin cans to achieve commercial sterility and FSSAI shelf life.",
-      specs: [
-        { label: "Batch Capacity", value: "500 Liters" },
-        { label: "Working Temp", value: "121°C - 134°C" },
-        { label: "Design Pressure", value: "30 PSI Hydro Tested" },
-        { label: "Construction", value: "SS-304 / SS-316" }
-      ]
-    },
-    {
-      id: 3,
-      name: "Raghav Tilting Steam Jacketed Mixing Kettle",
-      tagline: "Uniform Cooking, Boiling & Agitation with Scraper",
-      badge: "🍲 Commercial Food Vessel",
-      model: "RFPM-SJK-200",
-      image: "https://res.cloudinary.com/vgmmtb5k/image/upload/v1789202430/raghav-food-processing-machines/raghav-mixing-steam-jacket-kettle.jpg",
-      slug: "raghav-motorized-mixing-steam-jacketed-kettle",
-      price: "₹ 135,000",
-      mrp: "₹ 145,000",
-      stockStatus: "Ready Commissioning",
-      shortDesc: "Double-jacketed cooking pan with motorized Teflon scrapers preventing product sticking for jams, sauces, syrups, and confectionery.",
-      specs: [
-        { label: "Capacity", value: "200 Liters" },
-        { label: "Agitator Blade", value: "Motorized Scraper" },
-        { label: "Tilting Range", value: "90° Worm Gear" },
-        { label: "Heating", value: "Steam Jacket" }
-      ]
-    },
-    {
-      id: 4,
-      name: "Raghav Automatic Vertical FFS Pouch Packaging",
-      tagline: "Form-Fill-Seal Packaging Automation System",
-      badge: "📦 Packaging Automation",
-      model: "RFPM-FFS-500",
-      image: "https://res.cloudinary.com/vgmmtb5k/image/upload/v1789202428/raghav-food-processing-machines/raghav-ffs-pouch-packing-machine.jpg",
-      slug: "raghav-automatic-ffs-pouch-packing-machine",
-      price: "₹ 165,000",
-      mrp: "₹ 185,000",
-      stockStatus: "In Stock / Ready Dispatch",
-      shortDesc: "High-speed vertical form-fill-seal unit for powders, spices, granules, and snack food with digital PLC touchscreen automation.",
-      specs: [
-        { label: "Speed", value: "25 - 60 PPM" },
-        { label: "Weight Range", value: "10g - 500g" },
-        { label: "Automation", value: "Delta PLC + HMI" },
-        { label: "Sealing", value: "Center / 3-Side Seal" }
-      ]
-    },
-    {
-      id: 5,
-      name: "Raghav Blower Cyclone Spice & Grain Pulverizer",
-      tagline: "Continuous Commercial Grinding & Fine Pulverizing",
-      badge: "🌾 Heavy Grinding Unit",
-      model: "RFPM-BCP-100",
-      image: "https://res.cloudinary.com/dmvkcqt1u/image/upload/v1786879815/raghavfood/bzimaafoe0a49biue1s6.webp",
-      slug: "raghav-blower-cyclone-pulverizer-machine",
-      price: "₹ 145,000",
-      mrp: "₹ 165,000",
-      stockStatus: "In Stock / Ready Dispatch",
-      shortDesc: "Heavy-duty hammer mill with integrated cyclone dust collector, air-cooling blower, and grading sieves for chilli, turmeric, spices, and grains.",
-      specs: [
-        { label: "Output Capacity", value: "150 - 250 Kg/Hr" },
-        { label: "Main Motor", value: "10 HP 3-Phase" },
-        { label: "Fineness", value: "60 - 120 Mesh" },
-        { label: "Separation", value: "Cyclone Dust Collector" }
-      ]
-    },
-    {
-      id: 6,
-      name: "Raghav Industrial Screw Type Juice Extractor",
-      tagline: "High-Yield Cold-Press Spiral Juicing Machine",
-      badge: "🍊 Cold-Press Juicing",
-      model: "RFPM-STJ-50",
-      image: "https://res.cloudinary.com/vgmmtb5k/image/upload/v1789202425/raghav-food-processing-machines/raghav-screw-type-juicer.png",
-      slug: "raghav-screw-type-spiral-juicer-machine",
-      price: "₹ 32,000",
-      mrp: "₹ 38,000",
-      stockStatus: "In Stock / Ready Dispatch",
-      shortDesc: "Continuous spiral auger juice press for ginger, amla, apples, tomatoes, citrus, and leafy vegetables with automatic pulp/juice separation.",
-      specs: [
-        { label: "Capacity", value: "300 - 500 Kg/Hr" },
-        { label: "Juice Yield", value: "Up to 85% Recovery" },
-        { label: "Auger Spiral", value: "Precision SS-304" },
-        { label: "Discharge", value: "Continuous Dry Pomace" }
-      ]
+  // Dynamically map real products to slides whenever products change
+  const slides = useMemo(() => {
+    if (!Array.isArray(featuredProducts) || featuredProducts.length === 0) {
+      return defaultFallbackSlides;
     }
-  ];
 
-  // Auto-play timer: reduced by 2 seconds (from 5000ms to 3000ms)
+    const candidateProducts = featuredProducts.filter(p => p && p.isPublished !== false);
+    if (candidateProducts.length === 0) return defaultFallbackSlides;
+
+    const featuredOnly = candidateProducts.filter(p => p.isFeatured === true);
+    // Prioritize featured products, or pick first 6-8 products
+    const selectedList = featuredOnly.length >= 3 
+      ? featuredOnly.slice(0, 8) 
+      : candidateProducts.slice(0, 8);
+
+    return selectedList.map((p, idx) => {
+      const firstImage = (Array.isArray(p.images) && p.images.length > 0)
+        ? p.images[0]
+        : (p.image || `/images/products/${p.slug}.jpg`);
+
+      // Extract up to 4 meaningful specifications
+      const specs = [];
+      if (Array.isArray(p.specifications) && p.specifications.length > 0) {
+        for (const s of p.specifications) {
+          if (specs.length >= 4) break;
+          if (s && s.label && s.value) {
+            specs.push({ label: s.label, value: s.value });
+          }
+        }
+      }
+      if (specs.length < 4 && p.capacity) specs.push({ label: 'Capacity', value: p.capacity });
+      if (specs.length < 4 && p.power) specs.push({ label: 'Power / Motor', value: p.power });
+      if (specs.length < 4 && p.materialGrade) specs.push({ label: 'Material', value: p.materialGrade });
+      if (specs.length < 4 && p.automationGrade) specs.push({ label: 'Automation', value: p.automationGrade });
+      if (specs.length < 4 && p.voltage) specs.push({ label: 'Voltage', value: p.voltage });
+
+      const rawPriceStr = String(p.price || '');
+      const numPrice = parseInt(rawPriceStr.replace(/\D/g, ''), 10);
+      const formattedPrice = rawPriceStr ? (rawPriceStr.startsWith('₹') ? rawPriceStr : `₹ ${rawPriceStr}`) : 'Price on Request';
+      const estimatedMrp = numPrice && !isNaN(numPrice)
+        ? `₹ ${(Math.round((numPrice * 1.25) / 500) * 500).toLocaleString('en-IN')}`
+        : '';
+
+      const modelSpec = p.specifications?.find(s => s.label?.toLowerCase().includes('model'));
+      const modelCode = modelSpec?.value || `RFPM-${(p.categorySlug || 'IND').replace(/[^a-zA-Z]/g, '').substring(0, 3).toUpperCase()}-${String(idx + 1).padStart(2, '0')}`;
+
+      return {
+        id: p._id || p.slug || idx,
+        name: p.name,
+        tagline: p.shortDescription || p.category || "High-Yield Food Processing Equipment",
+        badge: p.isFeatured ? "⭐ Featured Machine" : (p.category || "Industrial Standard"),
+        model: modelCode,
+        image: firstImage,
+        slug: p.slug,
+        price: formattedPrice,
+        mrp: estimatedMrp,
+        stockStatus: "In Stock / Ready Dispatch",
+        shortDesc: p.shortDescription || (p.fullDescription ? p.fullDescription.slice(0, 160) + '...' : ''),
+        specs: specs.length > 0 ? specs : [
+          { label: "Material", value: "Food-Grade SS-304" },
+          { label: "Warranty", value: "1 Year Commercial" },
+          { label: "Support", value: "PAN India Service" },
+          { label: "Standard", value: "CE / ISO 9001" }
+        ],
+        rawProduct: p
+      };
+    });
+  }, [featuredProducts]);
+
+  // Keep index within range
   useEffect(() => {
-    if (isPaused) return;
+    if (currentIndex >= slides.length) {
+      setCurrentIndex(0);
+    }
+  }, [slides.length, currentIndex]);
+
+  // Auto-play timer: 3.5 seconds
+  useEffect(() => {
+    if (isPaused || slides.length <= 1) return;
     const timer = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % slides.length);
-    }, 3000);
+    }, 3500);
     return () => clearInterval(timer);
   }, [isPaused, slides.length]);
 
-  const currentSlide = slides[currentIndex];
+  const currentSlide = slides[currentIndex] || slides[0] || defaultFallbackSlides[0];
 
   const handlePrev = () => {
     setCurrentIndex((prev) => (prev === 0 ? slides.length - 1 : prev - 1));
@@ -179,11 +256,11 @@ export default function LargeHeroCarousel({ featuredProducts = [] }) {
   };
 
   const handleAddToCart = (slide) => {
-    const matched = featuredProducts.find(p => p.slug === slide.slug) || {
+    const matched = slide.rawProduct || featuredProducts.find(p => p.slug === slide.slug) || {
       name: slide.name,
       slug: slide.slug,
       images: [slide.image],
-      price: parseInt(slide.price.replace(/\D/g, '')) || 50000
+      price: parseInt(String(slide.price).replace(/\D/g, ''), 10) || 50000
     };
     addToCart(matched);
   };

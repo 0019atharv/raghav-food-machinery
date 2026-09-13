@@ -52,16 +52,30 @@ export default function Machines() {
   useEffect(() => {
     const cat = searchParams.get('category') || 'all';
     setSelectedCategory(cat);
+    const search = searchParams.get('search') || '';
+    setSearchQuery(search);
   }, [searchParams]);
 
   const handleCategorySelect = (catSlug) => {
     setSelectedCategory(catSlug);
+    const newParams = new URLSearchParams(searchParams);
     if (catSlug === 'all') {
-      searchParams.delete('category');
-      setSearchParams(searchParams);
+      newParams.delete('category');
     } else {
-      setSearchParams({ category: catSlug });
+      newParams.set('category', catSlug);
     }
+    setSearchParams(newParams);
+  };
+
+  const handleSearchChange = (val) => {
+    setSearchQuery(val);
+    const newParams = new URLSearchParams(searchParams);
+    if (val.trim()) {
+      newParams.set('search', val.trim());
+    } else {
+      newParams.delete('search');
+    }
+    setSearchParams(newParams, { replace: true });
   };
 
   // Filter machines
@@ -73,13 +87,16 @@ export default function Machines() {
       (p.categorySlug || '').toLowerCase() === selectedCategory.toLowerCase() ||
       (p.category || '').toLowerCase() === selectedCategory.toLowerCase();
 
-    const q = searchQuery.toLowerCase();
+    const q = searchQuery.toLowerCase().trim();
     const matchesSearch =
-      !searchQuery ||
-      p.name.toLowerCase().includes(q) ||
-      (p.shortDescription && p.shortDescription.toLowerCase().includes(q)) ||
-      (p.category && p.category.toLowerCase().includes(q)) ||
-      (p.materialGrade && p.materialGrade.toLowerCase().includes(q));
+      !q ||
+      p.name?.toLowerCase().includes(q) ||
+      p.shortDescription?.toLowerCase().includes(q) ||
+      p.fullDescription?.toLowerCase().includes(q) ||
+      p.category?.toLowerCase().includes(q) ||
+      p.categorySlug?.toLowerCase().includes(q) ||
+      p.materialGrade?.toLowerCase().includes(q) ||
+      (Array.isArray(p.specifications) && p.specifications.some(s => s.value && s.value.toLowerCase().includes(q)));
 
     return matchesCategory && matchesSearch;
   });
@@ -114,14 +131,15 @@ export default function Machines() {
           <input
             type="text"
             value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
+            onChange={(e) => handleSearchChange(e.target.value)}
             placeholder="Search by model, machine type, or SS grade..."
-            className="w-full bg-slate-50 border border-slate-200 rounded-xl pl-10 pr-9 py-2 text-xs text-slate-900 placeholder-slate-400 focus:border-[#3D9B28] focus:bg-white focus:outline-none transition-all"
+            className="w-full bg-slate-50 border border-slate-200 rounded-xl pl-10 pr-9 py-2 text-xs text-slate-900 placeholder-slate-400 focus:border-[#3D9B28] focus:bg-white focus:outline-none transition-all font-sans"
           />
           {searchQuery && (
             <button
-              onClick={() => setSearchQuery('')}
+              onClick={() => handleSearchChange('')}
               className="absolute right-3 top-2.5 text-slate-400 hover:text-slate-600"
+              title="Clear search"
             >
               <X className="w-4 h-4" />
             </button>
@@ -188,6 +206,25 @@ export default function Machines() {
           );
         })}
       </div>
+
+      {/* Active Search Notification Banner */}
+      {searchQuery && (
+        <div className="flex items-center justify-between gap-3 px-4 py-2.5 rounded-xl bg-emerald-50 border border-emerald-200 text-xs text-emerald-900 font-medium">
+          <div className="flex items-center gap-2">
+            <Search className="w-3.5 h-3.5 text-[#3D9B28] flex-shrink-0" />
+            <span>
+              Showing results for: <strong className="font-bold text-slate-900">"{searchQuery}"</strong> ({filteredProducts.length} machines found)
+            </span>
+          </div>
+          <button
+            onClick={() => handleSearchChange('')}
+            className="text-xs font-bold text-emerald-800 hover:text-emerald-950 underline flex items-center gap-1 flex-shrink-0"
+          >
+            <span>Clear search</span>
+            <X className="w-3.5 h-3.5" />
+          </button>
+        </div>
+      )}
 
       {/* Machinery Listing */}
       {loading ? (

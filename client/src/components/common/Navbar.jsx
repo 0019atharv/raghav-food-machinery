@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { 
   Phone, 
@@ -14,15 +14,23 @@ import {
   Wrench, 
   Sparkles,
   ExternalLink,
-  Lock
+  Lock,
+  Search
 } from 'lucide-react';
 import { useAuth } from '../../context/AuthContext';
 import { useCart } from '../../context/CartContext';
 import { useSettings } from '../../context/SettingsContext';
+import { api } from '../../services/api';
 import ThemeSwitcher from './ThemeSwitcher';
 
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [searchQuery, setSearchQuery] = useState('');
+  const [searchResults, setSearchResults] = useState([]);
+  const [isSearchFocused, setIsSearchFocused] = useState(false);
+  const [cachedProducts, setCachedProducts] = useState([]);
+  const searchRef = useRef(null);
+
   const location = useLocation();
   const navigate = useNavigate();
   const { user, isAdmin, logout, setAuthModalOpen } = useAuth();
@@ -32,14 +40,64 @@ export default function Navbar() {
   const navLinks = [
     { name: 'Home', path: '/' },
     { name: 'Machines', path: '/machines' },
-    { name: 'Catalog', path: '/catalog' },
     { name: 'Services', path: '/services' },
     { name: 'Gallery', path: '/gallery' },
-    { name: 'Blog', path: '/blog' },
     { name: 'About Us', path: '/about' },
     { name: 'Testimonials', path: '/testimonials' },
     { name: 'Contact', path: '/contact' },
   ];
+
+  // Pre-load products once for fast live search preview
+  useEffect(() => {
+    async function loadProductsForSearch() {
+      try {
+        const res = await api.getProducts();
+        if (res && res.success && Array.isArray(res.products)) {
+          setCachedProducts(res.products.filter(p => p.isPublished !== false));
+        }
+      } catch (err) {
+        // silent fallback
+      }
+    }
+    loadProductsForSearch();
+  }, []);
+
+  // Close live search dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (searchRef.current && !searchRef.current.contains(e.target)) {
+        setIsSearchFocused(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
+
+  const handleSearchInputChange = (val) => {
+    setSearchQuery(val);
+    if (!val || val.trim().length < 1) {
+      setSearchResults([]);
+      return;
+    }
+    const q = val.toLowerCase().trim();
+    const matches = cachedProducts.filter(p => 
+      p.name?.toLowerCase().includes(q) ||
+      p.shortDescription?.toLowerCase().includes(q) ||
+      p.category?.toLowerCase().includes(q) ||
+      p.categorySlug?.toLowerCase().includes(q) ||
+      p.materialGrade?.toLowerCase().includes(q)
+    );
+    setSearchResults(matches.slice(0, 5));
+  };
+
+  const handleSearchSubmit = (e) => {
+    if (e && e.preventDefault) e.preventDefault();
+    if (searchQuery.trim()) {
+      setIsSearchFocused(false);
+      setMobileMenuOpen(false);
+      navigate(`/machines?search=${encodeURIComponent(searchQuery.trim())}`);
+    }
+  };
 
   const isActive = (path) => {
     if (path === '/' && location.pathname !== '/') return false;
@@ -145,61 +203,130 @@ export default function Navbar() {
       </div>
 
       {/* Main Navigation Bar */}
-      <nav className="main-navbar bg-white border-b border-slate-200 px-4 sm:px-6 lg:px-8 py-3 shadow-sm">
-        <div className="max-w-7xl mx-auto flex items-center justify-between gap-3 lg:gap-5">
+      <nav className="main-navbar bg-white border-b border-slate-200 px-4 sm:px-6 lg:px-8 py-2.5 sm:py-3 shadow-sm">
+        <div className="max-w-7xl mx-auto flex items-center justify-between gap-3 lg:gap-4">
           
           {/* Logo - raghavfoodmachines.com style */}
           <Link to="/" className="flex items-center gap-2.5 sm:gap-3 group flex-shrink-0">
             <img 
               src="/raghav-logo.png" 
               alt="Raghav Food Machinery Company" 
-              className="w-11 h-11 sm:w-12 sm:h-12 object-contain bg-white rounded-xl p-0.5 border border-slate-200 flex-shrink-0 shadow-sm group-hover:scale-105 transition-transform" 
+              className="w-10 h-10 sm:w-11 sm:h-11 xl:w-12 xl:h-12 object-contain bg-white rounded-xl p-0.5 border border-slate-200 flex-shrink-0 shadow-sm group-hover:scale-105 transition-transform" 
             />
             <div className="flex flex-col flex-shrink-0 leading-tight">
-              <span className="font-montserrat font-black text-lg sm:text-xl xl:text-2xl tracking-wider text-slate-900 group-hover:text-[#3D9B28] transition-colors uppercase whitespace-nowrap">
+              <span className="font-montserrat font-black text-base sm:text-lg xl:text-xl 2xl:text-2xl tracking-wider text-slate-900 group-hover:text-[#3D9B28] transition-colors uppercase whitespace-nowrap">
                 RAGHAV <span className="text-[#3D9B28]">FOOD</span>
               </span>
-              <span className="text-[9px] sm:text-[10px] font-montserrat font-bold text-slate-500 tracking-widest uppercase -mt-0.5 whitespace-nowrap">
+              <span className="text-[8px] sm:text-[9px] xl:text-[10px] font-montserrat font-bold text-slate-500 tracking-widest uppercase -mt-0.5 whitespace-nowrap">
                 MACHINERY COMPANY
               </span>
             </div>
           </Link>
 
-          {/* Desktop Search Bar */}
-          <form 
-            onSubmit={(e) => {
-              e.preventDefault();
-              const q = e.target.elements.searchQuery?.value?.trim();
-              if (q) navigate(`/machines?search=${encodeURIComponent(q)}`);
-            }}
-            className="hidden lg:flex items-center relative flex-1 max-w-xs xl:max-w-sm mx-2"
-          >
-            <input 
-              name="searchQuery"
-              type="text" 
-              placeholder="Search food processing machines..."
-              className="w-full bg-slate-50 hover:bg-slate-100 focus:bg-white text-slate-800 placeholder-slate-400 text-xs rounded-xl pl-9 pr-3 py-2 border border-slate-200 focus:border-[#3D9B28] outline-none transition-all shadow-inner"
-            />
-            <button type="submit" className="absolute left-2.5 text-slate-400 hover:text-[#3D9B28]" aria-label="Search">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-            </button>
-          </form>
+          {/* Desktop Navigation Links + Search Box (Search placed immediately AFTER Contact) */}
+          <div className="hidden lg:flex items-center gap-2 xl:gap-3 flex-shrink-0">
+            {/* Nav Links: Home, Machines, Services, Gallery, About Us, Testimonials, Contact */}
+            <div className="flex items-center gap-0.5 xl:gap-1">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.name}
+                  to={link.path}
+                  className={`px-2 xl:px-2.5 2xl:px-3 py-1.5 rounded-lg text-xs xl:text-sm font-montserrat font-semibold transition-all duration-200 whitespace-nowrap ${
+                    isActive(link.path)
+                      ? 'text-white bg-[#3D9B28] shadow-sm font-bold'
+                      : 'text-slate-700 hover:text-[#3D9B28] hover:bg-slate-100/80'
+                  }`}
+                >
+                  {link.name}
+                </Link>
+              ))}
+            </div>
 
-          {/* Center: Desktop Navigation Links (High contrast on light background) */}
-          <div className="hidden xl:flex items-center justify-center gap-1 2xl:gap-1.5 flex-shrink-0">
-            {navLinks.map((link) => (
-              <Link
-                key={link.name}
-                to={link.path}
-                className={`px-2.5 2xl:px-3 py-1.5 rounded-lg text-xs 2xl:text-sm font-montserrat font-semibold transition-all duration-200 whitespace-nowrap ${
-                  isActive(link.path)
-                    ? 'text-white bg-[#3D9B28] shadow-sm font-bold'
-                    : 'text-slate-700 hover:text-[#3D9B28] hover:bg-slate-100/80'
-                }`}
+            {/* Search Box: Positioned immediately AFTER the Contact item */}
+            <div ref={searchRef} className="relative ml-1 xl:ml-2">
+              <form 
+                onSubmit={handleSearchSubmit}
+                className="flex items-center relative w-48 xl:w-60 2xl:w-72"
               >
-                {link.name}
-              </Link>
-            ))}
+                <Search className="w-3.5 h-3.5 xl:w-4 xl:h-4 text-slate-400 absolute left-3 pointer-events-none" />
+                <input 
+                  type="text" 
+                  value={searchQuery}
+                  onChange={(e) => handleSearchInputChange(e.target.value)}
+                  onFocus={() => {
+                    setIsSearchFocused(true);
+                    if (searchQuery.trim()) handleSearchInputChange(searchQuery);
+                  }}
+                  placeholder="Search machines..."
+                  className="w-full bg-slate-50 hover:bg-slate-100 focus:bg-white text-slate-800 placeholder-slate-400 text-xs rounded-xl pl-9 pr-8 py-2 border border-slate-200 focus:border-[#3D9B28] focus:ring-2 focus:ring-[#3D9B28]/20 outline-none transition-all shadow-inner font-sans"
+                />
+                {searchQuery ? (
+                  <button 
+                    type="button" 
+                    onClick={() => { setSearchQuery(''); setSearchResults([]); }}
+                    className="absolute right-2 text-slate-400 hover:text-slate-600 p-0.5"
+                    title="Clear search"
+                  >
+                    <X className="w-3.5 h-3.5" />
+                  </button>
+                ) : (
+                  <button 
+                    type="submit" 
+                    className="absolute right-2 text-slate-400 hover:text-[#3D9B28] p-0.5"
+                    aria-label="Submit search"
+                  >
+                    <Search className="w-3 h-3" />
+                  </button>
+                )}
+              </form>
+
+              {/* Live Search Floating Results Dropdown */}
+              {isSearchFocused && searchResults.length > 0 && (
+                <div className="absolute right-0 mt-2 bg-white rounded-2xl shadow-2xl border border-slate-200 p-2 z-50 animate-in fade-in-50 duration-150 w-72 xl:w-80 max-h-80 overflow-y-auto">
+                  <div className="px-2 py-1 text-[10px] font-bold text-slate-400 uppercase tracking-wider">
+                    Machines Matching "{searchQuery}"
+                  </div>
+                  <div className="space-y-1 mt-1">
+                    {searchResults.map((item) => (
+                      <Link
+                        key={item._id || item.slug}
+                        to={`/product/${item.slug}`}
+                        onClick={() => {
+                          setIsSearchFocused(false);
+                          setSearchQuery('');
+                        }}
+                        className="flex items-center gap-2.5 p-2 rounded-xl hover:bg-slate-50 transition-colors group"
+                      >
+                        <img 
+                          src={item.images?.[0] || '/raghav-logo.png'} 
+                          alt={item.name} 
+                          className="w-10 h-10 object-contain rounded-lg bg-slate-50 border border-slate-100 p-0.5 flex-shrink-0"
+                        />
+                        <div className="flex-1 min-w-0">
+                          <div className="text-xs font-bold text-slate-800 group-hover:text-[#3D9B28] truncate">
+                            {item.name}
+                          </div>
+                          <div className="text-[10px] text-slate-500 flex items-center justify-between mt-0.5">
+                            <span className="truncate max-w-[130px]">{item.category || 'Machinery'}</span>
+                            <span className="font-bold text-slate-900 ml-1 flex-shrink-0">{item.price}</span>
+                          </div>
+                        </div>
+                      </Link>
+                    ))}
+                  </div>
+                  <div className="pt-2 mt-1.5 border-t border-slate-100 px-2 flex justify-between items-center text-[11px] text-slate-500">
+                    <span>Press Enter to view all</span>
+                    <button 
+                      type="button"
+                      onClick={handleSearchSubmit}
+                      className="text-[#3D9B28] font-bold hover:underline"
+                    >
+                      View All Results →
+                    </button>
+                  </div>
+                </div>
+              )}
+            </div>
           </div>
 
           {/* Right Action Icons */}
@@ -231,7 +358,7 @@ export default function Navbar() {
             {/* Mobile Hamburger Toggle */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="xl:hidden p-2 rounded-lg text-slate-700 hover:bg-slate-100 transition-colors flex-shrink-0"
+              className="lg:hidden p-2 rounded-lg text-slate-700 hover:bg-slate-100 transition-colors flex-shrink-0"
               aria-label="Toggle menu"
             >
               {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -241,7 +368,28 @@ export default function Navbar() {
 
         {/* Mobile Dropdown Menu */}
         {mobileMenuOpen && (
-          <div className="xl:hidden mt-3 pt-3 border-t border-slate-200 bg-white rounded-2xl p-4 shadow-xl flex flex-col gap-1.5">
+          <div className="lg:hidden mt-3 pt-3 border-t border-slate-200 bg-white rounded-2xl p-4 shadow-xl flex flex-col gap-2 animate-in fade-in-50 duration-200">
+            {/* Mobile Search Input */}
+            <form onSubmit={handleSearchSubmit} className="relative w-full mb-1">
+              <Search className="w-4 h-4 text-slate-400 absolute left-3 top-2.5" />
+              <input
+                type="text"
+                value={searchQuery}
+                onChange={(e) => handleSearchInputChange(e.target.value)}
+                placeholder="Search food processing machines..."
+                className="w-full bg-slate-50 border border-slate-200 rounded-xl pl-9 pr-8 py-2 text-xs text-slate-800 placeholder-slate-400 focus:border-[#3D9B28] focus:bg-white outline-none font-sans"
+              />
+              {searchQuery && (
+                <button
+                  type="button"
+                  onClick={() => setSearchQuery('')}
+                  className="absolute right-2.5 top-2.5 text-slate-400 hover:text-slate-600"
+                >
+                  <X className="w-3.5 h-3.5" />
+                </button>
+              )}
+            </form>
+
             {navLinks.map((link) => (
               <Link
                 key={link.name}
