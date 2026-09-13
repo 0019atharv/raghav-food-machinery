@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { 
   Phone, 
   MessageSquare, 
@@ -16,6 +16,10 @@ import { api } from '../services/api';
 
 export default function Contact() {
   const { settings } = useSettings();
+
+  useEffect(() => {
+    document.title = 'Contact Factory & Sales Desk | Raghav Food Processing Machines';
+  }, []);
 
   const [customerName, setCustomerName] = useState('');
   const [phone, setPhone] = useState('');

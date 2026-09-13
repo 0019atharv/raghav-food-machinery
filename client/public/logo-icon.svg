@@ -1,15 +1,35 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
-  <rect width="100" height="100" rx="20" fill="#0f172a"/>
-  <!-- Outer Cog / Gear ring -->
-  <circle cx="50" cy="50" r="38" stroke="#f59e0b" stroke-width="4" stroke-dasharray="12 6" stroke-linecap="round"/>
-  <!-- Industrial Flame / Steam element -->
-  <path d="M50 20C42 34 32 44 32 58C32 68 40 76 50 76C60 76 68 68 68 58C68 44 58 34 50 20Z" fill="url(#brandGrad)" />
-  <path d="M50 42C46 50 42 55 42 63C42 68 46 72 50 72C54 72 58 68 58 63C58 55 54 50 50 42Z" fill="#ffffff" opacity="0.9"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" fill="none">
   <defs>
-    <linearGradient id="brandGrad" x1="50" y1="20" x2="50" y2="76" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#fbbf24"/>
-      <stop offset="1" stop-color="#d97706"/>
+    <linearGradient id="raghavBg" x1="0" y1="0" x2="128" y2="128" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#225419"/>
+      <stop offset="0.5" stop-color="#3D9B28"/>
+      <stop offset="1" stop-color="#1b4213"/>
     </linearGradient>
+    <linearGradient id="goldGrad" x1="20" y1="20" x2="108" y2="108" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FDE047"/>
+      <stop offset="1" stop-color="#EAB308"/>
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity="0.25"/>
+    </filter>
   </defs>
-</svg>
 
+  <!-- Background Shield/Circle -->
+  <rect width="128" height="128" rx="28" fill="url(#raghavBg)"/>
+
+  <!-- Outer Industrial Gear Ring -->
+  <circle cx="64" cy="64" r="50" stroke="url(#goldGrad)" stroke-width="4" stroke-dasharray="16 8" stroke-linecap="round"/>
+  <circle cx="64" cy="64" r="44" stroke="#ffffff" stroke-width="1.5" opacity="0.4"/>
+
+  <!-- Center Machinery Cog & Monogram RF -->
+  <g filter="url(#shadow)">
+    <!-- Central Cog Core -->
+    <circle cx="64" cy="64" r="32" fill="#ffffff"/>
+    
+    <!-- Bold RAGHAV 'R' Letterform in Green -->
+    <path d="M52 46 H66 C72 46 76 49.5 76 54.5 C76 58.5 73.5 61.5 69.5 62.5 L77 78 H70 L63.5 63.5 H58.5 V78 H52 V46 Z M58.5 58.5 H65 C68 58.5 70 57 70 54.5 C70 52 68 50.5 65 50.5 H58.5 V58.5 Z" fill="#3D9B28"/>
+    
+    <!-- Food Processing Leaf Accent in Gold -->
+    <path d="M69 44 C75 42 80 46 80 50 C76 51 71 48 69 44 Z" fill="url(#goldGrad)"/>
+  </g>
+</svg>

@@ -40,6 +40,7 @@ export default function Home() {
   const { settings } = useSettings();
 
   useEffect(() => {
+    document.title = 'Raghav Food Processing Machines | Food Processing & Packaging Machinery Manufacturer';
     async function loadHomeData() {
       try {
         setLoading(true);
@@ -105,19 +106,19 @@ export default function Home() {
           {/* Left Text Intro */}
           <div className="lg:col-span-8 space-y-4">
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#3D9B28]/10 text-[#3D9B28] text-xs font-montserrat font-bold">
-              ⚙️ Industrial Food Machinery
+              ⚙️ Industrial Food Machinery Manufacturer
             </div>
             
             <h1 className="font-montserrat font-black text-3xl sm:text-4xl lg:text-5xl text-slate-900 leading-tight">
-              RAGHAV <span className="text-[#3D9B28]">FOOD</span>
+              RAGHAV <span className="text-[#3D9B28]">FOOD PROCESSING</span> MACHINES
             </h1>
             
-            <p className="font-montserrat font-bold text-lg sm:text-xl text-slate-700 -mt-1">
-              Machinery Company
-            </p>
+            <h2 className="font-montserrat font-bold text-lg sm:text-xl text-slate-700 -mt-1">
+              Food Processing &amp; Packaging Machinery Manufacturer | Delhi, India
+            </h2>
             
             <p className="text-sm sm:text-base text-slate-600 leading-relaxed max-w-3xl">
-              Manufacturers of <strong>industrial fruit pulpers, tomato juicers</strong>, continuous band sealers, retort autoclaves, commercial cooking kettles, and food processing machinery across <strong>PAN India</strong>. Durable, high-yield equipment built with food-grade SS-304 stainless steel for the fruit, vegetable, confectionery, bakery, and spice industries.
+              Manufacturers of <strong>industrial fruit pulpers, tomato juicers, canning retort autoclaves, can seamers, continuous band sealers, motorized steam jacketed kettles, commercial pulverizers</strong>, and complete food processing machinery plants across <strong>PAN India &amp; Global Exports</strong>. Built with food-grade SS-304/SS-316 stainless steel with ISO 9001:2015 and CE certification.
             </p>
 
             <div className="flex flex-wrap items-center gap-3 pt-2">

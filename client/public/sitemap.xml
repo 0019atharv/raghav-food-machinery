@@ -1,191 +1,285 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <!-- Homepage -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
   <url>
     <loc>https://raghavfoodprocessingmachines.com/</loc>
-    <lastmod>2026-09-11</lastmod>
+    <lastmod>2026-09-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
 
-  <!-- Machines & Catalog -->
   <url>
     <loc>https://raghavfoodprocessingmachines.com/machines</loc>
-    <lastmod>2026-09-11</lastmod>
+    <lastmod>2026-09-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.95</priority>
   </url>
-  <url>
-    <loc>https://raghavfoodprocessingmachines.com/catalog</loc>
-    <lastmod>2026-09-11</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.90</priority>
-  </url>
 
-  <!-- Product Detail Pages -->
-  <url>
-    <loc>https://raghavfoodprocessingmachines.com/product/raghav-screw-type-spiral-juicer-machine</loc>
-    <lastmod>2026-09-12</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.90</priority>
-  </url>
-  <url>
-    <loc>https://raghavfoodprocessingmachines.com/product/raghav-automatic-ffs-pouch-packing-machine</loc>
-    <lastmod>2026-09-12</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.90</priority>
-  </url>
-  <url>
-    <loc>https://raghavfoodprocessingmachines.com/product/raghav-motorized-mixing-steam-jacketed-kettle</loc>
-    <lastmod>2026-09-12</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.90</priority>
-  </url>
-  <url>
-    <loc>https://raghavfoodprocessingmachines.com/product/raghav-industrial-vibratory-shifter-machine</loc>
-    <lastmod>2026-09-12</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://raghavfoodprocessingmachines.com/product/raghav-horizontal-continuous-band-sealing-machine</loc>
-    <lastmod>2026-09-12</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://raghavfoodprocessingmachines.com/product/raghav-500ltr-conical-storage-tank</loc>
-    <lastmod>2026-09-11</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.90</priority>
-  </url>
-  <url>
-    <loc>https://raghavfoodprocessingmachines.com/product/raghav-heavy-duty-crown-corking-machine</loc>
-    <lastmod>2026-09-11</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://raghavfoodprocessingmachines.com/product/raghav-blower-cyclone-pulverizer-machine</loc>
-    <lastmod>2026-09-11</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.90</priority>
-  </url>
-  <url>
-    <loc>https://raghavfoodprocessingmachines.com/product/raghav-tilting-steam-jacketed-kettle-commercial</loc>
-    <lastmod>2026-09-11</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.90</priority>
-  </url>
-  <url>
-    <loc>https://raghavfoodprocessingmachines.com/product/automatic-canning-retort-500l</loc>
-    <lastmod>2026-09-11</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.90</priority>
-  </url>
-  <url>
-    <loc>https://raghavfoodprocessingmachines.com/product/compact-industrial-retort-120l</loc>
-    <lastmod>2026-09-11</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://raghavfoodprocessingmachines.com/product/steam-jacketed-tilting-kettle-300l</loc>
-    <lastmod>2026-09-11</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.90</priority>
-  </url>
-  <url>
-    <loc>https://raghavfoodprocessingmachines.com/product/continuous-namkeen-chips-fryer</loc>
-    <lastmod>2026-09-11</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.90</priority>
-  </url>
-  <url>
-    <loc>https://raghavfoodprocessingmachines.com/product/kurkure-snacks-extruder-machine</loc>
-    <lastmod>2026-09-11</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.90</priority>
-  </url>
-  <url>
-    <loc>https://raghavfoodprocessingmachines.com/product/industrial-48-tray-vegetable-dryer</loc>
-    <lastmod>2026-09-11</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://raghavfoodprocessingmachines.com/product/heavy-duty-fruit-pulper-juice-extractor</loc>
-    <lastmod>2026-09-11</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://raghavfoodprocessingmachines.com/product/micro-spice-pulverizer-pin-mill</loc>
-    <lastmod>2026-09-11</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-  </url>
-
-  <!-- Turnkey Services -->
   <url>
     <loc>https://raghavfoodprocessingmachines.com/services</loc>
-    <lastmod>2026-09-11</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.80</priority>
-  </url>
-
-  <!-- Company Information -->
-  <url>
-    <loc>https://raghavfoodprocessingmachines.com/about</loc>
-    <lastmod>2026-09-11</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://raghavfoodprocessingmachines.com/gallery</loc>
-    <lastmod>2026-09-11</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
-  </url>
-  <url>
-    <loc>https://raghavfoodprocessingmachines.com/testimonials</loc>
-    <lastmod>2026-09-11</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.70</priority>
-  </url>
-
-  <!-- Engineering & Food Tech Blog -->
-  <url>
-    <loc>https://raghavfoodprocessingmachines.com/blog</loc>
-    <lastmod>2026-09-11</lastmod>
+    <lastmod>2026-09-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.80</priority>
   </url>
+
   <url>
-    <loc>https://raghavfoodprocessingmachines.com/blog/selecting-food-grade-stainless-steel-ss304-vs-ss316</loc>
-    <lastmod>2026-09-11</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
+    <loc>https://raghavfoodprocessingmachines.com/gallery</loc>
+    <lastmod>2026-09-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.80</priority>
   </url>
+
   <url>
-    <loc>https://raghavfoodprocessingmachines.com/blog/how-to-set-up-namkeen-snacks-plant-india</loc>
-    <lastmod>2026-09-11</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
-  </url>
-  <url>
-    <loc>https://raghavfoodprocessingmachines.com/blog/guide-to-canning-retort-sterilization-rte-foods</loc>
-    <lastmod>2026-09-11</lastmod>
+    <loc>https://raghavfoodprocessingmachines.com/about</loc>
+    <lastmod>2026-09-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.75</priority>
   </url>
 
-  <!-- Contact & Direct Factory RFQ -->
+  <url>
+    <loc>https://raghavfoodprocessingmachines.com/testimonials</loc>
+    <lastmod>2026-09-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.75</priority>
+  </url>
+
   <url>
     <loc>https://raghavfoodprocessingmachines.com/contact</loc>
-    <lastmod>2026-09-11</lastmod>
+    <lastmod>2026-09-13</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.90</priority>
+    <priority>0.85</priority>
   </url>
-</urlset>
 
+  <url>
+    <loc>https://raghavfoodprocessingmachines.com/product/raghav-double-burner-bhatti</loc>
+    <lastmod>2026-09-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/vgmmtb5k/image/upload/v1789296407/raghav-food-processing-machines/raghav-double-burner-bhatti.jpg</image:loc>
+      <image:title>Raghav Heavy-Duty SS Double Burner Bhatti (Commercial Gas Range)</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://raghavfoodprocessingmachines.com/product/raghav-mixing-steam-jacket-kettle</loc>
+    <lastmod>2026-09-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/vgmmtb5k/image/upload/v1789296406/raghav-food-processing-machines/raghav-mixing-steam-jacket-kettle.jpg</image:loc>
+      <image:title>Raghav Motorized Tilting Steam Jacketed Mixing Kettle</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://raghavfoodprocessingmachines.com/product/raghav-band-sealer-machine</loc>
+    <lastmod>2026-09-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/vgmmtb5k/image/upload/v1789296405/raghav-food-processing-machines/raghav-band-sealer-machine.jpg</image:loc>
+      <image:title>Raghav Horizontal Continuous Band Sealer Machine</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://raghavfoodprocessingmachines.com/product/raghav-can-seamer</loc>
+    <lastmod>2026-09-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/vgmmtb5k/image/upload/v1789296405/raghav-food-processing-machines/raghav-can-seamer.jpg</image:loc>
+      <image:title>Raghav Can Seamer Machine (Semi-Automatic Double Seamer)</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://raghavfoodprocessingmachines.com/product/raghav-hydraulic-juice-press</loc>
+    <lastmod>2026-09-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/vgmmtb5k/image/upload/v1789295915/raghav-food-processing-machines/raghav-hydraulic-juice-press.jpg</image:loc>
+      <image:title>Raghav Heavy-Duty Hydraulic Juice &amp; Oil Cold Press Machine</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://raghavfoodprocessingmachines.com/product/raghav-12-tray-stainless-steel-dryer</loc>
+    <lastmod>2026-09-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/vgmmtb5k/image/upload/v1789295914/raghav-food-processing-machines/raghav-12-tray-stainless-steel-dryer.jpg</image:loc>
+      <image:title>Raghav 12-Tray Industrial Stainless Steel Dehydrator Dryer</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://raghavfoodprocessingmachines.com/product/raghav-1hp-potato-peeler</loc>
+    <lastmod>2026-09-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/vgmmtb5k/image/upload/v1789295913/raghav-food-processing-machines/raghav-1hp-potato-peeler.jpg</image:loc>
+      <image:title>Raghav 1 HP Commercial Potato &amp; Root Vegetable Peeler</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://raghavfoodprocessingmachines.com/product/raghav-60ltr-canning-retort</loc>
+    <lastmod>2026-09-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/vgmmtb5k/image/upload/v1789295913/raghav-food-processing-machines/raghav-60ltr-canning-retort.jpg</image:loc>
+      <image:title>Raghav 60 Ltr Vertical Canning Retort Sterilizer</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://raghavfoodprocessingmachines.com/product/raghav-manual-liquid-filling-machine</loc>
+    <lastmod>2026-09-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/vgmmtb5k/image/upload/v1789295912/raghav-food-processing-machines/raghav-manual-liquid-filling-machine.jpg</image:loc>
+      <image:title>Raghav Manual Liquid &amp; Paste Filling Machine</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://raghavfoodprocessingmachines.com/product/raghav-slicer</loc>
+    <lastmod>2026-09-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/vgmmtb5k/image/upload/v1789295402/raghav-food-processing-machines/raghav-slicer.png</image:loc>
+      <image:title>Raghav Commercial Vegetable Slicer &amp; Cutter Machine</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://raghavfoodprocessingmachines.com/product/raghav-3hp-multipurpose-pulverizer-machine</loc>
+    <lastmod>2026-09-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/vgmmtb5k/image/upload/v1789295401/raghav-food-processing-machines/raghav-3hp-multipurpose-pulverizer-machine.png</image:loc>
+      <image:title>Raghav 3HP Multipurpose Pulverizer Machine (Premium Model)</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://raghavfoodprocessingmachines.com/product/raghav-two-in-one-pulverizer</loc>
+    <lastmod>2026-09-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/vgmmtb5k/image/upload/v1789295400/raghav-food-processing-machines/raghav-two-in-one-pulverizer.jpg</image:loc>
+      <image:title>Raghav Two in One Pulverizer (Dual Chamber Grinding Mill)</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://raghavfoodprocessingmachines.com/product/raghav-twin-pulping-machine</loc>
+    <lastmod>2026-09-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/vgmmtb5k/image/upload/v1789295400/raghav-food-processing-machines/raghav-twin-pulping-machine.jpg</image:loc>
+      <image:title>Raghav Twin Pulping Machine (Double Stage Fruit Pulper)</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://raghavfoodprocessingmachines.com/product/raghav-masala-coating-pan</loc>
+    <lastmod>2026-09-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/vgmmtb5k/image/upload/v1789295399/raghav-food-processing-machines/raghav-masala-coating-pan.jpg</image:loc>
+      <image:title>Raghav Masala Coating Pan (Seasoning Machine)</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://raghavfoodprocessingmachines.com/product/raghav-500ltr-conical-storage-tank</loc>
+    <lastmod>2026-09-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/vgmmtb5k/image/upload/v1789137497/raghav-food-processing-machines/raghav-500ltr-storage-tank.png</image:loc>
+      <image:title>Raghav 500 Ltr Stainless Steel Conical Storage Tank</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://raghavfoodprocessingmachines.com/product/raghav-heavy-duty-crown-corking-machine</loc>
+    <lastmod>2026-09-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/vgmmtb5k/image/upload/v1789137653/raghav-food-processing-machines/raghav-heavy-duty-crown-corking-machine.png</image:loc>
+      <image:title>Raghav Heavy-Duty Manual Crown Corking &amp; Bottle Capping Machine</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://raghavfoodprocessingmachines.com/product/raghav-blower-cyclone-pulverizer-machine</loc>
+    <lastmod>2026-09-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/vgmmtb5k/image/upload/v1789137654/raghav-food-processing-machines/raghav-blower-cyclone-pulverizer.jpg</image:loc>
+      <image:title>Raghav Blower Cyclone Spice &amp; Grain Pulverizer Machine</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://raghavfoodprocessingmachines.com/product/raghav-tilting-steam-jacketed-kettle-commercial</loc>
+    <lastmod>2026-09-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/vgmmtb5k/image/upload/v1789137658/raghav-food-processing-machines/raghav-tilting-steam-jacketed-kettle.jpg</image:loc>
+      <image:title>Raghav Tilting Steam Jacketed Cooking Kettle (Commercial Boiling Pan)</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://raghavfoodprocessingmachines.com/product/raghav-screw-type-spiral-juicer-machine</loc>
+    <lastmod>2026-09-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/vgmmtb5k/image/upload/v1789202425/raghav-food-processing-machines/raghav-screw-type-juicer.png</image:loc>
+      <image:title>Raghav Industrial Screw Type Juicer &amp; Cold-Press Spiral Juice Extractor</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://raghavfoodprocessingmachines.com/product/raghav-automatic-ffs-pouch-packing-machine</loc>
+    <lastmod>2026-09-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/vgmmtb5k/image/upload/v1789202428/raghav-food-processing-machines/raghav-ffs-pouch-packing-machine.jpg</image:loc>
+      <image:title>Raghav Automatic Vertical Form Fill Seal (FFS) Pouch Packing Machine</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://raghavfoodprocessingmachines.com/product/raghav-industrial-vibratory-shifter-machine</loc>
+    <lastmod>2026-09-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/vgmmtb5k/image/upload/v1789202431/raghav-food-processing-machines/raghav-vibratory-shifter-machine.jpg</image:loc>
+      <image:title>Raghav Industrial Rectangular Vibratory Sifter &amp; Grading Screen Machine</image:title>
+    </image:image>
+  </url>
+
+</urlset>

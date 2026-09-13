@@ -42,6 +42,51 @@ export default function ProductDetail() {
           setProduct(res.product);
           setRelated(res.related || []);
           setActiveImage(0);
+
+          // Dynamic SEO Title & Meta Description
+          document.title = `${res.product.name} | Raghav Food Processing Machines`;
+          const metaDesc = document.querySelector('meta[name="description"]');
+          if (metaDesc) {
+            metaDesc.setAttribute('content', res.product.shortDescription || `${res.product.name} manufactured by Raghav Food Processing Machines in Delhi, India. High quality SS304/SS316 food machinery.`);
+          }
+
+          // Dynamic Schema.org Product Structured Data
+          let scriptTag = document.getElementById('product-schema-jsonld');
+          if (!scriptTag) {
+            scriptTag = document.createElement('script');
+            scriptTag.id = 'product-schema-jsonld';
+            scriptTag.type = 'application/ld+json';
+            document.head.appendChild(scriptTag);
+          }
+          const numericPrice = (res.product.price || '').replace(/[^0-9]/g, '') || '25000';
+          scriptTag.textContent = JSON.stringify({
+            "@context": "https://schema.org/",
+            "@type": "Product",
+            "name": res.product.name,
+            "image": Array.isArray(res.product.images) && res.product.images.length > 0
+              ? res.product.images.map(img => img.startsWith('http') ? img : `https://raghavfoodprocessingmachines.com${img}`)
+              : ["https://raghavfoodprocessingmachines.com/raghav-logo.png"],
+            "description": res.product.shortDescription || res.product.fullDescription || `${res.product.name} - Raghav Food Processing Machines`,
+            "sku": res.product.slug,
+            "mpn": `RFPM-${res.product.slug.toUpperCase().slice(0, 16)}`,
+            "brand": {
+              "@type": "Brand",
+              "name": "Raghav Food Processing Machines"
+            },
+            "offers": {
+              "@type": "Offer",
+              "url": `https://raghavfoodprocessingmachines.com/product/${res.product.slug}`,
+              "priceCurrency": "INR",
+              "price": numericPrice,
+              "priceValidUntil": "2027-12-31",
+              "availability": "https://schema.org/InStock",
+              "itemCondition": "https://schema.org/NewCondition",
+              "seller": {
+                "@type": "Organization",
+                "name": "Raghav Food Processing Machines"
+              }
+            }
+          });
         } else {
           setError('Product not found.');
         }
@@ -53,6 +98,11 @@ export default function ProductDetail() {
     }
     loadProduct();
     window.scrollTo({ top: 0, behavior: 'smooth' });
+
+    return () => {
+      const scriptTag = document.getElementById('product-schema-jsonld');
+      if (scriptTag) scriptTag.remove();
+    };
   }, [slug]);
 
   if (loading) {

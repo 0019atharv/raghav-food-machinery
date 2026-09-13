@@ -1,10 +1,14 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { ShieldCheck, Factory, Award, CheckCircle2, ArrowRight, Wrench, Users, Globe2, Sparkles } from 'lucide-react';
 import { useSettings } from '../context/SettingsContext';
 
 export default function About() {
   const { settings } = useSettings();
+
+  useEffect(() => {
+    document.title = 'About Our Food Machinery Engineering | Raghav Food Processing Machines';
+  }, []);
 
   return (
     <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-8 py-12 space-y-16 overflow-hidden">

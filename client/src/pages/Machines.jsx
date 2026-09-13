@@ -31,6 +31,7 @@ export default function Machines() {
   const { settings } = useSettings();
 
   useEffect(() => {
+    document.title = 'Food Processing Machines & Packaging Equipment Catalog | Raghav Food Processing Machines';
     async function loadData() {
       try {
         setLoading(true);
