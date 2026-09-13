@@ -57,6 +57,318 @@ export const initialCategories = [
 
 export const initialProducts = [
   {
+  "name": "Raghav Commercial Vegetable Slicer & Cutter Machine",
+  "slug": "raghav-slicer",
+  "category": "Vegetable & Fruit Processing",
+  "categorySlug": "vegetable-fruit-processing",
+  "shortDescription": "High-speed commercial vegetable and fruit cutting machine with interchangeable precision slicing and shredding discs.",
+  "fullDescription": "Heavy-duty commercial-grade food processing machine commonly used in commercial kitchens, catering, and industrial food manufacturing. Functions as a high-capacity vegetable cutter and slicer, frequently used for rapid processing of cabbage, potatoes, carrots, onions, ginger, and cucumber with interchangeable precision slicing blades.",
+  "price": "₹ 40,000",
+  "priceUnit": "Ex-Factory Price",
+  "capacity": "150 - 300 kg / hr High Speed Slicing",
+  "power": "1 HP Single Phase 220V Electric Motor",
+  "materialGrade": "Heavy Stainless Steel Base & Food-Grade Aluminum Head",
+  "automationGrade": "Semi-Automatic Continuous Feed",
+  "voltage": "220V, 50 Hz Single Phase",
+  "dimensions": "600 mm x 350 mm x 600 mm",
+  "weight": "45 kg approx",
+  "warranty": "1 Year Commercial Warranty",
+  "images": [
+    "https://res.cloudinary.com/vgmmtb5k/image/upload/v1789295402/raghav-food-processing-machines/raghav-slicer.png",
+    "/images/products/raghav-slicer.png"
+  ],
+  "specifications": [
+    {
+      "label": "Model Code",
+      "value": "Raghav Slicer 22"
+    },
+    {
+      "label": "Motor Power",
+      "value": "1 HP Single Phase 1440 RPM Motor"
+    },
+    {
+      "label": "Throughput Capacity",
+      "value": "150 - 300 kg/hr (depending on produce type)"
+    },
+    {
+      "label": "Blade Discs Included",
+      "value": "Slicing, Dicing, Shredding & Finger Chips (French Fries)"
+    },
+    {
+      "label": "Feed Ports",
+      "value": "Dual Feed Hopper: Large Kidney-Shape Hopper + Cylindrical Pusher"
+    },
+    {
+      "label": "Safety System",
+      "value": "Safety Cut-off Microswitch when Lever is Raised"
+    }
+  ],
+  "applications": [
+    "Hotels, Banquets & Catering Industrial Kitchens",
+    "Potato Chips & French Fry Continuous Slicing Lines",
+    "Cabbage & Onion Shredding for Fast Food & Dehydration",
+    "Pickle & Chutney Raw Fruit Slicing (Mango, Lemon, Ginger)"
+  ],
+  "features": [
+    "Ergonomic mechanical pusher handle provides effortless feeding with zero hand danger",
+    "Interchangeable hardened steel discs swap in seconds without requiring tools",
+    "Safety interlock immediately halts motor when hopper lid or handle is opened",
+    "Downward angled chute discharges sliced produce directly into receiving bins or conveyor"
+  ],
+  "isFeatured": true,
+  "isPublished": true
+},
+  {
+  "name": "Raghav 3HP Multipurpose Pulverizer Machine (Premium Model)",
+  "slug": "raghav-3hp-multipurpose-pulverizer-machine",
+  "category": "Spices & Grain Pulverizers",
+  "categorySlug": "spices-grain-pulverizers",
+  "shortDescription": "Heavy-duty commercial all-in-one wet and dry pulverizer with top bowl hopper and stainless collection chamber.",
+  "fullDescription": "A multipurpose pulverizer chamber is the core grinding zone where raw ingredients (like grains, hard spices, herbs, or minerals) are smashed into fine powders. Unlike single-purpose mills, this multipurpose chamber is designed to handle a wide range of material textures, oily contents, and moisture levels without clogging.",
+  "price": "₹ 75,000",
+  "priceUnit": "Ex-Factory Price",
+  "capacity": "30 - 60 kg / hr Continuous Output",
+  "power": "3 HP 100% Copper Winding Motor (2800 RPM)",
+  "materialGrade": "Food Grade SS-304 Mirror Polished Finish",
+  "automationGrade": "Semi-Automatic Heavy Duty",
+  "voltage": "220V Single Phase / 415V 3-Phase",
+  "dimensions": "800 mm x 650 mm x 1450 mm",
+  "weight": "120 kg approx",
+  "warranty": "1 Year Comprehensive Warranty",
+  "images": [
+    "https://res.cloudinary.com/vgmmtb5k/image/upload/v1789295401/raghav-food-processing-machines/raghav-3hp-multipurpose-pulverizer-machine.png",
+    "/images/products/raghav-3hp-multipurpose-pulverizer-machine.png"
+  ],
+  "specifications": [
+    {
+      "label": "Model Code",
+      "value": "Raghav Pulverizer 07 Premium"
+    },
+    {
+      "label": "Motor Specification",
+      "value": "3 HP Heavy Duty 2800 RPM Industrial Motor"
+    },
+    {
+      "label": "Hopper Style",
+      "value": "Large Stainless Steel Top Feed Bowl with Flow Valve"
+    },
+    {
+      "label": "Collection Tank",
+      "value": "Stainless Steel Lower Receiver Tank with Filter Sleeve"
+    },
+    {
+      "label": "Internal Metallurgy",
+      "value": "High-Hardness SS Beaters & Perforated Screens"
+    },
+    {
+      "label": "Mounting",
+      "value": "Rigid Column Frame with Heavy Rubber Anti-Vibration Foot Pads"
+    }
+  ],
+  "applications": [
+    "Commercial Spice Mills & Hotel Gravy Preparation",
+    "Dry & Semi-Moist Grain Milling (Rice, Wheat, Besan, Lentils)",
+    "High Oil-Content Spices without Chamber Smearing",
+    "Pharmaceutical, Herbal & Chemical Non-Corrosive Grinding"
+  ],
+  "features": [
+    "Specially designed anti-clog beater geometry handles oily herbs and tough roots effortlessly",
+    "Complete SS-304 food contact surface meets strict commercial food safety audits",
+    "Integrated heavy-duty start/stop switchgear with motor overload thermal protection",
+    "Lower stainless collection vessel keeps powdered product clean and contamination-free"
+  ],
+  "isFeatured": true,
+  "isPublished": true
+},
+  {
+  "name": "Raghav Two in One Pulverizer (Dual Chamber Grinding Mill)",
+  "slug": "raghav-two-in-one-pulverizer",
+  "category": "Spices & Grain Pulverizers",
+  "categorySlug": "spices-grain-pulverizers",
+  "shortDescription": "Commercial high-speed dual-chamber stainless steel pulverizer with interchangeable sieves for dry grains, spices, and herbs.",
+  "fullDescription": "Commercial Stainless Steel Pulverizer / Grinding Machine designed for high-speed, hygienic fine grinding of dry food grains, spices, herbs, and pulses. Built with food-grade stainless steel to prevent rust and ensure compliance with strict commercial food safety standards. Houses high-speed beater assembly with interchangeable screens.",
+  "price": "₹ 38,000",
+  "priceUnit": "Ex-Factory Price",
+  "capacity": "25 - 50 kg / hr High Fineness Grinding",
+  "power": "3 HP Heavy Duty 1-Phase / 3-Phase Motor",
+  "materialGrade": "Food-Grade Stainless Steel Grinding Chamber",
+  "automationGrade": "Semi-Automatic Continuous Feed",
+  "voltage": "220V Single Phase / 415V 3-Phase",
+  "dimensions": "750 mm x 600 mm x 1350 mm",
+  "weight": "95 kg approx",
+  "warranty": "1 Year Manufacturer Warranty",
+  "images": [
+    "https://res.cloudinary.com/vgmmtb5k/image/upload/v1789295400/raghav-food-processing-machines/raghav-two-in-one-pulverizer.jpg",
+    "/images/products/raghav-two-in-one-pulverizer.jpg"
+  ],
+  "specifications": [
+    {
+      "label": "Grinding Mechanism",
+      "value": "Dual Chamber Rotor & Serrated Liner"
+    },
+    {
+      "label": "Motor Power",
+      "value": "3 HP Copper-Wound 2880 RPM Motor"
+    },
+    {
+      "label": "Sieve Mesh Range",
+      "value": "0.5 mm to 8 mm (Coarse to 100+ Mesh Fine)"
+    },
+    {
+      "label": "Feed Hopper",
+      "value": "Wide-Mouth Stainless Steel Hopper with Flow Slide"
+    },
+    {
+      "label": "Discharge System",
+      "value": "Bottom Dust-Free High Density Cotton Collection Bag"
+    },
+    {
+      "label": "Chamber Clamping",
+      "value": "Heavy-Duty Ergonomic Hand Knobs for Tool-Free Access"
+    }
+  ],
+  "applications": [
+    "Dry Spices: Turmeric, Red Chili, Coriander, Black Pepper, Cumin",
+    "Food Grains: Wheat, Rice, Besan (Gram Flour), Ragi, Maize",
+    "Ayurvedic Herbal Roots & Botanical Powders",
+    "Confectionery Sugar Pulverizing & Table Salt Refining"
+  ],
+  "features": [
+    "Dual chamber design generates minimal heat to preserve natural spice aroma & essential oils",
+    "Tool-free front door opening allows screen changes in under 60 seconds",
+    "Dust-free collection sock ensures clean, sanitary production room environment",
+    "Precision dynamically balanced rotor ensures virtually vibration-free operation"
+  ],
+  "isFeatured": true,
+  "isPublished": true
+},
+  {
+  "name": "Raghav Twin Pulping Machine (Double Stage Fruit Pulper)",
+  "slug": "raghav-twin-pulping-machine",
+  "category": "Vegetable & Fruit Processing",
+  "categorySlug": "vegetable-fruit-processing",
+  "shortDescription": "Heavy-duty two-tier continuous fruit and vegetable pulper for coarse extraction and micro-screen fine puree refining.",
+  "fullDescription": "This heavy-duty Double Stage (Twin) Fruit & Vegetable Pulping Machine is designed for high-capacity, fine-refinement pulp extraction, utilizing a two-tier continuous process to deliver maximum yield with minimum pulp waste. Upper Stage crushes produce and performs initial seed/skin separation; Lower Stage refines texture into smooth, uniform puree.",
+  "price": "₹ 3,20,000",
+  "priceUnit": "Ex-Factory Price",
+  "capacity": "500 - 1500 kg / hr Continuous Extraction",
+  "power": "5 HP (Stage 1) + 3 HP (Stage 2) Dual Motor Setup",
+  "materialGrade": "All Food Contact Parts SS-304 / SS-316 Stainless Steel",
+  "automationGrade": "Continuous Automated Dual Stage",
+  "voltage": "415V, 3-Phase, 50 Hz",
+  "dimensions": "1850 mm x 950 mm x 1750 mm",
+  "weight": "480 kg approx",
+  "warranty": "1 Year Comprehensive Warranty + On-Site Support",
+  "images": [
+    "https://res.cloudinary.com/vgmmtb5k/image/upload/v1789295400/raghav-food-processing-machines/raghav-twin-pulping-machine.jpg",
+    "/images/products/raghav-twin-pulping-machine.jpg"
+  ],
+  "specifications": [
+    {
+      "label": "Output Capacity",
+      "value": "Up to 1500 kg/hr Fresh Fruit"
+    },
+    {
+      "label": "Dual Motors",
+      "value": "5 HP Primary + 3 HP Secondary (Total 8 HP)"
+    },
+    {
+      "label": "Upper Screen Mesh",
+      "value": "Coarse Perforated Sieve (Seed & Skin Removal)"
+    },
+    {
+      "label": "Lower Screen Mesh",
+      "value": "Fine Refining Screen (Smooth Pulp & Puree)"
+    },
+    {
+      "label": "Beater Speed",
+      "value": "Adjustable Rotor Beaters with Replaceable Blades"
+    },
+    {
+      "label": "Chambers",
+      "value": "Dual Quick-Opening Sanitary Cylinders with Hinged Doors"
+    }
+  ],
+  "applications": [
+    "Mango Pulp Processing & Aamras Lines",
+    "Tomato Ketchup & Paste Plants",
+    "Guava, Papaya & Peach Puree",
+    "Industrial Jams, Jellies & Fruit Juices",
+    "Commercial Winery & Beverage Plants"
+  ],
+  "features": [
+    "Two-tier continuous processing extracts 15-20% higher yield than single-stage machines",
+    "Complete separation of seeds, skin, and fiber with zero seed cracking",
+    "Hinged cylinder covers with sanitary quick-release latches for rapid CIP cleanout",
+    "Heavy channel iron base frame eliminates vibration even at maximum throughput"
+  ],
+  "isFeatured": true,
+  "isPublished": true
+},
+  {
+  "name": "Raghav Masala Coating Pan (Seasoning Machine)",
+  "slug": "raghav-masala-coating-pan",
+  "category": "Commercial Kettles & Cooking",
+  "categorySlug": "commercial-kettles-cooking",
+  "shortDescription": "Industrial-grade snack seasoning and flavor coating pan with angular rotating drum for uniform masala coating without breakage.",
+  "fullDescription": "Elevate your food processing quality with our industrial-grade Masala Coating Pan, precisely engineered to deliver consistent, uniform seasoning for a wide variety of snacks. Combines robust mechanical design with highly efficient operation. The optimized angular tilt of the rotating drum ensures a continuous, gentle tumbling action, coating every piece evenly without breaking fragile snacks.",
+  "price": "₹ 65,000",
+  "priceUnit": "Ex-Factory Price",
+  "capacity": "25 - 50 kg / batch",
+  "power": "1 HP Geared Motor with Variable Speed Control",
+  "materialGrade": "Food-Grade SS-304 Stainless Steel",
+  "automationGrade": "Semi-Automatic Rotary Pan",
+  "voltage": "220V Single Phase / 415V 3-Phase",
+  "dimensions": "950 mm x 850 mm x 1200 mm",
+  "weight": "140 kg approx",
+  "warranty": "1 Year Warranty + Lifetime Technical Support",
+  "images": [
+    "https://res.cloudinary.com/vgmmtb5k/image/upload/v1789295399/raghav-food-processing-machines/raghav-masala-coating-pan.jpg",
+    "/images/products/raghav-masala-coating-pan.jpg"
+  ],
+  "specifications": [
+    {
+      "label": "Pan Diameter",
+      "value": "36 Inch (900 mm) Stainless Steel Drum"
+    },
+    {
+      "label": "Motor Power",
+      "value": "1 HP Heavy Duty Geared Motor"
+    },
+    {
+      "label": "Tilting Angle",
+      "value": "Adjustable 30° to 45° Drum Angle"
+    },
+    {
+      "label": "Pan Metallurgy",
+      "value": "SS-304 Food Grade Stainless Steel"
+    },
+    {
+      "label": "Speed Regulation",
+      "value": "Variable Frequency Drive (VFD) Compatible"
+    },
+    {
+      "label": "Base Structure",
+      "value": "Rigid Vibration-Damped Enclosed MS/SS Cabinet"
+    }
+  ],
+  "applications": [
+    "Roasted Peanuts & Cashews",
+    "Makhana (Foxnuts) Seasoning",
+    "Potato Chips & Kurkure Masala Coating",
+    "Fried Namkeen, Fryums & Extruded Snacks",
+    "Popcorn Sweet & Savory Coating"
+  ],
+  "features": [
+    "Continuous gentle tumbling action prevents breakage of fragile extruded snacks",
+    "Mirror polished internal finish for zero masala sticking and easy water washdown",
+    "Wide front mouth opening for rapid loading and instant unloading",
+    "Heavy-duty gearbox engineered for continuous 24/7 industrial factory operation"
+  ],
+  "isFeatured": true,
+  "isPublished": true
+},
+  {
     name: "Automatic Canning Retort Sterilization Machine (500 Ltr)",
     slug: "automatic-canning-retort-500l",
     category: "Retort & Sterilization",
