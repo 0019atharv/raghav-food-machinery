@@ -181,7 +181,7 @@ export default function RfqDrawer() {
                         <img 
                           src={item.image} 
                           alt={item.name} 
-                          className="w-14 h-14 rounded-lg object-cover bg-industrial-900 border border-industrial-800 flex-shrink-0"
+                          className="w-14 h-14 rounded-lg object-contain bg-white border border-slate-200 p-1 flex-shrink-0"
                         />
                         <div className="flex-1 min-w-0">
                           <h5 className="text-xs font-bold text-white truncate">{item.name}</h5>

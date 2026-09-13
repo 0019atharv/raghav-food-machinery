@@ -250,20 +250,20 @@ export default function ManageProducts() {
       {/* Top Header & Actions */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
-          <span className="text-xs font-mono font-bold text-amber-brand uppercase tracking-wider">
+          <span className="text-xs font-mono font-bold text-[#3D9B28] uppercase tracking-wider">
             Machinery Inventory & Catalog
           </span>
-          <h1 className="font-display text-2xl md:text-3xl font-extrabold text-white">
+          <h1 className="font-display text-2xl md:text-3xl font-extrabold text-slate-900">
             Manage Products & Publishing
           </h1>
-          <p className="text-xs text-industrial-400 mt-1">
+          <p className="text-xs text-slate-500 mt-1">
             Add new machinery models, configure technical specifications, and publish directly to the customer-facing website.
           </p>
         </div>
 
         <button
           onClick={openAddModal}
-          className="inline-flex items-center gap-2 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-industrial-950 font-bold px-5 py-3 rounded-xl text-xs transition-all shadow-glow-amber whitespace-nowrap"
+          className="inline-flex items-center gap-2 bg-[#3D9B28] hover:bg-[#2E7D1E] text-white font-bold px-5 py-3 rounded-xl text-xs transition-all shadow-sm whitespace-nowrap"
         >
           <Plus className="w-4 h-4" />
           <span>Add & Publish Machine</span>
@@ -272,7 +272,7 @@ export default function ManageProducts() {
 
       {/* Feedback Toast */}
       {successMsg && (
-        <div className="p-4 rounded-xl bg-emerald-950/60 border border-emerald-500/40 text-emerald-300 text-xs flex items-center justify-between animate-fade-in">
+        <div className="p-4 rounded-xl bg-emerald-50 border border-emerald-200 text-[#3D9B28] text-xs flex items-center justify-between font-semibold animate-fade-in">
           <span>{successMsg}</span>
           <button onClick={() => setSuccessMsg('')}><X className="w-4 h-4" /></button>
         </div>
@@ -282,25 +282,25 @@ export default function ManageProducts() {
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div className="flex flex-wrap items-center gap-3">
           <div className="relative w-full sm:w-72">
-            <Search className="w-4 h-4 text-industrial-500 absolute left-3.5 top-3" />
+            <Search className="w-4 h-4 text-slate-400 absolute left-3.5 top-3" />
             <input
               type="text"
               value={search}
               onChange={(e) => setSearch(e.target.value)}
               placeholder="Search machines..."
-              className="w-full bg-industrial-900 border border-industrial-800 rounded-xl pl-10 pr-4 py-2 text-xs text-white placeholder-industrial-500 focus:border-amber-brand focus:outline-none"
+              className="w-full bg-white border border-slate-300 rounded-xl pl-10 pr-4 py-2 text-xs text-slate-900 placeholder-slate-400 focus:border-[#3D9B28] focus:ring-1 focus:ring-[#3D9B28] focus:outline-none"
             />
           </div>
 
           {/* Status Filter Tabs */}
-          <div className="flex items-center gap-1 bg-industrial-950 p-1 rounded-xl border border-industrial-800 text-xs">
+          <div className="flex items-center gap-1 bg-slate-100 p-1 rounded-xl border border-slate-200 text-xs">
             <button
               type="button"
               onClick={() => setStatusFilter('all')}
               className={`px-3 py-1.5 rounded-lg font-semibold transition-all ${
                 statusFilter === 'all'
-                  ? 'bg-industrial-800 text-white shadow'
-                  : 'text-industrial-400 hover:text-white'
+                  ? 'bg-white text-slate-900 shadow-sm'
+                  : 'text-slate-600 hover:text-slate-900'
               }`}
             >
               All ({products.length})
@@ -310,11 +310,11 @@ export default function ManageProducts() {
               onClick={() => setStatusFilter('live')}
               className={`px-3 py-1.5 rounded-lg font-semibold flex items-center gap-1.5 transition-all ${
                 statusFilter === 'live'
-                  ? 'bg-emerald-500/20 text-emerald-400 border border-emerald-500/40 shadow'
-                  : 'text-emerald-500 hover:text-emerald-400'
+                  ? 'bg-white text-[#3D9B28] border border-emerald-300 shadow-sm'
+                  : 'text-emerald-700 hover:text-emerald-800'
               }`}
             >
-              <span className="w-2 h-2 rounded-full bg-emerald-400" />
+              <span className="w-2 h-2 rounded-full bg-[#3D9B28]" />
               Live on Site ({liveCount})
             </button>
             <button
@@ -322,26 +322,26 @@ export default function ManageProducts() {
               onClick={() => setStatusFilter('hidden')}
               className={`px-3 py-1.5 rounded-lg font-semibold flex items-center gap-1.5 transition-all ${
                 statusFilter === 'hidden'
-                  ? 'bg-amber-500/20 text-amber-300 border border-amber-500/40 shadow'
-                  : 'text-industrial-400 hover:text-amber-300'
+                  ? 'bg-white text-amber-700 border border-amber-300 shadow-sm'
+                  : 'text-slate-600 hover:text-amber-800'
               }`}
             >
-              <span className="w-2 h-2 rounded-full bg-amber-400" />
+              <span className="w-2 h-2 rounded-full bg-amber-500" />
               Hidden / Drafts ({hiddenCount})
             </button>
           </div>
         </div>
 
-        <span className="text-xs text-industrial-400">
-          Showing: <strong className="text-white">{filtered.length}</strong> of {products.length}
+        <span className="text-xs text-slate-500">
+          Showing: <strong className="text-slate-900">{filtered.length}</strong> of {products.length}
         </span>
       </div>
 
       {/* Products Table */}
-      <div className="rounded-2xl bg-industrial-900/90 border border-industrial-800 overflow-hidden shadow-xl">
+      <div className="rounded-2xl bg-white border border-slate-200 overflow-hidden shadow-sm">
         <div className="overflow-x-auto">
           <table className="w-full text-xs text-left">
-            <thead className="bg-industrial-950 text-industrial-400 uppercase font-mono text-[10px] tracking-wider border-b border-industrial-800">
+            <thead className="bg-slate-50 text-slate-600 uppercase font-mono text-[10px] tracking-wider border-b border-slate-200">
               <tr>
                 <th className="px-6 py-3.5">Machine Details</th>
                 <th className="px-6 py-3.5">Category</th>
@@ -351,37 +351,37 @@ export default function ManageProducts() {
                 <th className="px-6 py-3.5 text-right">Actions</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-industrial-800">
+            <tbody className="divide-y divide-slate-200">
               {loading ? (
                 <tr>
-                  <td colSpan={6} className="px-6 py-12 text-center text-industrial-500">
-                    <div className="inline-block w-6 h-6 border-2 border-amber-brand border-t-transparent rounded-full animate-spin" />
+                  <td colSpan={6} className="px-6 py-12 text-center text-slate-500">
+                    <div className="inline-block w-6 h-6 border-2 border-[#3D9B28] border-t-transparent rounded-full animate-spin" />
                   </td>
                 </tr>
               ) : filtered.length === 0 ? (
                 <tr>
-                  <td colSpan={6} className="px-6 py-12 text-center text-industrial-500">
+                  <td colSpan={6} className="px-6 py-12 text-center text-slate-500">
                     No machinery found matching your query.
                   </td>
                 </tr>
               ) : (
                 filtered.map((p) => (
-                  <tr key={p._id || Math.random()} className="hover:bg-industrial-850/50">
+                  <tr key={p._id || Math.random()} className="hover:bg-slate-50/75 transition-colors">
                     <td className="px-6 py-4">
                       <div className="flex items-center gap-3">
                         <img
                           src={p.images?.[0] || 'https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=200&q=80'}
                           alt={p.name || 'Machine'}
-                          className="w-12 h-12 rounded-xl object-cover bg-industrial-950 border border-industrial-800 flex-shrink-0"
+                          className="w-12 h-12 rounded-xl object-cover bg-slate-100 border border-slate-200 flex-shrink-0"
                           onError={(e) => {
                             e.target.src = 'https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=200&q=80';
                           }}
                         />
                         <div>
-                          <h4 className="font-bold text-white text-xs hover:text-amber-brand">{p.name || 'Unnamed Machine'}</h4>
-                          <span className="text-[10px] text-industrial-500 font-mono block">/{p.slug || p._id}</span>
+                          <h4 className="font-bold text-slate-900 text-xs hover:text-[#3D9B28]">{p.name || 'Unnamed Machine'}</h4>
+                          <span className="text-[10px] text-slate-500 font-mono block">/{p.slug || p._id}</span>
                           {p.isFeatured && (
-                            <span className="inline-block mt-0.5 bg-amber-500/10 text-amber-brand text-[9px] font-black px-1.5 py-0.2 rounded border border-amber-500/20">
+                            <span className="inline-block mt-0.5 bg-emerald-50 text-[#3D9B28] text-[9px] font-bold px-1.5 py-0.2 rounded border border-emerald-200">
                               Featured
                             </span>
                           )}
@@ -389,18 +389,18 @@ export default function ManageProducts() {
                       </div>
                     </td>
 
-                    <td className="px-6 py-4 text-industrial-300">
-                      <span className="bg-industrial-950 px-2 py-1 rounded text-[10px] text-industrial-300 border border-industrial-800">
+                    <td className="px-6 py-4 text-slate-700">
+                      <span className="bg-slate-100 px-2 py-1 rounded text-[10px] text-slate-700 border border-slate-200 font-medium">
                         {p.category || 'General Machinery'}
                       </span>
                     </td>
 
-                    <td className="px-6 py-4 text-industrial-300">
-                      <strong className="text-white block">{p.capacity || 'Standard'}</strong>
-                      <span className="text-[10px] text-industrial-500">{p.materialGrade || 'SS-304'}</span>
+                    <td className="px-6 py-4 text-slate-700">
+                      <strong className="text-slate-900 block">{p.capacity || 'Standard'}</strong>
+                      <span className="text-[10px] text-slate-500">{p.materialGrade || 'SS-304'}</span>
                     </td>
 
-                    <td className="px-6 py-4 text-amber-brand font-semibold">
+                    <td className="px-6 py-4 text-[#3D9B28] font-semibold">
                       {p.price || 'Contact for Quote'}
                     </td>
 
@@ -411,21 +411,21 @@ export default function ManageProducts() {
                         onClick={() => handleTogglePublish(p._id)}
                         className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-[11px] font-bold transition-all shadow-sm ${
                           p.isPublished !== false
-                            ? 'bg-emerald-500/20 text-emerald-400 border border-emerald-500/40 hover:bg-emerald-500/30'
-                            : 'bg-amber-500/10 text-amber-300 border border-amber-500/30 hover:bg-amber-500/20'
+                            ? 'bg-emerald-50 text-[#3D9B28] border border-emerald-200 hover:bg-emerald-100'
+                            : 'bg-amber-50 text-amber-800 border border-amber-200 hover:bg-amber-100'
                         }`}
                         title={p.isPublished !== false ? "Currently LIVE on website. Click to HIDE." : "Currently HIDDEN from website. Click to make LIVE."}
                       >
                         {p.isPublished !== false ? (
                           <>
-                            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-                            <Eye className="w-3.5 h-3.5 text-emerald-400" />
+                            <span className="w-2 h-2 rounded-full bg-[#3D9B28] animate-pulse" />
+                            <Eye className="w-3.5 h-3.5 text-[#3D9B28]" />
                             <span>Live on Site</span>
                           </>
                         ) : (
                           <>
-                            <span className="w-2 h-2 rounded-full bg-amber-400" />
-                            <EyeOff className="w-3.5 h-3.5 text-amber-400" />
+                            <span className="w-2 h-2 rounded-full bg-amber-500" />
+                            <EyeOff className="w-3.5 h-3.5 text-amber-600" />
                             <span>Hidden on Site</span>
                           </>
                         )}
@@ -437,7 +437,7 @@ export default function ManageProducts() {
                       <Link
                         to={`/product/${p.slug}`}
                         target="_blank"
-                        className="inline-block p-1.5 rounded-lg bg-industrial-950 text-industrial-400 hover:text-white"
+                        className="inline-block p-1.5 rounded-lg bg-slate-100 text-slate-600 hover:text-slate-900 hover:bg-slate-200 transition-colors"
                         title="Preview Live Page"
                       >
                         <ExternalLink className="w-3.5 h-3.5" />
@@ -445,7 +445,7 @@ export default function ManageProducts() {
 
                       <button
                         onClick={() => openEditModal(p)}
-                        className="p-1.5 rounded-lg bg-industrial-950 text-amber-brand hover:bg-amber-500/10"
+                        className="p-1.5 rounded-lg bg-slate-100 text-[#3D9B28] hover:bg-emerald-50 hover:text-[#2E7D1E] transition-colors"
                         title="Edit Machine Details"
                       >
                         <Edit className="w-3.5 h-3.5" />
@@ -453,7 +453,7 @@ export default function ManageProducts() {
 
                       <button
                         onClick={() => handleDelete(p._id)}
-                        className="p-1.5 rounded-lg bg-industrial-950 text-red-400 hover:bg-red-500/10"
+                        className="p-1.5 rounded-lg bg-red-50 text-red-600 hover:bg-red-100 transition-colors"
                         title="Delete Product"
                       >
                         <Trash2 className="w-3.5 h-3.5" />
@@ -472,28 +472,28 @@ export default function ManageProducts() {
           ADD / EDIT MACHINE MODAL
           ===================================================================== */}
       {isModalOpen && (
-        <div className="fixed inset-0 z-50 overflow-y-auto bg-industrial-950/80 backdrop-blur-md p-4 sm:p-6 flex justify-center items-start">
-          <div className="w-full max-w-2xl bg-industrial-900 border border-industrial-800 rounded-3xl p-6 md:p-8 shadow-2xl my-4 sm:my-8 space-y-6 relative">
+        <div className="fixed inset-0 z-50 overflow-y-auto bg-slate-900/50 backdrop-blur-sm p-4 sm:p-6 flex justify-center items-start">
+          <div className="w-full max-w-2xl bg-white border border-slate-200 rounded-3xl p-6 md:p-8 shadow-2xl my-4 sm:my-8 space-y-6 relative">
             
-            <div className="flex items-center justify-between border-b border-industrial-800 pb-4">
+            <div className="flex items-center justify-between border-b border-slate-200 pb-4">
               <div>
-                <h3 className="font-display font-bold text-xl text-white">
+                <h3 className="font-display font-bold text-xl text-slate-900">
                   {editingId ? 'Edit Machinery Model' : 'Add New Machine & Publish'}
                 </h3>
-                <p className="text-xs text-industrial-400">
+                <p className="text-xs text-slate-500">
                   Fill in specifications, upload machine photos, and toggle publish state.
                 </p>
               </div>
               <button
                 onClick={() => setIsModalOpen(false)}
-                className="text-industrial-400 hover:text-white p-1"
+                className="text-slate-400 hover:text-slate-600 hover:bg-slate-100 rounded-lg p-1"
               >
                 <X className="w-5 h-5" />
               </button>
             </div>
 
             {error && (
-              <div className="p-3 rounded-xl bg-red-950/50 border border-red-800 text-red-300 text-xs">
+              <div className="p-3 rounded-xl bg-red-50 border border-red-200 text-red-700 text-xs">
                 {error}
               </div>
             )}
@@ -502,7 +502,7 @@ export default function ManageProducts() {
               
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-xs font-medium text-industrial-300 mb-1">Machine Name *</label>
+                  <label className="block text-xs font-semibold text-slate-700 mb-1">Machine Name *</label>
                   <input
                     type="text"
                     value={name}
@@ -513,17 +513,17 @@ export default function ManageProducts() {
                       }
                     }}
                     placeholder="e.g. Automatic Canning Retort (750 Ltr)"
-                    className="w-full bg-industrial-950 border border-industrial-800 rounded-xl px-3.5 py-2 text-xs text-white focus:border-amber-brand focus:outline-none"
+                    className="w-full bg-white border border-slate-300 rounded-xl px-3.5 py-2 text-xs text-slate-900 focus:border-[#3D9B28] focus:ring-1 focus:ring-[#3D9B28] focus:outline-none"
                     required
                   />
                 </div>
 
                 <div>
-                  <label className="block text-xs font-medium text-industrial-300 mb-1">Category *</label>
+                  <label className="block text-xs font-semibold text-slate-700 mb-1">Category *</label>
                   <select
                     value={category}
                     onChange={(e) => setCategory(e.target.value)}
-                    className="w-full bg-industrial-950 border border-industrial-800 rounded-xl px-3 py-2 text-xs text-white focus:border-amber-brand focus:outline-none"
+                    className="w-full bg-white border border-slate-300 rounded-xl px-3 py-2 text-xs text-slate-900 focus:border-[#3D9B28] focus:ring-1 focus:ring-[#3D9B28] focus:outline-none"
                     required
                   >
                     {categories.map((c) => (
@@ -535,46 +535,46 @@ export default function ManageProducts() {
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-xs font-medium text-industrial-300 mb-1">URL Slug</label>
+                  <label className="block text-xs font-semibold text-slate-700 mb-1">URL Slug</label>
                   <input
                     type="text"
                     value={slug}
                     onChange={(e) => setSlug(e.target.value)}
                     placeholder="automatic-canning-retort-750l"
-                    className="w-full bg-industrial-950 border border-industrial-800 rounded-xl px-3.5 py-2 text-xs text-white focus:border-amber-brand focus:outline-none font-mono"
+                    className="w-full bg-white border border-slate-300 rounded-xl px-3.5 py-2 text-xs text-slate-900 focus:border-[#3D9B28] focus:ring-1 focus:ring-[#3D9B28] focus:outline-none font-mono"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-xs font-medium text-industrial-300 mb-1">Capacity</label>
+                  <label className="block text-xs font-semibold text-slate-700 mb-1">Capacity</label>
                   <input
                     type="text"
                     value={capacity}
                     onChange={(e) => setCapacity(e.target.value)}
                     placeholder="750 Liters / Batch (~400 Cans)"
-                    className="w-full bg-industrial-950 border border-industrial-800 rounded-xl px-3.5 py-2 text-xs text-white focus:border-amber-brand focus:outline-none"
+                    className="w-full bg-white border border-slate-300 rounded-xl px-3.5 py-2 text-xs text-slate-900 focus:border-[#3D9B28] focus:ring-1 focus:ring-[#3D9B28] focus:outline-none"
                   />
                 </div>
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-xs font-medium text-industrial-300 mb-1">Commercial Price Range</label>
+                  <label className="block text-xs font-semibold text-slate-700 mb-1">Commercial Price Range</label>
                   <input
                     type="text"
                     value={price}
                     onChange={(e) => setPrice(e.target.value)}
                     placeholder="₹4,50,000 - ₹6,00,000"
-                    className="w-full bg-industrial-950 border border-industrial-800 rounded-xl px-3.5 py-2 text-xs text-white focus:border-amber-brand focus:outline-none"
+                    className="w-full bg-white border border-slate-300 rounded-xl px-3.5 py-2 text-xs text-slate-900 focus:border-[#3D9B28] focus:ring-1 focus:ring-[#3D9B28] focus:outline-none"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-xs font-medium text-industrial-300 mb-1">Material Grade</label>
+                  <label className="block text-xs font-semibold text-slate-700 mb-1">Material Grade</label>
                   <select
                     value={materialGrade}
                     onChange={(e) => setMaterialGrade(e.target.value)}
-                    className="w-full bg-industrial-950 border border-industrial-800 rounded-xl px-3 py-2 text-xs text-white focus:border-amber-brand focus:outline-none"
+                    className="w-full bg-white border border-slate-300 rounded-xl px-3 py-2 text-xs text-slate-900 focus:border-[#3D9B28] focus:ring-1 focus:ring-[#3D9B28] focus:outline-none"
                   >
                     <option value="Food Grade SS-304">Food Grade SS-304</option>
                     <option value="Food Grade SS-316">Food Grade SS-316 (Acid/Saline Resistant)</option>
@@ -584,19 +584,19 @@ export default function ManageProducts() {
               </div>
 
               <div>
-                <label className="block text-xs font-medium text-industrial-300 mb-1">Short Description</label>
+                <label className="block text-xs font-semibold text-slate-700 mb-1">Short Description</label>
                 <textarea
                   value={shortDescription}
                   onChange={(e) => setShortDescription(e.target.value)}
                   rows={2}
                   placeholder="Summary of machine capabilities..."
-                  className="w-full bg-industrial-950 border border-industrial-800 rounded-xl p-2.5 text-xs text-white focus:border-amber-brand focus:outline-none resize-none"
+                  className="w-full bg-white border border-slate-300 rounded-xl p-2.5 text-xs text-slate-900 focus:border-[#3D9B28] focus:ring-1 focus:ring-[#3D9B28] focus:outline-none resize-none"
                 />
               </div>
 
               {/* Image Upload / URL Input */}
-              <div className="p-4 rounded-2xl bg-industrial-950 border border-industrial-800 space-y-3">
-                <label className="block text-xs font-bold text-white">Machine Photo (URL or File Upload)</label>
+              <div className="p-4 rounded-2xl bg-slate-50 border border-slate-200 space-y-3">
+                <label className="block text-xs font-bold text-slate-900">Machine Photo (URL or File Upload)</label>
                 
                 <div className="flex items-center gap-3">
                   <input
@@ -604,11 +604,11 @@ export default function ManageProducts() {
                     value={imageUrl}
                     onChange={(e) => setImageUrl(e.target.value)}
                     placeholder="https://images.unsplash.com/... or /uploads/..."
-                    className="flex-1 bg-industrial-900 border border-industrial-800 rounded-xl px-3.5 py-2 text-xs text-white focus:border-amber-brand focus:outline-none"
+                    className="flex-1 bg-white border border-slate-300 rounded-xl px-3.5 py-2 text-xs text-slate-900 focus:border-[#3D9B28] focus:ring-1 focus:ring-[#3D9B28] focus:outline-none"
                   />
                   
-                  <label className="cursor-pointer bg-industrial-800 hover:bg-industrial-700 text-white text-xs font-semibold px-4 py-2 rounded-xl flex items-center gap-1.5 border border-industrial-700 whitespace-nowrap">
-                    <Upload className="w-3.5 h-3.5 text-amber-brand" />
+                  <label className="cursor-pointer bg-white hover:bg-slate-100 text-slate-700 text-xs font-semibold px-4 py-2 rounded-xl flex items-center gap-1.5 border border-slate-300 shadow-sm whitespace-nowrap">
+                    <Upload className="w-3.5 h-3.5 text-[#3D9B28]" />
                     <span>{uploadingImage ? 'Uploading...' : 'Upload Image'}</span>
                     <input
                       type="file"
@@ -622,20 +622,20 @@ export default function ManageProducts() {
 
                 {imageUrl && (
                   <div className="flex items-center gap-3 pt-1">
-                    <img src={imageUrl} alt="preview" className="w-14 h-14 rounded-lg object-cover border border-industrial-700" />
-                    <span className="text-[11px] text-industrial-400">Preview image loaded</span>
+                    <img src={imageUrl} alt="preview" className="w-14 h-14 rounded-lg object-cover border border-slate-200 bg-white" />
+                    <span className="text-[11px] text-slate-500">Preview image loaded</span>
                   </div>
                 )}
               </div>
 
               {/* Technical Specifications Matrix Builder */}
-              <div className="p-4 rounded-2xl bg-industrial-950 border border-industrial-800 space-y-3">
+              <div className="p-4 rounded-2xl bg-slate-50 border border-slate-200 space-y-3">
                 <div className="flex items-center justify-between">
-                  <label className="text-xs font-bold text-white">Technical Specs (Key-Value Matrix)</label>
+                  <label className="text-xs font-bold text-slate-900">Technical Specs (Key-Value Matrix)</label>
                   <button
                     type="button"
                     onClick={() => setSpecList([...specList, { label: '', value: '' }])}
-                    className="text-[11px] text-amber-brand font-bold flex items-center gap-1 hover:underline"
+                    className="text-[11px] text-[#3D9B28] font-bold flex items-center gap-1 hover:underline"
                   >
                     <PlusCircle className="w-3.5 h-3.5" /> Add Spec Row
                   </button>
@@ -653,7 +653,7 @@ export default function ManageProducts() {
                           updated[idx].label = e.target.value;
                           setSpecList(updated);
                         }}
-                        className="flex-1 bg-industrial-900 border border-industrial-800 rounded-lg px-2.5 py-1.5 text-xs text-white"
+                        className="flex-1 bg-white border border-slate-300 rounded-lg px-2.5 py-1.5 text-xs text-slate-900 focus:border-[#3D9B28] focus:outline-none"
                       />
                       <input
                         type="text"
@@ -664,12 +664,12 @@ export default function ManageProducts() {
                           updated[idx].value = e.target.value;
                           setSpecList(updated);
                         }}
-                        className="flex-1 bg-industrial-900 border border-industrial-800 rounded-lg px-2.5 py-1.5 text-xs text-white"
+                        className="flex-1 bg-white border border-slate-300 rounded-lg px-2.5 py-1.5 text-xs text-slate-900 focus:border-[#3D9B28] focus:outline-none"
                       />
                       <button
                         type="button"
                         onClick={() => setSpecList(specList.filter((_, i) => i !== idx))}
-                        className="text-industrial-500 hover:text-red-400 p-1"
+                        className="text-slate-400 hover:text-red-600 p-1"
                       >
                         <X className="w-3.5 h-3.5" />
                       </button>
@@ -679,40 +679,40 @@ export default function ManageProducts() {
               </div>
 
               {/* Featured & Published Switches */}
-              <div className="flex flex-wrap items-center justify-between gap-4 p-4 rounded-xl bg-industrial-950 border border-industrial-800">
-                <label className="flex items-center gap-2 text-xs font-medium text-white cursor-pointer">
+              <div className="flex flex-wrap items-center justify-between gap-4 p-4 rounded-xl bg-slate-50 border border-slate-200">
+                <label className="flex items-center gap-2 text-xs font-medium text-slate-800 cursor-pointer">
                   <input
                     type="checkbox"
                     checked={isFeatured}
                     onChange={(e) => setIsFeatured(e.target.checked)}
-                    className="w-4 h-4 rounded text-amber-brand focus:ring-amber-500 bg-industrial-900 border-industrial-700"
+                    className="w-4 h-4 rounded text-[#3D9B28] focus:ring-[#3D9B28]"
                   />
                   <span>Feature on Home Page Carousel</span>
                 </label>
 
-                <label className="flex items-center gap-2 text-xs font-bold text-amber-brand cursor-pointer">
+                <label className="flex items-center gap-2 text-xs font-bold text-[#3D9B28] cursor-pointer">
                   <input
                     type="checkbox"
                     checked={isPublished}
                     onChange={(e) => setIsPublished(e.target.checked)}
-                    className="w-4 h-4 rounded text-amber-brand focus:ring-amber-500 bg-industrial-900 border-industrial-700"
+                    className="w-4 h-4 rounded text-[#3D9B28] focus:ring-[#3D9B28]"
                   />
                   <span>✓ Publish to Live Website Immediately</span>
                 </label>
               </div>
 
-              <div className="flex items-center justify-end gap-3 pt-4 border-t border-industrial-800">
+              <div className="flex items-center justify-end gap-3 pt-4 border-t border-slate-200">
                 <button
                   type="button"
                   onClick={() => setIsModalOpen(false)}
-                  className="px-4 py-2.5 rounded-xl bg-industrial-800 hover:bg-industrial-700 text-xs font-semibold text-industrial-300"
+                  className="bg-white hover:bg-slate-50 text-slate-700 border border-slate-300 font-semibold px-4 py-2.5 rounded-xl text-xs shadow-sm transition-all"
                 >
                   Cancel
                 </button>
                 <button
                   type="submit"
                   disabled={submitting}
-                  className="bg-amber-brand hover:bg-amber-400 text-industrial-950 font-bold px-6 py-2.5 rounded-xl text-xs shadow-glow-amber"
+                  className="bg-[#3D9B28] hover:bg-[#2E7D1E] text-white font-bold px-6 py-2.5 rounded-xl text-xs shadow-sm transition-all"
                 >
                   {submitting ? 'Saving & Publishing...' : editingId ? 'Update & Publish' : 'Add & Publish to Site'}
                 </button>

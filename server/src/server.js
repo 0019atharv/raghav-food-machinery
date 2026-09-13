@@ -14,6 +14,7 @@ import galleryRoutes from './routes/galleryRoutes.js';
 import testimonialRoutes from './routes/testimonialRoutes.js';
 import settingsRoutes from './routes/settingsRoutes.js';
 import uploadRoutes from './routes/uploadRoutes.js';
+import videoRoutes from './routes/videoRoutes.js';
 
 import { Product, Category, Enquiry, Blog } from './models/index.js';
 import { isUsingMongoDB, getFallbackDb } from './config/db.js';
@@ -54,6 +55,7 @@ app.use('/api/gallery', galleryRoutes);
 app.use('/api/testimonials', testimonialRoutes);
 app.use('/api/settings', settingsRoutes);
 app.use('/api/upload', uploadRoutes);
+app.use('/api/videos', videoRoutes);
 
 // Admin Quick Stats Route
 app.get('/api/stats', async (req, res) => {

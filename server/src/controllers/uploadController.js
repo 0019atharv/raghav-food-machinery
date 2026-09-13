@@ -38,3 +38,38 @@ export const uploadImage = async (req, res) => {
   }
 };
 
+/**
+ * Video Upload Controller
+ * Handles MP4 / WebM / Mov video file uploads
+ */
+export const uploadVideo = async (req, res) => {
+  try {
+    if (!req.file) {
+      return res.status(400).json({ success: false, message: 'Please select a video file to upload.' });
+    }
+
+    if (req.file.path && (req.file.path.startsWith('http://') || req.file.path.startsWith('https://'))) {
+      return res.json({
+        success: true,
+        message: 'Video uploaded to CDN successfully!',
+        videoUrl: req.file.path,
+        publicId: req.file.filename
+      });
+    }
+
+    const serverUrl = process.env.BACKEND_PUBLIC_URL || `${req.protocol}://${req.get('host')}`;
+    const localVideoUrl = `${serverUrl}/uploads/${req.file.filename}`;
+
+    return res.json({
+      success: true,
+      message: 'Video uploaded successfully!',
+      videoUrl: localVideoUrl,
+      filename: req.file.filename
+    });
+  } catch (error) {
+    console.error('Video upload error:', error);
+    res.status(500).json({ success: false, message: error.message || 'Video upload failed.' });
+  }
+};
+
+

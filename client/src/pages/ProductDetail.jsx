@@ -103,23 +103,23 @@ export default function ProductDetail() {
         
         {/* Left Column: Image Gallery */}
         <div className="lg:col-span-6 space-y-4">
-          <div className="relative h-80 sm:h-96 md:h-[420px] rounded-3xl overflow-hidden bg-industrial-900 border border-industrial-800 shadow-2xl">
+          <div className="relative h-80 sm:h-96 md:h-[450px] rounded-3xl overflow-hidden bg-white border border-slate-200/70 flex items-center justify-center p-4 sm:p-6">
             <img
               src={product.images?.[activeImage] || 'https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1000&q=80'}
               alt={product.name}
-              className="w-full h-full object-cover transition-all duration-500"
+              className="w-full h-full object-contain p-2 transition-all duration-500"
             />
-            <div className="absolute top-4 left-4 bg-industrial-950/90 backdrop-blur-md px-3 py-1 rounded-full text-xs font-bold text-amber-brand border border-industrial-800">
+            <div className="absolute top-4 left-4 bg-slate-900/90 backdrop-blur-md px-3 py-1 rounded-full text-xs font-bold text-amber-400 border border-slate-700 shadow-sm">
               {product.category}
             </div>
             {product.isFeatured && (
-              <div className="absolute top-4 right-4 bg-amber-brand text-industrial-950 px-2.5 py-1 rounded-full text-[10px] font-black uppercase shadow-md">
+              <div className="absolute top-4 right-4 bg-[#3D9B28] text-white px-3 py-1 rounded-full text-[10px] font-black uppercase shadow-md tracking-wider">
                 Featured System
               </div>
             )}
 
             {/* Official Manufacturer Watermark Overlay */}
-            <div className="absolute bottom-4 right-4 z-10 flex items-center gap-2 bg-industrial-950/85 backdrop-blur-md border border-amber-500/30 px-3 py-1.5 rounded-xl shadow-lg pointer-events-none select-none">
+            <div className="absolute bottom-4 right-4 z-10 flex items-center gap-2 bg-slate-900/85 backdrop-blur-md border border-slate-700/80 px-3 py-1.5 rounded-xl shadow-lg pointer-events-none select-none">
               <img 
                 src="/raghav-emblem-transparent.png" 
                 alt="Raghav Certified" 
@@ -127,7 +127,7 @@ export default function ProductDetail() {
               />
               <div className="flex flex-col text-left">
                 <span className="font-display font-extrabold text-[10px] tracking-wider text-white leading-none">RAGHAV</span>
-                <span className="text-[8px] font-mono uppercase tracking-widest text-amber-brand leading-none mt-0.5">Certified Equipment</span>
+                <span className="text-[8px] font-mono uppercase tracking-widest text-[#3D9B28] leading-none mt-0.5 font-bold">Certified Equipment</span>
               </div>
             </div>
           </div>
@@ -139,11 +139,11 @@ export default function ProductDetail() {
                 <button
                   key={idx}
                   onClick={() => setActiveImage(idx)}
-                  className={`w-20 h-20 rounded-xl overflow-hidden bg-industrial-950 border-2 transition-all flex-shrink-0 ${
-                    activeImage === idx ? 'border-amber-brand shadow-glow-amber scale-105' : 'border-industrial-800 opacity-60 hover:opacity-100'
+                  className={`w-20 h-20 rounded-xl overflow-hidden bg-white border-2 p-1 transition-all flex-shrink-0 flex items-center justify-center ${
+                    activeImage === idx ? 'border-[#3D9B28] shadow-md scale-105' : 'border-slate-200 opacity-60 hover:opacity-100'
                   }`}
                 >
-                  <img src={img} alt="thumb" className="w-full h-full object-cover" />
+                  <img src={img} alt="thumb" className="w-full h-full object-contain" />
                 </button>
               ))}
             </div>
@@ -370,11 +370,11 @@ export default function ProductDetail() {
                 className="group p-4 rounded-2xl bg-industrial-900 border border-industrial-800 hover:border-amber-500/40 transition-all flex flex-col justify-between"
               >
                 <div>
-                  <div className="h-36 rounded-xl overflow-hidden bg-industrial-950 mb-3">
+                  <div className="h-36 rounded-xl overflow-hidden bg-white border border-slate-200 p-2 mb-3 flex items-center justify-center">
                     <img
                       src={rel.images?.[0] || 'https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80'}
                       alt={rel.name}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform"
+                      className="w-full h-full object-contain group-hover:scale-105 transition-transform"
                     />
                   </div>
                   <h4 className="font-display font-bold text-xs text-white group-hover:text-amber-brand transition-colors line-clamp-2">

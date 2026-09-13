@@ -212,20 +212,20 @@ export default function Machines() {
         </div>
       ) : viewMode === 'grid' ? (
         /* GRID VIEW */
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-6">
           {filteredProducts.map((machine) => (
             <div
               key={machine._id || machine.slug}
-              className="rounded-3xl bg-industrial-900/90 border border-industrial-800 hover:border-amber-500/40 p-5 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 shadow-card-dark group"
+              className="rounded-2xl sm:rounded-3xl bg-industrial-900/90 border border-industrial-800 hover:border-amber-500/40 p-3 sm:p-5 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 shadow-card-dark group"
             >
               <div>
-                <div className="relative h-56 rounded-2xl overflow-hidden bg-industrial-950 mb-4">
+                <div className="relative h-44 sm:h-56 rounded-xl sm:rounded-2xl overflow-hidden bg-white p-3 sm:p-5 flex items-center justify-center mb-3 sm:mb-4">
                   <img
                     src={machine.images?.[0] || 'https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=800&q=80'}
                     alt={machine.name}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    className="w-full h-full object-contain p-1 group-hover:scale-102 transition-transform duration-300"
                   />
-                  <div className="absolute top-3 left-3 bg-industrial-950/90 backdrop-blur-md px-2.5 py-1 rounded-md text-[10px] font-bold text-amber-brand border border-industrial-800">
+                  <div className="absolute top-2 left-2 sm:top-3 sm:left-3 bg-industrial-950/90 backdrop-blur-md px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-md text-[9px] sm:text-[10px] font-bold text-amber-brand border border-industrial-800">
                     {machine.category}
                   </div>
                   {machine.isFeatured && (
@@ -305,11 +305,11 @@ export default function Machines() {
               key={machine._id || machine.slug}
               className="rounded-3xl bg-industrial-900/90 border border-industrial-800 hover:border-amber-500/40 p-5 flex flex-col md:flex-row items-center gap-6 transition-all duration-300 hover:-translate-y-0.5 shadow-card-dark"
             >
-              <div className="w-full md:w-56 h-44 rounded-2xl overflow-hidden bg-industrial-950 flex-shrink-0 relative">
+              <div className="w-full md:w-56 h-44 rounded-2xl overflow-hidden bg-white p-2 flex-shrink-0 relative flex items-center justify-center">
                 <img
                   src={machine.images?.[0] || 'https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=800&q=80'}
                   alt={machine.name}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-contain p-1"
                 />
                 <div className="absolute bottom-2 left-2 flex items-center gap-1 bg-industrial-950/80 backdrop-blur-sm px-1.5 py-0.5 rounded border border-industrial-800/80 text-[9px] text-industrial-300 font-mono">
                   <img src="/raghav-emblem-transparent.png" alt="" className="w-3 h-3 object-contain" />

@@ -10,7 +10,8 @@ import {
   Gallery,
   Testimonial,
   SiteSetting,
-  User
+  User,
+  MachineryVideo
 } from '../models/index.js';
 import {
   initialCategories,
@@ -18,7 +19,8 @@ import {
   initialBlogs,
   initialGallery,
   initialTestimonials,
-  initialSettings
+  initialSettings,
+  initialVideos
 } from '../utils/seedData.js';
 
 let isMongoConnected = false;
@@ -34,7 +36,12 @@ if (!fs.existsSync(dataDir)) {
 export const getFallbackDb = () => {
   if (fs.existsSync(fallbackDbFile)) {
     try {
-      return JSON.parse(fs.readFileSync(fallbackDbFile, 'utf8'));
+      const store = JSON.parse(fs.readFileSync(fallbackDbFile, 'utf8'));
+      if (!store.videos) {
+        store.videos = initialVideos.map((v, i) => ({ ...v, _id: 'vid_' + (i + 1), createdAt: new Date() }));
+        fs.writeFileSync(fallbackDbFile, JSON.stringify(store, null, 2));
+      }
+      return store;
     } catch (e) {
       console.error('[DB] Error parsing fallback json, re-initializing...', e);
     }
@@ -46,6 +53,7 @@ export const getFallbackDb = () => {
     gallery: initialGallery.map((g, i) => ({ ...g, _id: 'gal_' + (i + 1), createdAt: new Date() })),
     testimonials: initialTestimonials.map((t, i) => ({ ...t, _id: 'testi_' + (i + 1), createdAt: new Date() })),
     settings: { ...initialSettings, _id: 'settings_1' },
+    videos: initialVideos.map((v, i) => ({ ...v, _id: 'vid_' + (i + 1), createdAt: new Date() })),
     enquiries: [],
     users: [
       {

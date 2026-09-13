@@ -39,6 +39,7 @@ import ManageEnquiries from './pages/admin/ManageEnquiries';
 import ManageBlogs from './pages/admin/ManageBlogs';
 import ManageGallery from './pages/admin/ManageGallery';
 import ManageTestimonials from './pages/admin/ManageTestimonials';
+import ManageVideos from './pages/admin/ManageVideos';
 import SiteSettings from './pages/admin/SiteSettings';
 
 // Public Layout Wrapper
@@ -97,6 +98,7 @@ export default function App() {
                   <Route path="blogs" element={<ManageBlogs />} />
                   <Route path="gallery" element={<ManageGallery />} />
                   <Route path="testimonials" element={<ManageTestimonials />} />
+                  <Route path="videos" element={<ManageVideos />} />
                   <Route path="settings" element={<SiteSettings />} />
                 </Route>
               </Routes>

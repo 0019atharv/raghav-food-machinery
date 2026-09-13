@@ -301,6 +301,160 @@ export const api = {
       body: formData
     });
     return handleResponse(res);
+  },
+
+  // Upload Video (MP4 / WebM / Mov)
+  uploadVideo: async (file) => {
+    try {
+      const formData = new FormData();
+      formData.append('video', file);
+      const res = await fetch(`${API_BASE}/upload/video`, {
+        method: 'POST',
+        headers: getHeaders(true),
+        body: formData
+      });
+      return await handleResponse(res);
+    } catch (e) {
+      console.warn('Backend video upload failed, creating local preview object URL:', e.message);
+      const blobUrl = URL.createObjectURL(file);
+      return {
+        success: true,
+        videoUrl: blobUrl,
+        message: 'Video loaded for preview'
+      };
+    }
+  },
+
+  // Machinery In Action Videos
+  getVideos: async () => {
+    try {
+      const res = await fetch(`${API_BASE}/videos`, { headers: getHeaders() });
+      const data = await handleResponse(res);
+      if (data && data.success && Array.isArray(data.videos) && data.videos.length > 0) {
+        return data;
+      }
+    } catch (e) {
+      console.warn('Backend videos fetch failed, checking local storage:', e.message);
+    }
+    const stored = localStorage.getItem('rfpm_machinery_videos');
+    if (stored) {
+      try {
+        return { success: true, videos: JSON.parse(stored) };
+      } catch (err) {}
+    }
+    return { success: true, videos: defaultMachineryVideos };
+  },
+
+  createVideo: async (videoData) => {
+    try {
+      const res = await fetch(`${API_BASE}/videos`, {
+        method: 'POST',
+        headers: getHeaders(),
+        body: JSON.stringify(videoData)
+      });
+      return await handleResponse(res);
+    } catch (e) {
+      const stored = JSON.parse(localStorage.getItem('rfpm_machinery_videos') || JSON.stringify(defaultMachineryVideos));
+      const newVid = {
+        ...videoData,
+        _id: 'vid_' + Date.now(),
+        createdAt: new Date()
+      };
+      stored.unshift(newVid);
+      localStorage.setItem('rfpm_machinery_videos', JSON.stringify(stored));
+      return { success: true, video: newVid, message: 'Video added successfully!' };
+    }
+  },
+
+  updateVideo: async (id, videoData) => {
+    try {
+      const res = await fetch(`${API_BASE}/videos/${id}`, {
+        method: 'PUT',
+        headers: getHeaders(),
+        body: JSON.stringify(videoData)
+      });
+      return await handleResponse(res);
+    } catch (e) {
+      const stored = JSON.parse(localStorage.getItem('rfpm_machinery_videos') || JSON.stringify(defaultMachineryVideos));
+      const idx = stored.findIndex(v => v._id === id);
+      if (idx !== -1) {
+        stored[idx] = { ...stored[idx], ...videoData, updatedAt: new Date() };
+        localStorage.setItem('rfpm_machinery_videos', JSON.stringify(stored));
+        return { success: true, video: stored[idx], message: 'Video updated successfully!' };
+      }
+      throw new Error('Video not found');
+    }
+  },
+
+  deleteVideo: async (id) => {
+    try {
+      const res = await fetch(`${API_BASE}/videos/${id}`, {
+        method: 'DELETE',
+        headers: getHeaders()
+      });
+      return await handleResponse(res);
+    } catch (e) {
+      let stored = JSON.parse(localStorage.getItem('rfpm_machinery_videos') || JSON.stringify(defaultMachineryVideos));
+      stored = stored.filter(v => v._id !== id);
+      localStorage.setItem('rfpm_machinery_videos', JSON.stringify(stored));
+      return { success: true, message: 'Video deleted successfully!' };
+    }
   }
 };
+
+export const defaultMachineryVideos = [
+  {
+    _id: "vid_1",
+    title: "Continuous Band Sealer with Nitrogen Flushing",
+    machineName: "Raghav Industrial Band Sealer RFPM-CBS-900",
+    category: "Pouch Packaging",
+    videoUrl: "https://assets.mixkit.co/videos/preview/mixkit-factory-conveyor-belt-in-operation-40890-large.mp4",
+    thumbnailUrl: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=800&q=80",
+    duration: "0:45",
+    badge: "Conveyor Sealing",
+    specsSummary: "0-12 M/min Speed | PID Digital Temp 300°C | Solid Stainless Steel Stand",
+    isPublished: true,
+    order: 1
+  },
+  {
+    _id: "vid_2",
+    title: "Commercial Retort Autoclave Sterilizer",
+    machineName: "500L Canning Autoclave RFPM-RET-500",
+    category: "Thermal Canning",
+    videoUrl: "https://assets.mixkit.co/videos/preview/mixkit-close-up-of-machinery-parts-in-a-factory-40892-large.mp4",
+    thumbnailUrl: "https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&w=800&q=80",
+    duration: "1:15",
+    badge: "Thermal Sterilizer",
+    specsSummary: "121-134°C Sterilization | 30 PSI Hydro Tested | SS-304/SS-316 Food Grade",
+    isPublished: true,
+    order: 2
+  },
+  {
+    _id: "vid_3",
+    title: "Steam Jacketed Tilting Mixing Kettle",
+    machineName: "200L Motorized Scraper Kettle RFPM-SJK-200",
+    category: "Cooking Vessel",
+    videoUrl: "https://assets.mixkit.co/videos/preview/mixkit-industrial-robot-in-a-modern-automated-factory-40888-large.mp4",
+    thumbnailUrl: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&q=80",
+    duration: "0:55",
+    badge: "Motorized Scraper",
+    specsSummary: "Teflon Scraping Blades | 90° Tilting Gearbox | Dual Heating Jackets",
+    isPublished: true,
+    order: 3
+  },
+  {
+    _id: "vid_4",
+    title: "Cyclone Stainless Steel Pulverizer System",
+    machineName: "Blower Cyclone Grinder RFPM-BCP-100",
+    category: "Spice Grinding",
+    videoUrl: "https://assets.mixkit.co/videos/preview/mixkit-metal-pieces-coming-out-of-a-laser-cutting-machine-40889-large.mp4",
+    thumbnailUrl: "https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&w=800&q=80",
+    duration: "1:10",
+    badge: "Cyclone Grinding",
+    specsSummary: "150-250 Kg/hr Output | 10 HP Motor | Air-Cooled Cyclone Filter",
+    isPublished: true,
+    order: 4
+  }
+];
+
 

@@ -964,3 +964,54 @@ export const initialSettings = {
   }
 };
 
+export const initialVideos = [
+  {
+    title: "Continuous Band Sealer with Nitrogen Flushing",
+    machineName: "Raghav Industrial Band Sealer RFPM-CBS-900",
+    category: "Pouch Packaging",
+    videoUrl: "https://assets.mixkit.co/videos/preview/mixkit-factory-conveyor-belt-in-operation-40890-large.mp4",
+    thumbnailUrl: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=800&q=80",
+    duration: "0:45",
+    badge: "Conveyor Sealing",
+    specsSummary: "0-12 M/min Speed | PID Digital Temp 300°C | Solid Stainless Steel Stand",
+    isPublished: true,
+    order: 1
+  },
+  {
+    title: "Commercial Retort Autoclave Sterilizer",
+    machineName: "500L Canning Autoclave RFPM-RET-500",
+    category: "Thermal Canning",
+    videoUrl: "https://assets.mixkit.co/videos/preview/mixkit-close-up-of-machinery-parts-in-a-factory-40892-large.mp4",
+    thumbnailUrl: "https://images.unsplash.com/photo-1581092335397-9583fe92d232?auto=format&fit=crop&w=800&q=80",
+    duration: "1:15",
+    badge: "Thermal Sterilizer",
+    specsSummary: "121-134°C Sterilization | 30 PSI Hydro Tested | SS-304/SS-316 Food Grade",
+    isPublished: true,
+    order: 2
+  },
+  {
+    title: "Steam Jacketed Tilting Mixing Kettle",
+    machineName: "200L Motorized Scraper Kettle RFPM-SJK-200",
+    category: "Cooking Vessel",
+    videoUrl: "https://assets.mixkit.co/videos/preview/mixkit-industrial-robot-in-a-modern-automated-factory-40888-large.mp4",
+    thumbnailUrl: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&q=80",
+    duration: "0:55",
+    badge: "Motorized Scraper",
+    specsSummary: "Teflon Scraping Blades | 90° Tilting Gearbox | Dual Heating Jackets",
+    isPublished: true,
+    order: 3
+  },
+  {
+    title: "Cyclone Stainless Steel Pulverizer System",
+    machineName: "Blower Cyclone Grinder RFPM-BCP-100",
+    category: "Spice Grinding",
+    videoUrl: "https://assets.mixkit.co/videos/preview/mixkit-metal-pieces-coming-out-of-a-laser-cutting-machine-40889-large.mp4",
+    thumbnailUrl: "https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&w=800&q=80",
+    duration: "1:10",
+    badge: "Cyclone Grinding",
+    specsSummary: "150-250 Kg/hr Output | 10 HP Motor | Air-Cooled Cyclone Filter",
+    isPublished: true,
+    order: 4
+  }
+];
+

@@ -72,6 +72,21 @@ export const uploadLocal = multer({
   }
 });
 
+export const uploadVideoLocal = multer({
+  storage: localStorage,
+  limits: { fileSize: 100 * 1024 * 1024 }, // 100MB limit for video files
+  fileFilter: (req, file, cb) => {
+    const allowed = /mp4|webm|mov|m4v|ogg|mkv|avi/;
+    const ext = allowed.test(path.extname(file.originalname).toLowerCase());
+    const mime = file.mimetype.startsWith('video/');
+    if (ext || mime) {
+      cb(null, true);
+    } else {
+      cb(new Error('Only video files (MP4, WEBM, MOV, M4V, etc.) are allowed!'));
+    }
+  }
+});
+
 /**
  * Upload middleware selector:
  * When you are ready to switch to Cloudinary:
@@ -87,5 +102,10 @@ export const getUploadMiddleware = () => {
   return uploadLocal;
 };
 
+export const getVideoUploadMiddleware = () => {
+  return uploadVideoLocal;
+};
+
 export { cloudinary };
+
 

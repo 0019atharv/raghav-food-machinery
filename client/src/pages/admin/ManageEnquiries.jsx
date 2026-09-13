@@ -79,13 +79,13 @@ export default function ManageEnquiries() {
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
-          <span className="text-xs font-mono font-bold text-amber-brand uppercase tracking-wider">
+          <span className="text-xs font-mono font-bold text-[#3D9B28] uppercase tracking-wider">
             Lead Capture & Sales Pipeline
           </span>
-          <h1 className="font-display text-2xl md:text-3xl font-extrabold text-white">
+          <h1 className="font-display text-2xl md:text-3xl font-extrabold text-slate-900">
             Customer Quotation Enquiries (RFQs)
           </h1>
-          <p className="text-xs text-industrial-400 mt-1">
+          <p className="text-xs text-slate-500 mt-1">
             Track inquiries, update sales statuses, log custom engineering notes, and export to CSV.
           </p>
         </div>
@@ -94,7 +94,7 @@ export default function ManageEnquiries() {
         <a
           href={api.getExportCsvUrl()}
           download
-          className="inline-flex items-center gap-2 bg-gradient-to-r from-emerald-600 to-emerald-500 hover:from-emerald-500 hover:to-emerald-400 text-white font-bold px-5 py-3 rounded-xl text-xs transition-all shadow-lg shadow-emerald-950/40 whitespace-nowrap"
+          className="inline-flex items-center gap-2 bg-[#3D9B28] hover:bg-[#2E7D1E] text-white font-bold px-5 py-3 rounded-xl text-xs transition-all shadow-sm whitespace-nowrap"
         >
           <Download className="w-4 h-4" />
           <span>Export All Enquiries (CSV)</span>
@@ -102,16 +102,16 @@ export default function ManageEnquiries() {
       </div>
 
       {/* Toolbar: Search & Status Filters */}
-      <div className="flex flex-col md:flex-row items-center justify-between gap-4 bg-industrial-900/90 border border-industrial-800 p-4 rounded-2xl">
+      <div className="flex flex-col md:flex-row items-center justify-between gap-4 bg-white border border-slate-200 p-4 rounded-2xl shadow-sm">
         
         <form onSubmit={handleSearchSubmit} className="relative w-full md:w-80">
-          <Search className="w-4 h-4 text-industrial-500 absolute left-3.5 top-3" />
+          <Search className="w-4 h-4 text-slate-400 absolute left-3.5 top-3" />
           <input
             type="text"
             value={search}
             onChange={(e) => setSearch(e.target.value)}
             placeholder="Search by name, company, phone, RFQ #..."
-            className="w-full bg-industrial-950 border border-industrial-800 rounded-xl pl-10 pr-4 py-2 text-xs text-white focus:border-amber-brand focus:outline-none"
+            className="w-full bg-white border border-slate-300 rounded-xl pl-10 pr-4 py-2 text-xs text-slate-900 placeholder-slate-400 focus:border-[#3D9B28] focus:ring-1 focus:ring-[#3D9B28] focus:outline-none"
           />
         </form>
 
@@ -122,8 +122,8 @@ export default function ManageEnquiries() {
               onClick={() => setStatusFilter(status)}
               className={`px-3 py-1.5 rounded-xl text-xs font-semibold whitespace-nowrap transition-all ${
                 statusFilter === status
-                  ? 'bg-amber-brand text-industrial-950 font-bold'
-                  : 'bg-industrial-950 text-industrial-400 hover:text-white border border-industrial-800'
+                  ? 'bg-[#3D9B28] text-white font-bold shadow-sm'
+                  : 'bg-slate-100 text-slate-600 hover:text-slate-900 border border-slate-200'
               }`}
             >
               {status}
@@ -136,10 +136,10 @@ export default function ManageEnquiries() {
       {/* Enquiries List */}
       {loading ? (
         <div className="text-center py-20">
-          <div className="inline-block w-8 h-8 border-2 border-amber-brand border-t-transparent rounded-full animate-spin" />
+          <div className="inline-block w-8 h-8 border-2 border-[#3D9B28] border-t-transparent rounded-full animate-spin" />
         </div>
       ) : enquiries.length === 0 ? (
-        <div className="p-12 text-center rounded-3xl bg-industrial-900/50 border border-industrial-800 text-industrial-400 text-xs">
+        <div className="p-12 text-center rounded-3xl bg-white border border-slate-200 text-slate-500 text-xs shadow-sm">
           No customer enquiries found for the selected status.
         </div>
       ) : (
@@ -147,18 +147,18 @@ export default function ManageEnquiries() {
           {enquiries.map((enq) => (
             <div
               key={enq._id}
-              className="p-6 rounded-2xl bg-industrial-900/90 border border-industrial-800 hover:border-amber-500/40 transition-colors space-y-4 shadow-card-dark"
+              className="p-6 rounded-2xl bg-white border border-slate-200 hover:border-[#3D9B28]/50 transition-colors space-y-4 shadow-sm"
             >
-              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-industrial-800 pb-4">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-100 pb-4">
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-xl bg-amber-500/10 text-amber-brand flex items-center justify-center font-mono font-bold text-xs">
+                  <div className="w-10 h-10 rounded-xl bg-emerald-50 text-[#3D9B28] border border-emerald-200 flex items-center justify-center font-mono font-bold text-xs">
                     RFQ
                   </div>
                   <div>
-                    <span className="font-mono font-bold text-white text-sm">
+                    <span className="font-mono font-bold text-slate-900 text-sm">
                       {enq.enquiryNumber}
                     </span>
-                    <span className="text-[11px] text-industrial-500 block">
+                    <span className="text-[11px] text-slate-500 block">
                       Received {new Date(enq.createdAt).toLocaleString('en-IN', { dateStyle: 'medium', timeStyle: 'short' })}
                     </span>
                   </div>
@@ -167,19 +167,19 @@ export default function ManageEnquiries() {
                 <div className="flex items-center gap-3">
                   <span className={`px-3 py-1 rounded-full text-xs font-bold ${
                     enq.status === 'Quotation Sent'
-                      ? 'bg-emerald-500/20 text-emerald-400 border border-emerald-500/30'
+                      ? 'bg-emerald-50 text-[#3D9B28] border border-emerald-200'
                       : enq.status === 'Contacted'
-                      ? 'bg-sky-500/20 text-sky-400 border border-sky-500/30'
+                      ? 'bg-sky-50 text-sky-700 border border-sky-200'
                       : enq.status === 'Closed'
-                      ? 'bg-purple-500/20 text-purple-400 border border-purple-500/30'
-                      : 'bg-amber-500/20 text-amber-brand border border-amber-500/30'
+                      ? 'bg-slate-100 text-slate-700 border border-slate-200'
+                      : 'bg-amber-50 text-amber-800 border border-amber-200'
                   }`}>
                     {enq.status}
                   </span>
 
                   <button
                     onClick={() => openDetailModal(enq)}
-                    className="px-3 py-1.5 rounded-xl bg-industrial-800 hover:bg-industrial-700 text-industrial-200 text-xs font-semibold border border-industrial-700"
+                    className="px-3 py-1.5 rounded-xl bg-white hover:bg-slate-50 text-slate-700 text-xs font-semibold border border-slate-300 shadow-sm transition-colors"
                   >
                     Update Status & Notes
                   </button>
@@ -189,19 +189,19 @@ export default function ManageEnquiries() {
               {/* Customer Contact Details Grid */}
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 text-xs">
                 <div>
-                  <span className="text-industrial-500 block text-[10px] uppercase">Customer Name</span>
-                  <strong className="text-white text-xs">{enq.customerName}</strong>
+                  <span className="text-slate-500 block text-[10px] uppercase font-bold tracking-wider">Customer Name</span>
+                  <strong className="text-slate-900 text-xs">{enq.customerName}</strong>
                 </div>
 
                 <div>
-                  <span className="text-industrial-500 block text-[10px] uppercase">Phone / WhatsApp</span>
+                  <span className="text-slate-500 block text-[10px] uppercase font-bold tracking-wider">Phone / WhatsApp</span>
                   <div className="flex items-center gap-2">
-                    <strong className="text-white text-xs">{enq.phone}</strong>
+                    <strong className="text-slate-900 text-xs">{enq.phone}</strong>
                     <a
                       href={`https://wa.me/${enq.phone.replace(/\D/g, '')}?text=Hello%20${encodeURIComponent(enq.customerName)},%20this%20is%20Raghav%20Food%20Machinery%20regarding%20your%20inquiry%20${enq.enquiryNumber}.`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-emerald-400 hover:text-emerald-300"
+                      className="text-[#3D9B28] hover:text-[#2E7D1E]"
                       title="Open WhatsApp chat with lead"
                     >
                       <MessageSquare className="w-3.5 h-3.5 fill-emerald-500/20" />
@@ -210,28 +210,28 @@ export default function ManageEnquiries() {
                 </div>
 
                 <div>
-                  <span className="text-industrial-500 block text-[10px] uppercase">Company & Location</span>
-                  <strong className="text-white text-xs">
+                  <span className="text-slate-500 block text-[10px] uppercase font-bold tracking-wider">Company & Location</span>
+                  <strong className="text-slate-900 text-xs">
                     {enq.businessName || 'Individual / Startup'}
                     {enq.state ? ` (${enq.state})` : ''}
                   </strong>
                 </div>
 
                 <div>
-                  <span className="text-industrial-500 block text-[10px] uppercase">Email</span>
-                  <span className="text-industrial-300 text-xs">{enq.email || 'N/A'}</span>
+                  <span className="text-slate-500 block text-[10px] uppercase font-bold tracking-wider">Email</span>
+                  <span className="text-slate-600 text-xs">{enq.email || 'N/A'}</span>
                 </div>
               </div>
 
               {/* Machines Requested */}
               {enq.machines && enq.machines.length > 0 && (
-                <div className="p-3 rounded-xl bg-industrial-950 border border-industrial-850 space-y-1">
-                  <span className="text-[10px] font-bold text-industrial-400 uppercase tracking-wider block">
+                <div className="p-3 rounded-xl bg-slate-50 border border-slate-200 space-y-1">
+                  <span className="text-[10px] font-bold text-slate-500 uppercase tracking-wider block">
                     Machines in Quote Request:
                   </span>
                   <div className="flex flex-wrap items-center gap-2 pt-1">
                     {enq.machines.map((m, idx) => (
-                      <span key={idx} className="bg-industrial-900 border border-industrial-800 text-amber-brand text-xs px-2.5 py-1 rounded-lg">
+                      <span key={idx} className="bg-white border border-slate-200 text-[#3D9B28] text-xs px-2.5 py-1 rounded-lg font-semibold shadow-xs">
                         <strong>{m.name || m.slug}</strong> &bull; {m.capacity} (x{m.quantity || 1})
                       </span>
                     ))}
@@ -241,8 +241,8 @@ export default function ManageEnquiries() {
 
               {/* Requirements text */}
               {enq.requirements && (
-                <div className="text-xs text-industrial-300 bg-industrial-950/40 p-3 rounded-xl border border-industrial-850">
-                  <span className="text-industrial-500 font-bold block text-[10px] uppercase mb-1">
+                <div className="text-xs text-slate-700 bg-slate-50 p-3 rounded-xl border border-slate-200">
+                  <span className="text-slate-500 font-bold block text-[10px] uppercase mb-1 tracking-wider">
                     Customer Requirements / Production Goal:
                   </span>
                   {enq.requirements}
@@ -251,8 +251,8 @@ export default function ManageEnquiries() {
 
               {/* Admin notes */}
               {enq.adminNotes && (
-                <div className="text-xs text-amber-glow bg-amber-500/10 p-3 rounded-xl border border-amber-500/20">
-                  <span className="text-amber-brand font-bold block text-[10px] uppercase mb-1">
+                <div className="text-xs text-amber-900 bg-amber-50/80 p-3 rounded-xl border border-amber-200">
+                  <span className="text-amber-800 font-bold block text-[10px] uppercase mb-1 tracking-wider">
                     Internal Sales Remark:
                   </span>
                   {enq.adminNotes}
@@ -266,23 +266,23 @@ export default function ManageEnquiries() {
 
       {/* Status Update & Notes Modal */}
       {selectedEnquiry && (
-        <div className="fixed inset-0 z-50 bg-industrial-950/80 backdrop-blur-md flex items-center justify-center p-4">
-          <div className="w-full max-w-md bg-industrial-900 border border-industrial-800 rounded-3xl p-6 space-y-5">
-            <div className="flex items-center justify-between border-b border-industrial-800 pb-3">
+        <div className="fixed inset-0 z-50 bg-slate-900/50 backdrop-blur-sm flex items-center justify-center p-4">
+          <div className="w-full max-w-md bg-white border border-slate-200 rounded-3xl p-6 space-y-5 shadow-2xl">
+            <div className="flex items-center justify-between border-b border-slate-200 pb-3">
               <div>
-                <h3 className="font-bold text-base text-white">Update RFQ Status</h3>
-                <span className="text-xs font-mono text-amber-brand">{selectedEnquiry.enquiryNumber}</span>
+                <h3 className="font-bold text-base text-slate-900">Update RFQ Status</h3>
+                <span className="text-xs font-mono font-bold text-[#3D9B28]">{selectedEnquiry.enquiryNumber}</span>
               </div>
-              <button onClick={() => setSelectedEnquiry(null)}><X className="w-5 h-5 text-industrial-400" /></button>
+              <button onClick={() => setSelectedEnquiry(null)}><X className="w-5 h-5 text-slate-400 hover:text-slate-600" /></button>
             </div>
 
             <form onSubmit={handleUpdateStatus} className="space-y-4">
               <div>
-                <label className="block text-xs font-medium text-industrial-300 mb-1.5">Change Status</label>
+                <label className="block text-xs font-semibold text-slate-700 mb-1.5">Change Status</label>
                 <select
                   value={editStatus}
                   onChange={(e) => setEditStatus(e.target.value)}
-                  className="w-full bg-industrial-950 border border-industrial-800 rounded-xl px-3 py-2 text-xs text-white focus:border-amber-brand focus:outline-none font-semibold"
+                  className="w-full bg-white border border-slate-300 rounded-xl px-3 py-2 text-xs text-slate-900 focus:border-[#3D9B28] focus:ring-1 focus:ring-[#3D9B28] focus:outline-none font-semibold"
                 >
                   <option value="Pending">Pending Review</option>
                   <option value="Contacted">Contacted / Discussion in Progress</option>
@@ -293,28 +293,28 @@ export default function ManageEnquiries() {
               </div>
 
               <div>
-                <label className="block text-xs font-medium text-industrial-300 mb-1.5">Internal Sales Remarks & Notes</label>
+                <label className="block text-xs font-semibold text-slate-700 mb-1.5">Internal Sales Remarks & Notes</label>
                 <textarea
                   value={adminNotes}
                   onChange={(e) => setAdminNotes(e.target.value)}
                   rows={3}
                   placeholder="e.g. Quoted 500L Retort with steam boiler connection at ₹4.2 Lakhs on 10 Sept..."
-                  className="w-full bg-industrial-950 border border-industrial-800 rounded-xl p-3 text-xs text-white focus:border-amber-brand focus:outline-none resize-none"
+                  className="w-full bg-white border border-slate-300 rounded-xl p-3 text-xs text-slate-900 focus:border-[#3D9B28] focus:ring-1 focus:ring-[#3D9B28] focus:outline-none resize-none"
                 />
               </div>
 
-              <div className="flex justify-end gap-3 pt-3 border-t border-industrial-800">
+              <div className="flex justify-end gap-3 pt-3 border-t border-slate-200">
                 <button
                   type="button"
                   onClick={() => setSelectedEnquiry(null)}
-                  className="px-4 py-2 rounded-xl bg-industrial-800 text-xs font-semibold text-industrial-300"
+                  className="bg-white hover:bg-slate-50 text-slate-700 border border-slate-300 font-semibold px-4 py-2 rounded-xl text-xs shadow-sm transition-all"
                 >
                   Cancel
                 </button>
                 <button
                   type="submit"
                   disabled={updating}
-                  className="bg-amber-brand hover:bg-amber-400 text-industrial-950 font-bold px-5 py-2 rounded-xl text-xs"
+                  className="bg-[#3D9B28] hover:bg-[#2E7D1E] text-white font-bold px-5 py-2 rounded-xl text-xs shadow-sm transition-all"
                 >
                   {updating ? 'Updating...' : 'Save Changes'}
                 </button>

@@ -194,6 +194,24 @@ const userSchema = new mongoose.Schema({
   createdAt: { type: Date, default: Date.now }
 });
 
+// ============================================================================
+// 9. MACHINERY VIDEO SCHEMA
+// ============================================================================
+const machineryVideoSchema = new mongoose.Schema({
+  title: { type: String, required: true, trim: true },
+  machineName: { type: String, required: true, trim: true },
+  category: { type: String, default: 'Demonstration' },
+  videoUrl: { type: String, required: true },
+  thumbnailUrl: { type: String, default: '' },
+  duration: { type: String, default: '0:45' },
+  badge: { type: String, default: 'Live Demo' },
+  specsSummary: { type: String, default: '' },
+  isPublished: { type: Boolean, default: true },
+  order: { type: Number, default: 0 },
+  createdAt: { type: Date, default: Date.now },
+  updatedAt: { type: Date, default: Date.now }
+});
+
 export const Product = mongoose.models.Product || mongoose.model('Product', productSchema);
 export const Category = mongoose.models.Category || mongoose.model('Category', categorySchema);
 export const Enquiry = mongoose.models.Enquiry || mongoose.model('Enquiry', enquirySchema);
@@ -202,4 +220,5 @@ export const Gallery = mongoose.models.Gallery || mongoose.model('Gallery', gall
 export const Testimonial = mongoose.models.Testimonial || mongoose.model('Testimonial', testimonialSchema);
 export const SiteSetting = mongoose.models.SiteSetting || mongoose.model('SiteSetting', siteSettingSchema);
 export const User = mongoose.models.User || mongoose.model('User', userSchema);
+export const MachineryVideo = mongoose.models.MachineryVideo || mongoose.model('MachineryVideo', machineryVideoSchema);
 

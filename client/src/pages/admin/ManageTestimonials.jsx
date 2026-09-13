@@ -68,10 +68,10 @@ export default function ManageTestimonials() {
     <div className="p-6 md:p-10 space-y-8">
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
-          <span className="text-xs font-mono font-bold text-amber-brand uppercase tracking-wider">
+          <span className="text-xs font-mono font-bold text-[#3D9B28] uppercase tracking-wider">
             Client Proof & Social Trust
           </span>
-          <h1 className="font-display text-2xl md:text-3xl font-extrabold text-white">
+          <h1 className="font-display text-2xl md:text-3xl font-extrabold text-slate-900">
             Manage Client Testimonials
           </h1>
         </div>
@@ -87,7 +87,7 @@ export default function ManageTestimonials() {
             setError('');
             setIsModalOpen(true);
           }}
-          className="inline-flex items-center gap-2 bg-amber-brand hover:bg-amber-400 text-industrial-950 font-bold px-5 py-3 rounded-xl text-xs shadow-glow-amber whitespace-nowrap"
+          className="inline-flex items-center gap-2 bg-[#3D9B28] hover:bg-[#2E7D1E] text-white font-bold px-5 py-3 rounded-xl text-xs shadow-sm whitespace-nowrap transition-all"
         >
           <Plus className="w-4 h-4" />
           <span>Add Testimonial</span>
@@ -98,28 +98,28 @@ export default function ManageTestimonials() {
         {testimonials.map((t) => (
           <div
             key={t._id}
-            className="rounded-2xl bg-industrial-900/90 border border-industrial-800 p-6 space-y-4 flex flex-col justify-between"
+            className="rounded-2xl bg-white border border-slate-200 p-6 space-y-4 flex flex-col justify-between shadow-sm"
           >
             <div>
-              <div className="flex items-center gap-1 text-amber-brand mb-2">
+              <div className="flex items-center gap-1 text-amber-400 mb-2">
                 {[...Array(t.rating || 5)].map((_, i) => (
-                  <Star key={i} className="w-3.5 h-3.5 fill-amber-brand" />
+                  <Star key={i} className="w-3.5 h-3.5 fill-amber-400" />
                 ))}
               </div>
-              <p className="text-xs text-industrial-300 italic leading-relaxed">
+              <p className="text-xs text-slate-700 italic leading-relaxed">
                 "{t.review}"
               </p>
             </div>
 
-            <div className="pt-3 border-t border-industrial-800 flex items-center justify-between">
+            <div className="pt-3 border-t border-slate-100 flex items-center justify-between">
               <div>
-                <strong className="text-white text-xs block">{t.clientName}</strong>
-                <span className="text-[10px] text-amber-brand">{t.company} ({t.location})</span>
+                <strong className="text-slate-900 text-xs block">{t.clientName}</strong>
+                <span className="text-[10px] text-[#3D9B28] font-semibold">{t.company} ({t.location})</span>
               </div>
 
               <button
                 onClick={() => handleDelete(t._id)}
-                className="text-red-400 hover:text-red-300 text-xs"
+                className="text-red-600 hover:text-red-700 text-xs font-semibold"
               >
                 <Trash2 className="w-4 h-4" />
               </button>
@@ -129,34 +129,34 @@ export default function ManageTestimonials() {
       </div>
 
       {isModalOpen && (
-        <div className="fixed inset-0 z-50 bg-industrial-950/80 backdrop-blur-md flex items-center justify-center p-4">
-          <div className="w-full max-w-md bg-industrial-900 border border-industrial-800 rounded-3xl p-6 space-y-4">
-            <div className="flex items-center justify-between border-b border-industrial-800 pb-3">
-              <h3 className="font-bold text-lg text-white">Add Client Review</h3>
-              <button onClick={() => setIsModalOpen(false)}><X className="w-5 h-5 text-industrial-400" /></button>
+        <div className="fixed inset-0 z-50 bg-slate-900/50 backdrop-blur-sm flex items-center justify-center p-4">
+          <div className="w-full max-w-md bg-white border border-slate-200 rounded-3xl p-6 space-y-4 shadow-2xl">
+            <div className="flex items-center justify-between border-b border-slate-200 pb-3">
+              <h3 className="font-bold text-lg text-slate-900">Add Client Review</h3>
+              <button onClick={() => setIsModalOpen(false)}><X className="w-5 h-5 text-slate-400 hover:text-slate-600" /></button>
             </div>
 
-            {error && <div className="p-2.5 rounded-lg bg-red-950/50 text-red-300 text-xs">{error}</div>}
+            {error && <div className="p-2.5 rounded-lg bg-red-50 border border-red-200 text-red-700 text-xs">{error}</div>}
 
             <form onSubmit={handleSave} className="space-y-3">
               <div className="grid grid-cols-2 gap-3">
                 <div>
-                  <label className="block text-xs font-medium text-industrial-300 mb-1">Client Name *</label>
+                  <label className="block text-xs font-semibold text-slate-700 mb-1">Client Name *</label>
                   <input
                     type="text"
                     value={clientName}
                     onChange={(e) => setClientName(e.target.value)}
-                    className="w-full bg-industrial-950 border border-industrial-800 rounded-xl px-3 py-2 text-xs text-white"
+                    className="w-full bg-white border border-slate-300 rounded-xl px-3 py-2 text-xs text-slate-900 focus:border-[#3D9B28] focus:ring-1 focus:ring-[#3D9B28] focus:outline-none"
                     required
                   />
                 </div>
                 <div>
-                  <label className="block text-xs font-medium text-industrial-300 mb-1">Company *</label>
+                  <label className="block text-xs font-semibold text-slate-700 mb-1">Company *</label>
                   <input
                     type="text"
                     value={company}
                     onChange={(e) => setCompany(e.target.value)}
-                    className="w-full bg-industrial-950 border border-industrial-800 rounded-xl px-3 py-2 text-xs text-white"
+                    className="w-full bg-white border border-slate-300 rounded-xl px-3 py-2 text-xs text-slate-900 focus:border-[#3D9B28] focus:ring-1 focus:ring-[#3D9B28] focus:outline-none"
                     required
                   />
                 </div>
@@ -164,20 +164,20 @@ export default function ManageTestimonials() {
 
               <div className="grid grid-cols-2 gap-3">
                 <div>
-                  <label className="block text-xs font-medium text-industrial-300 mb-1">Location</label>
+                  <label className="block text-xs font-semibold text-slate-700 mb-1">Location</label>
                   <input
                     type="text"
                     value={location}
                     onChange={(e) => setLocation(e.target.value)}
-                    className="w-full bg-industrial-950 border border-industrial-800 rounded-xl px-3 py-2 text-xs text-white"
+                    className="w-full bg-white border border-slate-300 rounded-xl px-3 py-2 text-xs text-slate-900 focus:border-[#3D9B28] focus:ring-1 focus:ring-[#3D9B28] focus:outline-none"
                   />
                 </div>
                 <div>
-                  <label className="block text-xs font-medium text-industrial-300 mb-1">Rating (1-5)</label>
+                  <label className="block text-xs font-semibold text-slate-700 mb-1">Rating (1-5)</label>
                   <select
                     value={rating}
                     onChange={(e) => setRating(e.target.value)}
-                    className="w-full bg-industrial-950 border border-industrial-800 rounded-xl px-3 py-2 text-xs text-white"
+                    className="w-full bg-white border border-slate-300 rounded-xl px-3 py-2 text-xs text-slate-900 focus:border-[#3D9B28] focus:ring-1 focus:ring-[#3D9B28] focus:outline-none"
                   >
                     <option value={5}>5 Stars (Excellent)</option>
                     <option value={4}>4 Stars (Very Good)</option>
@@ -186,37 +186,37 @@ export default function ManageTestimonials() {
               </div>
 
               <div>
-                <label className="block text-xs font-medium text-industrial-300 mb-1">Machine Model Purchased</label>
+                <label className="block text-xs font-semibold text-slate-700 mb-1">Machine Model Purchased</label>
                 <input
                   type="text"
                   value={machinePurchased}
                   onChange={(e) => setMachinePurchased(e.target.value)}
-                  className="w-full bg-industrial-950 border border-industrial-800 rounded-xl px-3 py-2 text-xs text-white"
+                  className="w-full bg-white border border-slate-300 rounded-xl px-3 py-2 text-xs text-slate-900 focus:border-[#3D9B28] focus:ring-1 focus:ring-[#3D9B28] focus:outline-none"
                 />
               </div>
 
               <div>
-                <label className="block text-xs font-medium text-industrial-300 mb-1">Client Review *</label>
+                <label className="block text-xs font-semibold text-slate-700 mb-1">Client Review *</label>
                 <textarea
                   value={review}
                   onChange={(e) => setReview(e.target.value)}
                   rows={3}
-                  className="w-full bg-industrial-950 border border-industrial-800 rounded-xl p-2.5 text-xs text-white resize-none"
+                  className="w-full bg-white border border-slate-300 rounded-xl p-2.5 text-xs text-slate-900 focus:border-[#3D9B28] focus:ring-1 focus:ring-[#3D9B28] focus:outline-none resize-none"
                   required
                 />
               </div>
 
-              <div className="flex justify-end gap-3 pt-3 border-t border-industrial-800">
+              <div className="flex justify-end gap-3 pt-3 border-t border-slate-200">
                 <button
                   type="button"
                   onClick={() => setIsModalOpen(false)}
-                  className="px-4 py-2 rounded-xl bg-industrial-800 text-xs font-semibold text-industrial-300"
+                  className="bg-white hover:bg-slate-50 text-slate-700 border border-slate-300 font-semibold px-4 py-2 rounded-xl text-xs shadow-sm transition-all"
                 >
                   Cancel
                 </button>
                 <button
                   type="submit"
-                  className="bg-amber-brand hover:bg-amber-400 text-industrial-950 font-bold px-5 py-2 rounded-xl text-xs"
+                  className="bg-[#3D9B28] hover:bg-[#2E7D1E] text-white font-bold px-5 py-2 rounded-xl text-xs shadow-sm transition-all"
                 >
                   Save Review
                 </button>

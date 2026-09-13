@@ -22,11 +22,22 @@ export default {
           100: '#F1F5F9',
           50: '#F8FAFC',
         },
+        navy: {
+          DEFAULT: '#16233F',
+          dark: '#0B1324',
+          light: '#1E3055',
+        },
+        brandgreen: {
+          DEFAULT: '#3D9B28',
+          dark: '#2E7D1E',
+          light: '#4EBC35',
+          glow: 'rgba(61, 155, 40, 0.25)',
+        },
         amber: {
-          brand: '#F59E0B',
-          glow: '#FBBF24',
-          dark: '#D97706',
-          deep: '#B45309',
+          brand: '#3D9B28',
+          glow: '#4EBC35',
+          dark: '#2E7D1E',
+          deep: '#1B5E20',
         },
         steel: {
           base: '#64748B',
@@ -36,7 +47,8 @@ export default {
       },
       fontFamily: {
         sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
-        display: ['Space Grotesk', 'Cabinet Grotesk', 'Inter', 'sans-serif'],
+        montserrat: ['Montserrat', 'Inter', 'sans-serif'],
+        display: ['Montserrat', 'Space Grotesk', 'Inter', 'sans-serif'],
         mono: ['JetBrains Mono', 'Fira Code', 'monospace']
       },
       boxShadow: {

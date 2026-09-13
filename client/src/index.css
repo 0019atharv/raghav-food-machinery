@@ -79,56 +79,191 @@ body {
   -webkit-text-fill-color: transparent;
 }
 
+/* Reference Site Button & Layout Utilities (raghavfoodmachines.com) */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 11px 24px;
+  border-radius: 8px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 0.88rem;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: all 0.25s ease;
+  text-decoration: none;
+}
+.btn-primary {
+  background: #3D9B28 !important;
+  color: #FFFFFF !important;
+  border-color: #3D9B28 !important;
+}
+.btn-primary:hover {
+  background: #2E7D1E !important;
+  border-color: #2E7D1E !important;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(61, 155, 40, 0.35);
+}
+.btn-outline {
+  background: transparent !important;
+  color: #0f172a !important;
+  border-color: #cbd5e1 !important;
+}
+.btn-outline:hover {
+  background: #3D9B28 !important;
+  border-color: #3D9B28 !important;
+  color: #FFFFFF !important;
+  transform: translateY(-2px);
+}
+.btn-sm {
+  padding: 7px 16px;
+  font-size: 0.8rem;
+}
+.title-line {
+  width: 50px;
+  height: 4px;
+  background: #3D9B28;
+  border-radius: 2px;
+  margin: 10px auto 16px;
+}
+.title-line.left {
+  margin-left: 0;
+}
+
 /* ==========================================================================
    THEME STYLES (Light, Dark, Navy, Amber)
    ========================================================================== */
 
-/* 1. PRECISION STEEL (LIGHT THEME) */
+/* 1. RAGHAV CLASSIC LIGHT (raghavfoodmachines.com inspired) */
 html.theme-light {
   color-scheme: light;
 }
 
 html.theme-light body {
-  background-color: #f1f5f9;
-  color: #0f172a;
+  background-color: #ffffff;
+  color: #1e293b;
 }
 
+/* Backgrounds */
+html.theme-light [class*="bg-industrial-950"],
 html.theme-light .bg-industrial-950 {
   background-color: #ffffff !important;
 }
 
+html.theme-light [class*="bg-industrial-900"],
 html.theme-light .bg-industrial-900 {
+  background-color: #ffffff !important;
+}
+
+html.theme-light [class*="bg-industrial-850"],
+html.theme-light .bg-industrial-850 {
   background-color: #f8fafc !important;
 }
 
-html.theme-light .bg-industrial-850 {
-  background-color: #f1f5f9 !important;
-}
-
+html.theme-light [class*="bg-industrial-800"],
 html.theme-light .bg-industrial-800 {
-  background-color: #e2e8f0 !important;
+  background-color: #f1f5f9 !important;
   color: #0f172a !important;
 }
 
-html.theme-light .border-industrial-800,
-html.theme-light .border-industrial-850,
-html.theme-light .border-industrial-700 {
-  border-color: #cbd5e1 !important;
+/* Top Utility Bar & Footer */
+html.theme-light .top-utility-bar {
+  background-color: #f8fafc !important;
+  color: #475569 !important;
+  border-bottom-color: #e2e8f0 !important;
 }
 
-html.theme-light .text-white {
-  color: #0f172a !important;
-}
-
-html.theme-light .text-industrial-100,
-html.theme-light .text-industrial-200,
-html.theme-light .text-industrial-300 {
+html.theme-light .top-utility-bar a {
   color: #334155 !important;
 }
 
-html.theme-light .text-industrial-400,
+html.theme-light .top-utility-bar a:hover {
+  color: #3D9B28 !important;
+}
+
+html.theme-light .site-footer {
+  background-color: #f1f5f9 !important;
+  color: #475569 !important;
+  border-top-color: #e2e8f0 !important;
+}
+
+html.theme-light .site-footer .text-white,
+html.theme-light .site-footer h1,
+html.theme-light .site-footer h2,
+html.theme-light .site-footer h3,
+html.theme-light .site-footer h4 {
+  color: #0f172a !important;
+}
+
+html.theme-light .site-footer [class*="bg-industrial-900"],
+html.theme-light .site-footer .bg-industrial-900 {
+  background-color: #ffffff !important;
+  border-color: #e2e8f0 !important;
+}
+
+/* Main Navbar */
+html.theme-light nav.main-navbar {
+  background-color: #ffffff !important;
+  border-bottom-color: #e2e8f0 !important;
+  box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.05) !important;
+}
+
+html.theme-light nav.main-navbar .nav-link-idle {
+  color: #334155 !important;
+}
+
+html.theme-light nav.main-navbar .nav-link-idle:hover {
+  color: #3D9B28 !important;
+  background-color: #f8fafc !important;
+}
+
+html.theme-light nav.main-navbar .nav-link-active {
+  color: #ffffff !important;
+  background-color: #3D9B28 !important;
+}
+
+/* Headings in content areas */
+html.theme-light h1,
+html.theme-light h2,
+html.theme-light h3,
+html.theme-light h4,
+html.theme-light h5,
+html.theme-light .font-display.text-white {
+  color: #0f172a !important;
+}
+
+/* Content cards & borders */
+html.theme-light [class*="border-industrial-800"],
+html.theme-light [class*="border-industrial-850"],
+html.theme-light [class*="border-industrial-700"],
+html.theme-light .border-industrial-800,
+html.theme-light .border-industrial-850,
+html.theme-light .border-industrial-700 {
+  border-color: #e2e8f0 !important;
+}
+
+html.theme-light [class*="text-industrial-200"],
+html.theme-light .text-industrial-200 {
+  color: #334155 !important;
+}
+
+html.theme-light [class*="text-industrial-300"],
+html.theme-light [class*="text-industrial-400"],
+html.theme-light .text-industrial-300,
+html.theme-light .text-industrial-400 {
+  color: #475569 !important;
+}
+
+html.theme-light [class*="text-industrial-500"],
 html.theme-light .text-industrial-500 {
   color: #64748B !important;
+}
+
+html.theme-light .shadow-card-dark {
+  box-shadow: 0 4px 24px rgba(15, 23, 42, 0.06) !important;
 }
 
 html.theme-light input,
@@ -145,21 +280,21 @@ html.theme-light textarea::placeholder {
 }
 
 html.theme-light .glass-panel {
-  background: rgba(255, 255, 255, 0.88) !important;
-  border-color: rgba(203, 213, 225, 0.8) !important;
+  background: rgba(255, 255, 255, 0.95) !important;
+  border-color: #e2e8f0 !important;
   box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05) !important;
 }
 
 html.theme-light .glass-panel-hover:hover {
-  background: rgba(255, 255, 255, 0.98) !important;
+  background: #ffffff !important;
   border-color: rgba(217, 119, 6, 0.5) !important;
   box-shadow: 0 12px 30px -10px rgba(217, 119, 6, 0.15) !important;
 }
 
 html.theme-light .blueprint-grid {
   background-image: 
-    linear-gradient(to right, rgba(15, 23, 42, 0.04) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(15, 23, 42, 0.04) 1px, transparent 1px) !important;
+    linear-gradient(to right, rgba(15, 23, 42, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(15, 23, 42, 0.03) 1px, transparent 1px) !important;
 }
 
 html.theme-light thead {
@@ -168,10 +303,14 @@ html.theme-light thead {
 }
 
 html.theme-light ::-webkit-scrollbar-track {
-  background: #f1f5f9;
+  background: #f8fafc;
 }
 
 html.theme-light ::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+}
+
+html.theme-light ::-webkit-scrollbar-thumb:hover {
   background: #94a3b8;
 }
 

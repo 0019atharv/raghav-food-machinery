@@ -82,20 +82,20 @@ export default function ManageCategories() {
       
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
         <div>
-          <span className="text-xs font-mono font-bold text-amber-brand uppercase tracking-wider">
+          <span className="text-xs font-mono font-bold text-[#3D9B28] uppercase tracking-wider">
             Machinery Taxonomies
           </span>
-          <h1 className="font-display text-2xl md:text-3xl font-extrabold text-white">
+          <h1 className="font-display text-2xl md:text-3xl font-extrabold text-slate-900">
             Manage Categories
           </h1>
-          <p className="text-xs text-industrial-400 mt-1">
+          <p className="text-xs text-slate-500 mt-1">
             Organize food machinery into industry verticals (Retort, Snacks Extruder, Dryers, etc.).
           </p>
         </div>
 
         <button
           onClick={openAddModal}
-          className="inline-flex items-center gap-2 bg-amber-brand hover:bg-amber-400 text-industrial-950 font-bold px-5 py-3 rounded-xl text-xs transition-all shadow-glow-amber whitespace-nowrap"
+          className="inline-flex items-center gap-2 bg-[#3D9B28] hover:bg-[#2E7D1E] text-white font-bold px-5 py-3 rounded-xl text-xs transition-all shadow-sm whitespace-nowrap"
         >
           <Plus className="w-4 h-4" />
           <span>Add New Category</span>
@@ -107,29 +107,29 @@ export default function ManageCategories() {
         {categories.map((cat) => (
           <div
             key={cat._id}
-            className="p-6 rounded-2xl bg-industrial-900/90 border border-industrial-800 space-y-4 flex flex-col justify-between"
+            className="p-6 rounded-2xl bg-white border border-slate-200 shadow-sm space-y-4 flex flex-col justify-between"
           >
             <div>
               <div className="flex items-center justify-between">
-                <span className="text-[10px] font-mono text-amber-brand uppercase tracking-wider">/{cat.slug}</span>
-                <span className="text-xs text-industrial-400 font-bold">{cat.machineCount || 0} Machines</span>
+                <span className="text-[10px] font-mono text-[#3D9B28] font-bold uppercase tracking-wider">/{cat.slug}</span>
+                <span className="text-xs text-slate-500 font-bold">{cat.machineCount || 0} Machines</span>
               </div>
-              <h3 className="font-display font-bold text-lg text-white mt-2">{cat.name}</h3>
-              <p className="text-xs text-industrial-400 mt-1 line-clamp-2 leading-relaxed">
+              <h3 className="font-display font-bold text-lg text-slate-900 mt-2">{cat.name}</h3>
+              <p className="text-xs text-slate-600 mt-1 line-clamp-2 leading-relaxed">
                 {cat.description || 'No description provided.'}
               </p>
             </div>
 
-            <div className="pt-4 border-t border-industrial-800 flex items-center justify-end gap-2">
+            <div className="pt-4 border-t border-slate-100 flex items-center justify-end gap-2">
               <button
                 onClick={() => openEditModal(cat)}
-                className="p-1.5 rounded-lg bg-industrial-950 text-amber-brand hover:bg-amber-500/10 text-xs flex items-center gap-1 px-3"
+                className="p-1.5 rounded-lg bg-slate-100 text-[#3D9B28] hover:bg-emerald-50 hover:text-[#2E7D1E] text-xs flex items-center gap-1 px-3 font-semibold transition-colors"
               >
                 <Edit className="w-3.5 h-3.5" /> Edit
               </button>
               <button
                 onClick={() => handleDelete(cat._id)}
-                className="p-1.5 rounded-lg bg-industrial-950 text-red-400 hover:bg-red-500/10 text-xs flex items-center gap-1 px-3"
+                className="p-1.5 rounded-lg bg-red-50 text-red-600 hover:bg-red-100 text-xs flex items-center gap-1 px-3 font-semibold transition-colors"
               >
                 <Trash2 className="w-3.5 h-3.5" /> Delete
               </button>
@@ -140,52 +140,52 @@ export default function ManageCategories() {
 
       {/* Modal */}
       {isModalOpen && (
-        <div className="fixed inset-0 z-50 bg-industrial-950/80 backdrop-blur-md flex items-center justify-center p-4">
-          <div className="w-full max-w-md bg-industrial-900 border border-industrial-800 rounded-3xl p-6 space-y-5">
-            <div className="flex items-center justify-between border-b border-industrial-800 pb-3">
-              <h3 className="font-bold text-lg text-white">
+        <div className="fixed inset-0 z-50 bg-slate-900/50 backdrop-blur-sm flex items-center justify-center p-4">
+          <div className="w-full max-w-md bg-white border border-slate-200 rounded-3xl p-6 space-y-5 shadow-2xl">
+            <div className="flex items-center justify-between border-b border-slate-200 pb-3">
+              <h3 className="font-bold text-lg text-slate-900">
                 {editingId ? 'Edit Category' : 'Create Category'}
               </h3>
-              <button onClick={() => setIsModalOpen(false)}><X className="w-5 h-5 text-industrial-400" /></button>
+              <button onClick={() => setIsModalOpen(false)}><X className="w-5 h-5 text-slate-400 hover:text-slate-600" /></button>
             </div>
 
-            {error && <div className="p-2.5 rounded-lg bg-red-950/50 text-red-300 text-xs">{error}</div>}
+            {error && <div className="p-2.5 rounded-lg bg-red-50 border border-red-200 text-red-700 text-xs">{error}</div>}
 
             <form onSubmit={handleSave} className="space-y-4">
               <div>
-                <label className="block text-xs font-medium text-industrial-300 mb-1">Category Name *</label>
+                <label className="block text-xs font-semibold text-slate-700 mb-1">Category Name *</label>
                 <input
                   type="text"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                   placeholder="e.g. Dairy & Ice Cream Equipment"
-                  className="w-full bg-industrial-950 border border-industrial-800 rounded-xl px-3 py-2 text-xs text-white focus:border-amber-brand focus:outline-none"
+                  className="w-full bg-white border border-slate-300 rounded-xl px-3 py-2 text-xs text-slate-900 focus:border-[#3D9B28] focus:ring-1 focus:ring-[#3D9B28] focus:outline-none"
                   required
                 />
               </div>
 
               <div>
-                <label className="block text-xs font-medium text-industrial-300 mb-1">Description</label>
+                <label className="block text-xs font-semibold text-slate-700 mb-1">Description</label>
                 <textarea
                   value={description}
                   onChange={(e) => setDescription(e.target.value)}
                   rows={3}
                   placeholder="Summary of machinery in this vertical..."
-                  className="w-full bg-industrial-950 border border-industrial-800 rounded-xl p-2.5 text-xs text-white focus:border-amber-brand focus:outline-none resize-none"
+                  className="w-full bg-white border border-slate-300 rounded-xl p-2.5 text-xs text-slate-900 focus:border-[#3D9B28] focus:ring-1 focus:ring-[#3D9B28] focus:outline-none resize-none"
                 />
               </div>
 
-              <div className="flex justify-end gap-3 pt-3 border-t border-industrial-800">
+              <div className="flex justify-end gap-3 pt-3 border-t border-slate-200">
                 <button
                   type="button"
                   onClick={() => setIsModalOpen(false)}
-                  className="px-4 py-2 rounded-xl bg-industrial-800 text-xs font-semibold text-industrial-300"
+                  className="bg-white hover:bg-slate-50 text-slate-700 border border-slate-300 font-semibold px-4 py-2 rounded-xl text-xs shadow-sm transition-all"
                 >
                   Cancel
                 </button>
                 <button
                   type="submit"
-                  className="bg-amber-brand hover:bg-amber-400 text-industrial-950 font-bold px-5 py-2 rounded-xl text-xs"
+                  className="bg-[#3D9B28] hover:bg-[#2E7D1E] text-white font-bold px-5 py-2 rounded-xl text-xs shadow-sm transition-all"
                 >
                   Save Category
                 </button>

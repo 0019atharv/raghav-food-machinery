@@ -4,20 +4,20 @@ const ThemeContext = createContext(null);
 
 export const themes = [
   {
+    id: 'light',
+    name: 'Raghav Classic (Light)',
+    description: 'Clean corporate white with deep navy and vibrant accents',
+    icon: 'Sun',
+    preview: '#FFFFFF',
+    accent: '#3D9B28'
+  },
+  {
     id: 'dark',
     name: 'Obsidian Slate (Dark)',
     description: 'Deep graphite slate with safety amber accents',
     icon: 'Moon',
     preview: '#0B111E',
     accent: '#F59E0B'
-  },
-  {
-    id: 'light',
-    name: 'Precision Steel (Light)',
-    description: 'Clean stainless steel white with crisp industrial accents',
-    icon: 'Sun',
-    preview: '#F8FAFC',
-    accent: '#D97706'
   },
   {
     id: 'navy',
@@ -40,9 +40,14 @@ export const themes = [
 export const ThemeProvider = ({ children }) => {
   const [theme, setTheme] = useState(() => {
     try {
-      return localStorage.getItem('rfpm_theme') || 'dark';
+      const saved = localStorage.getItem('rfpm_theme');
+      if (!saved || saved === 'dark') {
+        localStorage.setItem('rfpm_theme', 'light');
+        return 'light';
+      }
+      return saved;
     } catch (e) {
-      return 'dark';
+      return 'light';
     }
   });
 

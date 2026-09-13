@@ -12,22 +12,28 @@ import {
   CheckCircle2, 
   MessageSquare, 
   Phone, 
-  FileText, 
-  Sparkles,
-  ChevronRight,
-  Download,
-  Star,
-  Factory,
-  Cog
+  Sparkles, 
+  ChevronRight, 
+  Star, 
+  Factory, 
+  Cog, 
+  ShoppingCart, 
+  Award,
+  Play,
+  Film,
+  X
 } from 'lucide-react';
-import { api } from '../services/api';
+import { api, defaultMachineryVideos } from '../services/api';
 import { useCart } from '../context/CartContext';
 import { useSettings } from '../context/SettingsContext';
+import LargeHeroCarousel from '../components/home/LargeHeroCarousel';
 
 export default function Home() {
-  const [featuredProducts, setFeaturedProducts] = useState([]);
+  const [allProducts, setAllProducts] = useState([]);
   const [categories, setCategories] = useState([]);
   const [testimonials, setTestimonials] = useState([]);
+  const [videos, setVideos] = useState(defaultMachineryVideos);
+  const [selectedCategory, setSelectedCategory] = useState('all');
   const [loading, setLoading] = useState(true);
 
   const { addToCart } = useCart();
@@ -36,17 +42,22 @@ export default function Home() {
   useEffect(() => {
     async function loadHomeData() {
       try {
-        const [prodRes, catRes, testRes] = await Promise.all([
-          api.getProducts({ featured: 'true' }),
+        setLoading(true);
+        const [prodRes, catRes, testRes, vidRes] = await Promise.all([
+          api.getProducts(),
           api.getCategories(),
-          api.getTestimonials()
+          api.getTestimonials(),
+          api.getVideos()
         ]);
         if (prodRes.success) {
-          const publishedFeatured = (prodRes.products || []).filter(p => p && p.isPublished !== false);
-          setFeaturedProducts(publishedFeatured);
+          const published = (prodRes.products || []).filter(p => p && p.isPublished !== false);
+          setAllProducts(published);
         }
         if (catRes.success) setCategories(catRes.categories || []);
         if (testRes.success) setTestimonials(testRes.testimonials || []);
+        if (vidRes && vidRes.success && Array.isArray(vidRes.videos) && vidRes.videos.length > 0) {
+          setVideos(vidRes.videos.filter(v => v.isPublished !== false));
+        }
       } catch (err) {
         console.error('Failed to load home data', err);
       } finally {
@@ -56,540 +67,511 @@ export default function Home() {
     loadHomeData();
   }, []);
 
-  const iconMap = {
-    ShieldCheck,
-    Layers,
-    Wheat,
-    Flame,
-    Cpu,
-    PackageCheck
-  };
+  // Filter products by selected category
+  const filteredProducts = allProducts.filter((p) => {
+    if (selectedCategory === 'all') return true;
+    const cat = (p.category || '').toLowerCase();
+    const catSlug = (p.categorySlug || '').toLowerCase();
+    const target = selectedCategory.toLowerCase();
+    return cat.includes(target) || catSlug.includes(target);
+  });
 
-  const heroData = {
-    badge: settings.hero?.badge || "India's Leading Industrial Food Machinery Engineering",
-    titleLine1: settings.hero?.titleLine1 || "Industrial Food",
-    titleHighlight: settings.hero?.titleHighlight || "Processing, Canning",
-    titleLine3: settings.hero?.titleLine3 || "& Snacks Machinery",
-    description: settings.hero?.description || "Engineered with certified Food-Grade SS-304/SS-316. From high-pressure Canning Retorts and Snacks Extruders to turnkey automated plants — delivered with factory direct warranty and on-site commissioning across India.",
-    stat1Number: settings.hero?.stat1Number || "500+",
-    stat1Label: settings.hero?.stat1Label || "Installed Plants Across India",
-    stat2Number: settings.hero?.stat2Number || "30+",
-    stat2Label: settings.hero?.stat2Label || "Years Food Tech Expertise",
-    stat3Number: settings.hero?.stat3Number || "100%",
-    stat3Label: settings.hero?.stat3Label || "Food-Grade SS-304/SS-316",
-    stat4Number: settings.hero?.stat4Number || "24/7",
-    stat4Label: settings.hero?.stat4Label || "Engineer AMC Support",
-    showcaseTag: settings.hero?.showcaseTag || "Flagship: Continuous Band Sealing Machine",
-    showcaseImage: settings.hero?.showcaseImage || "https://res.cloudinary.com/vgmmtb5k/image/upload/v1789208820/raghav-food-processing-machines/raghav-continuous-band-sealer-hero-branded.jpg",
-    showcaseModel: settings.hero?.showcaseModel || "RFPM-CBS-900",
-    showcaseStockStatus: settings.hero?.showcaseStockStatus || "In Stock / Ready Dispatch",
-    showcaseSpec1Label: settings.hero?.showcaseSpec1Label || "Sealing Speed",
-    showcaseSpec1Value: settings.hero?.showcaseSpec1Value || "0 - 12 Mtr/Min",
-    showcaseSpec2Label: settings.hero?.showcaseSpec2Label || "Temperature",
-    showcaseSpec2Value: settings.hero?.showcaseSpec2Value || "PID 0 - 300°C",
-    showcaseSpec3Label: settings.hero?.showcaseSpec3Label || "Automation",
-    showcaseSpec3Value: settings.hero?.showcaseSpec3Value || "Conveyor Driven",
-    showcaseButtonText: settings.hero?.showcaseButtonText || "View Machine Specs",
-    showcaseButtonLink: settings.hero?.showcaseButtonLink || "/product/raghav-horizontal-continuous-band-sealing-machine"
-  };
+  // Reference category filter tabs
+  const filterTabs = [
+    { id: 'all', label: 'All Machines' },
+    { id: 'pack', label: 'Packaging & Sealing' },
+    { id: 'kettle', label: 'Commercial Kettles & Cooking' },
+    { id: 'pulver', label: 'Spices & Pulverizers' },
+    { id: 'juice', label: 'Juicers & Processing' },
+    { id: 'retort', label: 'Canning & Retorts' }
+  ];
 
   return (
-    <div className="relative z-10 space-y-24 pb-20">
+    <div className="bg-white text-slate-800 space-y-16 pb-20">
       
       {/* =====================================================================
-          1. HERO BANNER WITH DYNAMIC INDUSTRIAL ACCENTS & TELEMETRY
+          1. LARGE MACHINERY SHOWCASE CAROUSEL (Covers the large hero area)
           ===================================================================== */}
-      <section className="relative pt-12 md:pt-20 pb-16 px-4 md:px-8 max-w-7xl mx-auto overflow-hidden">
-        {/* Subtle Background Watermark Emblem */}
-        <div className="absolute -right-16 top-1/2 -translate-y-1/2 w-[480px] h-[480px] md:w-[600px] md:h-[600px] opacity-[0.045] pointer-events-none select-none z-0">
-          <img src="/raghav-emblem-transparent.png" alt="" className="w-full h-full object-contain filter drop-shadow" />
-        </div>
-        
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
+      <section className="max-w-7xl mx-auto px-4 md:px-8 pt-6 sm:pt-8">
+        <LargeHeroCarousel featuredProducts={allProducts} />
+      </section>
+
+      {/* =====================================================================
+          2. CORE INTRO TEXT SECTION ("THEN TEXT" - Matching raghavfoodmachines.com)
+          ===================================================================== */}
+      <section className="max-w-7xl mx-auto px-4 md:px-8 pt-4 pb-4">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           
-          {/* Left Column: Headline & Action */}
-          <div className="lg:col-span-7 space-y-6">
-            
-            {/* Trust Badge */}
-            <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-industrial-900/90 border border-amber-500/30 text-xs font-semibold text-amber-brand shadow-sm backdrop-blur-md">
-              <span className="w-2 h-2 rounded-full bg-amber-brand animate-ping" />
-              <span>{heroData.badge}</span>
+          {/* Left Text Intro */}
+          <div className="lg:col-span-8 space-y-4">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#3D9B28]/10 text-[#3D9B28] text-xs font-montserrat font-bold">
+              ⚙️ Industrial Food Machinery
             </div>
-
-            {/* Main Punchy Title */}
-            <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.1]">
-              {heroData.titleLine1} <br />
-              <span className="text-gradient-amber">{heroData.titleHighlight}</span> <br />
-              {heroData.titleLine3}
+            
+            <h1 className="font-montserrat font-black text-3xl sm:text-4xl lg:text-5xl text-slate-900 leading-tight">
+              RAGHAV <span className="text-[#3D9B28]">FOOD</span>
             </h1>
-
-            {/* Description */}
-            <p className="text-base sm:text-lg text-industrial-300 max-w-2xl leading-relaxed">
-              {heroData.description}
+            
+            <p className="font-montserrat font-bold text-lg sm:text-xl text-slate-700 -mt-1">
+              Machinery Company
+            </p>
+            
+            <p className="text-sm sm:text-base text-slate-600 leading-relaxed max-w-3xl">
+              Manufacturers of <strong>industrial fruit pulpers, tomato juicers</strong>, continuous band sealers, retort autoclaves, commercial cooking kettles, and food processing machinery across <strong>PAN India</strong>. Durable, high-yield equipment built with food-grade SS-304 stainless steel for the fruit, vegetable, confectionery, bakery, and spice industries.
             </p>
 
-            {/* CTAs */}
-            <div className="pt-2 flex flex-wrap items-center gap-4">
-              <Link
-                to="/machines"
-                className="bg-gradient-to-r from-amber-500 via-amber-600 to-amber-700 hover:from-amber-400 hover:to-amber-600 text-industrial-950 font-extrabold px-6 py-3.5 rounded-xl text-sm transition-all shadow-glow-amber flex items-center gap-2.5 group"
-              >
-                <span>Browse Machinery Catalog</span>
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            <div className="flex flex-wrap items-center gap-3 pt-2">
+              <Link to="/machines" className="btn btn-primary">
+                ⚙️ Explore Machines
               </Link>
-
-              <Link
-                to="/catalog"
-                className="bg-industrial-900/80 hover:bg-industrial-800 text-industrial-200 hover:text-white border border-industrial-700 font-semibold px-5 py-3.5 rounded-xl text-sm transition-all flex items-center gap-2"
-              >
-                <Download className="w-4 h-4 text-amber-brand" />
-                <span>Download Spec Sheet</span>
+              <Link to="/contact" className="btn btn-outline">
+                Get a Quote →
               </Link>
-
               <a
-                href={`https://wa.me/${settings.whatsappNumber.replace(/\D/g, '')}?text=Hello%20Raghav%20Food%20Machinery,%20I%20want%20to%20request%20an%20instant%20quote.`}
+                href={`https://wa.me/${(settings.whatsappNumber || '919220706381').replace(/\D/g, '')}?text=Hello%20Raghav%20Food%20Machinery,%20I%20want%20to%20request%20an%20instant%20quote.`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-emerald-400 hover:text-emerald-300 text-xs font-semibold px-3 py-2 rounded-lg bg-emerald-950/40 border border-emerald-800/60"
+                className="inline-flex items-center gap-2 px-5 py-3 rounded-lg bg-[#25D366] hover:bg-[#1EBE5B] text-white text-sm font-montserrat font-bold shadow-sm transition-all"
               >
-                <MessageSquare className="w-3.5 h-3.5 fill-emerald-500/20" />
-                <span>Instant WhatsApp Quote</span>
+                <MessageSquare className="w-4 h-4" />
+                <span>WhatsApp Inquiry</span>
               </a>
             </div>
-
-            {/* Quick Micro Trust Badges */}
-            <div className="pt-4 flex flex-wrap items-center gap-6 text-xs text-industrial-400 border-t border-industrial-800/80">
-              <div className="flex items-center gap-2">
-                <CheckCircle2 className="w-4 h-4 text-amber-brand" />
-                <span>SS-304/316 Metallurgy</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <CheckCircle2 className="w-4 h-4 text-amber-brand" />
-                <span>CE & ISO 9001:2015</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <CheckCircle2 className="w-4 h-4 text-amber-brand" />
-                <span>Pan-India AMC & Spares</span>
-              </div>
-            </div>
-
           </div>
 
-          {/* Right Column: Interactive Machine Showcase Card */}
-          <div className="lg:col-span-5 relative">
-            <div className="relative rounded-3xl bg-industrial-900/90 border border-industrial-800/90 p-3 md:p-4 shadow-2xl overflow-hidden group">
-              
-              {/* Highlight Tag */}
-              <div className="absolute top-6 left-6 z-20 bg-industrial-950/90 border border-amber-500/40 px-3 py-1 rounded-full text-[11px] font-bold text-amber-brand flex items-center gap-1.5 shadow-md">
-                <Sparkles className="w-3.5 h-3.5" />
-                {heroData.showcaseTag}
-              </div>
-
-              {/* Machine Image */}
-              <div className="relative h-72 sm:h-80 rounded-2xl overflow-hidden bg-industrial-950">
-                <img
-                  src={heroData.showcaseImage}
-                  alt={heroData.showcaseTag}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-industrial-950 via-transparent to-transparent opacity-80" />
-                
-                {/* Official Raghav Watermark Stamp */}
-                <div className="absolute bottom-3 right-3 z-10 flex items-center gap-1.5 bg-industrial-950/85 backdrop-blur-md border border-amber-500/30 px-2.5 py-1 rounded-lg text-[10px] text-industrial-200 shadow">
-                  <img src="/raghav-emblem-transparent.png" alt="Raghav" className="w-4 h-4 object-contain" />
-                  <span className="font-semibold tracking-wider uppercase font-mono text-[9px] text-amber-brand">Raghav Certified</span>
+          {/* Right Floating Quick Contact Card */}
+          <div className="lg:col-span-4">
+            <div className="p-6 sm:p-7 rounded-2xl bg-white text-slate-800 space-y-4 shadow-lg border-2 border-[#3D9B28]/25 relative overflow-hidden">
+              <div className="flex items-center gap-3.5">
+                <div className="w-12 h-12 rounded-xl bg-[#3D9B28] flex items-center justify-center text-white flex-shrink-0 shadow-md">
+                  <Phone className="w-6 h-6 text-white" />
                 </div>
-              </div>
-
-              {/* Specs Badge Overlay */}
-              <div className="p-4 space-y-3">
-                <div className="flex items-center justify-between">
-                  <span className="text-xs font-mono text-amber-brand font-bold uppercase tracking-wider">
-                    Model: {heroData.showcaseModel}
-                  </span>
-                  <span className="text-xs bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 px-2 py-0.5 rounded font-semibold">
-                    {heroData.showcaseStockStatus}
-                  </span>
-                </div>
-
-                <div className="grid grid-cols-3 gap-2 text-center text-xs">
-                  <div className="p-2 rounded-xl bg-industrial-950 border border-industrial-800">
-                    <span className="text-[10px] text-industrial-500 block">{heroData.showcaseSpec1Label}</span>
-                    <strong className="text-white text-xs">{heroData.showcaseSpec1Value}</strong>
-                  </div>
-                  <div className="p-2 rounded-xl bg-industrial-950 border border-industrial-800">
-                    <span className="text-[10px] text-industrial-500 block">{heroData.showcaseSpec2Label}</span>
-                    <strong className="text-white text-xs">{heroData.showcaseSpec2Value}</strong>
-                  </div>
-                  <div className="p-2 rounded-xl bg-industrial-950 border border-industrial-800">
-                    <span className="text-[10px] text-industrial-500 block">{heroData.showcaseSpec3Label}</span>
-                    <strong className="text-white text-xs">{heroData.showcaseSpec3Value}</strong>
-                  </div>
-                </div>
-
-                <div className="pt-2 flex items-center gap-2">
-                  <Link
-                    to={heroData.showcaseButtonLink}
-                    className="flex-1 text-center bg-industrial-800 hover:bg-industrial-700 text-white font-semibold py-2.5 rounded-xl text-xs transition-colors border border-industrial-700"
-                  >
-                    {heroData.showcaseButtonText}
-                  </Link>
-                  <button
-                    onClick={() => {
-                      if (featuredProducts[0]) addToCart(featuredProducts[0]);
-                    }}
-                    className="flex-1 bg-amber-brand hover:bg-amber-400 text-industrial-950 font-bold py-2.5 rounded-xl text-xs transition-all shadow-glow-amber"
-                  >
-                    + Add to RFQ Basket
-                  </button>
-                </div>
-              </div>
-
-            </div>
-          </div>
-
-        </div>
-
-        {/* Live Machinery Stats Bar */}
-        <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4 p-6 rounded-2xl bg-industrial-900/60 border border-industrial-800/80 backdrop-blur-xl">
-          <div className="text-center p-2">
-            <div className="font-display font-black text-3xl md:text-4xl text-gradient-amber">{heroData.stat1Number}</div>
-            <div className="text-xs font-semibold text-industrial-300 mt-1">{heroData.stat1Label}</div>
-          </div>
-          <div className="text-center p-2 border-l border-industrial-800/80">
-            <div className="font-display font-black text-3xl md:text-4xl text-white">{heroData.stat2Number}</div>
-            <div className="text-xs font-semibold text-industrial-300 mt-1">{heroData.stat2Label}</div>
-          </div>
-          <div className="text-center p-2 border-l border-industrial-800/80">
-            <div className="font-display font-black text-3xl md:text-4xl text-gradient-amber">{heroData.stat3Number}</div>
-            <div className="text-xs font-semibold text-industrial-300 mt-1">{heroData.stat3Label}</div>
-          </div>
-          <div className="text-center p-2 border-l border-industrial-800/80">
-            <div className="font-display font-black text-3xl md:text-4xl text-white">{heroData.stat4Number}</div>
-            <div className="text-xs font-semibold text-industrial-300 mt-1">{heroData.stat4Label}</div>
-          </div>
-        </div>
-
-      </section>
-
-      {/* =====================================================================
-          2. MACHINERY VERTICALS / CATEGORIES GRID
-          ===================================================================== */}
-      <section className="max-w-7xl mx-auto px-4 md:px-8">
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-10">
-          <div>
-            <div className="text-xs font-bold font-mono text-amber-brand uppercase tracking-wider mb-2">
-              Machinery Verticals
-            </div>
-            <h2 className="font-display text-3xl md:text-4xl font-extrabold text-white">
-              Complete Food Processing Equipment
-            </h2>
-          </div>
-          <Link
-            to="/machines"
-            className="text-xs font-bold text-amber-brand hover:text-amber-glow flex items-center gap-1 group"
-          >
-            <span>Explore All 20+ Models</span>
-            <ChevronRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
-          </Link>
-        </div>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {categories.map((cat) => {
-            const Icon = iconMap[cat.icon] || Cpu;
-            return (
-              <Link
-                key={cat._id || cat.slug}
-                to={`/machines?category=${cat.slug}`}
-                className="group relative rounded-2xl bg-industrial-900/80 border border-industrial-800/80 hover:border-amber-500/40 p-6 transition-all duration-300 hover:-translate-y-1 shadow-card-dark overflow-hidden flex flex-col justify-between"
-              >
-                {/* Background Glow */}
-                <div className="absolute -bottom-10 -right-10 w-32 h-32 bg-amber-500/10 rounded-full blur-2xl group-hover:bg-amber-500/20 transition-all pointer-events-none" />
-
                 <div>
-                  <div className="w-12 h-12 rounded-xl bg-industrial-950 border border-industrial-800 group-hover:border-amber-500/40 flex items-center justify-center text-amber-brand mb-4 transition-colors">
-                    <Icon className="w-6 h-6" />
-                  </div>
-                  <h3 className="font-display font-bold text-lg text-white group-hover:text-amber-brand transition-colors">
-                    {cat.name}
-                  </h3>
-                  <p className="text-xs text-industrial-400 mt-2 line-clamp-2 leading-relaxed">
-                    {cat.description}
-                  </p>
+                  <div className="text-xs text-slate-500 font-montserrat font-bold uppercase tracking-wider">Call Us Now</div>
+                  <a href={`tel:${settings.phone.replace(/\s+/g, '')}`} className="text-lg font-mono font-bold text-slate-900 hover:text-[#3D9B28] transition-colors">
+                    {settings.phone}
+                  </a>
                 </div>
+              </div>
 
-                <div className="pt-6 flex items-center justify-between text-xs border-t border-industrial-800/60 mt-4">
-                  <span className="text-industrial-500 font-mono">
-                    {cat.machineCount || 3} Machines
-                  </span>
-                  <span className="text-amber-brand font-semibold flex items-center gap-1 group-hover:translate-x-1 transition-transform">
-                    View Range &rarr;
-                  </span>
+              <div className="border-t border-slate-200 pt-4 space-y-2.5 text-xs text-slate-700 font-medium">
+                <div className="flex items-center gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-[#3D9B28] flex-shrink-0" />
+                  <span>Food-Grade SS-304 & SS-316 Alloys</span>
                 </div>
-              </Link>
-            );
-          })}
+                <div className="flex items-center gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-[#3D9B28] flex-shrink-0" />
+                  <span>ISO 9001:2015 & CE Quality Tested</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-[#3D9B28] flex-shrink-0" />
+                  <span>PAN India Delivery & On-Site Installation</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
         </div>
       </section>
 
       {/* =====================================================================
-          3. FEATURED MACHINES SHOWCASE (With Instant Quote & Add to RFQ)
+          3. STATS BAR (Identical Green Color & Size)
           ===================================================================== */}
       <section className="max-w-7xl mx-auto px-4 md:px-8">
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-10">
-          <div>
-            <div className="text-xs font-bold font-mono text-amber-brand uppercase tracking-wider mb-2">
-              Featured Machinery
-            </div>
-            <h2 className="font-display text-3xl md:text-4xl font-extrabold text-white">
-              High-Demand Processing Systems
-            </h2>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 p-6 sm:p-8 rounded-2xl bg-[#F8FAFC] border border-[#e2e8f0] shadow-sm">
+          <div className="text-center p-2">
+            <div className="font-montserrat font-black text-3xl sm:text-4xl text-[#3D9B28]">50+</div>
+            <div className="text-xs sm:text-sm font-semibold text-slate-600 mt-1">Machine Types</div>
           </div>
-          <Link
-            to="/machines"
-            className="text-xs font-bold text-amber-brand hover:text-amber-glow flex items-center gap-1 group"
-          >
-            <span>View All Machinery</span>
-            <ChevronRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
-          </Link>
+          <div className="text-center p-2 border-l border-slate-200">
+            <div className="font-montserrat font-black text-3xl sm:text-4xl text-[#3D9B28]">SS-304</div>
+            <div className="text-xs sm:text-sm font-semibold text-slate-600 mt-1">Food-Grade Build</div>
+          </div>
+          <div className="text-center p-2 border-l border-slate-200">
+            <div className="font-montserrat font-black text-3xl sm:text-4xl text-[#3D9B28]">PAN India</div>
+            <div className="text-xs sm:text-sm font-semibold text-slate-600 mt-1">Delivery & Install</div>
+          </div>
+          <div className="text-center p-2 border-l border-slate-200">
+            <div className="font-montserrat font-black text-3xl sm:text-4xl text-[#3D9B28]">100%</div>
+            <div className="text-xs sm:text-sm font-semibold text-slate-600 mt-1">Quality Tested</div>
+          </div>
+        </div>
+      </section>
+
+      {/* =====================================================================
+          4. LIFTED UP: OUR MACHINES (2-by-2 on mobile, zoomed-out uncropped photos)
+          ===================================================================== */}
+      <section className="max-w-7xl mx-auto px-4 md:px-8">
+        <div className="text-center max-w-2xl mx-auto mb-8">
+          <h2 className="font-montserrat font-extrabold text-3xl sm:text-4xl text-slate-900">
+            Our <span className="text-[#3D9B28]">Machines</span>
+          </h2>
+          <div className="title-line"></div>
+          <p className="text-sm text-slate-500 mt-2">
+            Premium food processing machinery — fruit pulpers, juicers, pulverizers, kettles and more for every production need.
+          </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {featuredProducts.slice(0, 6).map((machine) => (
+        {/* Filter Tabs matching reference site */}
+        <div className="flex flex-wrap items-center justify-center gap-2 mb-8 sm:mb-10">
+          {filterTabs.map((tab) => (
+            <button
+              key={tab.id}
+              onClick={() => setSelectedCategory(tab.id)}
+              className={`px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-xs font-montserrat font-bold transition-all ${
+                selectedCategory === tab.id
+                  ? 'bg-[#3D9B28] text-white shadow-md'
+                  : 'bg-white text-slate-700 border border-[#e2e8f0] hover:border-[#3D9B28] hover:text-[#3D9B28]'
+              }`}
+            >
+              {tab.label}
+            </button>
+          ))}
+        </div>
+
+        {/* Machinery Cards Grid: Exactly 2 products per row on mobile (grid-cols-2) */}
+        <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-3 sm:gap-6">
+          {filteredProducts.slice(0, 12).map((machine) => (
             <div
               key={machine._id || machine.slug}
-              className="rounded-3xl bg-industrial-900/90 border border-industrial-800/90 hover:border-amber-500/40 p-5 flex flex-col justify-between transition-all duration-300 hover:-translate-y-1 shadow-card-dark group"
+              className="bg-white border border-slate-200 hover:border-[#3D9B28]/60 rounded-xl sm:rounded-2xl p-2.5 sm:p-4 flex flex-col justify-between shadow-sm hover:shadow-lg transition-all duration-300 group"
             >
               <div>
-                {/* Image & Category Pill */}
-                <div className="relative h-52 rounded-2xl overflow-hidden bg-industrial-950 mb-4">
+                {/* Image Container with seamless integration - NO inner border or shadow */}
+                <div className="relative h-36 sm:h-48 md:h-52 rounded-lg sm:rounded-xl bg-transparent p-2 sm:p-3 mb-2 sm:mb-2.5 flex items-center justify-center overflow-hidden">
                   <img
                     src={machine.images?.[0] || 'https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=800&q=80'}
                     alt={machine.name}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    className="w-full h-full object-contain group-hover:scale-102 transition-transform duration-300"
                   />
-                  <div className="absolute top-3 left-3 bg-industrial-950/90 backdrop-blur-md px-2.5 py-1 rounded-md text-[10px] font-bold text-amber-brand border border-industrial-800">
-                    {machine.category}
-                  </div>
-                  <div className="absolute bottom-3 right-3 bg-industrial-950/90 px-2 py-0.5 rounded text-[11px] font-mono text-industrial-300">
-                    {machine.capacity}
-                  </div>
-                  {/* Subtle Raghav Certified Stamp */}
-                  <div className="absolute bottom-3 left-3 flex items-center gap-1 bg-industrial-950/80 backdrop-blur-sm px-1.5 py-0.5 rounded border border-industrial-800/80 text-[9px] text-industrial-300 font-mono">
-                    <img src="/raghav-emblem-transparent.png" alt="" className="w-3.5 h-3.5 object-contain" />
-                    <span className="text-amber-brand font-semibold">RFPM</span>
-                  </div>
+                  <span className="absolute top-1.5 left-1.5 sm:top-2 sm:left-2 text-[9px] sm:text-[10px] font-bold text-amber-900 uppercase tracking-wider bg-amber-50/90 border border-amber-200/60 px-1.5 sm:px-2 py-0.5 rounded">
+                    Machine
+                  </span>
                 </div>
 
-                {/* Title */}
+                {/* Machine Name */}
                 <Link to={`/product/${machine.slug}`}>
-                  <h3 className="font-display font-bold text-base text-white hover:text-amber-brand transition-colors line-clamp-2">
+                  <h3 className="font-montserrat font-bold text-xs sm:text-sm md:text-base text-slate-900 group-hover:text-[#3D9B28] transition-colors line-clamp-2 leading-snug">
                     {machine.name}
                   </h3>
                 </Link>
 
-                <p className="text-xs text-industrial-400 mt-2 line-clamp-2 leading-relaxed">
-                  {machine.shortDescription}
-                </p>
-
-                {/* Quick specs grid */}
-                <div className="mt-4 pt-3 border-t border-industrial-800/80 grid grid-cols-2 gap-2 text-[11px]">
-                  <div>
-                    <span className="text-industrial-500 block">Material</span>
-                    <strong className="text-industrial-200">{machine.materialGrade || 'SS-304'}</strong>
-                  </div>
-                  <div>
-                    <span className="text-industrial-500 block">Motor Power</span>
-                    <strong className="text-industrial-200">{machine.power || 'Standard'}</strong>
-                  </div>
+                {/* Price Display */}
+                <div className="mt-1.5 sm:mt-2 flex flex-wrap items-baseline gap-1 sm:gap-2">
+                  <span className="font-montserrat font-black text-xs sm:text-base md:text-lg text-slate-900">
+                    ₹ {machine.price ? machine.price.toLocaleString('en-IN') : '25,000'}
+                  </span>
+                  <span className="text-[10px] sm:text-xs text-slate-400 line-through">
+                    ₹ {machine.price ? Math.round(machine.price * 1.15).toLocaleString('en-IN') : '35,000'}
+                  </span>
                 </div>
+
+                {/* Short Excerpt */}
+                <p className="text-[11px] sm:text-xs text-slate-500 mt-1.5 line-clamp-2 leading-relaxed">
+                  {machine.shortDescription || 'Commercial food processing machinery engineered with food-grade stainless steel.'}
+                </p>
               </div>
 
-              {/* Action Buttons */}
-              <div className="mt-6 pt-3 border-t border-industrial-800 flex items-center gap-2">
+              {/* Full Width Green Button matching mobile reference screenshot */}
+              <div className="mt-3 pt-2 sm:pt-3 border-t border-slate-100 flex items-center gap-1.5">
                 <Link
                   to={`/product/${machine.slug}`}
-                  className="flex-1 text-center bg-industrial-800 hover:bg-industrial-700 text-industrial-200 hover:text-white py-2.5 rounded-xl text-xs font-semibold transition-colors border border-industrial-700"
+                  className="flex-1 text-center py-2 sm:py-2.5 px-2 rounded-lg bg-[#3D9B28] hover:bg-[#2E7D1E] text-white text-[11px] sm:text-xs font-bold font-montserrat shadow-sm transition-all flex items-center justify-center gap-1"
                 >
-                  View Details
+                  <span>View Details</span>
+                  <span>&rarr;</span>
                 </Link>
-
                 <button
                   onClick={() => addToCart(machine)}
-                  className="flex-1 bg-amber-brand hover:bg-amber-400 text-industrial-950 font-bold py-2.5 rounded-xl text-xs transition-all shadow-glow-amber"
+                  className="w-8 h-8 sm:w-9 sm:h-9 rounded-lg bg-slate-100 hover:bg-[#3D9B28] hover:text-white text-slate-700 flex items-center justify-center transition-colors border border-slate-200 flex-shrink-0"
+                  title="Add to RFQ"
+                  aria-label="Add to RFQ"
                 >
-                  + Add to RFQ
+                  <ShoppingCart className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
                 </button>
               </div>
 
             </div>
           ))}
         </div>
-      </section>
 
-      {/* =====================================================================
-          4. TURNKEY PLANT SOLUTIONS WORKFLOW (From Concept to Commissioning)
-          ===================================================================== */}
-      <section className="max-w-7xl mx-auto px-4 md:px-8">
-        <div className="rounded-3xl bg-gradient-to-b from-industrial-900 to-industrial-950 border border-industrial-800 p-8 md:p-12 relative overflow-hidden">
-          
-          <div className="max-w-3xl mb-12">
-            <div className="text-xs font-bold font-mono text-amber-brand uppercase tracking-wider mb-2">
-              Turnkey Plant Engineering
-            </div>
-            <h2 className="font-display text-3xl md:text-4xl font-extrabold text-white">
-              End-to-End Food Processing Project Delivery
-            </h2>
-            <p className="text-sm text-industrial-400 mt-3 leading-relaxed">
-              We don't just sell standalone machines — we architect complete production facilities from plant layout CAD blueprints, utility steam piping, and electrical automation to trial batch FSSAI compliance.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-5 gap-6 relative">
-            
-            {[
-              { step: '01', title: 'Plant Layout & CAD', desc: 'Custom facility planning, batch capacity sizing & utility routing.' },
-              { step: '02', title: 'Precision SS Fabrication', desc: 'CNC fiber laser cutting, hygienic TIG welding & mirror polishing.' },
-              { step: '03', title: 'Factory FAT Testing', desc: 'Hydrostatic pressure testing and dry run trials before dispatch.' },
-              { step: '04', title: 'On-Site Commissioning', desc: 'Erection, steam boiler connection, and live production trials.' },
-              { step: '05', title: 'Operator SOP Training', desc: 'Technician training, maintenance manuals & 24/7 AMC support.' },
-            ].map((step, idx) => (
-              <div key={idx} className="p-5 rounded-2xl bg-industrial-950/80 border border-industrial-800 space-y-3 relative group hover:border-amber-500/40 transition-colors">
-                <div className="font-mono text-2xl font-black text-amber-brand/40 group-hover:text-amber-brand transition-colors">
-                  {step.step}
-                </div>
-                <h4 className="font-display font-bold text-sm text-white">
-                  {step.title}
-                </h4>
-                <p className="text-xs text-industrial-400 leading-relaxed">
-                  {step.desc}
-                </p>
-              </div>
-            ))}
-
-          </div>
-
-          <div className="mt-10 pt-8 border-t border-industrial-800 flex flex-wrap items-center justify-between gap-4">
-            <div className="text-xs text-industrial-400">
-              Need plant layout consultation? Contact our chief food engineering director.
-            </div>
-            <Link
-              to="/services"
-              className="inline-flex items-center gap-2 bg-amber-brand hover:bg-amber-400 text-industrial-950 font-bold px-5 py-2.5 rounded-xl text-xs transition-all shadow-glow-amber"
-            >
-              <span>Explore Turnkey Engineering Services</span>
-              <ArrowRight className="w-3.5 h-3.5" />
-            </Link>
-          </div>
-
-        </div>
-      </section>
-
-      {/* =====================================================================
-          5. WHY CHOOSE RAGHAV FOOD MACHINERY
-          ===================================================================== */}
-      <section className="max-w-7xl mx-auto px-4 md:px-8">
-        <div className="text-center max-w-2xl mx-auto mb-12">
-          {/* Official Badge Logo */}
-          <div className="flex items-center justify-center mb-5">
-            <img 
-              src="/raghav-logo.png" 
-              alt="Raghav Food Processing Machine Official Badge Logo" 
-              className="h-14 sm:h-16 w-auto object-contain rounded-xl bg-white/95 p-2 shadow-lg border border-amber-500/30 hover:scale-105 transition-transform" 
-            />
-          </div>
-          <div className="text-xs font-bold font-mono text-amber-brand uppercase tracking-wider mb-2">
-            The Raghav Advantage
-          </div>
-          <h2 className="font-display text-3xl md:text-4xl font-extrabold text-white">
-            Built for 24/7 Industrial Heavy-Duty Reliability
-          </h2>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div className="p-6 rounded-2xl bg-industrial-900/80 border border-industrial-800 space-y-4">
-            <div className="w-12 h-12 rounded-xl bg-amber-500/10 text-amber-brand flex items-center justify-center border border-amber-500/20">
-              <ShieldCheck className="w-6 h-6" />
-            </div>
-            <h3 className="font-display font-bold text-lg text-white">Certified SS-304/SS-316 Alloys</h3>
-            <p className="text-xs text-industrial-400 leading-relaxed">
-              We never compromise on metallurgy. All food contact chambers, agitator blades, and baskets are fabricated strictly from prime certified stainless steel to withstand aggressive organic acids and CIP sanitizers.
-            </p>
-          </div>
-
-          <div className="p-6 rounded-2xl bg-industrial-900/80 border border-industrial-800 space-y-4">
-            <div className="w-12 h-12 rounded-xl bg-amber-500/10 text-amber-brand flex items-center justify-center border border-amber-500/20">
-              <Cog className="w-6 h-6" />
-            </div>
-            <h3 className="font-display font-bold text-lg text-white">Direct Factory Pricing & Spares</h3>
-            <p className="text-xs text-industrial-400 leading-relaxed">
-              No middleman commission. Deal directly with the manufacturer. We maintain an exhaustive ready inventory of silicone gaskets, VFD drives, pressure relief valves, and heating elements for same-day dispatch.
-            </p>
-          </div>
-
-          <div className="p-6 rounded-2xl bg-industrial-900/80 border border-industrial-800 space-y-4">
-            <div className="w-12 h-12 rounded-xl bg-amber-500/10 text-amber-brand flex items-center justify-center border border-amber-500/20">
-              <Factory className="w-6 h-6" />
-            </div>
-            <h3 className="font-display font-bold text-lg text-white">On-Site Commissioning Pan-India</h3>
-            <p className="text-xs text-industrial-400 leading-relaxed">
-              Our factory technicians travel to your site to execute installation, pipeline connection, steam boiler balancing, and operator training until commercial output goals are met.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* =====================================================================
-          6. CLIENT TESTIMONIALS SLIDER / PREVIEW
-          ===================================================================== */}
-      <section className="max-w-7xl mx-auto px-4 md:px-8">
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-10">
-          <div>
-            <div className="text-xs font-bold font-mono text-amber-brand uppercase tracking-wider mb-2">
-              Verified Client Reviews
-            </div>
-            <h2 className="font-display text-3xl md:text-4xl font-extrabold text-white">
-              Trusted by 500+ Food Producers
-            </h2>
-          </div>
-          <Link
-            to="/testimonials"
-            className="text-xs font-bold text-amber-brand hover:text-amber-glow flex items-center gap-1 group"
-          >
-            <span>Read All Client Case Studies</span>
-            <ChevronRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
+        {/* View All Machines Button */}
+        <div className="text-center mt-8 sm:mt-10">
+          <Link to="/machines" className="btn btn-outline">
+            View All Machines →
           </Link>
         </div>
+      </section>
+
+      {/* =====================================================================
+          5. MANUFACTURING STANDARDS & QUALITY INSPECTION
+          ===================================================================== */}
+      <section className="max-w-7xl mx-auto px-4 md:px-8">
+        <div className="text-center max-w-2xl mx-auto mb-10">
+          <div className="text-xs font-montserrat font-bold text-[#3D9B28] uppercase tracking-wider mb-2">
+            Engineering Precision
+          </div>
+          <h2 className="font-montserrat font-extrabold text-2xl sm:text-3xl md:text-4xl text-slate-900">
+            Built for 24/7 Heavy-Duty Industrial Reliability
+          </h2>
+          <div className="title-line"></div>
+        </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {testimonials.map((t) => (
+          <div className="p-6 rounded-2xl bg-white border border-[#e2e8f0] hover:border-[#3D9B28] space-y-4 shadow-sm transition-all hover:shadow-md">
+            <div className="w-12 h-12 rounded-xl bg-[#3D9B28]/10 text-[#3D9B28] flex items-center justify-center border border-[#3D9B28]/20">
+              <ShieldCheck className="w-6 h-6" />
+            </div>
+            <h3 className="font-montserrat font-bold text-lg text-slate-900">Certified SS-304/SS-316 Metallurgy</h3>
+            <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              We never compromise on alloy quality. Food contact chambers, agitator blades, and perforated baskets are fabricated strictly from certified stainless steel to withstand aggressive organic acids and CIP sanitizers.
+            </p>
+          </div>
+
+          <div className="p-6 rounded-2xl bg-white border border-[#e2e8f0] hover:border-[#3D9B28] space-y-4 shadow-sm transition-all hover:shadow-md">
+            <div className="w-12 h-12 rounded-xl bg-[#3D9B28]/10 text-[#3D9B28] flex items-center justify-center border border-[#3D9B28]/20">
+              <Wrench className="w-6 h-6" />
+            </div>
+            <h3 className="font-montserrat font-bold text-lg text-slate-900">Hydrostatic Pressure Testing</h3>
+            <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              Every Canning Retort and Steam Jacketed Kettle is hydrostatically pressure tested up to 1.5x design pressure with certified digital gauges before factory dispatch.
+            </p>
+          </div>
+
+          <div className="p-6 rounded-2xl bg-white border border-[#e2e8f0] hover:border-[#3D9B28] space-y-4 shadow-sm transition-all hover:shadow-md">
+            <div className="w-12 h-12 rounded-xl bg-[#3D9B28]/10 text-[#3D9B28] flex items-center justify-center border border-[#3D9B28]/20">
+              <Factory className="w-6 h-6" />
+            </div>
+            <h3 className="font-montserrat font-bold text-lg text-slate-900">On-Site Commissioning Pan-India</h3>
+            <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+              Our factory technicians travel to your production plant to execute installation, pipeline connection, steam boiler balancing, and operator training until commercial output goals are met.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* =====================================================================
+          6. SHIFTED DOWN: ABOUT RAGHAV FOOD SNIPPET
+          ===================================================================== */}
+      <section className="py-14 bg-[#F8FAFC] border-y border-[#e2e8f0]">
+        <div className="max-w-7xl mx-auto px-4 md:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+            
+            {/* Left Story & Features */}
+            <div className="lg:col-span-7 space-y-4">
+              <h2 className="font-montserrat font-extrabold text-2xl sm:text-3xl md:text-4xl text-slate-900">
+                About <span className="text-[#3D9B28]">RAGHAV FOOD</span>
+              </h2>
+              <div className="title-line left"></div>
+              
+              <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
+                Raghav Food Machinery Company is a trusted manufacturer of industrial food processing machinery. We design and build fruit pulpers, tomato juicers, spice pulverizers, steam jacketed kettles, hydraulic juice presses, and complete processing lines — engineered with food-grade SS-304 stainless steel for reliability and high output across India.
+              </p>
+
+              <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2 text-xs sm:text-sm text-slate-700">
+                <li className="flex items-center gap-2 font-semibold">
+                  <span className="text-[#3D9B28] font-bold text-base">✓</span> In-house manufacturing of machinery
+                </li>
+                <li className="flex items-center gap-2 font-semibold">
+                  <span className="text-[#3D9B28] font-bold text-base">✓</span> Food-grade SS-304 stainless steel
+                </li>
+                <li className="flex items-center gap-2 font-semibold">
+                  <span className="text-[#3D9B28] font-bold text-base">✓</span> High-yield, low-maintenance designs
+                </li>
+                <li className="flex items-center gap-2 font-semibold">
+                  <span className="text-[#3D9B28] font-bold text-base">✓</span> Team of experienced engineers
+                </li>
+                <li className="flex items-center gap-2 font-semibold">
+                  <span className="text-[#3D9B28] font-bold text-base">✓</span> Installation, training & AMC support
+                </li>
+                <li className="flex items-center gap-2 font-semibold">
+                  <span className="text-[#3D9B28] font-bold text-base">✓</span> PAN India delivery and service
+                </li>
+              </ul>
+
+              <div className="pt-4">
+                <Link to="/about" className="btn btn-primary">
+                  Learn More About Us →
+                </Link>
+              </div>
+            </div>
+
+            {/* Right Branded Visual Box with New Official Logo */}
+            <div className="lg:col-span-5">
+              <div className="rounded-3xl bg-white p-8 text-center text-slate-800 space-y-4 shadow-lg border border-slate-200 relative overflow-hidden">
+                <img 
+                  src="/raghav-logo.png" 
+                  alt="Raghav Food Logo" 
+                  className="w-24 h-24 object-contain bg-white rounded-2xl p-2 mx-auto shadow-md border-2 border-slate-200" 
+                />
+                
+                <div className="font-montserrat font-black text-2xl tracking-wider text-slate-900">
+                  RAGHAV <span className="text-[#3D9B28]">FOOD</span>
+                </div>
+                
+                <div className="text-xs font-montserrat font-bold text-slate-500 tracking-widest uppercase -mt-2">
+                  MACHINERY COMPANY
+                </div>
+                
+                <p className="text-xs text-slate-600 leading-relaxed max-w-sm mx-auto">
+                  Registered GST manufacturer of industrial food processing machinery, supplying food, fruit, and spice industries across India.
+                </p>
+
+                <div className="pt-2 grid grid-cols-2 gap-3 text-left">
+                  <div className="p-3 rounded-xl bg-slate-50 border border-slate-200">
+                    <div className="text-[10px] text-slate-500 font-bold uppercase tracking-wider">GSTIN</div>
+                    <div className="text-xs font-mono font-bold text-[#3D9B28] mt-0.5">{settings.gstin}</div>
+                  </div>
+                  <div className="p-3 rounded-xl bg-slate-50 border border-slate-200">
+                    <div className="text-[10px] text-slate-500 font-bold uppercase tracking-wider">Facility</div>
+                    <div className="text-xs font-bold text-slate-900 mt-0.5 truncate">Mangol Puri, Delhi</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* =====================================================================
+          7. NEW: MACHINERY IN ACTION / FACTORY DEMONSTRATION VIDEOS
+          ===================================================================== */}
+      <section className="max-w-7xl mx-auto px-4 md:px-8">
+        <div className="text-center max-w-2xl mx-auto mb-10">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#3D9B28]/10 text-[#3D9B28] text-xs font-montserrat font-bold mb-2">
+            <Film className="w-3.5 h-3.5" />
+            <span>Live Demonstrations</span>
+          </div>
+          <h2 className="font-montserrat font-extrabold text-2xl sm:text-3xl md:text-4xl text-slate-900">
+            Machinery In <span className="text-[#3D9B28]">Action</span>
+          </h2>
+          <div className="title-line"></div>
+          <p className="text-sm text-slate-500 mt-2">
+            Watch our food processing, continuous packaging, and thermal sterilization equipment operating live in production facilities.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {videos.map((video) => (
             <div
-              key={t._id}
-              className="p-6 rounded-2xl bg-industrial-900/80 border border-industrial-800 flex flex-col justify-between"
+              key={video._id || video.id}
+              className="bg-white border border-slate-200 rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 group flex flex-col justify-between"
             >
               <div>
-                {/* Rating stars */}
-                <div className="flex items-center gap-1 text-amber-brand mb-3">
-                  {[...Array(t.rating || 5)].map((_, i) => (
-                    <Star key={i} className="w-4 h-4 fill-amber-brand" />
-                  ))}
+                {/* Live Looping Video - NO PLAY BUTTON - Auto-plays and continuously auto-replays */}
+                <div className="relative h-48 sm:h-52 bg-slate-950 overflow-hidden flex items-center justify-center group/vid">
+                  <video
+                    src={video.videoUrl}
+                    poster={video.thumbnailUrl || video.thumbnail}
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    className="w-full h-full object-cover"
+                    onEnded={(e) => {
+                      e.target.currentTime = 0;
+                      e.target.play();
+                    }}
+                  />
+                  <span className="absolute top-2 left-2 text-[9px] font-bold text-white bg-black/65 backdrop-blur-sm px-2 py-0.5 rounded">
+                    {video.category}
+                  </span>
+                  <span className="absolute bottom-2 right-2 text-[10px] font-mono font-bold text-white bg-[#3D9B28] px-2 py-0.5 rounded shadow-sm">
+                    {video.machineName || video.model}
+                  </span>
                 </div>
 
-                <p className="text-xs text-industrial-300 italic leading-relaxed">
+                {/* Video Info */}
+                <div className="p-4">
+                  <h4 className="font-montserrat font-bold text-sm text-slate-900 group-hover:text-[#3D9B28] transition-colors line-clamp-2">
+                    {video.title}
+                  </h4>
+                  <p className="text-xs text-slate-500 mt-1.5 line-clamp-2 leading-relaxed">
+                    {video.specsSummary || video.description || 'Watch live industrial demonstration and continuous packaging cycles.'}
+                  </p>
+                </div>
+              </div>
+
+              {/* Action */}
+              <div className="p-4 pt-0">
+                <a
+                  href={`https://wa.me/${(settings.whatsappNumber || '919220706381').replace(/\D/g, '')}?text=Hello%20Raghav%20Food%20Machinery,%20please%20send%20me%20the%20live%20working%20video%20for%20${encodeURIComponent(video.title)}.`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full text-center py-2 px-3 rounded-lg bg-emerald-50 hover:bg-emerald-100 text-[#2E7D1E] border border-emerald-200 text-xs font-bold font-montserrat transition-colors flex items-center justify-center gap-1.5"
+                >
+                  <MessageSquare className="w-3.5 h-3.5 text-[#25D366]" />
+                  <span>Request Video on WhatsApp</span>
+                </a>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Custom Machine Video Enquiry Banner */}
+        <div className="mt-8 p-4 sm:p-5 rounded-2xl bg-slate-50 border border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
+          <div className="flex items-center gap-3">
+            <div className="w-10 h-10 rounded-xl bg-[#3D9B28]/10 text-[#3D9B28] flex items-center justify-center flex-shrink-0">
+              <Film className="w-5 h-5" />
+            </div>
+            <div>
+              <h5 className="font-montserrat font-bold text-sm text-slate-900">Looking for a specific machinery trial video?</h5>
+              <p className="text-xs text-slate-500">We record custom product trial runs at our Delhi manufacturing workshop for prospective buyers.</p>
+            </div>
+          </div>
+          <a
+            href={`https://wa.me/${(settings.whatsappNumber || '919220706381').replace(/\D/g, '')}?text=Hello%20Raghav%20Food%20Machinery,%20I%20want%20to%20request%20a%20video%20demonstration%20of%20a%20machine.`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn btn-primary btn-sm whitespace-nowrap"
+          >
+            Request Live Demo on WhatsApp →
+          </a>
+        </div>
+      </section>
+
+      {/* =====================================================================
+          8. CLIENT TESTIMONIALS
+          ===================================================================== */}
+      <section className="max-w-7xl mx-auto px-4 md:px-8">
+        <div className="text-center max-w-2xl mx-auto mb-10">
+          <div className="text-xs font-montserrat font-bold text-[#3D9B28] uppercase tracking-wider mb-2">
+            Verified Reviews
+          </div>
+          <h2 className="font-montserrat font-extrabold text-2xl sm:text-3xl md:text-4xl text-slate-900">
+            Trusted by 500+ Food Producers
+          </h2>
+          <div className="title-line"></div>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {testimonials.slice(0, 3).map((t) => (
+            <div
+              key={t._id}
+              className="p-6 rounded-2xl bg-white border border-[#e2e8f0] hover:border-[#3D9B28] flex flex-col justify-between shadow-sm transition-all hover:shadow-md"
+            >
+              <div>
+                <div className="flex items-center gap-1 text-[#3D9B28] mb-3">
+                  {[...Array(t.rating || 5)].map((_, i) => (
+                    <Star key={i} className="w-4 h-4 fill-[#3D9B28] text-[#3D9B28]" />
+                  ))}
+                </div>
+                <p className="text-xs sm:text-sm text-slate-600 italic leading-relaxed">
                   "{t.review}"
                 </p>
               </div>
 
-              <div className="pt-4 mt-4 border-t border-industrial-800 flex items-center gap-3">
+              <div className="pt-4 mt-4 border-t border-slate-100 flex items-center gap-3">
                 <img
                   src={t.avatarUrl || 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80'}
                   alt={t.clientName}
-                  className="w-10 h-10 rounded-full object-cover border border-amber-500/40"
+                  className="w-10 h-10 rounded-full object-cover border border-[#3D9B28]"
                 />
                 <div>
-                  <h5 className="font-bold text-white text-xs">{t.clientName}</h5>
-                  <span className="text-[11px] text-amber-brand block">{t.company}</span>
-                  <span className="text-[10px] text-industrial-500">{t.location}</span>
+                  <h5 className="font-bold text-slate-900 text-xs sm:text-sm">{t.clientName}</h5>
+                  <span className="text-[11px] text-[#3D9B28] block font-semibold">{t.company}</span>
+                  <span className="text-[10px] text-slate-500">{t.location}</span>
                 </div>
               </div>
             </div>
@@ -598,37 +580,37 @@ export default function Home() {
       </section>
 
       {/* =====================================================================
-          7. FACTORY VISIT & RAPID ENQUIRY CTA BLOCK
+          9. FACTORY VISIT & RAPID ENQUIRY CTA BLOCK
           ===================================================================== */}
       <section className="max-w-7xl mx-auto px-4 md:px-8">
-        <div className="rounded-3xl bg-gradient-to-r from-amber-600 via-amber-500 to-amber-700 p-8 md:p-12 text-industrial-950 flex flex-col lg:flex-row items-center justify-between gap-8 shadow-2xl">
+        <div className="rounded-3xl bg-gradient-to-r from-[#2E7D1E] via-[#3D9B28] to-[#2E7D1E] p-8 md:p-12 text-white flex flex-col lg:flex-row items-center justify-between gap-8 shadow-xl border border-emerald-500/30">
           <div className="space-y-3 max-w-2xl">
-            <span className="bg-industrial-950 text-amber-brand font-mono text-xs font-black px-3 py-1 rounded-full uppercase tracking-wider">
+            <span className="bg-white/20 text-white font-montserrat text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider backdrop-blur-sm">
               Visit Our Manufacturing Facility
             </span>
-            <h3 className="font-display font-black text-2xl sm:text-3xl lg:text-4xl text-industrial-950 tracking-tight">
+            <h3 className="font-montserrat font-black text-2xl sm:text-3xl lg:text-4xl text-white tracking-tight">
               Ready to Upgrade or Establish Your Food Processing Plant?
             </h3>
-            <p className="text-xs sm:text-sm font-medium text-industrial-950/80 leading-relaxed">
-              Schedule a visit to our facility in Mangol Puri, New Delhi to inspect live machinery runs and review equipment specifications with our technical team.
+            <p className="text-xs sm:text-sm text-emerald-50 leading-relaxed">
+              Schedule a visit to our manufacturing workshop in Mangol Puri, New Delhi to inspect live machinery runs and review equipment specifications with our technical engineering team.
             </p>
           </div>
 
-          <div className="flex flex-col sm:flex-row items-center gap-4 w-full lg:w-auto">
+          <div className="flex flex-col sm:flex-row items-center gap-3 w-full lg:w-auto">
             <Link
               to="/contact"
-              className="w-full sm:w-auto text-center bg-industrial-950 hover:bg-industrial-900 text-white font-extrabold px-6 py-3.5 rounded-xl text-sm transition-all shadow-xl"
+              className="w-full sm:w-auto text-center px-6 py-3 rounded-lg bg-white text-[#2E7D1E] hover:bg-slate-100 text-sm font-montserrat font-bold shadow-md transition-all"
             >
               Contact Us & Map
             </Link>
 
             <a
-              href={`https://wa.me/${settings.whatsappNumber.replace(/\D/g, '')}?text=Hello%20Raghav%20Food%20Processing%20Machine,%20I%20want%20to%20schedule%20a%20visit.`}
+              href={`https://wa.me/${(settings.whatsappNumber || '919220706381').replace(/\D/g, '')}?text=Hello%20Raghav%20Food%20Processing%20Machine,%20I%20want%20to%20schedule%20a%20visit.`}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full sm:w-auto text-center bg-white/90 hover:bg-white text-industrial-950 font-extrabold px-6 py-3.5 rounded-xl text-sm transition-all shadow-md flex items-center justify-center gap-2"
+              className="w-full sm:w-auto text-center inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-[#25D366] hover:bg-[#1EBE5B] text-white text-sm font-montserrat font-bold shadow-md transition-all border border-white/20"
             >
-              <MessageSquare className="w-4 h-4 text-emerald-600" />
+              <MessageSquare className="w-4 h-4" />
               <span>WhatsApp Direct</span>
             </a>
           </div>
@@ -638,4 +620,3 @@ export default function Home() {
     </div>
   );
 }
-
