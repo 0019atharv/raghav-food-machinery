@@ -102,9 +102,32 @@ export const connectDB = async () => {
 
 export const isUsingMongoDB = () => isMongoConnected;
 
-// Auto-seed MongoDB with Raghav Food Machinery data if collections are empty
+// Auto-seed MongoDB with Raghav Food Machinery data and purge obsolete dummy items
 async function seedDatabaseIfEmpty() {
   try {
+    const dummySlugs = [
+      'steam-jacketed-tilting-kettle-300l',
+      'steam-jacketed-kettle-300l',
+      'industrial-48-tray-vegetable-dryer',
+      'industrial-48-tray-dryer',
+      'continuous-namkeen-chips-fryer',
+      'continuous-namkeen-fryer',
+      'kurkure-snacks-extruder-machine',
+      'snacks-kurkure-extruder-machine',
+      'automatic-canning-retort-500l',
+      'micro-spice-pulverizer-pin-mill',
+      'heavy-duty-fruit-pulper-juice-extractor',
+      'commercial-heavy-duty-fruit-pulper',
+      'compact-industrial-retort-120l',
+      'raghav-horizontal-continuous-band-sealing-machine',
+      'raghav-motorized-mixing-steam-jacketed-kettle'
+    ];
+
+    const delRes = await Product.deleteMany({ slug: { $in: dummySlugs } });
+    if (delRes.deletedCount > 0) {
+      console.log(`🗑️ [Database] Purged ${delRes.deletedCount} dummy/duplicate products from MongoDB.`);
+    }
+
     const productCount = await Product.countDocuments();
     if (productCount === 0) {
       console.log('🌱 [Database] Seeding initial Raghav Food Machinery data into MongoDB...');
@@ -126,18 +149,19 @@ async function seedDatabaseIfEmpty() {
       });
       console.log('✅ [Database] Seeded Products, Categories, Blogs, Testimonials & Admin User into MongoDB!');
     } else {
-      console.log(`ℹ️ [Database] MongoDB already populated (${productCount} products found). Syncing missing products...`);
+      console.log(`ℹ️ [Database] MongoDB active (${productCount} products found). Syncing authentic products...`);
       for (const p of initialProducts) {
         const exists = await Product.findOne({ slug: p.slug });
         if (!exists) {
           await Product.create(p);
           console.log(`✅ [Database] Synced new product to MongoDB: ${p.slug}`);
+        } else {
+          await Product.updateOne({ slug: p.slug }, { $set: p });
         }
       }
     }
   } catch (seedErr) {
     console.error('[Database] Seeding error:', seedErr);
   }
-
 }
 
