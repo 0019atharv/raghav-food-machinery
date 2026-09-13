@@ -237,15 +237,15 @@ export default function Home() {
               className="bg-white border border-slate-200 hover:border-[#3D9B28]/60 rounded-xl sm:rounded-2xl p-2.5 sm:p-4 flex flex-col justify-between shadow-sm hover:shadow-lg transition-all duration-300 group"
             >
               <div>
-                {/* Image Container with seamless integration - NO inner border or shadow */}
-                <div className="relative h-36 sm:h-48 md:h-52 rounded-lg sm:rounded-xl bg-transparent p-2 sm:p-3 mb-2 sm:mb-2.5 flex items-center justify-center overflow-hidden">
+                {/* Image Container with seamless integration - Zoomed out uncropped photos */}
+                <div className="relative h-32 sm:h-48 md:h-52 rounded-xl bg-slate-50/50 p-2.5 sm:p-4 mb-2 sm:mb-2.5 flex items-center justify-center overflow-hidden border border-slate-100/60">
                   <img
                     src={machine.images?.[0] || 'https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=800&q=80'}
                     alt={machine.name}
-                    className="w-full h-full object-contain group-hover:scale-102 transition-transform duration-300"
+                    className="max-h-full max-w-full object-contain group-hover:scale-105 transition-transform duration-300"
                   />
-                  <span className="absolute top-1.5 left-1.5 sm:top-2 sm:left-2 text-[9px] sm:text-[10px] font-bold text-amber-900 uppercase tracking-wider bg-amber-50/90 border border-amber-200/60 px-1.5 sm:px-2 py-0.5 rounded">
-                    Machine
+                  <span className="absolute top-1.5 left-1.5 sm:top-2 sm:left-2 text-[8px] sm:text-[10px] font-bold text-slate-700 bg-white/95 border border-slate-200 px-1.5 sm:px-2 py-0.5 rounded shadow-xs max-w-[90px] truncate">
+                    {machine.category || 'Machine'}
                   </span>
                 </div>
 
@@ -257,38 +257,62 @@ export default function Home() {
                 </Link>
 
                 {/* Price Display */}
-                <div className="mt-1.5 sm:mt-2 flex flex-wrap items-baseline gap-1 sm:gap-2">
-                  <span className="font-montserrat font-black text-xs sm:text-base md:text-lg text-slate-900">
-                    ₹ {machine.price ? machine.price.toLocaleString('en-IN') : '25,000'}
-                  </span>
-                  <span className="text-[10px] sm:text-xs text-slate-400 line-through">
-                    ₹ {machine.price ? Math.round(machine.price * 1.15).toLocaleString('en-IN') : '35,000'}
+                <div className="mt-1 sm:mt-1.5 flex flex-wrap items-baseline gap-1 sm:gap-1.5">
+                  <span className="font-montserrat font-extrabold text-xs sm:text-base md:text-lg text-slate-900">
+                    {machine.price ? (typeof machine.price === 'number' ? `₹ ${machine.price.toLocaleString('en-IN')}` : machine.price) : '₹ 25,000'}
                   </span>
                 </div>
 
-                {/* Short Excerpt */}
-                <p className="text-[11px] sm:text-xs text-slate-500 mt-1.5 line-clamp-2 leading-relaxed">
+                {/* Minimal mobile chips (material/capacity) */}
+                <div className="mt-1 flex items-center gap-1 text-[9px] text-slate-600 sm:hidden">
+                  <span className="bg-slate-100 px-1.5 py-0.5 rounded truncate max-w-[90px]">
+                    {machine.materialGrade ? (machine.materialGrade.length > 10 ? machine.materialGrade.slice(0, 8) + '..' : machine.materialGrade) : 'SS-304'}
+                  </span>
+                  {machine.capacity && (
+                    <span className="bg-slate-100 px-1.5 py-0.5 rounded truncate max-w-[90px]">
+                      {machine.capacity.length > 12 ? machine.capacity.slice(0, 10) + '..' : machine.capacity}
+                    </span>
+                  )}
+                </div>
+
+                {/* Short Excerpt - hidden on mobile to avoid covering screen */}
+                <p className="hidden sm:block text-[11px] sm:text-xs text-slate-500 mt-1.5 line-clamp-2 leading-relaxed">
                   {machine.shortDescription || 'Commercial food processing machinery engineered with food-grade stainless steel.'}
                 </p>
               </div>
 
-              {/* Full Width Green Button matching mobile reference screenshot */}
-              <div className="mt-3 pt-2 sm:pt-3 border-t border-slate-100 flex items-center gap-1.5">
-                <Link
-                  to={`/product/${machine.slug}`}
-                  className="flex-1 text-center py-2 sm:py-2.5 px-2 rounded-lg bg-[#3D9B28] hover:bg-[#2E7D1E] text-white text-[11px] sm:text-xs font-bold font-montserrat shadow-sm transition-all flex items-center justify-center gap-1"
+              {/* Action Buttons */}
+              <div className="mt-2.5 sm:mt-3 pt-2 sm:pt-3 border-t border-slate-100 space-y-1.5">
+                <div className="flex items-center gap-1.5">
+                  <Link
+                    to={`/product/${machine.slug}`}
+                    className="flex-1 text-center py-1.5 sm:py-2 px-2 rounded-lg bg-[#3D9B28] hover:bg-[#2E7D1E] text-white text-[10px] sm:text-xs font-bold font-montserrat shadow-xs transition-all flex items-center justify-center gap-1"
+                  >
+                    <span>View Details</span>
+                    <span>&rarr;</span>
+                  </Link>
+                  <button
+                    onClick={() => addToCart(machine)}
+                    className="w-7 h-7 sm:w-8 sm:h-8 rounded-lg bg-slate-100 hover:bg-[#3D9B28] hover:text-white text-slate-700 flex items-center justify-center transition-colors border border-slate-200 flex-shrink-0"
+                    title="Add to RFQ"
+                    aria-label="Add to RFQ"
+                  >
+                    <ShoppingCart className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
+                  </button>
+                </div>
+
+                {/* WhatsApp button with official WhatsApp brand color */}
+                <a
+                  href={`https://wa.me/${(settings.whatsappNumber || '918796463055').replace(/\D/g, '')}?text=Hello%20Raghav%20Food%20Machinery,%20I%20am%20interested%20in%20${encodeURIComponent(machine.name)}.`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full inline-flex items-center justify-center gap-1.5 py-1.5 rounded-lg bg-[#25D366] hover:bg-[#20ba59] text-white text-[10px] sm:text-xs font-bold shadow-xs hover:shadow transition-all"
                 >
-                  <span>View Details</span>
-                  <span>&rarr;</span>
-                </Link>
-                <button
-                  onClick={() => addToCart(machine)}
-                  className="w-8 h-8 sm:w-9 sm:h-9 rounded-lg bg-slate-100 hover:bg-[#3D9B28] hover:text-white text-slate-700 flex items-center justify-center transition-colors border border-slate-200 flex-shrink-0"
-                  title="Add to RFQ"
-                  aria-label="Add to RFQ"
-                >
-                  <ShoppingCart className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
-                </button>
+                  <svg className="w-3.5 h-3.5 fill-current flex-shrink-0" viewBox="0 0 24 24">
+                    <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+                  </svg>
+                  <span>WhatsApp Inquiry</span>
+                </a>
               </div>
 
             </div>
