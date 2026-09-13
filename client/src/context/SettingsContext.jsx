@@ -2,7 +2,7 @@ import React, { createContext, useContext, useState, useEffect } from 'react';
 import { api } from '../services/api';
 
 const defaultSettings = {
-  companyName: "Raghav Food Processing Machine",
+  companyName: "Raghav Food Processing Machines",
   proprietor: "Naresh",
   websiteUrl: "https://raghavfoodprocessingmachines.com",
   tagline: "Precision Engineering for Food Processing, Canning & Snacks Machinery",

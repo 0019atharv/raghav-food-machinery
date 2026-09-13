@@ -96,21 +96,21 @@ export default function Footer() {
             <Link to="/" className="flex items-center gap-3.5 group">
               <img 
                 src="/raghav-logo.png" 
-                alt="Raghav Food Machinery Company" 
+                alt="Raghav Food Processing Machines" 
                 className="w-12 h-12 rounded-xl border border-slate-200 bg-white p-1 object-contain flex-shrink-0 shadow-sm group-hover:scale-105 transition-transform" 
               />
               <div className="flex flex-col leading-tight">
                 <span className="font-montserrat font-black text-xl text-slate-900 tracking-wider group-hover:text-[#3D9B28] transition-colors">
                   RAGHAV <span className="text-[#3D9B28]">FOOD</span>
                 </span>
-                <span className="text-[10px] font-montserrat font-bold text-slate-500 tracking-widest uppercase">
-                  MACHINERY COMPANY
+                <span className="text-[9.5px] font-montserrat font-bold text-slate-500 tracking-wider uppercase">
+                  PROCESSING MACHINES
                 </span>
               </div>
             </Link>
 
             <p className="text-slate-600 text-sm leading-relaxed mt-1">
-              Raghav Food Processing Machine is an Indian manufacturer specializing in canning retort autoclaves, continuous band sealers, snacks extrusion lines, commercial kettles, and food-grade stainless steel machinery.
+              Raghav Food Processing Machines is an Indian manufacturer specializing in canning retort autoclaves, can seamers, continuous band sealers, commercial planetary mixers, commercial kettles, and food-grade stainless steel machinery.
             </p>
 
             <div className="flex flex-col gap-2 mt-2 text-xs text-slate-600">

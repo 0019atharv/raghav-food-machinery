@@ -210,15 +210,15 @@ export default function Navbar() {
           <Link to="/" className="flex items-center gap-2.5 sm:gap-3 group flex-shrink-0">
             <img 
               src="/raghav-logo.png" 
-              alt="Raghav Food Machinery Company" 
+              alt="Raghav Food Processing Machines" 
               className="w-10 h-10 sm:w-11 sm:h-11 xl:w-12 xl:h-12 object-contain bg-white rounded-xl p-0.5 border border-slate-200 flex-shrink-0 shadow-sm group-hover:scale-105 transition-transform" 
             />
             <div className="flex flex-col flex-shrink-0 leading-tight">
               <span className="font-montserrat font-black text-base sm:text-lg xl:text-xl 2xl:text-2xl tracking-wider text-slate-900 group-hover:text-[#3D9B28] transition-colors uppercase whitespace-nowrap">
                 RAGHAV <span className="text-[#3D9B28]">FOOD</span>
               </span>
-              <span className="text-[8px] sm:text-[9px] xl:text-[10px] font-montserrat font-bold text-slate-500 tracking-widest uppercase -mt-0.5 whitespace-nowrap">
-                MACHINERY COMPANY
+              <span className="text-[7.5px] sm:text-[8.5px] xl:text-[9.5px] font-montserrat font-bold text-slate-500 tracking-wider uppercase -mt-0.5 whitespace-nowrap">
+                PROCESSING MACHINES
               </span>
             </div>
           </Link>

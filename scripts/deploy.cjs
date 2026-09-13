@@ -20,13 +20,18 @@ async function runDeploy() {
   console.log('🚀 Starting 1-Click Deployment to Azure Production');
   console.log('==================================================\n');
 
-  // Auto-recover corrupted 0-byte index if needed
+  // Auto-recover corrupted git index if needed
   try {
     const indexPath = path.join(ROOT_DIR, '.git', 'index');
-    if (fs.existsSync(indexPath) && fs.statSync(indexPath).size === 0) {
-      console.log('🔧 Rebuilding corrupted 0-byte git index...');
-      fs.unlinkSync(indexPath);
-      execSync(`"${GIT_EXE}" reset`, { cwd: ROOT_DIR });
+    if (fs.existsSync(indexPath)) {
+      try {
+        execSync(`"${GIT_EXE}" status --porcelain`, { cwd: ROOT_DIR, stdio: 'pipe' });
+      } catch (err) {
+        console.log('🔧 Rebuilding corrupted git index...');
+        try { fs.unlinkSync(indexPath); } catch (e) {}
+        execSync(`"${GIT_EXE}" reset`, { cwd: ROOT_DIR });
+        console.log('✅ Git index successfully repaired.');
+      }
     }
   } catch (e) {
     console.log('Index recovery note:', e.message);

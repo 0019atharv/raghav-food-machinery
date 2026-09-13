@@ -116,7 +116,10 @@ export const initialProducts = [
       "Raised rear backsplash protects kitchen walls from oil splatters and heat scorch"
     ],
     "isFeatured": true,
-    "isPublished": true
+    "isPublished": true,
+    "_id": "prod_1",
+    "createdAt": "2026-09-13T10:52:56.485Z",
+    "updatedAt": "2026-09-13T10:52:56.485Z"
   },
   {
     "name": "Raghav Motorized Tilting Steam Jacketed Mixing Kettle",
@@ -178,7 +181,10 @@ export const initialProducts = [
       "Heavy stainless steel tubular A-frame with locking casters allows easy kitchen positioning"
     ],
     "isFeatured": true,
-    "isPublished": true
+    "isPublished": true,
+    "_id": "prod_2",
+    "createdAt": "2026-09-13T10:52:56.485Z",
+    "updatedAt": "2026-09-13T10:52:56.485Z"
   },
   {
     "name": "Raghav Horizontal Continuous Band Sealer Machine",
@@ -241,7 +247,10 @@ export const initialProducts = [
       "Compact tabletop design engineered for high-throughput commercial packing lines"
     ],
     "isFeatured": true,
-    "isPublished": true
+    "isPublished": true,
+    "_id": "prod_3",
+    "createdAt": "2026-09-13T10:52:56.485Z",
+    "updatedAt": "2026-09-13T10:52:56.485Z"
   },
   {
     "name": "Raghav Can Seamer Machine (Semi-Automatic Double Seamer)",
@@ -303,7 +312,10 @@ export const initialProducts = [
       "Compact benchtop footprint fits easily into commercial packaging rooms"
     ],
     "isFeatured": true,
-    "isPublished": true
+    "isPublished": true,
+    "_id": "prod_4",
+    "createdAt": "2026-09-13T10:52:56.485Z",
+    "updatedAt": "2026-09-13T10:52:56.485Z"
   },
   {
     "name": "Raghav Heavy-Duty Hydraulic Juice & Oil Cold Press Machine",
@@ -365,7 +377,10 @@ export const initialProducts = [
       "SS-304 contact components detach quickly for sanitization under strict FSSAI guidelines"
     ],
     "isFeatured": true,
-    "isPublished": true
+    "isPublished": true,
+    "_id": "prod_5",
+    "createdAt": "2026-09-13T10:52:56.485Z",
+    "updatedAt": "2026-09-13T10:52:56.485Z"
   },
   {
     "name": "Raghav 12-Tray Industrial Stainless Steel Dehydrator Dryer",
@@ -427,7 +442,10 @@ export const initialProducts = [
       "Seamless sanitary interior with smooth rounded corners allows effortless washdown"
     ],
     "isFeatured": true,
-    "isPublished": true
+    "isPublished": true,
+    "_id": "prod_6",
+    "createdAt": "2026-09-13T10:52:56.485Z",
+    "updatedAt": "2026-09-13T10:52:56.485Z"
   },
   {
     "name": "Raghav 1 HP Commercial Potato & Root Vegetable Peeler",
@@ -489,7 +507,10 @@ export const initialProducts = [
       "Robust industrial painted body with food-grade stainless steel peeling chamber"
     ],
     "isFeatured": true,
-    "isPublished": true
+    "isPublished": true,
+    "_id": "prod_7",
+    "createdAt": "2026-09-13T10:52:56.485Z",
+    "updatedAt": "2026-09-13T10:52:56.485Z"
   },
   {
     "name": "Raghav 60 Ltr Vertical Canning Retort Sterilizer",
@@ -551,7 +572,10 @@ export const initialProducts = [
       "Includes perforated heavy stainless steel loading basket with convenient lift handle"
     ],
     "isFeatured": true,
-    "isPublished": true
+    "isPublished": true,
+    "_id": "prod_8",
+    "createdAt": "2026-09-13T10:52:56.485Z",
+    "updatedAt": "2026-09-13T10:52:56.485Z"
   },
   {
     "name": "Raghav Manual Liquid & Paste Filling Machine",
@@ -613,7 +637,10 @@ export const initialProducts = [
       "Sanitary tri-clamp fittings allow complete 5-minute cleanout and sanitization"
     ],
     "isFeatured": true,
-    "isPublished": true
+    "isPublished": true,
+    "_id": "prod_9",
+    "createdAt": "2026-09-13T10:52:56.485Z",
+    "updatedAt": "2026-09-13T10:52:56.485Z"
   },
   {
     "name": "Raghav Commercial Vegetable Slicer & Cutter Machine",
@@ -675,7 +702,10 @@ export const initialProducts = [
       "Downward angled chute discharges sliced produce directly into receiving bins or conveyor"
     ],
     "isFeatured": true,
-    "isPublished": true
+    "isPublished": true,
+    "_id": "prod_10",
+    "createdAt": "2026-09-13T10:52:56.485Z",
+    "updatedAt": "2026-09-13T10:52:56.485Z"
   },
   {
     "name": "Raghav 3HP Multipurpose Pulverizer Machine (Premium Model)",
@@ -737,7 +767,10 @@ export const initialProducts = [
       "Lower stainless collection vessel keeps powdered product clean and contamination-free"
     ],
     "isFeatured": true,
-    "isPublished": true
+    "isPublished": true,
+    "_id": "prod_11",
+    "createdAt": "2026-09-13T10:52:56.485Z",
+    "updatedAt": "2026-09-13T10:52:56.485Z"
   },
   {
     "name": "Raghav Two in One Pulverizer (Dual Chamber Grinding Mill)",
@@ -799,7 +832,10 @@ export const initialProducts = [
       "Precision dynamically balanced rotor ensures virtually vibration-free operation"
     ],
     "isFeatured": true,
-    "isPublished": true
+    "isPublished": true,
+    "_id": "prod_12",
+    "createdAt": "2026-09-13T10:52:56.485Z",
+    "updatedAt": "2026-09-13T10:52:56.485Z"
   },
   {
     "name": "Raghav Twin Pulping Machine (Double Stage Fruit Pulper)",
@@ -862,7 +898,10 @@ export const initialProducts = [
       "Heavy channel iron base frame eliminates vibration even at maximum throughput"
     ],
     "isFeatured": true,
-    "isPublished": true
+    "isPublished": true,
+    "_id": "prod_13",
+    "createdAt": "2026-09-13T10:52:56.485Z",
+    "updatedAt": "2026-09-13T10:52:56.485Z"
   },
   {
     "name": "Raghav Masala Coating Pan (Seasoning Machine)",
@@ -925,7 +964,10 @@ export const initialProducts = [
       "Heavy-duty gearbox engineered for continuous 24/7 industrial factory operation"
     ],
     "isFeatured": true,
-    "isPublished": true
+    "isPublished": true,
+    "_id": "prod_14",
+    "createdAt": "2026-09-13T10:52:56.485Z",
+    "updatedAt": "2026-09-13T10:52:56.485Z"
   },
   {
     "name": "Raghav 500 Ltr Stainless Steel Conical Storage Tank",
@@ -989,7 +1031,10 @@ export const initialProducts = [
       "Corrosion-resistant and 100% compatible with hot washdowns"
     ],
     "isFeatured": true,
-    "isPublished": true
+    "isPublished": true,
+    "_id": "prod_15",
+    "createdAt": "2026-09-13T10:52:56.485Z",
+    "updatedAt": "2026-09-13T10:52:56.485Z"
   },
   {
     "name": "Raghav Heavy-Duty Manual Crown Corking & Bottle Capping Machine",
@@ -1049,7 +1094,10 @@ export const initialProducts = [
       "Airtight, leak-proof hermetic seal every single cycle"
     ],
     "isFeatured": true,
-    "isPublished": true
+    "isPublished": true,
+    "_id": "prod_16",
+    "createdAt": "2026-09-13T10:52:56.485Z",
+    "updatedAt": "2026-09-13T10:52:56.485Z"
   },
   {
     "name": "Raghav Blower Cyclone Spice & Grain Pulverizer Machine",
@@ -1109,7 +1157,10 @@ export const initialProducts = [
       "Quick-clamp screen changeover in under 2 minutes"
     ],
     "isFeatured": true,
-    "isPublished": true
+    "isPublished": true,
+    "_id": "prod_17",
+    "createdAt": "2026-09-13T10:52:56.485Z",
+    "updatedAt": "2026-09-13T10:52:56.485Z"
   },
   {
     "name": "Raghav Tilting Steam Jacketed Cooking Kettle (Commercial Boiling Pan)",
@@ -1174,7 +1225,10 @@ export const initialProducts = [
       "Heavy A-frame construction engineered for decades of daily factory use"
     ],
     "isFeatured": true,
-    "isPublished": true
+    "isPublished": true,
+    "_id": "prod_18",
+    "createdAt": "2026-09-13T10:52:56.485Z",
+    "updatedAt": "2026-09-13T10:52:56.485Z"
   },
   {
     "name": "Raghav Industrial Screw Type Juicer & Cold-Press Spiral Juice Extractor",
@@ -1236,7 +1290,10 @@ export const initialProducts = [
       "Heavy-duty geared transmission designed for continuous production runs"
     ],
     "isFeatured": true,
-    "isPublished": true
+    "isPublished": true,
+    "_id": "prod_19",
+    "createdAt": "2026-09-13T10:52:56.485Z",
+    "updatedAt": "2026-09-13T10:52:56.485Z"
   },
   {
     "name": "Raghav Automatic Vertical Form Fill Seal (FFS) Pouch Packing Machine",
@@ -1298,7 +1355,10 @@ export const initialProducts = [
       "Easy tool-free pouch width changeover with modular forming tubes"
     ],
     "isFeatured": true,
-    "isPublished": true
+    "isPublished": true,
+    "_id": "prod_20",
+    "createdAt": "2026-09-13T10:52:56.485Z",
+    "updatedAt": "2026-09-13T10:52:56.485Z"
   },
   {
     "name": "Raghav Industrial Rectangular Vibratory Sifter & Grading Screen Machine",
@@ -1360,7 +1420,354 @@ export const initialProducts = [
       "Quiet, low-noise operation with floor-isolated vibration dampeners"
     ],
     "isFeatured": true,
-    "isPublished": true
+    "isPublished": true,
+    "_id": "prod_21",
+    "createdAt": "2026-09-13T10:52:56.485Z",
+    "updatedAt": "2026-09-13T10:52:56.485Z"
+  },
+  {
+    "name": "Raghav Pneumatic Paste & Liquid Filling Machine (Single Head Piston Filler)",
+    "slug": "raghav-paste-filler",
+    "category": "Packaging & Sealing",
+    "categorySlug": "packaging-sealing",
+    "shortDescription": "Semi-automatic pneumatic single-head piston filling machine with SS-304 hopper and foot pedal control for high-viscosity pastes and liquids.",
+    "fullDescription": "This machine is specifically engineered to handle high-viscosity fluids, thick liquids, and dense pastes that standard gravity fillers cannot process. Equipped with an industrial pneumatic cylinder, quick-clean food-grade SS-304 contact parts, a drip-free shut-off dispensing nozzle, and an emergency safety cutoff. Ideal for filling honey, tomato ketchup, fruit jams, ginger-garlic paste, ghee, oils, creams, cosmetic lotions, sauces, and pharmaceutical syrups with repeatable volumetric accuracy.",
+    "price": "₹ 68,000",
+    "priceUnit": "Ex-Factory Price",
+    "capacity": "100 – 1000 ml Adjustable Volume (10–30 fills/min)",
+    "power": "Pneumatic Operated (Requires 0.4–0.6 MPa Air Compressor)",
+    "materialGrade": "Food-Grade SS-304 Contact Parts & 16-Gauge SS Body",
+    "automationGrade": "Semi-Automatic Pneumatic (Pedal & Auto-Cycle)",
+    "voltage": "220V / 50Hz (Pneumatic Control System)",
+    "dimensions": "950 mm x 300 mm x 900 mm",
+    "weight": "35 kg",
+    "warranty": "1 Year Commercial Warranty",
+    "images": [
+      "https://res.cloudinary.com/vgmmtb5k/image/upload/v1789326614/raghav-food-processing-machines/raghav-paste-filler.jpg",
+      "/images/products/raghav-paste-filler.jpg"
+    ],
+    "specifications": [
+      {
+        "label": "Model",
+        "value": "Raghav33"
+      },
+      {
+        "label": "Brand",
+        "value": "Raghav"
+      },
+      {
+        "label": "Filling Range",
+        "value": "100 ml – 1000 ml (Adjustable Stroke)"
+      },
+      {
+        "label": "Filling Accuracy",
+        "value": "± 1%"
+      },
+      {
+        "label": "Filling Speed",
+        "value": "10 – 30 bottles / pouches per minute"
+      },
+      {
+        "label": "Body Gauge",
+        "value": "16-Gauge Heavy Stainless Steel 304"
+      },
+      {
+        "label": "Hopper Capacity",
+        "value": "30 Liters SS-304 Conical Hopper"
+      },
+      {
+        "label": "Air Pressure Required",
+        "value": "0.4 – 0.6 MPa (4 – 6 Bar)"
+      },
+      {
+        "label": "Nozzle Type",
+        "value": "Anti-Drip Pneumatic Shut-Off Nozzle"
+      },
+      {
+        "label": "Control Modes",
+        "value": "Foot Pedal Trigger / Continuous Auto-Cycle"
+      }
+    ],
+    "applications": [
+      "Tomato Ketchup, Chutney & Mustard Sauce Filling",
+      "Fruit Jams, Marmalades & Jelly Packing",
+      "Ginger-Garlic Paste & Spice Puree Packaging",
+      "Honey, Edible Ghee & Cooking Oil Bottling",
+      "Cosmetic Creams, Lotions, Shampoos & Hand Sanitizers"
+    ],
+    "features": [
+      "Industrial pneumatic cylinder provides smooth, precise volumetric suction and discharge",
+      "Equipped with 30L food-grade conical stainless steel hopper for continuous feeding",
+      "Anti-drip shut-off nozzle prevents nozzle stringing and keeps bottle exteriors clean",
+      "Dual operational modes: manual single-fill foot pedal trigger or continuous auto-cycling",
+      "Tool-free tri-clamp quick-release fittings for effortless daily sanitary CIP washdown"
+    ],
+    "isFeatured": true,
+    "isPublished": true,
+    "inStock": true,
+    "stockCount": 5,
+    "sku": "RFPM-RAGHAV-PASTE-FIL",
+    "createdAt": "2026-09-13T19:10:15.738Z",
+    "updatedAt": "2026-09-13T19:10:15.756Z",
+    "_id": "prod_22"
+  },
+  {
+    "name": "Raghav 30L Commercial Planetary Mixer (Bakery Whisking & Kneading Machine)",
+    "slug": "raghav-planetary-mixer",
+    "category": "Commercial Kettles & Cooking",
+    "categorySlug": "commercial-kettles-cooking",
+    "shortDescription": "Heavy-duty 30-liter commercial planetary mixer with 3-speed transmission, SS-304 bowl, and three interchangeable agitators for bakery production.",
+    "fullDescription": "Engineered for high-performance commercial baking and food preparation, this heavy-duty 30-liter planetary mixer is a versatile workhorse for professional bakeries, pastry kitchens, restaurants, and cloud kitchens. Features a 3-speed heavy planetary gearbox allowing seamless switching between high-speed egg/cream whipping, medium-speed batter and icing mixing, and low-speed bread and pizza dough kneading. Built with a food-grade SS-304 removable bowl, ergonomic bowl-lift lever, transparent polycarbonate safety guard with pouring chute, and rugged cast iron framework.",
+    "price": "₹ 65,000",
+    "priceUnit": "Ex-Factory Price",
+    "capacity": "30 Liters Bowl Capacity (6–8 kg Flour / Dough Batch)",
+    "power": "2 HP Heavy-Duty Induction Motor",
+    "materialGrade": "Cast Iron Enameled Body with SS-304 Bowl & Agitators",
+    "automationGrade": "Semi-Automatic (3-Speed Gear Shift Transmission)",
+    "voltage": "220V / 240V, 50 Hz Single Phase",
+    "dimensions": "580 mm x 520 mm x 920 mm",
+    "weight": "95 kg",
+    "warranty": "1 Year Commercial Warranty",
+    "images": [
+      "https://res.cloudinary.com/vgmmtb5k/image/upload/v1789326615/raghav-food-processing-machines/raghav-planetary-mixer.jpg",
+      "/images/products/raghav-planetary-mixer.jpg"
+    ],
+    "specifications": [
+      {
+        "label": "Model",
+        "value": "Raghav32"
+      },
+      {
+        "label": "Brand",
+        "value": "Raghav"
+      },
+      {
+        "label": "Bowl Capacity",
+        "value": "30 Liters at a time"
+      },
+      {
+        "label": "Motor Power",
+        "value": "2 HP Heavy-Duty Single Phase"
+      },
+      {
+        "label": "Body Material",
+        "value": "Heavy Mild Steel / Cast Iron Casing with SS Parts"
+      },
+      {
+        "label": "Bowl Material",
+        "value": "Food-Grade Stainless Steel 304 with Dual Handles"
+      },
+      {
+        "label": "Transmission",
+        "value": "3-Speed Hardened Alloy Gear Drive"
+      },
+      {
+        "label": "Included Agitators",
+        "value": "Wire Whisk (Egg/Cream), Flat Beater (Batter), Dough Spiral (Bread)"
+      },
+      {
+        "label": "Safety Mechanism",
+        "value": "Transparent Bowl Guard with Safety Limit Microswitch"
+      },
+      {
+        "label": "Bowl Lift",
+        "value": "Mechanical Manual Lever Lift Mechanism"
+      }
+    ],
+    "applications": [
+      "Commercial Bakery Cake Sponges, Egg Whites & Meringue Whipping",
+      "Fresh Cream, Buttercream Frosting & Pastry Fillings",
+      "Bread, Pizza, Pav & Bun Yeast Dough Kneading",
+      "Cookie, Biscuit, Pastry & Muffin Batter Blending",
+      "Restaurant Mashed Potatoes, Mayonnaise & Salad Dressings"
+    ],
+    "features": [
+      "3-speed hardened alloy gear transmission withstands dense dough kneading and light whisking",
+      "Includes three commercial-grade attachments: stainless steel wire whisk, flat beater, and dough spiral",
+      "Safety interlock guard automatically stops motor if the transparent safety cage is opened",
+      "Heavy cast iron base absorbs rotational vibrations for quiet, rock-solid counter operation",
+      "Ergonomic manual hand crank smoothly raises and locks bowl into optimal mixing position"
+    ],
+    "isFeatured": true,
+    "isPublished": true,
+    "inStock": true,
+    "stockCount": 5,
+    "sku": "RFPM-RAGHAV-PLANETARY",
+    "createdAt": "2026-09-13T19:10:16.520Z",
+    "updatedAt": "2026-09-13T19:10:16.520Z",
+    "_id": "prod_23"
+  },
+  {
+    "name": "Raghav Automatic Fruit & Vegetable Bubble Washing Machine with Conveyor Elevator",
+    "slug": "raghav-automatic-conveyor-washer",
+    "category": "Vegetable & Fruit Processing",
+    "categorySlug": "vegetable-fruit-processing",
+    "shortDescription": "Industrial stainless steel air-bubble washing tank with continuous cleated modular conveyor elevator and overhead high-pressure spray rinsing.",
+    "fullDescription": "An automated continuous industrial washing and elevator rinsing machine engineered for high-throughput cleaning of fruits, leafy vegetables, roots, tomatoes, carrots, apples, herbs, and culinary produce. High-pressure air bubbles agitate the water bath, gently tumbling and cleansing produce to loosen mud, field soils, pesticide residues, and surface impurities without bruising or skinning delicate skins. The inclined cleated modular conveyor continuously lifts washed produce out of the bath through an overhead fresh water high-pressure spray rinsing zone for hygienic discharge into sorting tables or peeling machines.",
+    "price": "₹ 4,50,000",
+    "priceUnit": "Ex-Factory Price",
+    "capacity": "500 – 1000 kg / Hour Continuous Throughput",
+    "power": "1 HP Bubble Blower + 1/2 HP Water Pump + 1 HP Geared Conveyor Motor",
+    "materialGrade": "Heavy-Gauge Food-Grade SS-304 (14-Gauge Sheet)",
+    "automationGrade": "Fully Automatic Continuous In-Line Conveyor System",
+    "voltage": "415V 3-Phase / 230V 1-Phase (Configurable)",
+    "dimensions": "2400 mm x 1200 mm x 1800 mm (Tank: 5 x 4 x 3 Feet)",
+    "weight": "320 kg",
+    "warranty": "1 Year Heavy-Duty Commercial Warranty",
+    "images": [
+      "https://res.cloudinary.com/vgmmtb5k/image/upload/v1789326616/raghav-food-processing-machines/raghav-automatic-conveyor-washer.jpg",
+      "/images/products/raghav-automatic-conveyor-washer.jpg"
+    ],
+    "specifications": [
+      {
+        "label": "Model",
+        "value": "Raghav35"
+      },
+      {
+        "label": "Brand",
+        "value": "Raghav"
+      },
+      {
+        "label": "Processing Capacity",
+        "value": "500 – 1000 kg / hr Continuous Throughput"
+      },
+      {
+        "label": "Tank Dimensions",
+        "value": "5 x 4 x 3 Feet (L x W x H)"
+      },
+      {
+        "label": "Tank Gauge",
+        "value": "14-Gauge Heavy Stainless Steel 304"
+      },
+      {
+        "label": "Air Blower Motor",
+        "value": "1 HP High-Volume Vortex Bubble Generator"
+      },
+      {
+        "label": "Circulation Water Pump",
+        "value": "1/2 HP Stainless Steel Water Pump"
+      },
+      {
+        "label": "Conveyor Drive Motor",
+        "value": "1 HP Geared Motor with Variable Frequency Drive (VFD)"
+      },
+      {
+        "label": "Elevator Belt Material",
+        "value": "Food-Grade Blue Modular Cleated Polymer Conveyor"
+      },
+      {
+        "label": "Spray Rinsing System",
+        "value": "Overhead High-Pressure Stainless Steel Spray Bar"
+      },
+      {
+        "label": "Mobility & Drainage",
+        "value": "Heavy Swivel Lockable Casters + 2-Inch Quick Drain Ball Valve"
+      }
+    ],
+    "applications": [
+      "Tomatoes, Mangoes, Apples, Citrus & Guava Surface Washing",
+      "Potatoes, Carrots, Onions & Beetroot Soil Removal",
+      "Spinach, Lettuce, Coriander & Fresh Herbs Cleansing",
+      "Pre-Processing Lines for Canning, Pulping, Slicing & Freezing",
+      "Commercial IQF (Individually Quick Frozen) Vegetable Processing Plants"
+    ],
+    "features": [
+      "Vortex air bubble generator creates rolling turbulence that scrubs dirt without damaging delicate produce",
+      "Inclined cleated modular conveyor automatically elevates and drains washed items out of the water tank",
+      "Overhead stainless steel spray manifold applies clean potable water rinse before produce exit",
+      "Sanitary stainless steel construction with sloped tank floor and quick-open bottom sludge drain valve",
+      "Mounted on four heavy-duty locking industrial swivel wheels for flexible facility positioning"
+    ],
+    "isFeatured": true,
+    "isPublished": true,
+    "inStock": true,
+    "stockCount": 5,
+    "sku": "RFPM-RAGHAV-AUTOMATIC",
+    "createdAt": "2026-09-13T19:10:17.490Z",
+    "updatedAt": "2026-09-13T19:10:17.490Z",
+    "_id": "prod_24"
+  },
+  {
+    "name": "Raghav Commercial Hydro Extractor & Centrifugal De-Oiler Machine",
+    "slug": "raghav-hydro",
+    "category": "Snacks & Extrusion Lines",
+    "categorySlug": "snacks-extrusion-lines",
+    "shortDescription": "Centrifugal high-speed hydro extractor and namkeen de-oiler with removable perforated SS-304 basket and heavy anti-vibration cast base.",
+    "fullDescription": "This machine uses high-speed centrifugal force to rapidly separate surface liquids and oil from solids. Widely utilized in commercial food processing for de-oiling fried namkeen, sev, banana chips, potato chips, and samosas to reduce oiliness, improve crispness, and extend shelf life. Also used for rapidly dewatering washed vegetables, cut salad leaves, sprouts, and grated root crops prior to packing or dehydration. Built with a durable SS-304 chamber, removable perforated basket, heavy cast-iron anti-vibration mountings, and a dedicated stainless steel discharge pipe for recovered oil or water.",
+    "price": "₹ 38,000",
+    "priceUnit": "Ex-Factory Price",
+    "capacity": "10 Liters Batch (approx 8–12 kg Snacks / Produce)",
+    "power": "1/2 HP Heavy-Duty Single Phase Motor (1440 RPM)",
+    "materialGrade": "Food-Grade SS-304 Casing & Basket with Cast Iron Base",
+    "automationGrade": "Semi-Automatic Centrifugal Rotation with Brake",
+    "voltage": "220V / 240V, 50 Hz Single Phase",
+    "dimensions": "550 mm x 550 mm x 750 mm",
+    "weight": "42 kg",
+    "warranty": "1 Year Commercial Warranty",
+    "images": [
+      "https://res.cloudinary.com/vgmmtb5k/image/upload/v1789326617/raghav-food-processing-machines/raghav-hydro.jpg",
+      "/images/products/raghav-hydro.jpg"
+    ],
+    "specifications": [
+      {
+        "label": "Model",
+        "value": "Raghav33"
+      },
+      {
+        "label": "Brand",
+        "value": "Raghav"
+      },
+      {
+        "label": "Batch Capacity",
+        "value": "10 Liters at a time (8–12 kg load)"
+      },
+      {
+        "label": "Motor Rating",
+        "value": "1/2 HP 1440 RPM Single Phase"
+      },
+      {
+        "label": "Rotational Extraction Speed",
+        "value": "900 – 1200 RPM Centrifugal Spin"
+      },
+      {
+        "label": "Sheet Gauge",
+        "value": "16-Gauge Heavy Stainless Steel 304"
+      },
+      {
+        "label": "Inner Basket",
+        "value": "Perforated Stainless Steel 304 with Heavy Lift Handles"
+      },
+      {
+        "label": "Liquid / Oil Drainage",
+        "value": "Direct Side Heavy SS Spout for Oil Collection"
+      },
+      {
+        "label": "Base Construction",
+        "value": "Heavy Cast Iron Counterweight Base with Rubber Damper Bushings"
+      }
+    ],
+    "applications": [
+      "Fried Namkeen, Sev, Gathiya & Bhujia Oil Removal",
+      "Potato Chips, Banana Chips & Kurkure Snacks De-Oiling",
+      "Washed Leafy Vegetables & Herb Dewatering before Packing",
+      "Grated Ginger, Garlic, Cabbage & Coconut Moisture Spin",
+      "Pickle & Fruit Pulp Excess Moisture Separation"
+    ],
+    "features": [
+      "High-speed centrifugal rotation extracts up to 80% excess surface oil from fried snacks in 90 seconds",
+      "Significantly lowers oil content in finished namkeen for healthier, crispier snacks with extended shelf life",
+      "Perforated SS-304 inner basket lifts out instantly with sturdy handles for rapid batch turnaround",
+      "Heavy cast iron base and vibration-absorbing rubber feet prevent machine creep during high-RPM spinning",
+      "Large side discharge nozzle channels drained oil or water directly into external collection containers"
+    ],
+    "isFeatured": true,
+    "isPublished": true,
+    "inStock": true,
+    "stockCount": 5,
+    "sku": "RFPM-RAGHAV-HYDRO",
+    "createdAt": "2026-09-13T19:10:18.247Z",
+    "updatedAt": "2026-09-13T19:10:18.247Z",
+    "_id": "prod_25"
   }
 ];
 

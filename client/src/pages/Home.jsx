@@ -390,7 +390,7 @@ export default function Home() {
               <div className="title-line left"></div>
               
               <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
-                Raghav Food Machinery Company is a trusted manufacturer of industrial food processing machinery. We design and build fruit pulpers, tomato juicers, spice pulverizers, steam jacketed kettles, hydraulic juice presses, and complete processing lines — engineered with food-grade SS-304 stainless steel for reliability and high output across India.
+                Raghav Food Processing Machines is a trusted manufacturer of industrial food processing machinery. We design and build fruit pulpers, tomato juicers, spice pulverizers, steam jacketed kettles, hydraulic juice presses, commercial planetary mixers, and complete processing lines — engineered with food-grade SS-304 stainless steel for reliability and high output across India.
               </p>
 
               <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2 text-xs sm:text-sm text-slate-700">
@@ -434,8 +434,8 @@ export default function Home() {
                   RAGHAV <span className="text-[#3D9B28]">FOOD</span>
                 </div>
                 
-                <div className="text-xs font-montserrat font-bold text-slate-500 tracking-widest uppercase -mt-2">
-                  MACHINERY COMPANY
+                <div className="text-xs font-montserrat font-bold text-slate-500 tracking-wider uppercase -mt-2">
+                  PROCESSING MACHINES
                 </div>
                 
                 <p className="text-xs text-slate-600 leading-relaxed max-w-sm mx-auto">

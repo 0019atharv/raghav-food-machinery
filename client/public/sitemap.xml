@@ -282,4 +282,48 @@
     </image:image>
   </url>
 
+  <url>
+    <loc>https://raghavfoodprocessingmachines.com/product/raghav-paste-filler</loc>
+    <lastmod>2026-09-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/vgmmtb5k/image/upload/v1789326614/raghav-food-processing-machines/raghav-paste-filler.jpg</image:loc>
+      <image:title>Raghav Pneumatic Paste &amp; Liquid Filling Machine (Single Head Piston Filler)</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://raghavfoodprocessingmachines.com/product/raghav-planetary-mixer</loc>
+    <lastmod>2026-09-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/vgmmtb5k/image/upload/v1789326615/raghav-food-processing-machines/raghav-planetary-mixer.jpg</image:loc>
+      <image:title>Raghav 30L Commercial Planetary Mixer (Bakery Whisking &amp; Kneading Machine)</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://raghavfoodprocessingmachines.com/product/raghav-automatic-conveyor-washer</loc>
+    <lastmod>2026-09-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/vgmmtb5k/image/upload/v1789326616/raghav-food-processing-machines/raghav-automatic-conveyor-washer.jpg</image:loc>
+      <image:title>Raghav Automatic Fruit &amp; Vegetable Bubble Washing Machine with Conveyor Elevator</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://raghavfoodprocessingmachines.com/product/raghav-hydro</loc>
+    <lastmod>2026-09-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/vgmmtb5k/image/upload/v1789326617/raghav-food-processing-machines/raghav-hydro.jpg</image:loc>
+      <image:title>Raghav Commercial Hydro Extractor &amp; Centrifugal De-Oiler Machine</image:title>
+    </image:image>
+  </url>
+
 </urlset>
