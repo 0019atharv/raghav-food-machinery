@@ -151,12 +151,13 @@ async function seedDatabaseIfEmpty() {
     } else {
       console.log(`ℹ️ [Database] MongoDB active (${productCount} products found). Syncing authentic products...`);
       for (const p of initialProducts) {
-        const exists = await Product.findOne({ slug: p.slug });
+        const { _id, ...cleanProduct } = p;
+        const exists = await Product.findOne({ slug: cleanProduct.slug });
         if (!exists) {
-          await Product.create(p);
-          console.log(`✅ [Database] Synced new product to MongoDB: ${p.slug}`);
+          await Product.create(cleanProduct);
+          console.log(`✅ [Database] Synced new product to MongoDB: ${cleanProduct.slug}`);
         } else {
-          await Product.updateOne({ slug: p.slug }, { $set: p });
+          await Product.updateOne({ slug: cleanProduct.slug }, { $set: cleanProduct });
         }
       }
     }
