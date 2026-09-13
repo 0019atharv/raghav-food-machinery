@@ -224,14 +224,14 @@ export default function Navbar() {
           </Link>
 
           {/* Desktop Navigation Links + Search Box (Search placed immediately AFTER Contact) */}
-          <div className="hidden lg:flex items-center gap-2 xl:gap-3 flex-shrink-0">
+          <div className="hidden lg:flex items-center gap-1.5 xl:gap-2.5 flex-shrink-0">
             {/* Nav Links: Home, Machines, Services, Gallery, About Us, Testimonials, Contact */}
             <div className="flex items-center gap-0.5 xl:gap-1">
               {navLinks.map((link) => (
                 <Link
                   key={link.name}
                   to={link.path}
-                  className={`px-2 xl:px-2.5 2xl:px-3 py-1.5 rounded-lg text-xs xl:text-sm font-montserrat font-semibold transition-all duration-200 whitespace-nowrap ${
+                  className={`px-2 xl:px-2.5 py-1.5 rounded-lg text-xs xl:text-[13px] font-montserrat font-semibold transition-all duration-200 whitespace-nowrap ${
                     isActive(link.path)
                       ? 'text-white bg-[#3D9B28] shadow-sm font-bold'
                       : 'text-slate-700 hover:text-[#3D9B28] hover:bg-slate-100/80'
@@ -242,13 +242,13 @@ export default function Navbar() {
               ))}
             </div>
 
-            {/* Search Box: Positioned immediately AFTER the Contact item */}
-            <div ref={searchRef} className="relative ml-1 xl:ml-2">
+            {/* Search Box: Positioned immediately AFTER the Contact item with compact width */}
+            <div ref={searchRef} className="relative ml-0.5 xl:ml-1.5">
               <form 
                 onSubmit={handleSearchSubmit}
-                className="flex items-center relative w-48 xl:w-60 2xl:w-72"
+                className="flex items-center relative w-36 lg:w-40 xl:w-48 2xl:w-52 transition-all"
               >
-                <Search className="w-3.5 h-3.5 xl:w-4 xl:h-4 text-slate-400 absolute left-3 pointer-events-none" />
+                <Search className="w-3.5 h-3.5 text-slate-400 absolute left-2.5 pointer-events-none" />
                 <input 
                   type="text" 
                   value={searchQuery}
@@ -258,7 +258,7 @@ export default function Navbar() {
                     if (searchQuery.trim()) handleSearchInputChange(searchQuery);
                   }}
                   placeholder="Search machines..."
-                  className="w-full bg-slate-50 hover:bg-slate-100 focus:bg-white text-slate-800 placeholder-slate-400 text-xs rounded-xl pl-9 pr-8 py-2 border border-slate-200 focus:border-[#3D9B28] focus:ring-2 focus:ring-[#3D9B28]/20 outline-none transition-all shadow-inner font-sans"
+                  className="w-full bg-slate-50 hover:bg-slate-100 focus:bg-white text-slate-800 placeholder-slate-400 text-xs rounded-xl pl-8 pr-7 py-1.5 xl:py-2 border border-slate-200 focus:border-[#3D9B28] focus:ring-2 focus:ring-[#3D9B28]/20 outline-none transition-all shadow-inner font-sans"
                 />
                 {searchQuery ? (
                   <button 
