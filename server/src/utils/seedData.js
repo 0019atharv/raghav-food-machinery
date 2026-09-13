@@ -57,6 +57,316 @@ export const initialCategories = [
 
 export const initialProducts = [
   {
+  "name": "Raghav Heavy-Duty Hydraulic Juice & Oil Cold Press Machine",
+  "slug": "raghav-hydraulic-juice-press",
+  "category": "Vegetable & Fruit Processing",
+  "categorySlug": "vegetable-fruit-processing",
+  "shortDescription": "High-tonnage hydraulic cold press for commercial juice and botanical extraction with SS-304 juice pan and electric hydraulic pump.",
+  "fullDescription": "A hydraulic juice press designed for heavy-duty, high-yield juice extraction from crushed fruits and vegetables (apples, pineapples, berries, citrus) and plant/herb extraction. Powered by an electric hydraulic pump applying steady 20 to 30 tons of pressing force, minimizing oxidation and thermal degradation while preserving natural enzymes, vitamins, and authentic taste.",
+  "price": "₹ 1,75,000",
+  "priceUnit": "Ex-Factory Price",
+  "capacity": "50 - 150 kg / batch Cold Hydraulic Pressing",
+  "power": "3 HP / 5 HP Industrial Hydraulic Power Pack",
+  "materialGrade": "Food-Grade SS-304 Juice Contact Pan & Platen",
+  "automationGrade": "Hydraulic Lever Control with Auto-Return Valve",
+  "voltage": "415V, 3-Phase, 50 Hz",
+  "dimensions": "1200 mm x 850 mm x 1650 mm",
+  "weight": "380 kg approx",
+  "warranty": "1 Year Commercial Warranty",
+  "images": [
+    "https://res.cloudinary.com/vgmmtb5k/image/upload/v1789295915/raghav-food-processing-machines/raghav-hydraulic-juice-press.jpg",
+    "/images/products/raghav-hydraulic-juice-press.jpg"
+  ],
+  "specifications": [
+    {
+      "label": "Pressing Pressure",
+      "value": "20 to 30 Tons Heavy Hydraulic Force"
+    },
+    {
+      "label": "Hydraulic Power Pack",
+      "value": "3 HP Heavy Duty Gear Pump & Oil Reservoir"
+    },
+    {
+      "label": "Juice Contact Basin",
+      "value": "SS-304 Deep Basin with Sloped Drain Spout"
+    },
+    {
+      "label": "Pressure Indicator",
+      "value": "Glycerin-Filled High Pressure Analog Dial Gauge"
+    },
+    {
+      "label": "Compression Platen",
+      "value": "Solid Heavy SS-304 Compression Head Plate"
+    },
+    {
+      "label": "Structural Frame",
+      "value": "Rigid Industrial Steel H-Frame Construction"
+    }
+  ],
+  "applications": [
+    "Cold-Pressed Apple Cider, Pomegranate & Citrus Juices",
+    "Pineapple, Grape & Berry Commercial Juice Extraction",
+    "Ayurvedic Botanical Leaf, Root & Herb Cold Extract Pressing",
+    "Specialty Seeds, Nuts & Virgin Cold-Pressed Natural Oils"
+  ],
+  "features": [
+    "Pure hydraulic cold pressing preserves natural color, vitamins, and zero friction heat",
+    "Heavy 20-30 ton ram force achieves maximum juice extraction with dry pulp leftovers",
+    "Proportional hydraulic hand lever allows gentle, graduated pressure ramp-up",
+    "SS-304 contact components detach quickly for sanitization under strict FSSAI guidelines"
+  ],
+  "isFeatured": true,
+  "isPublished": true
+},
+  {
+  "name": "Raghav 12-Tray Industrial Stainless Steel Dehydrator Dryer",
+  "slug": "raghav-12-tray-stainless-steel-dryer",
+  "category": "Vegetable & Fruit Processing",
+  "categorySlug": "vegetable-fruit-processing",
+  "shortDescription": "Commercial hot-air circulation dehydrator with 12 perforated SS trays, digital PID temperature timer, and double-wall insulated body.",
+  "fullDescription": "This 12-Tray Stainless Steel (SS) Dehydrator / Tray Dryer is designed for high-precision, uniform hot-air drying of food products, spices, herbs, pharmaceuticals, and agricultural produce in commercial and industrial settings. Built completely from high-grade SS-304 with double-walled ceramic mineral wool insulation, horizontal laminar heated airflow, and digital temperature timer controls.",
+  "price": "₹ 1,45,000",
+  "priceUnit": "Ex-Factory Price",
+  "capacity": "12 Trays (30 - 60 kg wet produce / batch)",
+  "power": "4.5 kW Incoloy Heating Elements + Blower Fan",
+  "materialGrade": "100% Food-Grade SS-304 Construction",
+  "automationGrade": "Digital Microprocessor PID Temperature & Timer",
+  "voltage": "220V Single Phase / 415V 3-Phase",
+  "dimensions": "1100 mm x 800 mm x 1200 mm",
+  "weight": "160 kg approx",
+  "warranty": "1 Year Comprehensive Warranty",
+  "images": [
+    "https://res.cloudinary.com/vgmmtb5k/image/upload/v1789295914/raghav-food-processing-machines/raghav-12-tray-stainless-steel-dryer.jpg",
+    "/images/products/raghav-12-tray-stainless-steel-dryer.jpg"
+  ],
+  "specifications": [
+    {
+      "label": "Tray Capacity",
+      "value": "12 Stainless Steel 304 Perforated Mesh Trays"
+    },
+    {
+      "label": "Tray Size",
+      "value": "16 x 32 Inch Heavy Industrial Trays"
+    },
+    {
+      "label": "Operating Temperature",
+      "value": "Ambient to 120°C (Precision PID Controlled)"
+    },
+    {
+      "label": "Air Circulation",
+      "value": "Forced Horizontal Heated Laminar Airflow Blower"
+    },
+    {
+      "label": "Thermal Insulation",
+      "value": "50 mm Ceramic Mineral Wool Double-Walled Body"
+    },
+    {
+      "label": "Control Console",
+      "value": "Side Mounted Digital Touchscreen & Timer Panel"
+    }
+  ],
+  "applications": [
+    "Dehydrated Onion Flakes, Garlic Powder, Tomato Slices",
+    "Dried Fruits: Mango Strips, Banana Chips, Apple Slices",
+    "Spices: Whole Red Chili, Ginger Slices, Turmeric, Black Pepper",
+    "Pharmaceutical Granules, Herbal Teas & Botanical Powders"
+  ],
+  "features": [
+    "Laminar horizontal air distribution guarantees identical drying rates across all 12 trays",
+    "Double-walled insulation prevents thermal loss and reduces energy consumption by 35%",
+    "Automatic digital timer automatically powers down heaters once process completes",
+    "Seamless sanitary interior with smooth rounded corners allows effortless washdown"
+  ],
+  "isFeatured": true,
+  "isPublished": true
+},
+  {
+  "name": "Raghav 1 HP Commercial Potato & Root Vegetable Peeler",
+  "slug": "raghav-1hp-potato-peeler",
+  "category": "Vegetable & Fruit Processing",
+  "categorySlug": "vegetable-fruit-processing",
+  "shortDescription": "High-speed commercial abrasive potato peeler with carborundum bottom disc, water flushing system, and front discharge door.",
+  "fullDescription": "A commercial potato peeling machine designed to rapidly wash and remove the skin from potatoes and root vegetables like carrots, ginger, and radish in 90 to 120 seconds. Centrifugal force pushes the produce against an abrasive carborundum rotating disc and walls, gently grinding away outer skin without bruising the inner flesh. Continuous water flushing washes peel waste away instantly.",
+  "price": "₹ 28,000",
+  "priceUnit": "Ex-Factory Price",
+  "capacity": "10 - 15 kg / batch (90-120 sec cycle)",
+  "power": "1 HP Heavy Duty 1440 RPM Motor",
+  "materialGrade": "Food-Grade Stainless Steel Drum",
+  "automationGrade": "Semi-Automatic Rotary Peeler",
+  "voltage": "220V Single Phase 50 Hz",
+  "dimensions": "550 mm x 450 mm x 850 mm",
+  "weight": "55 kg",
+  "warranty": "1 Year Commercial Warranty",
+  "images": [
+    "https://res.cloudinary.com/vgmmtb5k/image/upload/v1789295913/raghav-food-processing-machines/raghav-1hp-potato-peeler.jpg",
+    "/images/products/raghav-1hp-potato-peeler.jpg"
+  ],
+  "specifications": [
+    {
+      "label": "Batch Capacity",
+      "value": "10 - 15 kg raw potatoes per run"
+    },
+    {
+      "label": "Cycle Duration",
+      "value": "90 to 120 seconds per batch"
+    },
+    {
+      "label": "Motor Power",
+      "value": "1 HP Heavy Duty 100% Copper Winding Motor"
+    },
+    {
+      "label": "Abrasive Surface",
+      "value": "High-Hardness Silicon Carbide / Carborundum Coated Plate"
+    },
+    {
+      "label": "Water Connection",
+      "value": "Continuous Top Spray Water Inlet with Hose Connector"
+    },
+    {
+      "label": "Discharge Door",
+      "value": "Front Hinged Door with Quick-Action Locking Handle"
+    }
+  ],
+  "applications": [
+    "Potato Chips & French Fry Continuous Processing",
+    "Hotels, Banquet Kitchens & Catering Operations",
+    "Carrot, Ginger, Beetroot & Radish Peeling",
+    "Dehydrated Vegetable & Namkeen Manufacturing"
+  ],
+  "features": [
+    "Abrasive carborundum disc peels skins uniformly thin with minimal potato flesh waste",
+    "Integrated water flushing constantly clears peel residue through bottom drainage chute",
+    "Front discharge handle allows instant gravity unloading into collection trays",
+    "Robust industrial painted body with food-grade stainless steel peeling chamber"
+  ],
+  "isFeatured": true,
+  "isPublished": true
+},
+  {
+  "name": "Raghav 60 Ltr Vertical Canning Retort Sterilizer",
+  "slug": "raghav-60ltr-canning-retort",
+  "category": "Retort & Sterilization",
+  "categorySlug": "retort-sterilization",
+  "shortDescription": "High-pressure vertical canning retort autoclave with radial swing-bolt clamps, safety release valves, and digital PID controls.",
+  "fullDescription": "This commercial-grade vertical Canning Retort (retort sterilizer pressure autoclave) is engineered for small-to-medium-scale food processors, labs, or canning units to thermally sterilize sealed cans, glass jars, or retort pouches, effectively destroying harmful bacteria and extending shelf life at room temperature. Features heavy-duty swing-bolts, digital PID temperature controllers, and dual safety release valves.",
+  "price": "₹ 60,000",
+  "priceUnit": "Ex-Factory Price",
+  "capacity": "60 Liters / Batch (~30-40 cans or pouches)",
+  "power": "4.5 kW Electric Immersion Heating",
+  "materialGrade": "High-Strength SS-304 Pressure Vessel",
+  "automationGrade": "Semi-Automatic Digital PID Controlled",
+  "voltage": "230V Single Phase / 415V 3-Phase",
+  "dimensions": "650 mm x 600 mm x 1150 mm",
+  "weight": "110 kg approx",
+  "warranty": "1 Year Manufacturer Warranty",
+  "images": [
+    "https://res.cloudinary.com/vgmmtb5k/image/upload/v1789295913/raghav-food-processing-machines/raghav-60ltr-canning-retort.jpg",
+    "/images/products/raghav-60ltr-canning-retort.jpg"
+  ],
+  "specifications": [
+    {
+      "label": "Chamber Volume",
+      "value": "60 Liters Deep Autoclave Vessel"
+    },
+    {
+      "label": "Working Pressure",
+      "value": "0.15 - 0.22 MPa (Hydraulically Tested)"
+    },
+    {
+      "label": "Max Temperature",
+      "value": "134°C (273°F) for Commercial Sterility"
+    },
+    {
+      "label": "Lid Locking",
+      "value": "Radial Heavy-Duty Swing-Bolt (Eyebolt) Clamps"
+    },
+    {
+      "label": "Safety System",
+      "value": "Automatic Brass Spring Valve + Dual Venting Valves"
+    },
+    {
+      "label": "Instrumentation",
+      "value": "Analog Dial Pressure Gauge + Digital PID LED Display"
+    }
+  ],
+  "applications": [
+    "Ready-to-Eat (RTE) Retort Pouches & Meal Trays",
+    "Tin Cans: Sweet Corn, Mushroom, Meat & Gravy",
+    "Glass Jar Pickles, Chutneys & Baby Food",
+    "Food Tech Labs & Specialty Startup Pilot Batches"
+  ],
+  "features": [
+    "Heavy swing-bolt clamping system ensures zero steam loss under high operating pressure",
+    "Digital PID controller maintains exact thermal dwell times for scientific commercial sterilization",
+    "Dual safety relief valves prevent over-pressurization automatically with audible release",
+    "Includes perforated heavy stainless steel loading basket with convenient lift handle"
+  ],
+  "isFeatured": true,
+  "isPublished": true
+},
+  {
+  "name": "Raghav Manual Liquid & Paste Filling Machine",
+  "slug": "raghav-manual-liquid-filling-machine",
+  "category": "Packaging & Sealing",
+  "categorySlug": "packaging-sealing",
+  "shortDescription": "Precision foot-pedal volumetric piston filler for viscous pastes, honey, sauces, creams, and liquids with anti-drip nozzle.",
+  "fullDescription": "This commercial-grade vertically oriented Piston-Driven Liquid/Paste Filling Machine is designed to efficiently dispense precise quantities of viscous or liquid products in small to medium-scale production setups. Equipped with a 30L SS conical hopper, anti-drip positive shutoff nozzle, and foot pedal actuator that leaves both operator hands free for container positioning.",
+  "price": "₹ 35,000",
+  "priceUnit": "Ex-Factory Price",
+  "capacity": "100 ml - 1000 ml / stroke (15-30 fills/min)",
+  "power": "Manual / Foot-Pedal Pneumatic (Zero Electricity)",
+  "materialGrade": "Food-Grade SS-304 Hopper & Contact Nozzle",
+  "automationGrade": "Manual Foot-Pedal Operation",
+  "voltage": "Zero Electricity Required",
+  "dimensions": "550 mm x 450 mm x 1400 mm",
+  "weight": "38 kg",
+  "warranty": "1 Year Commercial Warranty",
+  "images": [
+    "https://res.cloudinary.com/vgmmtb5k/image/upload/v1789295912/raghav-food-processing-machines/raghav-manual-liquid-filling-machine.jpg",
+    "/images/products/raghav-manual-liquid-filling-machine.jpg"
+  ],
+  "specifications": [
+    {
+      "label": "Filling Volume Range",
+      "value": "100 ml to 1000 ml per stroke (Adjustable)"
+    },
+    {
+      "label": "Hopper Volume",
+      "value": "30 Liters Heavy-Gauge SS-304 Conical Hopper"
+    },
+    {
+      "label": "Filling Accuracy",
+      "value": "Within ± 1% Volumetric Precision"
+    },
+    {
+      "label": "Dispensing Speed",
+      "value": "15 to 30 containers / minute"
+    },
+    {
+      "label": "Nozzle Mechanism",
+      "value": "Anti-Drip Spring-Loaded Positive Shut-Off Nozzle"
+    },
+    {
+      "label": "Structure",
+      "value": "Heavy-Duty Pedestal Stand with Foot Actuation Pedal"
+    }
+  ],
+  "applications": [
+    "Liquid Honey, Syrups & Edible Oils",
+    "Tomato Ketchup, Mayonnaise & Sauces",
+    "Cosmetic Lotions, Shampoos & Creams",
+    "Bakery Fillings, Glazes & Fruit Pastes"
+  ],
+  "features": [
+    "Positive shutoff anti-drip nozzle prevents product loss and messy bottle necks",
+    "Tool-free volumetric adjustment knob allows rapid fill volume changes in seconds",
+    "Ergonomic foot pedal frees both hands for seamless bottle placement and capping",
+    "Sanitary tri-clamp fittings allow complete 5-minute cleanout and sanitization"
+  ],
+  "isFeatured": true,
+  "isPublished": true
+},
+  {
   "name": "Raghav Commercial Vegetable Slicer & Cutter Machine",
   "slug": "raghav-slicer",
   "category": "Vegetable & Fruit Processing",
