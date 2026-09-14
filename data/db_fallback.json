@@ -2036,6 +2036,318 @@
       "createdAt": "2026-09-14T15:02:06.073Z",
       "updatedAt": "2026-09-14T15:02:06.073Z",
       "_id": "prod_29"
+    },
+    {
+      "_id": "prod_30",
+      "name": "Raghav Handheld Intelligent Inkjet Batch Coder & MRP Printing Machine",
+      "slug": "raghav-manual-price-codder",
+      "category": "Packaging & Sealing",
+      "categorySlug": "packaging-sealing",
+      "shortDescription": "Portable high-resolution thermal inkjet (TIJ) handheld batch coding printer with color touchscreen for printing MRP, expiry dates, barcodes, and batch numbers.",
+      "fullDescription": "Streamline your packaging line with this high-efficiency, handheld intelligent inkjet printer. Designed for ultimate mobility and crisp print clarity, this versatile batch coder lets you easily print crucial product information including MRP (Maximum Retail Price), manufacturing dates, expiry dates, batch codes, QR codes, counters, and logos on virtually any material surface. Featuring a vibrant, built-in color touchscreen interface, operators can edit text, alter fonts, and input serial numbers directly on the device without needing an external computer connection. Its ergonomic grip, roller encoder, and sensitive trigger mechanism make it perfect for rapid, high-volume manual coding across cartons, plastic bottles, glass jars, tin cans, and flexible laminate pouches.",
+      "price": "₹ 22,500",
+      "priceUnit": "Ex-Factory Price",
+      "capacity": "Continuous High-Speed Manual Printing (Up to 70 m/min)",
+      "power": "Rechargeable 16.8V Lithium Battery Pack (10+ Hours Standby)",
+      "materialGrade": "Industrial ABS Shock-Resistant Enclosure with Precision Roller Encoder",
+      "automationGrade": "Semi-Automatic Handheld (Manual Trigger / Continuous Sensor Mode)",
+      "voltage": "100 – 240V AC Charger (16.8V DC Battery Powered)",
+      "dimensions": "240 mm x 130 mm x 125 mm",
+      "weight": "1.1 kg (with battery & ink cartridge)",
+      "warranty": "1 Year Commercial Warranty",
+      "images": [
+        "https://res.cloudinary.com/vgmmtb5k/image/upload/v1789399376/raghav-food-processing-machines/raghav-manual-price-codder.jpg",
+        "/images/products/raghav-manual-price-codder.jpg"
+      ],
+      "specifications": [
+        {
+          "label": "Model",
+          "value": "Raghav24"
+        },
+        {
+          "label": "Brand",
+          "value": "Raghav"
+        },
+        {
+          "label": "Print Technology",
+          "value": "Thermal Inkjet (TIJ 2.5 HP Cartridge Tech)"
+        },
+        {
+          "label": "Print Height",
+          "value": "2 mm to 12.7 mm (Adjustable up to 25.4 mm option)"
+        },
+        {
+          "label": "Print Resolution",
+          "value": "300 – 600 DPI High-Definition"
+        },
+        {
+          "label": "Display Screen",
+          "value": "4.3-Inch Full-Color Capacitive Touchscreen"
+        },
+        {
+          "label": "Print Content",
+          "value": "Text, Date, Time, Batch No, Counter, Barcode, QR Code, Logo"
+        },
+        {
+          "label": "Ink Type",
+          "value": "42 ml Quick-Drying Solvent-Based Cartridge (Black/White/Color)"
+        },
+        {
+          "label": "Print Distance",
+          "value": "2 mm to 5 mm from substrate surface"
+        }
+      ],
+      "applications": [
+        "Food Pouches, Snack Bags & Namkeen Packets",
+        "Corrugated Outer Master Cartons & Boxes",
+        "Glass Jars, Bottles & HDPE Plastic Containers",
+        "Metal Cans, Crown Caps & Tin Lids",
+        "Pharmaceutical Bottles, Blisters & Cartons",
+        "Pipes, Cables, Timber & Construction Materials"
+      ],
+      "features": [
+        "Vibrant built-in color touchscreen enables direct message editing without laptop or app dependencies",
+        "Quick-drying solvent ink adheres instantly to non-porous plastics, metals, foils, and glass without smudging",
+        "Built-in dual optical roller encoders guarantee straight, uniform print alignment regardless of hand movement speed",
+        "Support for multiple languages, dynamic real-time date/time auto-advancing, and consecutive batch numbering",
+        "Lightweight ergonomic balanced grip prevents operator fatigue across full-shift warehouse packaging operations"
+      ],
+      "brochureUrl": "",
+      "isFeatured": true,
+      "isPublished": true,
+      "createdAt": "2026-09-14T15:23:02.134Z"
+    },
+    {
+      "_id": "prod_31",
+      "name": "Raghav 16-Inch Commercial Electric Hand Impulse Pouch Sealer",
+      "slug": "raghav-electric-hand-sealer",
+      "category": "Packaging & Sealing",
+      "categorySlug": "packaging-sealing",
+      "shortDescription": "Heavy-duty 16-inch manual tabletop impulse heat sealer with iron body, adjustable electronic timer, and instant heating element for airtight bag sealing.",
+      "fullDescription": "This heavy-duty Electric Hand-Operated Impulse Sealer is an essential tabletop packaging machine for small to medium-sized food processors, retail packaging units, and commercial cleanrooms. Engineered for speed, airtight consistency, and energy efficiency, it delivers leak-proof seals on a wide variety of plastic films, barrier bags, and pouches in just 1 to 3 seconds. Built with a rugged, powder-coated metal chassis designed to withstand continuous commercial use far superior to brittle plastic sealers. The impulse heating mechanism consumes electric power only while the handle is pressed down, requiring zero preheating time and delivering safe, cool-to-touch operation between cycles.",
+      "price": "₹ 6,500",
+      "priceUnit": "Ex-Factory Price",
+      "capacity": "10 – 20 Seals / Minute (Operator Dependent)",
+      "power": "450W Instant Impulse Heating",
+      "materialGrade": "Heavy Powder-Coated Metal/Iron Chassis with Teflon Insulated Heating Ribbon",
+      "automationGrade": "Manual Hand-Lever Operated with Automatic Electronic Timer Shut-Off",
+      "voltage": "220V AC, 50 Hz Single Phase",
+      "dimensions": "540 mm x 100 mm x 180 mm",
+      "weight": "4.8 kg",
+      "warranty": "1 Year Commercial Warranty",
+      "images": [
+        "https://res.cloudinary.com/vgmmtb5k/image/upload/v1789399378/raghav-food-processing-machines/raghav-electric-hand-sealer.jpg",
+        "/images/products/raghav-electric-hand-sealer.jpg"
+      ],
+      "specifications": [
+        {
+          "label": "Model",
+          "value": "Raghav28"
+        },
+        {
+          "label": "Brand",
+          "value": "Raghav"
+        },
+        {
+          "label": "Sealing Length",
+          "value": "16 Inches (400 mm)"
+        },
+        {
+          "label": "Sealing Width",
+          "value": "2.5 mm – 3 mm Flat Sealing Ribbon"
+        },
+        {
+          "label": "Heating Time",
+          "value": "0.2 to 2.5 Seconds (Adjustable Rotary Timer 1–8)"
+        },
+        {
+          "label": "Film Thickness",
+          "value": "Up to 0.4 mm (400 Micron) Total Seal Thickness"
+        },
+        {
+          "label": "Body Material",
+          "value": "Heavy Cast Iron / Formed Steel Alloy"
+        },
+        {
+          "label": "Heating Element",
+          "value": "Nichrome Wire with High-Grade PTFE Teflon Cloth"
+        }
+      ],
+      "applications": [
+        "Spices, Seasonings, Flour & Pulses Packaging",
+        "Dry Fruits, Nuts & Sweets Heat-Sealed Pouches",
+        "Namkeen, Chips, Khakhra & Bakery Bags",
+        "Granules, Seeds & Agro-Chemical Plastic Envelopes",
+        "General E-Commerce Poly Bag Shipping & Retail Protection"
+      ],
+      "features": [
+        "Instant energy-efficient impulse heating requires zero warm-up time and draws current only when compressed",
+        "Precision 8-step analog timer dial allows exact temperature matching for thin LDPE up to heavy laminated foils",
+        "Rugged powder-coated industrial metal chassis delivers superior durability compared to cheap plastic units",
+        "Ergonomic contour grip handle with heavy-duty return spring reduces operator hand fatigue during batch sealing",
+        "Comes with replaceable spare nichrome heating elements and heat-resistant Teflon strips for effortless maintenance"
+      ],
+      "brochureUrl": "",
+      "isFeatured": true,
+      "isPublished": true,
+      "createdAt": "2026-09-14T15:23:02.144Z"
+    },
+    {
+      "_id": "prod_32",
+      "name": "Raghav Industrial Walnut Cracker & Nut Shelling Machine",
+      "slug": "raghav-walnut-cracker",
+      "category": "Vegetable & Fruit Processing",
+      "categorySlug": "vegetable-fruit-processing",
+      "shortDescription": "Heavy-duty 300-500 kg/hr commercial walnut and dry fruit cracking machine with 2 HP motor, 18-inch rollers, and precision dual T-screw gap calibration.",
+      "fullDescription": "Designed for high efficiency and optimum whole-kernel recovery, this industrial-grade walnut cracking machine automates the tedious and labor-intensive process of hulling and cracking hard-shelled walnuts, almonds, and apricots. Built specifically for commercial dry fruit processors, agricultural cooperatives, and wholesale nut suppliers, this machine ensures continuous throughput of 300 to 500 kg per hour while minimizing kernel damage and breakage. Features a wide top-loading feed hopper, an 18-inch precision-machined cracking roller assembly driven by a 2 HP motor with a 3-inch industrial reduction gearbox, and dual front-mounted manual T-screw calibration handles that allow operators to instantly adjust the cracking gap to accommodate varying nut grades and shell thicknesses.",
+      "price": "₹ 95,000",
+      "priceUnit": "Ex-Factory Price",
+      "capacity": "300 – 500 kg / Hour Throughput",
+      "power": "2 HP Electric Motor with 3-Inch Heavy Reduction Gearbox",
+      "materialGrade": "Heavy-Duty Mild Steel Fabricated Box Frame with Anti-Vibration Footings",
+      "automationGrade": "Semi-Automatic Motorized (Continuous Gravity Feed)",
+      "voltage": "220V Single Phase / 415V 3-Phase Option",
+      "dimensions": "1050 mm x 650 mm x 950 mm",
+      "weight": "145 kg",
+      "warranty": "1 Year Commercial Warranty",
+      "images": [
+        "https://res.cloudinary.com/vgmmtb5k/image/upload/v1789399379/raghav-food-processing-machines/raghav-walnut-cracker.jpg",
+        "/images/products/raghav-walnut-cracker.jpg"
+      ],
+      "specifications": [
+        {
+          "label": "Model",
+          "value": "Raghav32"
+        },
+        {
+          "label": "Brand",
+          "value": "Raghav"
+        },
+        {
+          "label": "Processing Capacity",
+          "value": "300 to 500 kg per hour"
+        },
+        {
+          "label": "Motor Power",
+          "value": "2 HP Single / 3-Phase High-Torque Motor"
+        },
+        {
+          "label": "Gearbox",
+          "value": "3-Inch Heavy-Duty Industrial Reduction Gearbox"
+        },
+        {
+          "label": "Roller Size",
+          "value": "18-Inch Precision Fluted Cracking Rollers"
+        },
+        {
+          "label": "Frame Construction",
+          "value": "Structural Mild Steel with Industrial Blue Epoxy Coating"
+        },
+        {
+          "label": "Suitable Nuts",
+          "value": "Walnuts, Almonds, Apricot Kernels, Hazel Nuts"
+        },
+        {
+          "label": "Gap Adjustment",
+          "value": "Dual Front Manual T-Screw Precision Handles"
+        }
+      ],
+      "applications": [
+        "Commercial Walnut Cracking & Kernel Recovery Facilities",
+        "Almond & Apricot Shelling & Processing Plants",
+        "Dry Fruit Wholesalers & Agricultural Packing Units",
+        "Nut-Based Oil Mills & Bakery Confectionery Suppliers"
+      ],
+      "features": [
+        "High-throughput continuous cracking delivering 300–500 kg/hr with maximum whole butterfly kernel yields",
+        "Dual precision T-screw adjustment handles calibrate the roller clearance in seconds for all nut varieties",
+        "Heavy 3-inch reduction gearbox delivers steady high torque to power through the toughest thick-shelled walnuts",
+        "Spacious forward-angled discharge chute allows rapid collection into bins, crates, or sorting conveyors",
+        "Sturdy heavy-gauge steel frame with vibration-dampening feet ensures low noise and smooth floor stability"
+      ],
+      "brochureUrl": "",
+      "isFeatured": true,
+      "isPublished": true,
+      "createdAt": "2026-09-14T15:23:02.145Z"
+    },
+    {
+      "_id": "prod_33",
+      "name": "Raghav Manual Jar & Cup Heat Foil Sealing Machine",
+      "slug": "raghav-manual-foil-sealer",
+      "category": "Packaging & Sealing",
+      "categorySlug": "packaging-sealing",
+      "shortDescription": "Industrial spring-loaded manual tabletop foil and lid heat sealer with analog temperature controller (0-180°C) for plastic jars, tubs, and bottles.",
+      "fullDescription": "This industrial-grade, manual heat-sealing machine is engineered for precision, airtight integrity, and continuous daily durability. Equipped with a robust spring-loaded mechanical lever mechanism and an integrated electronic temperature control unit, it provides an airtight, tamper-evident seal for plastic jars, bottles, and cups using pre-cut aluminum foil seals or heat-sealable composite lids. The dedicated analog temperature module features a graduated dial (0°C to 180°C) allowing operators to dial in the ideal thermal bonding temperature for HDPE, PET, PP, and glass containers. A circular heavy metal heating die ensures uniform heat and compression across the entire rim circumference, eliminating leaks and extending product freshness.",
+      "price": "₹ 7,500",
+      "priceUnit": "Ex-Factory Price",
+      "capacity": "5 – 6 Bottles / Minute (300 – 360 Jars/Hr)",
+      "power": "350W Electric Heating Die with Integrated Thermostat",
+      "materialGrade": "Heavy Cast Iron Base with Stainless Steel Guide Pillar & Aluminum Heating Die",
+      "automationGrade": "Manual Spring-Loaded Lever Operated with Automatic Temperature Regulation",
+      "voltage": "220V AC, 50 Hz Single Phase",
+      "dimensions": "350 mm x 280 mm x 620 mm",
+      "weight": "9.5 kg",
+      "warranty": "1 Year Commercial Warranty",
+      "images": [
+        "https://res.cloudinary.com/vgmmtb5k/image/upload/v1789399380/raghav-food-processing-machines/raghav-manual-foil-sealer.png",
+        "/images/products/raghav-manual-foil-sealer.png"
+      ],
+      "specifications": [
+        {
+          "label": "Model",
+          "value": "Raghav29"
+        },
+        {
+          "label": "Brand",
+          "value": "Raghav"
+        },
+        {
+          "label": "Sealing Speed",
+          "value": "5 to 6 bottles / jars per minute"
+        },
+        {
+          "label": "Sealing Diameter",
+          "value": "Up to 100 mm Circular Die (Standard PET/HDPE Jars)"
+        },
+        {
+          "label": "Temperature Range",
+          "value": "0°C to 180°C Adjustable Heat Control"
+        },
+        {
+          "label": "Base Construction",
+          "value": "Heavy Cast Iron Base (Anti-Tip Stability)"
+        },
+        {
+          "label": "Pillar Material",
+          "value": "Solid Stainless Steel Shaft with Heavy Spring Return"
+        },
+        {
+          "label": "Safety Protection",
+          "value": "Built-in Safety Fuse & Active Heating Status Indicator"
+        },
+        {
+          "label": "Compatible Containers",
+          "value": "Plastic Jars, PET Bottles, PP Tubs, HDPE Containers"
+        }
+      ],
+      "applications": [
+        "Pickle, Chutney & Cooking Paste Plastic Jars",
+        "Peanut Butter, Honey & Ghee Container Foil Sealing",
+        "Yogurt, Curd & Dairy Cup Foil Sealing",
+        "Ayurvedic Powder, Herbal Formulation & Supplement Bottles",
+        "Cosmetic Creams, Gels & Wax Container Tamper-Evident Lids"
+      ],
+      "features": [
+        "Precision rotary temperature dial (0–180°C) delivers perfect hermetic seals for varied plastic polymers and foil grades",
+        "Spring-loaded leverage handle applies uniform downward pressure with minimal physical effort by the operator",
+        "Heavy cast iron base keeps the machine firmly seated on tabletops without needing bolt-down anchoring",
+        "Integrated control panel with safety fuse protection and dual Power/Heat status lamps prevents accidental burn hazards",
+        "Affordable, reliable tabletop solution for small cottage industries, organic food startups, and batch producers"
+      ],
+      "brochureUrl": "",
+      "isFeatured": true,
+      "isPublished": true,
+      "createdAt": "2026-09-14T15:23:02.145Z"
     }
   ],
   "categories": [
