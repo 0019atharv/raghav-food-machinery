@@ -1768,6 +1768,330 @@ export const initialProducts = [
     "createdAt": "2026-09-13T19:10:18.247Z",
     "updatedAt": "2026-09-13T19:10:18.247Z",
     "_id": "prod_25"
+  },
+  {
+    "name": "Raghav Pneumatic Lug Capping Machine (Semi-Automatic Jar Capper)",
+    "slug": "raghav-penaumatic-lug-capping",
+    "category": "Packaging & Sealing",
+    "categorySlug": "packaging-sealing",
+    "shortDescription": "Semi-automatic tabletop pneumatic lug and twist-off capping machine with height-adjustable column and torque regulator for glass jars.",
+    "fullDescription": "This heavy-duty, tabletop pneumatic lug capping machine is designed to deliver fast, airtight, and consistent sealing for glass jars and containers fitted with twist-off and lug caps. Equipped with an industrial pneumatic actuator, pressure regulator gauge, and a soft-grip capping chuck, this machine eliminates operator wrist fatigue while preventing overtightening or thread damage. Easily adjustable for jars of varying heights from small condiment bottles up to 1-liter bulk food containers.",
+    "price": "₹ 45,000",
+    "priceUnit": "Ex-Factory Price",
+    "capacity": "20 – 30 Jars / Minute",
+    "power": "Pneumatic Air Compressor Driven (0.4 – 0.6 MPa)",
+    "materialGrade": "Heavy-Duty Fabricated Steel Structure with Anti-Wear Capping Head",
+    "automationGrade": "Semi-Automatic Pneumatic (Mechanical Lever Positioning)",
+    "voltage": "Non-Electric (Pneumatic Pressure Driven)",
+    "dimensions": "450 mm x 400 mm x 750 mm",
+    "weight": "28 kg",
+    "warranty": "1 Year Commercial Warranty",
+    "images": [
+      "https://res.cloudinary.com/vgmmtb5k/image/upload/v1789398119/raghav-food-processing-machines/raghav-penaumatic-lug-capping.jpg",
+      "/images/products/raghav-penaumatic-lug-capping.jpg"
+    ],
+    "specifications": [
+      {
+        "label": "Model",
+        "value": "Raghav31"
+      },
+      {
+        "label": "Brand",
+        "value": "Raghav"
+      },
+      {
+        "label": "Capping Diameter",
+        "value": "25 mm – 82 mm Lug & Twist-Off Caps"
+      },
+      {
+        "label": "Jar Height Range",
+        "value": "40 mm – 250 mm (Height-Adjustable Column)"
+      },
+      {
+        "label": "Air Pressure Required",
+        "value": "4 – 6 Bar (0.4 – 0.6 MPa)"
+      },
+      {
+        "label": "Capping Output",
+        "value": "20 to 30 jars per minute"
+      },
+      {
+        "label": "Body Construction",
+        "value": "Heavy Mild Steel Industrial Frame with Powder Coating"
+      },
+      {
+        "label": "Chuck Material",
+        "value": "Wear-Resistant Polyurethane Cushioned Capping Head"
+      }
+    ],
+    "applications": [
+      "Glass Pickle Jars & Chutney Bottles",
+      "Honey, Fruit Jam & Marmalade Lug Jars",
+      "Ghee, Butter & Mayonnaise Glass Containers",
+      "Salsa, Puree & Cooking Paste Bottling",
+      "Ayurvedic Tonics, Syrups & Pharmaceutical Containers"
+    ],
+    "features": [
+      "Consistent pneumatic torque sealing prevents cap overtightening, leaks, or thread stripping",
+      "Adjustable column height easily accommodates miniature sample jars up to 1kg bulk containers",
+      "Soft-contact capping puck cushions metal caps against scratching, denting, or aesthetic marring",
+      "Pneumatic lever actuation requires minimal operator effort for sustained 8-hour production shifts",
+      "Compact benchtop footprint integrates easily into small to medium packaging cleanrooms"
+    ],
+    "isFeatured": true,
+    "isPublished": true,
+    "inStock": true,
+    "stockCount": 5,
+    "sku": "RFPM-RAGHAV-PENAUMATI",
+    "createdAt": "2026-09-14T15:02:01.773Z",
+    "updatedAt": "2026-09-14T15:02:01.787Z",
+    "_id": "prod_26"
+  },
+  {
+    "name": "Raghav Industrial Wood-Fired Non-IBR Steam Boiler (200 kg/hr)",
+    "slug": "raghav-industrial-wood-fired-non-ibr-steam-boiler",
+    "category": "Commercial Kettles & Cooking",
+    "categorySlug": "commercial-kettles-cooking",
+    "shortDescription": "Heavy-duty vertical wood and biomass fired non-IBR steam boiler generating 200 kg/hr steam with automated water feed and dual safety valves.",
+    "fullDescription": "This highly efficient, vertical Wood-Fired Non-IBR Steam Boiler is designed to provide a low-cost, reliable steam generation solution for food processing facilities, canning retort operations, commercial cooking kettles, and distillation units. Engineered to fall outside Indian Boiler Regulations (Non-IBR), eliminating costly annual licensing and statutory inspection hassles. Features a submerged multi-tube vertical shell, heavy refractory-lined firebox, 1 HP multi-stage high-pressure feed pump, dual pop safety valves, and high-visibility level gauges.",
+    "price": "₹ 2,95,000",
+    "priceUnit": "Ex-Factory Price",
+    "capacity": "200 kg/hr Steam Output (Working Pressure: 7–10 Bar)",
+    "power": "1 HP High-Pressure Water Pump (415V / 230V)",
+    "materialGrade": "Heavy-Gauge Boiler Steel Plate with Refractory Firebox Lining",
+    "automationGrade": "Manual Wood Feeding with Automatic Water Level Control & Safety Cut-off",
+    "voltage": "415V 3-Phase / 230V 1-Phase (Water Pump & Controls)",
+    "dimensions": "1200 mm x 1200 mm x 2800 mm",
+    "weight": "850 kg",
+    "warranty": "1 Year Heavy Industrial Warranty",
+    "images": [
+      "https://res.cloudinary.com/vgmmtb5k/image/upload/v1789398121/raghav-food-processing-machines/raghav-industrial-wood-fired-non-ibr-steam-boiler.png",
+      "/images/products/raghav-industrial-wood-fired-non-ibr-steam-boiler.png"
+    ],
+    "specifications": [
+      {
+        "label": "Model",
+        "value": "Raghav30"
+      },
+      {
+        "label": "Brand",
+        "value": "Raghav"
+      },
+      {
+        "label": "Steam Generation Capacity",
+        "value": "200 kg Steam per hour"
+      },
+      {
+        "label": "Operating Fuel",
+        "value": "Firewood, Briquettes, Agro-Waste & Biomass"
+      },
+      {
+        "label": "Working Steam Pressure",
+        "value": "7 – 10 kg/cm² (Tested up to 15 kg/cm²)"
+      },
+      {
+        "label": "Boiler Category",
+        "value": "Non-IBR (Exempt from Indian Boiler Regulations licensing)"
+      },
+      {
+        "label": "Water Feed Pump",
+        "value": "1 HP Multi-Stage High-Pressure Centrifugal Pump"
+      },
+      {
+        "label": "Safety Devices",
+        "value": "Dual Spring-Loaded Pop Safety Valves & Bourdon Pressure Gauge"
+      },
+      {
+        "label": "Water Level Indicator",
+        "value": "High-Pressure Armored Sight Glass with Isolation Cocks"
+      }
+    ],
+    "applications": [
+      "Canning Retort Autoclaves & Food Sterilization Pressure Vessels",
+      "Steam Jacketed Boiling Kettles & Cooking Pans",
+      "Khoya, Milk Boiling & Commercial Dairy Processing Plants",
+      "Textile Dyeing, Dehydration Drying Chambers & Fruit Pulping Lines",
+      "Edible Oil Extraction & Food Factory Washing Steaming Lines"
+    ],
+    "features": [
+      "Non-IBR design eliminates costly annual government boiler inspections and operator license red tape",
+      "Biomass & firewood combustion slashes daily steam fuel expenses by up to 60% compared to diesel/gas boilers",
+      "Submerged vertical fire tubes provide rapid steam raising within 20 minutes from a cold fire start",
+      "Heavy boiler-grade steel casing with thermal refractory firebox resists thermal stress and ensures decades of service",
+      "Complete safety cluster featuring dual independent mechanical pop safety release valves and water level alarms"
+    ],
+    "isFeatured": true,
+    "isPublished": true,
+    "inStock": true,
+    "stockCount": 5,
+    "sku": "RFPM-RAGHAV-INDUSTRIA",
+    "createdAt": "2026-09-14T15:02:03.836Z",
+    "updatedAt": "2026-09-14T15:02:03.836Z",
+    "_id": "prod_27"
+  },
+  {
+    "name": "Raghav 25kg Commercial Pickle and Flour Mixer (U-Trough Blender)",
+    "slug": "raghav-25kg-pickle-and-flour-mixer",
+    "category": "Commercial Kettles & Cooking",
+    "categorySlug": "commercial-kettles-cooking",
+    "shortDescription": "Heavy-duty 25kg U-trough commercial blender with food-grade SS-304 contact parts, 2 HP motor, and manual tilting discharge for pickles and dough.",
+    "fullDescription": "This heavy-duty, commercial-grade Pickle and Flour Mixer is specifically designed for high-efficiency, uniform blending of fruits, vegetables, oil, salt, spices, and dough premixes. The U-shaped trough is fabricated from food-grade 16-gauge SS-304 stainless steel to completely resist acidic and salty corrosion from pickling liquids. Driven by a powerful 2 HP single-phase motor with a heavy pulley-belt speed reducer, the counter-rotating ribbon/paddle agitator ensures gentle yet thorough mixing without crushing delicate vegetable chunks. Features a manual tilting trough for effortless batch unloading.",
+    "price": "₹ 40,000",
+    "priceUnit": "Ex-Factory Price",
+    "capacity": "25 kg per Batch (U-Trough Heavy Blending Chamber)",
+    "power": "2 HP Single Phase Heavy-Duty Copper Induction Motor",
+    "materialGrade": "SS-304 Food-Grade Contact Parts (16-Gauge) with Rigid MS Stand",
+    "automationGrade": "Semi-Automatic Motorized Mixing with Manual Tilting Discharge",
+    "voltage": "220V / 240V, 50 Hz Single Phase",
+    "dimensions": "1050 mm x 600 mm x 950 mm",
+    "weight": "75 kg",
+    "warranty": "1 Year Commercial Warranty",
+    "images": [
+      "https://res.cloudinary.com/vgmmtb5k/image/upload/v1789398123/raghav-food-processing-machines/raghav-25kg-pickle-and-flour-mixer.jpg",
+      "/images/products/raghav-25kg-pickle-and-flour-mixer.jpg"
+    ],
+    "specifications": [
+      {
+        "label": "Model",
+        "value": "Raghav21"
+      },
+      {
+        "label": "Brand",
+        "value": "Raghav"
+      },
+      {
+        "label": "Batch Mixing Capacity",
+        "value": "25 kg per batch (Flour / Pickle / Spices)"
+      },
+      {
+        "label": "Trough Material",
+        "value": "Food-Grade Stainless Steel 304 (16-Gauge)"
+      },
+      {
+        "label": "Stand Structure",
+        "value": "Heavy Mild Steel Box Channel Stand with Industrial Paint"
+      },
+      {
+        "label": "Motor Rating",
+        "value": "2 HP 1440 RPM Single Phase Motor"
+      },
+      {
+        "label": "Drive Mechanism",
+        "value": "Heavy Cast Iron Pulley & V-Belt Speed Reduction"
+      },
+      {
+        "label": "Discharge Method",
+        "value": "Manual Lever Tilting Trough (Rotates 90° for Full Pour)"
+      },
+      {
+        "label": "Cover Lid",
+        "value": "Removable Stainless Steel Top Lid with Dual Sturdy Handles"
+      }
+    ],
+    "applications": [
+      "Mango, Lemon, Chilli & Mixed Vegetable Pickle Seasoning",
+      "Atta, Maida, Besan & Bakery Premix Kneading & Dry Blending",
+      "Namkeen, Sev, Gathiya & Peanuts Uniform Spice Coating",
+      "Ayurvedic Churna & Dry Herb Powder Homogenization",
+      "Chutney, Sauces & High-Density Paste Blending"
+    ],
+    "features": [
+      "Food-grade SS-304 contact parts resist vinegar, brine, and high-acid spice mixes indefinitely without rust",
+      "Specialized ribbon-paddle agitator distributes oil, spices, and salt evenly throughout the batch in 5 minutes",
+      "Manual tilting trough allows 100% complete, clean product evacuation directly into processing bins",
+      "Heavy structural steel frame absorbs high blending torques and maintains smooth, steady operation",
+      "Removable top cover with safety handles prevents dust contamination and allows inspection during operation"
+    ],
+    "isFeatured": true,
+    "isPublished": true,
+    "inStock": true,
+    "stockCount": 5,
+    "sku": "RFPM-RAGHAV-25KG-PICK",
+    "createdAt": "2026-09-14T15:02:05.047Z",
+    "updatedAt": "2026-09-14T15:02:05.047Z",
+    "_id": "prod_28"
+  },
+  {
+    "name": "Raghav 100L Commercial Gas Operated Tilting Boiling Kettle (Jacketed Pan)",
+    "slug": "raghav-gas-operated-boiling-kettle",
+    "category": "Commercial Kettles & Cooking",
+    "categorySlug": "commercial-kettles-cooking",
+    "shortDescription": "Industrial 100-liter tilting boiling kettle fabricated from 3mm SS-304 with high-calorie gas burner and precision handwheel tilting gearbox.",
+    "fullDescription": "This industrial-grade, Gas-Operated Tilting Boiling Kettle (jacketed pan) is designed for high-capacity cooking, boiling, and reduction of food products in commercial kitchens, catering facilities, sauce factories, and confectioneries. Fabricated from heavy 3mm food-grade SS-304 stainless steel, the hemispherical bowl ensures rapid, uniform heat distribution across the entire surface. Features a high-calorie commercial burner manifold, worm-gear tilting handwheel for precise controlled pouring, a bottom product discharge valve, and a heavy-duty hinged stainless steel lid.",
+    "price": "₹ 1,10,000",
+    "priceUnit": "Ex-Factory Price",
+    "capacity": "100 Liters / Batch Cooking Volume",
+    "power": "Commercial High-Calorie LPG / Natural Gas Burner System",
+    "materialGrade": "Heavy 3 mm Food-Grade Stainless Steel 304 Vessel & Stand",
+    "automationGrade": "Semi-Automatic Tilting with Worm Gearbox Handwheel",
+    "voltage": "Non-Electric (Gas Operated with Electric Ignition/Thermostat Options)",
+    "dimensions": "1150 mm x 900 mm x 1250 mm",
+    "weight": "140 kg",
+    "warranty": "1 Year Commercial Warranty",
+    "images": [
+      "https://res.cloudinary.com/vgmmtb5k/image/upload/v1789398124/raghav-food-processing-machines/raghav-gas-operated-boiling-kettle.jpg",
+      "/images/products/raghav-gas-operated-boiling-kettle.jpg"
+    ],
+    "specifications": [
+      {
+        "label": "Model",
+        "value": "Raghav27"
+      },
+      {
+        "label": "Brand",
+        "value": "Raghav"
+      },
+      {
+        "label": "Cooking Bowl Capacity",
+        "value": "100 Liters per batch"
+      },
+      {
+        "label": "Vessel Sheet Thickness",
+        "value": "Heavy 3.0 mm Food-Grade Stainless Steel 304"
+      },
+      {
+        "label": "Heat Source",
+        "value": "Commercial High-Output Multi-Ring Gas Burner"
+      },
+      {
+        "label": "Tilting Gearbox",
+        "value": "Precision Worm & Wheel Reduction with Chrome Handwheel"
+      },
+      {
+        "label": "Discharge Options",
+        "value": "90° Smooth Pouring Tilt + Bottom 1.5-Inch Ball Valve Drain"
+      },
+      {
+        "label": "Top Lid",
+        "value": "Hinged SS-304 Lid with Counterbalance Support"
+      },
+      {
+        "label": "Frame Construction",
+        "value": "All-Stainless Steel Tubular Heavy Support Frame"
+      }
+    ],
+    "applications": [
+      "Tomato Ketchup, Sauces, Purees & Rich Culinary Gravies",
+      "Sugar Syrups, Chashni, Toffees & Confectionery Boiling",
+      "Fruit Jams, Jellies, Marmalades & Fruit Pulp Concentration",
+      "Khoya, Milk Boiling, Basundi & Dairy Sweet Preparation",
+      "Commercial Catering Large-Volume Curry, Stews, Dal & Rice Boiling"
+    ],
+    "features": [
+      "Heavy 3mm SS-304 hemispherical pan eliminates localized hot spots and prevents food scorching",
+      "Precision worm gearbox handwheel allows one-hand tilting control to pour hot liquids safely without splashing",
+      "Integrated bottom drain ball valve permits direct hose transfer or rapid cleaning washdown",
+      "Heavy all-stainless steel frame resists corrosion, water washdowns, and aggressive kitchen environments",
+      "Balanced hinged lid seals in steam and aromas to drastically accelerate boiling and energy conservation"
+    ],
+    "isFeatured": true,
+    "isPublished": true,
+    "inStock": true,
+    "stockCount": 5,
+    "sku": "RFPM-RAGHAV-GAS-OPERA",
+    "createdAt": "2026-09-14T15:02:06.073Z",
+    "updatedAt": "2026-09-14T15:02:06.073Z",
+    "_id": "prod_29"
   }
 ];
 
