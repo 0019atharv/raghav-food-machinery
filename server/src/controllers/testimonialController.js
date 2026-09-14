@@ -29,7 +29,7 @@ export const createTestimonial = async (req, res) => {
       location: location || 'India',
       rating: rating ? Number(rating) : 5,
       review,
-      avatarUrl: avatarUrl || 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=200&q=80',
+      avatarUrl: avatarUrl || 'https://res.cloudinary.com/vgmmtb5k/image/upload/v1789411141/raghav-food-processing-machines/testimonials/testimonial-rajesh-singhania.jpg',
       machinePurchased: machinePurchased || 'Industrial Food Machine',
       isApproved: true,
       createdAt: new Date()

@@ -92,7 +92,7 @@ export default function Contact() {
           Contact Raghav Food Processing Machine
         </h1>
         <p className="text-sm text-industrial-300 leading-relaxed">
-          Request commercial machinery quotation, schedule a visit to our facility in Mangol Puri, New Delhi, or consult our engineering team regarding your plant requirements.
+          Request commercial machinery quotation, schedule a visit to our facility in Delhi, India, or consult our engineering team regarding your plant requirements.
         </p>
       </div>
 

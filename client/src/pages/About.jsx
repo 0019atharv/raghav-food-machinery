@@ -76,7 +76,7 @@ export default function About() {
               }}
             />
             <div className="p-4 bg-industrial-950/90 border-t border-industrial-800 text-xs text-industrial-400 flex items-center justify-between">
-              <span>Mangol Puri, New Delhi</span>
+              <span>Delhi, India</span>
               <span className="text-amber-brand font-semibold font-mono">GST: 07AREPN9294Q1ZQ</span>
             </div>
           </div>

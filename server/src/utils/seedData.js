@@ -2534,7 +2534,7 @@ export const initialTestimonials = [
     location: "Sonipat, Haryana",
     rating: 5,
     review: "We commissioned a 500L Automatic Retort Machine from Raghav Food Machinery for our ready-to-eat curry project. The thermal Fo calculation is spot-on and we achieved FSSAI commercial sterility on our first trial run. Their technical team stayed on-site for 3 days until our operators were 100% confident.",
-    avatarUrl: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80",
+    avatarUrl: "https://res.cloudinary.com/vgmmtb5k/image/upload/v1789411141/raghav-food-processing-machines/testimonials/testimonial-rajesh-singhania.jpg",
     machinePurchased: "500L Automatic Retort Machine",
     isApproved: true
   },
@@ -2544,7 +2544,7 @@ export const initialTestimonials = [
     location: "Ahmedabad, Gujarat",
     rating: 5,
     review: "The micro spice pulverizer with water cooling jacket preserved the bright natural yellow color and essential aroma of our organic turmeric. Zero burnt aroma and absolutely dust-free cyclone collection. Best Indian machinery manufacturer for spices!",
-    avatarUrl: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=200&q=80",
+    avatarUrl: "https://res.cloudinary.com/vgmmtb5k/image/upload/v1789411144/raghav-food-processing-machines/testimonials/testimonial-vikas-patel.jpg",
     machinePurchased: "Micro Spice Pulverizer (15 HP)",
     isApproved: true
   },
@@ -2554,7 +2554,7 @@ export const initialTestimonials = [
     location: "Amritsar, Punjab",
     rating: 5,
     review: "Extremely rugged kurkure extruder and continuous namkeen fryer line. We run 16 hours daily without any breakdown. Spare parts are dispatched same day from Delhi NCR. Strongly recommend Raghav Food Machinery to any snack manufacturer.",
-    avatarUrl: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=200&q=80",
+    avatarUrl: "https://res.cloudinary.com/vgmmtb5k/image/upload/v1789411145/raghav-food-processing-machines/testimonials/testimonial-gurpreet-singh.jpg",
     machinePurchased: "Continuous Snacks Extrusion Line",
     isApproved: true
   }

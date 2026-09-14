@@ -449,7 +449,7 @@ export default function Home() {
                   </div>
                   <div className="p-3 rounded-xl bg-slate-50 border border-slate-200">
                     <div className="text-[10px] text-slate-500 font-bold uppercase tracking-wider">Facility</div>
-                    <div className="text-xs font-bold text-slate-900 mt-0.5 truncate">Mangol Puri, Delhi</div>
+                    <div className="text-xs font-bold text-slate-900 mt-0.5 truncate">Delhi, India</div>
                   </div>
                 </div>
               </div>
@@ -617,7 +617,7 @@ export default function Home() {
               Ready to Upgrade or Establish Your Food Processing Plant?
             </h3>
             <p className="text-xs sm:text-sm text-emerald-50 leading-relaxed">
-              Schedule a visit to our manufacturing workshop in Mangol Puri, New Delhi to inspect live machinery runs and review equipment specifications with our technical engineering team.
+              Schedule a visit to our manufacturing workshop in Delhi, India to inspect live machinery runs and review equipment specifications with our technical engineering team.
             </p>
           </div>
 

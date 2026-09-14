@@ -56,7 +56,7 @@ export default function Testimonials() {
               <div className="pt-4 border-t border-industrial-800 flex items-center justify-between">
                 <div className="flex items-center gap-3">
                   <img
-                    src={item.avatarUrl || 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80'}
+                    src={item.avatarUrl || 'https://res.cloudinary.com/vgmmtb5k/image/upload/v1789411141/raghav-food-processing-machines/testimonials/testimonial-rajesh-singhania.jpg'}
                     alt={item.clientName}
                     className="w-12 h-12 rounded-full object-cover border-2 border-amber-brand"
                   />

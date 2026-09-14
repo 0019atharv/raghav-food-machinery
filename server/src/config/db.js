@@ -160,6 +160,12 @@ async function seedDatabaseIfEmpty() {
           await Product.updateOne({ slug: cleanProduct.slug }, { $set: cleanProduct });
         }
       }
+
+      for (const t of initialTestimonials) {
+        const { _id, ...cleanTesti } = t;
+        await Testimonial.updateOne({ clientName: cleanTesti.clientName }, { $set: cleanTesti });
+      }
+      console.log('✅ [Database] Synced authentic Indian testimonials in MongoDB!');
     }
   } catch (seedErr) {
     console.error('[Database] Seeding error:', seedErr);
