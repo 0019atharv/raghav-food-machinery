@@ -392,69 +392,83 @@
       "updatedAt": "2026-09-13T10:52:56.485Z"
     },
     {
-      "name": "Raghav 1 HP Commercial Potato & Root Vegetable Peeler",
+      "name": "Raghav 1HP Commercial Potato & Root Vegetable Peeler",
       "slug": "raghav-1hp-potato-peeler",
       "category": "Vegetable & Fruit Processing",
       "categorySlug": "vegetable-fruit-processing",
-      "shortDescription": "High-speed commercial abrasive potato peeler with carborundum bottom disc, water flushing system, and front discharge door.",
-      "fullDescription": "A commercial potato peeling machine designed to rapidly wash and remove the skin from potatoes and root vegetables like carrots, ginger, and radish in 90 to 120 seconds. Centrifugal force pushes the produce against an abrasive carborundum rotating disc and walls, gently grinding away outer skin without bruising the inner flesh. Continuous water flushing washes peel waste away instantly.",
+      "shortDescription": "Heavy-duty 15 kg/batch commercial stainless steel potato peeler with carborundum abrasive disc, continuous water spray flushing, and safety discharge gate.",
+      "fullDescription": "An industrial food processing unit designed to rapidly wash and remove the skin from potatoes, carrots, ginger, and other root vegetables. Built entirely from 16-gauge food-grade Jindal Stainless Steel (SS-304), this machine replaces tedious manual peeling in commercial kitchens, potato chip production lines, catering facilities, and central hostels. Powered by a high-torque 1 HP single-phase motor, the centrifugal rotation against the silicon carbide abrasive disc and inner cylinder walls peels a complete 15 kg batch in just 90 to 120 seconds while integrated water spray continuously flushes peel waste through the bottom drainage outlet.",
       "price": "₹ 28,000",
       "priceUnit": "Ex-Factory Price",
-      "capacity": "10 - 15 kg / batch (90-120 sec cycle)",
-      "power": "1 HP Heavy Duty 1440 RPM Motor",
-      "materialGrade": "Food-Grade Stainless Steel Drum",
-      "automationGrade": "Semi-Automatic Rotary Peeler",
-      "voltage": "220V Single Phase 50 Hz",
-      "dimensions": "550 mm x 450 mm x 850 mm",
+      "capacity": "15 kg / Batch (100 – 150 kg/hr)",
+      "power": "1 HP High-Torque Single Phase Motor",
+      "materialGrade": "Food-Grade Stainless Steel 304 (16 Gauge Drum & Exterior Cabinet)",
+      "automationGrade": "Semi-Automatic (Batch Feed with Mechanical Door Latch)",
+      "voltage": "220V AC, 50 Hz Single Phase",
+      "dimensions": "550 mm x 500 mm x 900 mm",
       "weight": "55 kg",
       "warranty": "1 Year Commercial Warranty",
       "images": [
-        "https://res.cloudinary.com/vgmmtb5k/image/upload/v1789295913/raghav-food-processing-machines/raghav-1hp-potato-peeler.jpg",
-        "/images/products/raghav-1hp-potato-peeler.jpg"
+        "https://res.cloudinary.com/vgmmtb5k/image/upload/v1789486264/raghav-food-processing-machines/raghav-1hp-potato-peeler.png",
+        "/images/products/raghav-1hp-potato-peeler.png"
       ],
       "specifications": [
         {
-          "label": "Batch Capacity",
-          "value": "10 - 15 kg raw potatoes per run"
+          "label": "Model",
+          "value": "Raghav17"
         },
         {
-          "label": "Cycle Duration",
-          "value": "90 to 120 seconds per batch"
+          "label": "Brand",
+          "value": "Raghav"
+        },
+        {
+          "label": "Batch Capacity",
+          "value": "15 kg per batch"
+        },
+        {
+          "label": "Processing Time",
+          "value": "90 – 120 seconds per batch"
         },
         {
           "label": "Motor Power",
-          "value": "1 HP Heavy Duty 100% Copper Winding Motor"
+          "value": "1 HP High-Torque Motor (1-Phase, 1440 RPM)"
         },
         {
-          "label": "Abrasive Surface",
-          "value": "High-Hardness Silicon Carbide / Carborundum Coated Plate"
+          "label": "Sheet Thickness",
+          "value": "16 Gauge SS-304 Sheet Metal"
+        },
+        {
+          "label": "Peeling Mechanism",
+          "value": "Heavy Silicon Carbide / Carborundum Coated Bottom Disc"
         },
         {
           "label": "Water Connection",
-          "value": "Continuous Top Spray Water Inlet with Hose Connector"
+          "value": "Standard 0.5-inch inlet nozzle for continuous flushing"
         },
         {
-          "label": "Discharge Door",
-          "value": "Front Hinged Door with Quick-Action Locking Handle"
+          "label": "Waste Outlet",
+          "value": "Bottom stainless steel drain chute for slurry discharge"
         }
       ],
       "applications": [
-        "Potato Chips & French Fry Continuous Processing",
-        "Hotels, Banquet Kitchens & Catering Operations",
-        "Carrot, Ginger, Beetroot & Radish Peeling",
-        "Dehydrated Vegetable & Namkeen Manufacturing"
+        "Commercial Potato Chips & French Fries Processing Units",
+        "Hotels, Cloud Kitchens, Central Messes & Catering Base Kitchens",
+        "Carrot, Ginger, Beetroot & Turnip Industrial Peeling",
+        "Frozen Vegetable & Dehydrated Vegetable Processing Plants"
       ],
       "features": [
-        "Abrasive carborundum disc peels skins uniformly thin with minimal potato flesh waste",
-        "Integrated water flushing constantly clears peel residue through bottom drainage chute",
-        "Front discharge handle allows instant gravity unloading into collection trays",
-        "Robust industrial painted body with food-grade stainless steel peeling chamber"
+        "Rapid centrifugal abrasive peeling removes skin uniformly with under 5% pulp wastage",
+        "Built-in continuous water spray rinses produce and flushes skins out cleanly through bottom drain",
+        "Heavy-duty 1 HP motor provides high startup torque to power through dense, wet 15 kg vegetable loads",
+        "Front safety discharge door with quick-release knob discharges peeled vegetables in seconds",
+        "Full SS-304 food-grade construction ensures rust-free hygienic operation and effortless cleaning"
       ],
       "isFeatured": true,
       "isPublished": true,
       "_id": "prod_7",
-      "createdAt": "2026-09-13T10:52:56.485Z",
-      "updatedAt": "2026-09-13T10:52:56.485Z"
+      "createdAt": "2026-09-15T15:31:16.169Z",
+      "updatedAt": "2026-09-13T10:52:56.485Z",
+      "brochureUrl": ""
     },
     {
       "name": "Raghav 60 Ltr Vertical Canning Retort Sterilizer",
@@ -981,67 +995,80 @@
       "updatedAt": "2026-09-13T10:52:56.485Z"
     },
     {
-      "name": "Raghav Heavy-Duty Manual Crown Corking & Bottle Capping Machine",
+      "name": "Raghav Heavy Duty Commercial Crown Corking Machine",
       "slug": "raghav-heavy-duty-crown-corking-machine",
       "category": "Packaging & Sealing",
       "categorySlug": "packaging-sealing",
-      "shortDescription": "Precision manual crown corking machine built for commercial micro-breweries, craft beverage makers, artisanal juice bottlers, and sauce packaging lines.",
-      "fullDescription": "The Raghav Heavy-Duty Manual Crown Corking Machine is engineered for professional-grade bottle sealing across craft beverage, cold-brew coffee, kombucha, fruit juice, tomato sauce, and micro-brewery plants. Constructed from high-density cast iron with an industrial emerald powder-coat finish and a precision chrome-plated solid steel column. Equipped with a hardened magnetic crimping bell that securely retains standard 26mm (and optional 29mm) crown caps, ensuring airtight, hermetic, leak-proof crimping without chipping glass rims. The smooth leverage handle mechanism delivers high mechanical advantage with minimal operator hand fatigue. Includes tool-free height adjustment to swiftly accommodate bottles from 150ml nip bottles up to 1000ml tall beverage bottles, and a stable bench-mount base with pre-cast bolt holes.",
-      "price": "₹ 4,000",
-      "priceUnit": "Ex-Factory Unit",
-      "capacity": "300 - 500 Bottles / Hour",
-      "power": "Manual Mechanical (Zero Electricity Required)",
-      "materialGrade": "Cast Iron Base + Chrome-Plated Solid Steel Column",
-      "automationGrade": "Manual Leverage Action",
-      "voltage": "Zero Power Required",
-      "dimensions": "250 mm x 200 mm x 520 mm",
-      "weight": "4.8 kg",
-      "warranty": "1 Year Replacement Warranty on Crimp Head",
+      "shortDescription": "Cast iron benchtop crown bottle capper with ergonomic curved lever handle, magnetic capping bell, and adjustable centering stops for glass bottles.",
+      "fullDescription": "A heavy-duty commercial crown corking machine (manual benchtop bottle capper) engineered to crimp metallic crown caps tightly onto glass bottles, creating an airtight, leak-proof seal. Built with a heavy cast-iron base providing low center of gravity, a solid chrome-plated support pillar, and an ergonomic curved lever handle that provides maximum mechanical advantage for smooth, fatigue-free operation. The magnetic capping head securely holds the crown cap in place prior to crimping, while adjustable rear bottle stops ensure precise centering for glass bottles from 200 ml to 750 ml.",
+      "price": "₹ 20,000",
+      "priceUnit": "Ex-Factory Price",
+      "capacity": "8 – 10 Bottles / Minute (480 – 600 Bottles/Hr)",
+      "power": "Manual Mechanical Lever (No Electric Power Required)",
+      "materialGrade": "Heavy Cast Iron Base & Body with Hardened Steel Magnetic Capping Head",
+      "automationGrade": "Manual Hand-Lever Operated with Spring Return",
+      "voltage": "Non-Electric",
+      "dimensions": "300 mm x 220 mm x 680 mm",
+      "weight": "20 kg approx",
+      "warranty": "1 Year Commercial Warranty",
       "images": [
-        "https://res.cloudinary.com/vgmmtb5k/image/upload/v1789137653/raghav-food-processing-machines/raghav-heavy-duty-crown-corking-machine.png"
+        "https://res.cloudinary.com/vgmmtb5k/image/upload/v1789486255/raghav-food-processing-machines/raghav-heavy-duty-crown-corking-machine.png",
+        "/images/products/raghav-heavy-duty-crown-corking-machine.png"
       ],
       "specifications": [
         {
-          "label": "Capping Speed",
-          "value": "300 - 500 Bottles per hour"
+          "label": "Model",
+          "value": "Raghav50"
         },
         {
-          "label": "Cap Standard",
-          "value": "26 mm Crown Caps (Optional 29 mm Bell)"
+          "label": "Brand",
+          "value": "Raghav"
+        },
+        {
+          "label": "Sealing Speed",
+          "value": "8 to 10 bottles per minute"
+        },
+        {
+          "label": "Machine Weight",
+          "value": "20 kg approx"
+        },
+        {
+          "label": "Body Material",
+          "value": "Heavy Cast Iron with Industrial Enamel Finish"
+        },
+        {
+          "label": "Capping Head",
+          "value": "Hardened Magnetic Steel Bell Die (Standard 26 mm Crown Caps)"
         },
         {
           "label": "Bottle Height Range",
-          "value": "100 mm to 380 mm (Tool-Free Quick Clamp)"
+          "value": "150 mm to 380 mm (Adjustable Column Height)"
         },
         {
-          "label": "Crimp Die",
-          "value": "Hardened Steel Magnetic Crimping Bell"
-        },
-        {
-          "label": "Base Structure",
-          "value": "High-Tension Cast Iron with Rubber Centering Pad"
-        },
-        {
-          "label": "Mounting",
-          "value": "Pre-drilled bench mounting holes"
+          "label": "Base Mounting",
+          "value": "Pre-drilled workbench bolt-down anchor holes"
         }
       ],
       "applications": [
-        "Glass Bottle Sealing: Craft Beer, Cider & Kombucha",
-        "Fruit Juices, Cold Drinks, Flavored Milks & Sharbat",
-        "Ketchup, Sauce & Vinegar Glass Packaging"
+        "Beer, Craft Cider & Micro-Brewery Glass Bottling",
+        "Flavored Soda, Cold Drinks & Carbonated Beverages",
+        "Fruit Juice, Milk Shake & Flavored Dairy Glass Bottles",
+        "Kombucha, Tonic Water & Mineral Water Bottling",
+        "Sauces, Vinegar & Specialty Condiment Glass Packaging"
       ],
       "features": [
-        "Magnetic capping bell securely holds cap before crimping",
-        "Ergonomic extended lever arm minimizes operator effort",
-        "Heavy cast iron base prevents tipping during operation",
-        "Airtight, leak-proof hermetic seal every single cycle"
+        "Ergonomic curved high-leverage handle ensures effortless manual crimping without operator strain",
+        "Integrated internal magnet suspends crown cap automatically for quick hands-free bottle placement",
+        "Heavy 20 kg solid cast-iron base prevents wobbling, tipping, or neck breakage during pressing",
+        "Adjustable bottle alignment stops ensure centered crimp and hermetic pressure-tight seal every time",
+        "Rust-resistant chrome-plated solid steel column with multi-hole height adjustment for all bottle sizes"
       ],
       "isFeatured": true,
       "isPublished": true,
       "_id": "prod_16",
-      "createdAt": "2026-09-13T10:52:56.485Z",
-      "updatedAt": "2026-09-13T10:52:56.485Z"
+      "createdAt": "2026-09-15T15:31:16.154Z",
+      "updatedAt": "2026-09-13T10:52:56.485Z",
+      "brochureUrl": ""
     },
     {
       "name": "Raghav Blower Cyclone Spice & Grain Pulverizer Machine",
@@ -2348,6 +2375,242 @@
       "isFeatured": true,
       "isPublished": true,
       "createdAt": "2026-09-14T15:23:02.145Z"
+    },
+    {
+      "_id": "prod_34",
+      "name": "Raghav Commercial Stainless Steel Bubble Washer (Fruit & Vegetable Washing Tank)",
+      "slug": "raghav-bubble-washer",
+      "category": "Vegetable & Fruit Processing",
+      "categorySlug": "vegetable-fruit-processing",
+      "shortDescription": "Industrial 4x2x2.5 ft mobile bubble washing tank with 1 HP air vortex blower, 0.5 HP water circulation pump, overhead spray manifold, and perforated liner.",
+      "fullDescription": "This commercial Fruits and Vegetables Bubble Washing Machine is engineered for small-to-medium-scale food processing plants, catering facilities, and central kitchens to gently yet thoroughly wash leafy greens, fruits, and vegetables. Fabricated using high-grade 16-gauge Jindal Stainless Steel (SS-304), it features a bottom high-pressure air manifold that injects continuous micro-bubbles to create a gentle tumbling whirlpool. This rolling bubble action removes surface mud, insects, and chemical residues without bruising delicate produce like spinach, herbs, tomatoes, or berries. Equipped with an overhead fresh-water spray rinse manifold, removable perforated liner basket, side pump housing with push handle, and heavy-duty swivel lock caster wheels.",
+      "price": "₹ 95,000",
+      "priceUnit": "Ex-Factory Price",
+      "capacity": "200 – 400 kg / Hour Throughput",
+      "power": "1 HP Air Blower (1-Phase) + 0.5 HP Water Circulation Pump (1-Phase)",
+      "materialGrade": "Food-Grade Jindal Stainless Steel 304 (16 Gauge)",
+      "automationGrade": "Semi-Automatic Bubble Tumbling & Overhead Rinse",
+      "voltage": "220V AC, 50 Hz Single Phase",
+      "dimensions": "4 ft x 2 ft x 2.5 ft (Tank: 1200 mm x 600 mm x 750 mm)",
+      "weight": "85 kg",
+      "warranty": "1 Year Commercial Warranty",
+      "images": [
+        "https://res.cloudinary.com/vgmmtb5k/image/upload/v1789486269/raghav-food-processing-machines/raghav-bubble-washer.png",
+        "/images/products/raghav-bubble-washer.png"
+      ],
+      "specifications": [
+        {
+          "label": "Model",
+          "value": "Raghav14"
+        },
+        {
+          "label": "Brand",
+          "value": "Raghav"
+        },
+        {
+          "label": "Tank Dimensions",
+          "value": "4 ft Length x 2 ft Width x 2.5 ft Height"
+        },
+        {
+          "label": "Air Blower Motor",
+          "value": "1 HP High-Pressure Vortex Air Blower (Single Phase)"
+        },
+        {
+          "label": "Water Pump Motor",
+          "value": "0.5 HP Sanitary Stainless Steel Pump (Single Phase)"
+        },
+        {
+          "label": "Sheet Gauge",
+          "value": "16 Gauge SS-304 Heavy Sheet"
+        },
+        {
+          "label": "Overhead Rinse",
+          "value": "Stainless steel manifold with multi-jet spray nozzles"
+        },
+        {
+          "label": "Inner Liner",
+          "value": "Removable perforated SS-304 sheet basket for easy lifting"
+        },
+        {
+          "label": "Mobility",
+          "value": "4 Heavy-duty polyurethane swivel casters with foot brakes"
+        }
+      ],
+      "applications": [
+        "Leafy Greens: Spinach (Palak), Lettuce, Mint, Coriander, Methi",
+        "Vegetables: Tomatoes, Cucumbers, Bell Peppers, Cauliflower, Cabbage",
+        "Fruits: Apples, Grapes, Berries, Guavas, Mangoes, Strawberries",
+        "Herbs, Root Crops & Agro-Processing Packhouses"
+      ],
+      "features": [
+        "High-pressure micro-bubble bubbling action cleans delicate produce thoroughly without skin bruising",
+        "Dual washing action combines air bubble tumbling from bottom with overhead fresh water jet spray",
+        "Removable perforated inner basket contains floating produce while allowing sediment to settle at bottom",
+        "Heavy-duty industrial swivel casters allow effortless mobility around factory and kitchen floors",
+        "All contact parts fabricated from 100% food-grade Jindal SS-304 for lifelong anti-corrosion sanitation"
+      ],
+      "brochureUrl": "",
+      "isFeatured": true,
+      "isPublished": true,
+      "createdAt": "2026-09-15T15:31:16.169Z"
+    },
+    {
+      "_id": "prod_35",
+      "name": "Raghav Commercial Screw Type Fruit Juicer & Cold Press Extractor",
+      "slug": "raghav-screw-type-juicer",
+      "category": "Vegetable & Fruit Processing",
+      "categorySlug": "vegetable-fruit-processing",
+      "shortDescription": "Heavy-duty 30-50 L/hr commercial screw auger cold-press juice extractor with stainless steel contact components, 0.75 HP motor, and continuous pulp separation.",
+      "fullDescription": "A commercial continuous screw-type juice extractor (spiral juice extractor / auger cold-press juicer) designed to extract high-yield, premium-quality juice from fruits, vegetables, ginger, tomatoes, and fibrous herbs through continuous mechanical crushing rather than high-speed centrifugal heat-generating blades. Features a rotating heavy-duty stainless steel tapered screw auger inside a perforated filter screen barrel that progressively compresses the raw ingredients as they move forward. Extracted pure juice drains cleanly through the primary bottom outlet, while dehydrated fiber and dry pulp are automatically expelled from the front conical nozzle.",
+      "price": "₹ 32,000",
+      "priceUnit": "Ex-Factory Price",
+      "capacity": "30 – 50 Litres / Hour Juice Output",
+      "power": "0.75 HP Single Phase Heavy-Duty Electric Motor",
+      "materialGrade": "Food-Grade Stainless Steel 304 Contact Parts with Powder-Coated Cast Iron Chassis",
+      "automationGrade": "Continuous Motorized Spiral Screw Cold-Press Extrusion",
+      "voltage": "220V AC, 50 Hz Single Phase",
+      "dimensions": "580 mm x 260 mm x 420 mm",
+      "weight": "32 kg",
+      "warranty": "1 Year Commercial Warranty",
+      "images": [
+        "https://res.cloudinary.com/vgmmtb5k/image/upload/v1789486271/raghav-food-processing-machines/raghav-screw-type-juicer.jpg",
+        "/images/products/raghav-screw-type-juicer.jpg"
+      ],
+      "specifications": [
+        {
+          "label": "Model",
+          "value": "Raghav19"
+        },
+        {
+          "label": "Brand",
+          "value": "Raghav"
+        },
+        {
+          "label": "Juicing Capacity",
+          "value": "30 to 50 Litres per hour"
+        },
+        {
+          "label": "Motor Power",
+          "value": "0.75 HP High-Torque Electric Motor (1-Phase)"
+        },
+        {
+          "label": "Auger Screw",
+          "value": "Solid Food-Grade Stainless Steel 304 Spiral Screw"
+        },
+        {
+          "label": "Feeding Tray",
+          "value": "Stainless Steel oval feed hopper with wooden safety stomper"
+        },
+        {
+          "label": "Discharge",
+          "value": "Dual separated discharge: Front juice port & forward pulp outlet"
+        },
+        {
+          "label": "Base Construction",
+          "value": "Heavy cast iron vibration-dampening red chassis"
+        },
+        {
+          "label": "Control",
+          "value": "Rotary industrial Forward/Reverse power switch"
+        }
+      ],
+      "applications": [
+        "Pomegranate (Anaar), Citrus, Orange & Sweet Lime Cold-Press Juicing",
+        "Tomato Puree, Ginger-Garlic Juice & Cooking Base Extraction",
+        "Apple, Pineapple, Carrot, Beetroot & Vegetable Health Juices",
+        "Amla (Gooseberry), Wheatgrass, Aloe Vera & Ayurvedic Herbal Juice Extraction",
+        "Commercial Juice Bars, Restaurants, Hotels & Food Processing Kitchens"
+      ],
+      "features": [
+        "Gentle cold-press spiral extrusion extracts maximum juice without oxidation, preserving natural vitamins and color",
+        "Automatic continuous pulp-juice separation enables non-stop juicing without frequent cleaning shutdowns",
+        "Food-grade SS-304 contact components ensure hygienic compliance and total acid-resistance",
+        "Heavy-duty reduction gear system delivers steady torque to crush tough fibrous ginger and amla",
+        "Compact countertop footprint with suction rubber feet absorbs operating vibrations completely"
+      ],
+      "brochureUrl": "",
+      "isFeatured": true,
+      "isPublished": true,
+      "createdAt": "2026-09-15T15:31:16.169Z"
+    },
+    {
+      "_id": "prod_36",
+      "name": "Raghav 225L Commercial Tilting Steam Jacketed Kettle (Cooking Pan)",
+      "slug": "raghav-steam-jacket-kettle",
+      "category": "Commercial Kettles & Cooking",
+      "categorySlug": "commercial-kettles-cooking",
+      "shortDescription": "Industrial 225-liter tilting steam-jacketed boiling kettle with 3mm SS-304 inner bowl, manual worm gear handwheel, and pressurized steam trunnions.",
+      "fullDescription": "An industrial steam-jacketed kettle (steam boiling pan) designed to boil, simmer, concentrate, and cook large batches of liquid food products, sauces, jams, syrups, and milk rapidly and evenly without scorching or burning. Fabricated with a heavy 3mm food-grade SS-304 inner hemispherical pan surrounded by a 2.5mm pressurized outer steam jacket. Pressurized steam transfers intense latent heat across the entire rounded bottom and sidewalls, reducing cooking times by up to 60% compared to direct flame bhattas. Features manual 90-degree worm-gear handwheel tilting for smooth, safe discharge of hot viscous products through the front pouring spout, steam inlet/outlet trunnions, and safety pressure relief valve.",
+      "price": "₹ 95,000",
+      "priceUnit": "Ex-Factory Price",
+      "capacity": "225 Litres per Batch",
+      "power": "External Steam Connection (Boiler Driven)",
+      "materialGrade": "Food-Grade Stainless Steel 304 (3mm Inner Bowl, 2.5mm Outer Steam Jacket)",
+      "automationGrade": "Manual Worm-Gear Handwheel Tilting Discharge (90-Degree Pour)",
+      "voltage": "Non-Electric (Steam Pressure Driven)",
+      "dimensions": "1250 mm x 950 mm x 1150 mm",
+      "weight": "160 kg",
+      "warranty": "1 Year Commercial Warranty",
+      "images": [
+        "https://res.cloudinary.com/vgmmtb5k/image/upload/v1789486275/raghav-food-processing-machines/raghav-steam-jacket-kettle.png",
+        "/images/products/raghav-steam-jacket-kettle.png"
+      ],
+      "specifications": [
+        {
+          "label": "Model",
+          "value": "Raghav45"
+        },
+        {
+          "label": "Brand",
+          "value": "Raghav"
+        },
+        {
+          "label": "Gross Capacity",
+          "value": "225 Litres per batch"
+        },
+        {
+          "label": "Inner Pan Gauge",
+          "value": "3.0 mm Heavy SS-304 Dish"
+        },
+        {
+          "label": "Outer Jacket Gauge",
+          "value": "2.5 mm Pressurized Steam Jacket"
+        },
+        {
+          "label": "Working Steam Pressure",
+          "value": "2 to 4 bar (tested up to 6 bar hydrostatic)"
+        },
+        {
+          "label": "Tilting Mechanism",
+          "value": "Manual worm-gear handwheel with self-locking 90° tilt"
+        },
+        {
+          "label": "Mounting Stand",
+          "value": "Heavy structural SS square tube A-frame stand"
+        },
+        {
+          "label": "Steam Connections",
+          "value": "Rotary trunnion steam inlet, condensate bottom drain trap, safety valve"
+        }
+      ],
+      "applications": [
+        "Commercial Tomato Ketchup, Puree & Cooking Paste Boiling",
+        "Fruit Jams, Jellies, Marmalades & Fruit Pulp Concentration",
+        "Milk Boiling, Kheer, Rabri & Sweet Confectionery Preparation",
+        "Curries, Gravies, Sambhar, Dal & Ready-to-Eat Food Processing",
+        "Sugar Syrups, Ayurvedic Decoctions (Kadha) & Chemical Heating"
+      ],
+      "features": [
+        "Uniform indirect steam jacket heating eliminates scorching, burning, and hotspots on viscous mixtures",
+        "Latent heat transfer across hemispherical bowl cuts cooking and boiling cycles by over 50%",
+        "Self-locking worm-gear handwheel mechanism allows controlled 90° tilting without spilling hazard",
+        "Heavy 3mm SS-304 inner bowl withstands high thermal expansion and acidic fruit food batches",
+        "Includes safety pressure relief valve, steam trap connection, and heavy structural A-frame stand"
+      ],
+      "brochureUrl": "",
+      "isFeatured": true,
+      "isPublished": true,
+      "createdAt": "2026-09-15T15:31:16.169Z"
     }
   ],
   "categories": [
