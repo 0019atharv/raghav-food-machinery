@@ -197,69 +197,84 @@
       "updatedAt": "2026-09-13T10:52:56.485Z"
     },
     {
-      "name": "Raghav Can Seamer Machine (Semi-Automatic Double Seamer)",
+      "name": "Raghav Tabletop Semi-Automatic Electric Can Seamer Machine (TDFJ-160)",
       "slug": "raghav-can-seamer",
       "category": "Packaging & Sealing",
       "categorySlug": "packaging-sealing",
-      "shortDescription": "Heavy-duty electric tabletop can seamer for hermetic double seaming of tin, aluminum, and composite food/beverage cans.",
-      "fullDescription": "This commercial tabletop Semi-Automatic Electric Can Seamer Machine is designed to mechanically seal lids onto tin, aluminum, PET plastic, or paperboard cans with high precision and an airtight hermetic finish. Highly popular for craft beverages, food canning laboratories, and commercial packaging facilities. Features a heavy-duty pedestal lifter and precision seaming rollers.",
+      "shortDescription": "Motorized tabletop commercial can seaming machine with hardened double-seaming rollers, adjustable threaded can lifter pedestal, and safety control panel for tin, aluminum, and PET cans.",
+      "fullDescription": "A commercial tabletop Semi-Automatic Electric Can Seamer Machine (Model: TDFJ-160) engineered to mechanically roll and seal metal lids onto tin, aluminum, PET plastic, and paperboard composite cans with high precision and an airtight, leak-proof double seam. Built with a heavy-duty industrial structural steel frame in a protective industrial finish, a rear-mounted 0.75 HP electric motor, dual hardened alloy tool-steel seaming rollers, and an adjustable threaded can lifter pedestal to accommodate varying can heights from 39 mm to 200 mm. The front control panel features an LED Power indicator, safety Fuse, Point jog button, and independent Motor/Lifting switches.",
       "price": "₹ 60,000",
       "priceUnit": "Ex-Factory Price",
-      "capacity": "15 - 25 cans / minute (Seam time: 2-3 sec/can)",
-      "power": "0.5 HP Single Phase 220V Electric Motor",
-      "materialGrade": "Heavy Industrial Steel Frame & Food-Grade Hardened Seaming Rollers",
-      "automationGrade": "Semi-Automatic with Lever Lifter",
-      "voltage": "220V, 50 Hz Single Phase",
-      "dimensions": "600 mm x 450 mm x 1100 mm",
-      "weight": "65 kg approx",
+      "capacity": "15 – 25 Cans / Minute (900 – 1500 Cans/Hr)",
+      "power": "0.75 HP (370W / 550W) High-Torque Single Phase Motor",
+      "materialGrade": "Heavy Industrial Structural Steel Body with Hardened Alloy Tool Steel Seaming Rollers",
+      "automationGrade": "Semi-Automatic Motorized (Manual Can Placement & Lever/Switch Lift)",
+      "voltage": "220V AC, 50 Hz Single Phase",
+      "dimensions": "600 mm x 320 mm x 700 mm",
+      "weight": "35 kg",
       "warranty": "1 Year Commercial Warranty",
       "images": [
-        "https://res.cloudinary.com/vgmmtb5k/image/upload/v1789296405/raghav-food-processing-machines/raghav-can-seamer.jpg",
-        "/images/products/raghav-can-seamer.jpg"
+        "https://res.cloudinary.com/vgmmtb5k/image/upload/v1789487819/raghav-food-processing-machines/raghav-can-seamer.png",
+        "/images/products/raghav-can-seamer.png"
       ],
       "specifications": [
         {
-          "label": "Can Diameter Range",
-          "value": "39 mm to 150 mm (Interchangeable Chucks)"
+          "label": "Model",
+          "value": "Raghav 16 (TDFJ-160)"
         },
         {
-          "label": "Can Height Range",
-          "value": "39 mm to 200 mm (Adjustable Pedestal Lifter)"
+          "label": "Brand",
+          "value": "Raghav"
         },
         {
           "label": "Sealing Speed",
           "value": "15 to 25 cans per minute"
         },
         {
-          "label": "Seaming Method",
-          "value": "Rotary Double Seaming Head with Dual Precision Rollers"
+          "label": "Can Diameter Range",
+          "value": "45 mm to 130 mm (Standard Beverage & Food Cans)"
         },
         {
-          "label": "Motor Drive",
-          "value": "0.5 HP Copper-Wound High-Torque Gear Motor"
+          "label": "Can Height Range",
+          "value": "39 mm to 200 mm (Adjustable Pedestal Height)"
         },
         {
-          "label": "Structure",
-          "value": "Rigid Cast Iron / Steel Column with Floor/Bench Mount Base"
+          "label": "Motor Power",
+          "value": "0.75 HP Single Phase 220V Electric Motor"
+        },
+        {
+          "label": "Seaming Principle",
+          "value": "Hermetic Mechanical Double Seaming (1st & 2nd Operation Rollers)"
+        },
+        {
+          "label": "Applicable Can Types",
+          "value": "Tinplate Cans, Aluminum Cans, Clear PET Pop-Top Cans, Paper Cans"
+        },
+        {
+          "label": "Control Features",
+          "value": "Safety Fuse, Power Indicator, Inching/Point Jog Button, Motor Switch"
         }
       ],
       "applications": [
-        "Craft Beverage, Cold Brew & Juice Canning",
-        "Food Canning: Sweet Corn, Mushrooms, Fruit Slices",
-        "Dry Fruit, Spices & Roasted Snack Tins",
-        "Chemical, Wax & Grease Metal Container Packaging"
+        "Beer, Cold Brew Coffee, Kombucha & Carbonated Soda Aluminum Cans",
+        "Transparent PET Pop-Can Beverage & Bubble Tea Canning",
+        "Canned Fruits, Pineapple Slices, Mushroom & Vegetable Canning Lines",
+        "Dry Fruits, Roasted Nuts, Sweets & Snacks Hermetic Tin Sealing",
+        "Fish, Meat, Cooking Oil & Ghee Airtight Tin Packaging"
       ],
       "features": [
-        "Airtight hermetic double seam prevents contamination and preserves freshness",
-        "Adjustable pedestal lifter accommodates different can heights easily",
-        "Hardened alloy steel rollers deliver uniform double seam compression with zero leaks",
-        "Compact benchtop footprint fits easily into commercial packaging rooms"
+        "Hardened tool-steel double-seaming rollers deliver certified airtight hermetic double-seam seal",
+        "Versatile threaded height-adjustable pedestal accommodates small tuna cans up to tall 500ml beverage cans",
+        "Compatible with tin, aluminum easy-open ends (EOE), and modern transparent PET plastic pop-top cans",
+        "Integrated control panel with safety fuse, jog inching button, and power lamps for foolproof operation",
+        "Compact benchtop footprint with heavy vibration-absorbing rubber feet fits easily into packing lines"
       ],
       "isFeatured": true,
       "isPublished": true,
       "_id": "prod_4",
-      "createdAt": "2026-09-13T10:52:56.485Z",
-      "updatedAt": "2026-09-13T10:52:56.485Z"
+      "createdAt": "2026-09-15T15:57:01.648Z",
+      "updatedAt": "2026-09-13T10:52:56.485Z",
+      "brochureUrl": ""
     },
     {
       "name": "Raghav Heavy-Duty Hydraulic Juice & Oil Cold Press Machine",
@@ -2611,6 +2626,86 @@
       "isFeatured": true,
       "isPublished": true,
       "createdAt": "2026-09-15T15:31:16.169Z"
+    },
+    {
+      "_id": "prod_37",
+      "name": "Raghav Commercial Stainless Steel Colloid Mill Machine (Ultra-Fine Homogenizer)",
+      "slug": "raghav-colidal-mill",
+      "category": "Vegetable & Fruit Processing",
+      "categorySlug": "vegetable-fruit-processing",
+      "shortDescription": "Industrial 300-400 kg/hr sanitary SS-304 colloid mill with 3 HP motor, high-shear rotor-stator grinding head, micrometer gap adjustment, and recirculation pipe.",
+      "fullDescription": "A commercial Colloid Mill Machine is a precision, high-shear fluid-processing machine used to reduce the particle size of solids in suspension down to microscopic levels and break down droplets in immiscible emulsions. Widely utilized across commercial food, beverage, pharmaceutical, and cosmetic manufacturing units, it delivers ultra-fine wet grinding, intensive homogenization, and silky smooth blending for highly viscous pastes. Built with all-stainless-steel 304 food-grade contact parts, a conical feed hopper with continuous recirculation bypass loop, precision micrometer stator-rotor clearance adjusters, a 3 HP high-torque motor housed under a perforated SS shroud, and push-button controls.",
+      "price": "₹ 1,15,000",
+      "priceUnit": "Ex-Factory Price",
+      "capacity": "300 – 400 kg / Hour Throughput",
+      "power": "3 HP Heavy-Duty Single / 3-Phase Electric Motor (2800 RPM)",
+      "materialGrade": "Food-Grade Stainless Steel 304 (Sanitary Rotor, Stator & Hopper)",
+      "automationGrade": "Semi-Automatic (Continuous Feed with Recirculation Loop)",
+      "voltage": "220V Single Phase / 415V 3-Phase Option",
+      "dimensions": "750 mm x 380 mm x 850 mm",
+      "weight": "95 kg",
+      "warranty": "1 Year Commercial Warranty",
+      "images": [
+        "https://res.cloudinary.com/vgmmtb5k/image/upload/v1789487812/raghav-food-processing-machines/raghav-colidal-mill.png",
+        "/images/products/raghav-colidal-mill.png"
+      ],
+      "specifications": [
+        {
+          "label": "Model",
+          "value": "Raghav13"
+        },
+        {
+          "label": "Brand",
+          "value": "Raghav"
+        },
+        {
+          "label": "Grinding Output",
+          "value": "300 to 400 kg per hour"
+        },
+        {
+          "label": "Motor Power",
+          "value": "3 HP High-Speed Motor (2800 RPM)"
+        },
+        {
+          "label": "Material of Construction",
+          "value": "Complete Stainless Steel 304 (Food Grade)"
+        },
+        {
+          "label": "Grinding Mechanism",
+          "value": "Precision Tapered Rotor & Toothed Stator Assembly"
+        },
+        {
+          "label": "Fineness Range",
+          "value": "2 to 50 Microns (Adjustable via Micrometer Ring)"
+        },
+        {
+          "label": "Recirculation Pipe",
+          "value": "Sanitary SS-304 Bypass Tube with 3-Way Valve"
+        },
+        {
+          "label": "Feed Hopper",
+          "value": "Conical Stainless Steel Funnel with Splash Guard"
+        }
+      ],
+      "applications": [
+        "Peanut Butter, Almond Butter, Cashew Paste & Tahini",
+        "Tomato Ketchup, Puree, Chilli Paste & Garlic-Ginger Emulsions",
+        "Fruit Jams, Marmalades, Fruit Syrups & Mango Pulp Homogenization",
+        "Mayonnaise, Salad Dressings, Mustard Sauce & Cooking Sauces",
+        "Soy Milk, Almond Milk, Dairy Emulsions & Nutritional Beverages",
+        "Ayurvedic Herbal Pastes, Creams, Gels & Cosmetic Formulations"
+      ],
+      "features": [
+        "High-shear rotor-stator design homogenizes particles down to 2–50 microns for velvety smooth textures",
+        "Sanitary recirculation loop pipe enables continuous multi-pass processing without manual transfer",
+        "Precision micrometer clearance ring allows fine-tuning of grinding gap while the machine is running",
+        "Entire body and motor enclosure fabricated from polished food-grade SS-304 for effortless clean-in-place CIP",
+        "Heavy vibration-dampening feet provide steady benchtop stability during high-speed 2800 RPM operation"
+      ],
+      "brochureUrl": "",
+      "isFeatured": true,
+      "isPublished": true,
+      "createdAt": "2026-09-15T15:57:01.635Z"
     }
   ],
   "categories": [

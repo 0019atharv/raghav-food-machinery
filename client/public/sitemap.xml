@@ -90,8 +90,8 @@
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
     <image:image>
-      <image:loc>https://res.cloudinary.com/vgmmtb5k/image/upload/v1789296405/raghav-food-processing-machines/raghav-can-seamer.jpg</image:loc>
-      <image:title>Raghav Can Seamer Machine (Semi-Automatic Double Seamer)</image:title>
+      <image:loc>https://res.cloudinary.com/vgmmtb5k/image/upload/v1789487819/raghav-food-processing-machines/raghav-can-seamer.png</image:loc>
+      <image:title>Raghav Tabletop Semi-Automatic Electric Can Seamer Machine (TDFJ-160)</image:title>
     </image:image>
   </url>
 
@@ -444,6 +444,17 @@
     <image:image>
       <image:loc>https://res.cloudinary.com/vgmmtb5k/image/upload/v1789486275/raghav-food-processing-machines/raghav-steam-jacket-kettle.png</image:loc>
       <image:title>Raghav 225L Commercial Tilting Steam Jacketed Kettle (Cooking Pan)</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://raghavfoodprocessingmachines.com/product/raghav-colidal-mill</loc>
+    <lastmod>2026-09-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+    <image:image>
+      <image:loc>https://res.cloudinary.com/vgmmtb5k/image/upload/v1789487812/raghav-food-processing-machines/raghav-colidal-mill.png</image:loc>
+      <image:title>Raghav Commercial Stainless Steel Colloid Mill Machine (Ultra-Fine Homogenizer)</image:title>
     </image:image>
   </url>
 
