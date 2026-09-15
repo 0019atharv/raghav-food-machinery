@@ -1989,7 +1989,7 @@ export const initialProducts = [
     "weight": "75 kg",
     "warranty": "1 Year Commercial Warranty",
     "images": [
-      "https://res.cloudinary.com/vgmmtb5k/image/upload/v1789398123/raghav-food-processing-machines/raghav-25kg-pickle-and-flour-mixer.jpg",
+      "https://res.cloudinary.com/vgmmtb5k/image/upload/v1789490352/raghav-food-processing-machines/raghav-25kg-pickle-and-flour-mixer.jpg",
       "/images/products/raghav-25kg-pickle-and-flour-mixer.jpg"
     ],
     "specifications": [
@@ -2050,7 +2050,7 @@ export const initialProducts = [
     "stockCount": 5,
     "sku": "RFPM-RAGHAV-25KG-PICK",
     "createdAt": "2026-09-14T15:02:05.047Z",
-    "updatedAt": "2026-09-14T15:02:05.047Z",
+    "updatedAt": "2026-09-15T16:39:18.823Z",
     "_id": "prod_28"
   },
   {
@@ -2071,7 +2071,7 @@ export const initialProducts = [
     "weight": "140 kg",
     "warranty": "1 Year Commercial Warranty",
     "images": [
-      "https://res.cloudinary.com/vgmmtb5k/image/upload/v1789398124/raghav-food-processing-machines/raghav-gas-operated-boiling-kettle.jpg",
+      "https://res.cloudinary.com/vgmmtb5k/image/upload/v1789490354/raghav-food-processing-machines/raghav-gas-operated-boiling-kettle.jpg",
       "/images/products/raghav-gas-operated-boiling-kettle.jpg"
     ],
     "specifications": [
@@ -2132,7 +2132,7 @@ export const initialProducts = [
     "stockCount": 5,
     "sku": "RFPM-RAGHAV-GAS-OPERA",
     "createdAt": "2026-09-14T15:02:06.073Z",
-    "updatedAt": "2026-09-14T15:02:06.073Z",
+    "updatedAt": "2026-09-15T16:39:18.823Z",
     "_id": "prod_29"
   },
   {
@@ -2154,8 +2154,8 @@ export const initialProducts = [
     "weight": "1.1 kg (with battery & ink cartridge)",
     "warranty": "1 Year Commercial Warranty",
     "images": [
-      "https://res.cloudinary.com/vgmmtb5k/image/upload/v1789399376/raghav-food-processing-machines/raghav-manual-price-codder.jpg",
-      "/images/products/raghav-manual-price-codder.jpg"
+      "https://res.cloudinary.com/vgmmtb5k/image/upload/v1789490356/raghav-food-processing-machines/raghav-manual-price-codder.png",
+      "/images/products/raghav-manual-price-codder.png"
     ],
     "specifications": [
       {
@@ -2213,7 +2213,8 @@ export const initialProducts = [
     "brochureUrl": "",
     "isFeatured": true,
     "isPublished": true,
-    "createdAt": "2026-09-14T15:23:02.152Z"
+    "createdAt": "2026-09-14T15:23:02.152Z",
+    "updatedAt": "2026-09-15T16:39:18.823Z"
   },
   {
     "_id": "prod_31",
